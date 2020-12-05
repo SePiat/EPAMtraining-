@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AviaCompany.Planes
 {
-    class PassengerPlane
+    public class Boeing_737_500
     {
     }
 }

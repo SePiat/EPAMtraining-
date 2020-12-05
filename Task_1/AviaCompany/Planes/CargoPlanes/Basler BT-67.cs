@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AviaCompany.Planes
 {
-    class CargoPlane
+    class Basler_BT_67
     {
     }
 }
