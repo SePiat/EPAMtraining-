@@ -7,7 +7,7 @@ namespace AviaCompany.Planes
     public class CargoPlane : Plane
     {
         public CargoPlane(string flightNumber, int yearProduction) : base(flightNumber, yearProduction) { }
-        public override string ModelName { get; set; }
+        public override string ModelName { get;  set;  }
         public override string FlightNumber { get; set; }
         public override string Manufacturer { get; set; }
         public override string EngineType { get; set; }
@@ -17,5 +17,6 @@ namespace AviaCompany.Planes
         public override int FuelConsumption { get; set; }
         public override int YearProduction { get; set; }
         public int cargoWeight { get; set; }
+        
     }
 }

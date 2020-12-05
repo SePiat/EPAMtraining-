@@ -61,9 +61,9 @@ namespace AviaCompany.AviaParkBuilder
             aviaPark.planes.Add(new Boeing_747_LCF_Dreamlifter($"EW-{new Random().Next(10, 99)}", new Random().Next(1990, 2021)));
         }
 
-        public override List<IPlane> GetResult()
+        public override AviaPark GetResult()
         {
-            return aviaPark.planes;
+            return aviaPark;
         }
     }
 }

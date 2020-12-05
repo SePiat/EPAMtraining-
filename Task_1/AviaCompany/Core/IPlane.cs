@@ -7,7 +7,7 @@ namespace AviaCompany.Core
     public interface IPlane
     {
 
-        public string ModelName { get; set; }
+        public string ModelName { get; }
         public string FlightNumber { get; set; }
         public string Manufacturer { get; set; }
         public string EngineType { get; set; }

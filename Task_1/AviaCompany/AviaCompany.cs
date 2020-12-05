@@ -6,6 +6,11 @@ namespace AviaCompany
 {
     public class AviaCompany
     {
+        public AviaCompany(string name)
+        {
+            Name = name;
+        }
+
         public string Name { get; set; }
 
 

@@ -15,7 +15,7 @@ namespace AviaCompany.AviaParkBuilder
         public abstract void BuildBasler_BT_67();
         public abstract void BuildBoeing_747_LCF_Dreamlifter();
 
-        public abstract List<IPlane> GetResult();
+        public abstract AviaPark GetResult();
       
     }
 }
