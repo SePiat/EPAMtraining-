@@ -8,6 +8,11 @@ namespace AviaCompany
     public class AviaPark
     {
         public string NameCompanyOwner { get; set; }
-        public List<IPlane> planes;
+        public List<IPlane> planes=new List<IPlane>();
+
+        public AviaPark(string nameCompanyOwner)
+        {
+            NameCompanyOwner = nameCompanyOwner;
+        }
     }
 }

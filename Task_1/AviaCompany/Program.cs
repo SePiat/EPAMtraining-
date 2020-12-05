@@ -1,5 +1,7 @@
 ﻿using AviaCompany.AviaParckBuilder;
+using AviaCompany.Planes;
 using System;
+using System.Collections.Generic;
 
 
 
@@ -20,10 +22,14 @@ namespace AviaCompany
 {
     class Program
     {
-        static void Main(string[] args)
+        public class apple
         {
-           
+            public string brre = "abbp";
+            public int part = 3;
 
+        }
+        static void Main(string[] args)
+        {          
 
 
             AirParkBuilder builder = new BelAviaAirParkBuilder();

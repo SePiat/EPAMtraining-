@@ -12,14 +12,13 @@ namespace AviaCompany.AviaParckBuilder
 
         public BelAviaAirParkBuilder()
         {
-            this.aviaPark = new AviaPark();
+            this.aviaPark = new AviaPark("Belavia");
         }
-
+       
         public override void BuildBoeing_737_300()
         {
-            IPlane boing = new Boeing_737_300("test", 365);
-            aviaPark.planes.Add(boing);
-            aviaPark.planes.Add(new Boeing_737_300(/*$"EW-{new Random().Next(10,99)}", new Random().Next(1990,2021))*/"test", 365));
+            
+            aviaPark.planes.Add(new Boeing_737_300($"EW-{new Random().Next(10, 99)}", new Random().Next(1990, 2021)));
             aviaPark.planes.Add(new Boeing_737_300($"EW-{new Random().Next(10, 99)}", new Random().Next(1990, 2021)));
             aviaPark.planes.Add(new Boeing_737_300($"EW-{new Random().Next(10, 99)}", new Random().Next(1990, 2021)));
             aviaPark.planes.Add(new Boeing_737_300($"EW-{new Random().Next(10, 99)}", new Random().Next(1990, 2021)));

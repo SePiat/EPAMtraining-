@@ -17,7 +17,7 @@ namespace AviaCompany.Planes
         public override int FuelConsumption { get; set; }
         public override int YearProduction { get; set; }
 
-        public int businessClassSeats;
-        public int еconomyClassSeats;
+        public int businessClassSeats=1;
+        public int еconomyClassSeats=1;
     }
 }
