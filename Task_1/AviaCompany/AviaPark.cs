@@ -8,6 +8,6 @@ namespace AviaCompany
     public class AviaPark
     {
         public string NameCompanyOwner { get; set; }
-        public List<IPlane> aviaParck;
+        public List<IPlane> planes;
     }
 }

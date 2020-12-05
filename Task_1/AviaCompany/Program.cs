@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AviaCompany.AviaParckBuilder;
+using System;
 
 
 
@@ -21,6 +22,16 @@ namespace AviaCompany
     {
         static void Main(string[] args)
         {
+           
+
+
+
+            AirParkBuilder builder = new BelAviaAirParkBuilder();
+            AirParkCreator creator=new AirParkCreator(builder);
+            creator.Construct();
+            var park=builder.GetResult();
+
+
             Console.WriteLine("Hello World!");
         }
     }
