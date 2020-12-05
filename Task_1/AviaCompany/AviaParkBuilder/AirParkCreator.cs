@@ -1,8 +1,9 @@
-﻿using System;
+﻿using AviaCompany.AviaParkBuilder;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AviaCompany.AviaParckBuilder
+namespace AviaCompany.AviaParkBuilder
 {
     public class AirParkCreator
     {

@@ -7,7 +7,7 @@ namespace AviaCompany.Planes
 {
     public abstract class Plane : IPlane
     {
-        public Plane(string flightNumber, int yearProduction)
+        protected Plane(string flightNumber, int yearProduction)
         {
             FlightNumber = flightNumber;
             YearProduction = yearProduction;

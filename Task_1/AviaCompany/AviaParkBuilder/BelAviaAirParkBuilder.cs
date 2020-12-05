@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AviaCompany.AviaParckBuilder
+namespace AviaCompany.AviaParkBuilder
 {
     public class BelAviaAirParkBuilder : AirParkBuilder
     {
@@ -16,8 +16,7 @@ namespace AviaCompany.AviaParckBuilder
         }
        
         public override void BuildBoeing_737_300()
-        {
-            
+        {            
             aviaPark.planes.Add(new Boeing_737_300($"EW-{new Random().Next(10, 99)}", new Random().Next(1990, 2021)));
             aviaPark.planes.Add(new Boeing_737_300($"EW-{new Random().Next(10, 99)}", new Random().Next(1990, 2021)));
             aviaPark.planes.Add(new Boeing_737_300($"EW-{new Random().Next(10, 99)}", new Random().Next(1990, 2021)));

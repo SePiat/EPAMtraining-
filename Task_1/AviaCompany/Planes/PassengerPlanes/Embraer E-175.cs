@@ -15,6 +15,8 @@ namespace AviaCompany.Planes
             Speed = 890;  //  км/ч
             MaxAltitude = 12500;// м
             FuelConsumption = 1800;//  л/ч
+            еconomyClassSeats = 64;
+            businessClassSeats = 12;
         }
     }
 }

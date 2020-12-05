@@ -16,7 +16,9 @@ namespace AviaCompany.Planes
             Speed = 910;
             MaxAltitude = 10200;
             FuelConsumption = 2600;
-           
+            еconomyClassSeats = 148;
+
+
         }
     }
 }

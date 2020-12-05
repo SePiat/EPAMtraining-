@@ -15,6 +15,7 @@ namespace AviaCompany.Planes
             Speed = 380;  //  км/ч
             MaxAltitude = 7600;// м
             FuelConsumption = 1850;//  л/ч
+            cargoWeight = 5897;
         }
     }
 }

@@ -16,6 +16,6 @@ namespace AviaCompany.Planes
         public override int MaxAltitude { get; set; }
         public override int FuelConsumption { get; set; }
         public override int YearProduction { get; set; }
-        public int cargoVolume { get; set; }
+        public int cargoWeight { get; set; }
     }
 }
