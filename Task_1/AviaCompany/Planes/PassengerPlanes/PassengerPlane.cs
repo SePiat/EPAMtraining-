@@ -22,8 +22,7 @@ namespace AviaCompany.Planes
 
         public override void Fly()
         {
-            Console.WriteLine($"Пассажирский лайнер {ModelName} с боротовым номером {FlightNumber} отправился в полет с " +
-                $"{businessClassSeats} пассажирами економкласса и {businessClassSeats} пассажирами бизнесс класса");
+            Console.WriteLine($"Пассажирский лайнер {ModelName} с боротовым номером {FlightNumber} отправился в полет с ");
         }
     }
 }

@@ -12,6 +12,7 @@ namespace AviaCompany
         }
 
         public string Name { get; set; }
+        public AviaPark aviaPark;
 
 
     }

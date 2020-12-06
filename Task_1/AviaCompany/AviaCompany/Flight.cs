@@ -27,12 +27,15 @@ namespace AviaCompany
         
 
         public void Flying(IFly plane)
-        {            
-            plane.Fly();
-            string massage =plane is PassengerPlane?$"{NumberOfPassengrsEconomyClass} пассажирами економ класса и {NumberOfPassengrsBusinessClass} пассажирами бизнесс класса":
-                $"{WeightOfCargo} кг груза";
-            Console.WriteLine(massage);
-            Console.WriteLine($"в направлении {Destination}");
+        {
+            if (plane!=null)
+            {
+                plane.Fly();
+                string massage = plane is PassengerPlane ? $"{NumberOfPassengrsEconomyClass} пассажирами економ класса и {NumberOfPassengrsBusinessClass} пассажирами бизнесс класса" :
+                    $"{WeightOfCargo} кг груза";
+                Console.WriteLine(massage);
+                Console.WriteLine($"в пункт назначения: {Destination}");
+            }           
         }
 
 

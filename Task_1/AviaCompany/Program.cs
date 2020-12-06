@@ -1,5 +1,6 @@
 ﻿
 using AviaCompany.AviaParkBuilder;
+using AviaCompany.Core;
 using AviaCompany.Planes;
 using System;
 using System.Collections.Generic;
@@ -29,15 +30,18 @@ namespace AviaCompany
         
         static void Main(string[] args)
         {
-            AviaCompany Belavia = new AviaCompany("Belavia");
-            AirParkBuilder builder = new BelAviaAirParkBuilder();
-            AirParkCreator creator=new AirParkCreator(builder);
+            AviaCompany Belavia = new AviaCompany("Belavia"); //создание авиокомпании
+
+            AirParkBuilder builder = new BelAviaAirParkBuilder(); //создание объекта builder (Pattern Builder)
+            AirParkCreator creator=new AirParkCreator(builder); 
             creator.Construct();
-            AviaPark aviaPark =builder.GetResult();
-            var listOfPlanes = aviaPark.planes;
+            Belavia.aviaPark= builder.GetResult();     //создание авиапарка  (Pattern Builder)       
+            var listOfPlanes = Belavia.aviaPark.planes;  //список самолетов в авипарке
+
+            
 
 
-
+            Console.WriteLine();
             Console.WriteLine($"Создана авиокампания {Belavia.Name} , содержащая парк самолетов:");
             listOfPlanes.ToList().ForEach(x => Console.WriteLine($"{x.ModelName}, бортовой номер:{x.FlightNumber}"));
 
@@ -70,8 +74,14 @@ namespace AviaCompany
             var plane = listOfPlanes.FirstOrDefault(x => x.FuelConsumption > minValueRange && x.FuelConsumption < maxValueRange); // поиск самолета по заданному диапазону потребления горючего
            string message= plane == null? $"В заданном диапазоне потребления горючего самолетов не найдено":$"Самолет соответствующий заданному диапазону параметров потребления горючего:  {plane.ModelName} {plane.FuelConsumption} л/ч";
             Console.WriteLine(message);
-            
-            
+
+
+            Console.WriteLine();
+            Belavia.aviaPark.flight = new Flight("Минск-Варшава", 3000, "аэропорт Варшавы «Фредерик Шопен»", 0, 0, 1000);// создание рейса с заданными параметрами
+            Plane planeToFly = Belavia.aviaPark.GetPlaneToFlying(Belavia.aviaPark.flight);// подбор самолета из парка с подходящими параметрами
+            Belavia.aviaPark.flight.Flying(planeToFly);//отправка самолета в рейс
+
+
             Console.ReadKey();
         
         }

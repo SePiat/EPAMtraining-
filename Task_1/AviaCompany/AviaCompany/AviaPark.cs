@@ -18,24 +18,31 @@ namespace AviaCompany
             NameCompanyOwner = nameCompanyOwner;
         }
 
-        public IPlane GetPlaneToFlying(Flight flight)
+        public Plane GetPlaneToFlying(Flight flight)
         {
             if (planes!=null)
             {
-                IPlane plane;
+                Plane plane;
+
+                var planeEnoughDistance = planes.Where(x => x.FlightRange > flight.Distance);
+                if (planeEnoughDistance == null) 
+                {
+                    Console.WriteLine("Данная авиокампания не имеет самолетов для полетов на такие дистанции");
+                    return null;
+
+                }
                 if (flight.NumberOfPassengrsBusinessClass>0||flight.NumberOfPassengrsEconomyClass>0)
                 {
-                    plane = planes.Where(x => x.FlightRange < flight.Distance).
+                    plane = planeEnoughDistance.
                         Where(x => x is PassengerPlane).
-                        Select(x=>(PassengerPlane)x).
+                        Select(x => (PassengerPlane)x).
                         Where(x=>x.businessClassSeats>flight.NumberOfPassengrsBusinessClass&&x.еconomyClassSeats>flight.NumberOfPassengrsEconomyClass).FirstOrDefault();
                     if (plane==null) Console.WriteLine("В данной авиакомпании не имеется самолета для перевозки такого колличества пассажиров");
-
                     return plane;
                 }
                 if (flight.WeightOfCargo>0)
                 {
-                    plane = planes.Where(x => x.FlightRange < flight.Distance).
+                    plane = planeEnoughDistance.
                         Where(x => x is CargoPlane).
                         Select(x => (CargoPlane)x).
                         Where(x => x.cargoWeight > flight.WeightOfCargo).FirstOrDefault();

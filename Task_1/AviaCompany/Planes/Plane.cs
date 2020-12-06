@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AviaCompany.Planes
 {
-    public abstract class Plane : IPlane, IFly
+    public abstract class Plane : IPlane,IFly
     {
         protected Plane(string flightNumber, int yearProduction)
         {
