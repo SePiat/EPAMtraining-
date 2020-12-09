@@ -17,10 +17,25 @@ namespace AviaCompany.AviaParkBuilder
         public void Construct()
         {
             builder.BuildBoeing_737_300();
+            builder.BuildBoeing_737_300();
+            builder.BuildBoeing_737_300();
+            builder.BuildBoeing_737_300();
+
             builder.BuildBoeing_737_500();
+            builder.BuildBoeing_737_500();
+
             builder.BuildBoeing_737_800();
+            builder.BuildBoeing_737_800();
+            builder.BuildBoeing_737_800();
+            builder.BuildBoeing_737_800();
+            builder.BuildBoeing_737_800();
+            builder.BuildBoeing_737_800();
+            builder.BuildBoeing_737_800();
+
+            builder.BuildEmbraer_E_175();
             builder.BuildEmbraer_E_175();
             builder.BuildEmbraer_E_195();
+
             builder.BuildBasler_BT_67();
             builder.BuildBoeing_747_LCF_Dreamlifter();
         }
