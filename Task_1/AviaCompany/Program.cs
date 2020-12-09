@@ -33,28 +33,19 @@ namespace AviaCompany
             AviaCompany Belavia = new AviaCompany("Belavia"); //создание авиокомпании
 
             AirParkBuilder builder = new BelAviaAirParkBuilder(); //создание объекта builder (Pattern Builder)
-            AirParkCreator creator=new AirParkCreator(builder); 
+            AirParkForBelAviaCreator creator=new AirParkForBelAviaCreator(builder); 
             creator.Construct();
             Belavia.aviaPark= builder.GetResult();     //создание авиапарка  (Pattern Builder)       
-            var listOfPlanes = Belavia.aviaPark.planes;  //список самолетов в авипарке
-
-            
-
+            var listOfPlanes = Belavia.aviaPark.planes;  //список самолетов в авипарке 
 
             Console.WriteLine();
             Console.WriteLine($"Создана авиокампания {Belavia.Name} , содержащая парк самолетов:");
-            listOfPlanes.ToList().ForEach(x => Console.WriteLine($"{x.ModelName}, бортовой номер:{x.FlightNumber}"));
-
-            int totalNumberOfPassengers = listOfPlanes.Where(x => x is PassengerPlane).
-                Select(x => (PassengerPlane)x).Sum(x => x.еconomyClassSeats)+
-                listOfPlanes.Where(x => x is PassengerPlane).
-                Select(x => (PassengerPlane)x).Sum(x => x.businessClassSeats); // подсчет общей вместимости пассажиров (пассажирские самолеты)
-
-            int totalCapacity = listOfPlanes.Where(x => x is CargoPlane).Select(x => (CargoPlane)x).Sum(x => x.cargoWeight); // подсчет общей гзузоподъемности (грузовые самолеты)
-
-            var sortOfDistance = listOfPlanes.OrderBy(x => x.FlightRange); // сортировка по дальности полета (от меньшего к больщему)
+            Belavia.GetPlanes(Belavia.aviaPark); //получаем в консоль список самолетов сразу в консоль
 
             
+            int totalNumberOfPassengers = Belavia.GetCommonCapacity(Belavia.aviaPark); ; // подсчет общей вместимости пассажиров (пассажирские самолеты)??????            
+            int totalCapacity = Belavia.GetCommonCargoWeight(Belavia.aviaPark); ; // подсчет общей гзузоподъемности (грузовые самолеты)
+            var sortOfDistance = listOfPlanes.OrderBy(x => x.FlightRange); // сортировка по дальности полета (от меньшего к большему)           
 
             
             Console.WriteLine();
@@ -66,13 +57,11 @@ namespace AviaCompany
             sortOfDistance.ToList().ForEach(x => Console.WriteLine($"{x.ModelName}  {x.FlightRange} км"));
             Console.WriteLine();
 
-            Console.WriteLine("Для поиска самолета по заданному диапазону параметров потребления горючего введите максимальное значение диапазона");
-            int maxValueRange = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Введите минимальное значение диапазона");
-            int minValueRange = Convert.ToInt32(Console.ReadLine()); 
+            
 
-            var plane = listOfPlanes.FirstOrDefault(x => x.FuelConsumption > minValueRange && x.FuelConsumption < maxValueRange); // поиск самолета по заданному диапазону потребления горючего
-           string message= plane == null? $"В заданном диапазоне потребления горючего самолетов не найдено":$"Самолет соответствующий заданному диапазону параметров потребления горючего:  {plane.ModelName} {plane.FuelConsumption} л/ч";
+            var plane = Belavia.GetPlaneByFuelConsumption(Belavia.aviaPark); // поиск самолета по заданному диапазону потребления горючего
+            string message = plane == null? $"В заданном диапазоне потребления горючего самолетов не найдено или введено некорректное значение":
+                $"Самолет соответствующий заданному диапазону параметров потребления горючего:  {plane.ModelName} {plane.FuelConsumption} л/ч";
             Console.WriteLine(message);
 
 

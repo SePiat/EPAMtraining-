@@ -5,11 +5,11 @@ using System.Text;
 
 namespace AviaCompany.AviaParkBuilder
 {
-    public class AirParkCreator
+    public class AirParkForBelAviaCreator
     {
         AirParkBuilder builder;
 
-        public AirParkCreator(AirParkBuilder builder)
+        public AirParkForBelAviaCreator(AirParkBuilder builder)
         {
             this.builder = builder;
         }

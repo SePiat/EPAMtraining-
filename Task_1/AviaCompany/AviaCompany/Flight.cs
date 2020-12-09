@@ -24,6 +24,8 @@ namespace AviaCompany
             NumberOfPassengrsBusinessClass = numberOfPassengrsBusinessClass;
             WeightOfCargo = weightOfCargo;
         }
+
+
         
 
         public void Flying(IFly plane)

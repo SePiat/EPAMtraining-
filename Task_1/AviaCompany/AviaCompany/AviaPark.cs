@@ -16,7 +16,7 @@ namespace AviaCompany
         public AviaPark(string nameCompanyOwner)
         {
             NameCompanyOwner = nameCompanyOwner;
-        }
+        }        
 
         public Plane GetPlaneToFlying(Flight flight)
         {
