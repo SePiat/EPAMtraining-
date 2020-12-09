@@ -26,8 +26,7 @@ namespace AviaCompany.Planes
         }
 
         public override int GetStaff()
-        {
-            Console.WriteLine($"Борт укомплектован {requiredMovers} грузчиками");
+        {            
             return requiredMovers;
         }
     }

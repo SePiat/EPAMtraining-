@@ -29,17 +29,23 @@ namespace AviaCompany
         {
             if (plane!=null)
             {
+               int staff= StaffedPlane((IStaff)plane);
                 plane.Fly();
-                string massage = plane is PassengerPlane ? $"{NumberOfPassengrsEconomyClass} пассажирами економ класса и {NumberOfPassengrsBusinessClass} пассажирами бизнесс класса" :
-                    $"{WeightOfCargo} кг груза";
+                string massage = plane is PassengerPlane ? $"{NumberOfPassengrsEconomyClass} пассажирами економ класса и {NumberOfPassengrsBusinessClass} пассажирами бизнесс класса, а так же {staff} стюардессами" :
+                    $"{WeightOfCargo} кг груза, а так же {staff} грузчиками";
                 Console.WriteLine(massage);
                 Console.WriteLine($"в пункт назначения: {Destination}");
             }           
         }
 
-        public void StaffedPlane(IStaff plane)
+        public int StaffedPlane(IStaff plane)
         {
-            plane.GetStaff();
+            if (plane!=null)
+            {
+                return plane.GetStaff();
+            }
+            return 0;
+           
         }
        
     }

@@ -33,8 +33,7 @@ namespace AviaCompany.Planes
               
 
         public override int GetStaff()
-        {
-            Console.WriteLine($"Борт укомплектован {requiredStewardesses} стюардессами");
+        {            
             return requiredStewardesses;
         }
     }

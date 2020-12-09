@@ -69,7 +69,7 @@ namespace AviaCompany
             Belavia.aviaPark.flight = new Flight("Минск-Варшава", 3000, "аэропорт Варшавы «Фредерик Шопен»", 0, 0, 1000);// создание рейса с заданными параметрами
             Plane planeToFly = Belavia.aviaPark.GetPlaneToFlying(Belavia.aviaPark.flight);// подбор самолета из парка с подходящими параметрами
 
-            Belavia.aviaPark.flight.StaffedPlane(planeToFly);//комплектация самолета обслуживающим персноналом            
+                       
             Belavia.aviaPark.flight.Flying(planeToFly);//отправка самолета в рейс
             Console.ReadKey();
         
