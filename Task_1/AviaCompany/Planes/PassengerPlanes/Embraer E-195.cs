@@ -17,6 +17,7 @@ namespace AviaCompany.Planes
             FuelConsumption = 1850;//  л/ч
             еconomyClassSeats = 96;
             businessClassSeats = 11;
+            baggageWeight = 1100;
         }
     }
 }

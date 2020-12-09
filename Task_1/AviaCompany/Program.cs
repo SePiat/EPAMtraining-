@@ -51,7 +51,7 @@ namespace AviaCompany
             Console.WriteLine();
             Console.WriteLine($"Общая вместимость пассажиров всех пассажирских самолетов: {totalNumberOfPassengers} человек");
             Console.WriteLine();
-            Console.WriteLine($"Общая грузоподъемность всех грузовых самолетов: {totalCapacity} кг");
+            Console.WriteLine($"Общая грузоподъемность всех самолетов: {totalCapacity} кг");
             Console.WriteLine();
             Console.WriteLine("Отсортированный список самолетов по дальности полета");
             sortOfDistance.ToList().ForEach(x => Console.WriteLine($"{x.ModelName}  {x.FlightRange} км"));

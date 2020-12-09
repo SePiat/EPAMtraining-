@@ -46,8 +46,9 @@ namespace AviaCompany
         internal int GetCommonCargoWeight(AviaPark aviaPark)
         {
             if (aviaPark != null)
-            {
-                return aviaPark.planes.Where(x => x is CargoPlane).Select(x => (CargoPlane)x).Sum(x => x.cargoWeight);
+            {                
+                return aviaPark.planes.Where(x => x is CargoPlane).Select(x => (CargoPlane)x).Sum(x => x.cargoWeight)+ aviaPark.planes.Where(x => x is PassengerPlane).
+               Select(x => (PassengerPlane)x).Sum(x => x.baggageWeight);
             }
             else return 0;
         }

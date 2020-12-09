@@ -17,6 +17,8 @@ namespace AviaCompany.Planes
             MaxAltitude = 10200;
             FuelConsumption = 2600;
             еconomyClassSeats = 148;
+            baggageWeight = 1500;
+
 
 
         }
