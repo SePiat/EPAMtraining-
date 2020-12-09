@@ -16,6 +16,7 @@ namespace AviaCompany.Planes
             MaxAltitude = 7600;// м
             FuelConsumption = 1850;//  л/ч
             cargoWeight = 5897;
+            requiredMovers = 6;
         }
     }
 }

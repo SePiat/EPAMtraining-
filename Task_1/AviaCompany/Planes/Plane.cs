@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AviaCompany.Planes
 {
-    public abstract class Plane : IPlane
+    public abstract class Plane : IPlane,IStaff
     {
         protected Plane(string flightNumber, int yearProduction)
         {
@@ -26,6 +26,8 @@ namespace AviaCompany.Planes
         public abstract int FlightRange { get; set; }
 
         public abstract void Fly();
-        
+
+        public abstract int GetStaff();
+       
     }
 }

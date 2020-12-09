@@ -1,10 +1,11 @@
-﻿using System;
+﻿using AviaCompany.Core;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace AviaCompany.Planes
 {
-    public class CargoPlane : Plane
+    public class CargoPlane : Plane, IStaff
     {
         public CargoPlane(string flightNumber, int yearProduction) : base(flightNumber, yearProduction) { }
         public override string ModelName { get;  set;  }
@@ -17,10 +18,17 @@ namespace AviaCompany.Planes
         public override int FuelConsumption { get; set; }
         public override int YearProduction { get; set; }
         public int cargoWeight { get; set; }
+
+        public int requiredMovers;
         public override void Fly()
         {
             Console.WriteLine($"Грузовой самолет {ModelName} с боротовым номером {FlightNumber} отправился в полет с ");
         }
 
+        public override int GetStaff()
+        {
+            Console.WriteLine($"Борт укомплектован {requiredMovers} грузчиками");
+            return requiredMovers;
+        }
     }
 }

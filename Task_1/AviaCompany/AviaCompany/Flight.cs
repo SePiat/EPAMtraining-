@@ -23,10 +23,7 @@ namespace AviaCompany
             NumberOfPassengrsEconomyClass = numberOfPassengrsEconomyClass;
             NumberOfPassengrsBusinessClass = numberOfPassengrsBusinessClass;
             WeightOfCargo = weightOfCargo;
-        }
-
-
-        
+        }        
 
         public void Flying(IPlane plane)
         {
@@ -40,7 +37,10 @@ namespace AviaCompany
             }           
         }
 
-
-
+        public void StaffedPlane(IStaff plane)
+        {
+            plane.GetStaff();
+        }
+       
     }
 }

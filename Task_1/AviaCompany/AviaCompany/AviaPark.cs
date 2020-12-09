@@ -20,7 +20,7 @@ namespace AviaCompany
 
         public Plane GetPlaneToFlying(Flight flight)
         {
-            if (planes!=null)
+            if (flight!= null)
             {
                 Plane plane;
 
@@ -36,8 +36,8 @@ namespace AviaCompany
                     plane = planeEnoughDistance.
                         Where(x => x is PassengerPlane).
                         Select(x => (PassengerPlane)x).
-                        Where(x=>x.businessClassSeats>flight.NumberOfPassengrsBusinessClass&&x.еconomyClassSeats>flight.NumberOfPassengrsEconomyClass).FirstOrDefault();
-                    if (plane==null) Console.WriteLine("В данной авиакомпании не имеется самолета для перевозки такого колличества пассажиров");
+                        Where(x=>x.businessClassSeats>flight.NumberOfPassengrsBusinessClass&&x.еconomyClassSeats>flight.NumberOfPassengrsEconomyClass&&x.baggageWeight>flight.WeightOfCargo).FirstOrDefault();
+                    if (plane==null) Console.WriteLine("В данной авиакомпании не имеется самолета для перевозки такого колличества пассажиров с таким количеством багажа");
                     return plane;
                 }
                 if (flight.WeightOfCargo>0)
@@ -62,7 +62,7 @@ namespace AviaCompany
             }
             else
             {
-                Console.WriteLine("В авифпарке данной компании отсутствуют самолеты");
+                Console.WriteLine("Рейс не сформирован");
                 return null;
             }
         }

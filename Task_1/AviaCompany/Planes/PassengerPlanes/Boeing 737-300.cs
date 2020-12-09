@@ -19,6 +19,8 @@ namespace AviaCompany.Planes
             еconomyClassSeats = 148;
             baggageWeight = 1500;
 
+            requiredStewardesses = 4;
+
 
 
         }

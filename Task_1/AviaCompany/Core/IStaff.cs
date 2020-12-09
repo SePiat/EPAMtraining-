@@ -4,8 +4,8 @@ using System.Text;
 
 namespace AviaCompany.Core
 {
-  /* public interface IFly
+    public interface IStaff
     {
-        public void Fly();
-    }*/
+        public int GetStaff();
+    }
 }

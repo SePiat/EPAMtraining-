@@ -33,10 +33,10 @@ namespace AviaCompany
                 /*int totalNumberOfPassengers = aviaPark.planes.Where(x => x is PassengerPlane).
                Select(x => (PassengerPlane)x).Sum(x => x.еconomyClassSeats) +
                aviaPark.planes.Where(x => x is PassengerPlane).
-               Select(x => (PassengerPlane)x).Sum(x => x.businessClassSeats);*/ // подсчет общей вместимости пассажиров (пассажирские самолеты)??????
+               Select(x => (PassengerPlane)x).Sum(x => x.businessClassSeats);*/ // подсчет общей вместимости пассажиров (пассажирские самолеты)
 
                 int totalNumberOfPassengers = aviaPark.planes.Where(x => x is PassengerPlane).
-               Select(x => (PassengerPlane)x).Sum(x => x.businessClassSeats + x.еconomyClassSeats);
+               Select(x => (PassengerPlane)x).Sum(x => x.businessClassSeats + x.еconomyClassSeats);// подсчет общей вместимости пассажиров (пассажирские самолеты)
                 return totalNumberOfPassengers;
             }
             else return 0;

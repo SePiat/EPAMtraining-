@@ -1,10 +1,11 @@
-﻿using System;
+﻿using AviaCompany.Core;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace AviaCompany.Planes
 {
-    public class PassengerPlane : Plane
+    public class PassengerPlane : Plane, IStaff
     {
         public PassengerPlane(string flightNumber, int yearProduction):base(flightNumber,yearProduction) { }
         public override string ModelName { get; set; }
@@ -21,10 +22,20 @@ namespace AviaCompany.Planes
         public int baggageWeight;
         public int businessClassSeats;
         public int еconomyClassSeats;
+        public int requiredStewardesses;
+
+
 
         public override void Fly()
         {
             Console.WriteLine($"Пассажирский лайнер {ModelName} с боротовым номером {FlightNumber} отправился в полет с ");
+        }
+              
+
+        public override int GetStaff()
+        {
+            Console.WriteLine($"Борт укомплектован {requiredStewardesses} стюардессами");
+            return requiredStewardesses;
         }
     }
 }

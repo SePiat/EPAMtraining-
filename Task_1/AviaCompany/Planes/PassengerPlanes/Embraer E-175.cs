@@ -18,6 +18,7 @@ namespace AviaCompany.Planes
             еconomyClassSeats = 64;
             businessClassSeats = 12;
             baggageWeight = 1000;
+            requiredStewardesses = 3;
         }
     }
 }

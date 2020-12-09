@@ -16,6 +16,7 @@ namespace AviaCompany.Planes
             MaxAltitude = 11300;// м
             FuelConsumption = 3000;//  л/ч
             еconomyClassSeats = 120;
+            requiredStewardesses = 6;
 
         }
     }
