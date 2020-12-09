@@ -16,6 +16,7 @@ namespace AviaCompany.Core
         public int MaxAltitude { get; set; }
         public int FuelConsumption { get; set; } 
         public int YearProduction { get; set; }
+        public void Fly();
 
 
 

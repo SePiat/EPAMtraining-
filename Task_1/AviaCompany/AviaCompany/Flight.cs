@@ -28,7 +28,7 @@ namespace AviaCompany
 
         
 
-        public void Flying(IFly plane)
+        public void Flying(IPlane plane)
         {
             if (plane!=null)
             {

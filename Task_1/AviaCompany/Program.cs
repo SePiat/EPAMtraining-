@@ -64,7 +64,7 @@ namespace AviaCompany
                 $"Самолет соответствующий заданному диапазону параметров потребления горючего:  {plane.ModelName} {plane.FuelConsumption} л/ч";
             Console.WriteLine(message);
 
-
+            Console.ReadKey();
             Console.WriteLine();
             Belavia.aviaPark.flight = new Flight("Минск-Варшава", 3000, "аэропорт Варшавы «Фредерик Шопен»", 0, 0, 1000);// создание рейса с заданными параметрами
             Plane planeToFly = Belavia.aviaPark.GetPlaneToFlying(Belavia.aviaPark.flight);// подбор самолета из парка с подходящими параметрами
