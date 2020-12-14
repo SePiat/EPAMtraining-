@@ -43,7 +43,7 @@ namespace AviaCompany
             Belavia.GetPlanes(Belavia.aviaPark); //получаем в консоль список самолетов сразу в консоль
 
             
-            int totalNumberOfPassengers = Belavia.GetCommonCapacity(Belavia.aviaPark); ; // подсчет общей вместимости пассажиров (пассажирские самолеты)??????            
+            int totalNumberOfPassengers = Belavia.GetCommonCapacity(Belavia.aviaPark); ; // подсчет общей вместимости пассажиров (пассажирские самолеты)           
             int totalCapacity = Belavia.GetCommonCargoWeight(Belavia.aviaPark); ; // подсчет общей гзузоподъемности (грузовые самолеты)
             var sortOfDistance = listOfPlanes.OrderBy(x => x.FlightRange); // сортировка по дальности полета (от меньшего к большему)           
 

@@ -3,14 +3,14 @@
   <Class Name="TextProcessor.Symbol">
     <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <HashCode>AAAIAEAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Symbol.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TextProcessor.Word">
     <Position X="2" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <HashCode>QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Word.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -25,14 +25,21 @@
   <Class Name="TextProcessor.Parser">
     <Position X="6.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>gAAAAAABAAAACAAAAAAQAQAgEAAAAAAAAAAAAAAIQAA=</HashCode>
       <FileName>Parser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextProcessor.Punctuation">
+    <Position X="3.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Punctuation.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="TextProcessor.ISentenceElement">
     <Position X="2" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <HashCode>QAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ISentenceElement.cs</FileName>
     </TypeIdentifier>
   </Interface>
