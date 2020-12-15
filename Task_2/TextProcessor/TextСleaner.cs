@@ -11,7 +11,7 @@ namespace TextProcessor
         private string pattern2 = @"( {2,})"; //удаляет множественные пробелы
         public string CleanText(string text)
         {
-            string cleanedText = Regex.Replace(text, pattern1, "\r\n");
+            string cleanedText = Regex.Replace(text, pattern1, " ");
             cleanedText= Regex.Replace(cleanedText, pattern2, " ");
 
             return cleanedText;

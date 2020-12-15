@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace TextProcessor
 {
-    class Program
+    public class TextModelCreator
     {
-        static void Main(string[] args)
+        ReaderText reader = new ReaderText();
+        TextСleaner tcleaner = new TextСleaner();
+        Parser parser = new Parser();
+        TextModel textModel = new TextModel();
+
+        public TextModel CreateTextModel()
         {
-            TextModelCreator tmc = new TextModelCreator();
-            TextModel textModel= tmc.CreateTextModel();
-
-            /*ReaderText reader = new ReaderText();
-            TextСleaner tcleaner = new TextСleaner();
-            Parser parser = new Parser();            
-            TextModel textModel = new TextModel();
-
             string text = reader.ReadText();
             string textCleaned = tcleaner.CleanText(text);
             var ListSubSentence = parser.TextParserBySubSentence(textCleaned);
@@ -23,15 +21,9 @@ namespace TextProcessor
                 textModel.text.Add(new Sentence(parser.SentenceOfSybolsParserBySentenceElement
                                                 (parser.TextParserSentenceBySymbols(subSentence))));
 
-            }*/
-
-
-           
-
-
-
-
-            Console.WriteLine("Hello World!");
+            }
+            return textModel;
         }
+
     }
 }

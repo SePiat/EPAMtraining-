@@ -6,8 +6,13 @@ namespace TextProcessor
 {
     public class PunctuationOrSpace : ISentenceElement
     {
-        public Symbol symbol;
+        public PunctuationOrSpace(Symbol punctuationOrSpace)
+        {
+            symbols = new List<Symbol>();
+            symbols.Add(punctuationOrSpace);
+        }
         public List<Symbol> symbols { get; set; }
-        public int IndexInSentence { get; set; }
+        
+       //public int IndexInSentence { get; set; }
     }
 }

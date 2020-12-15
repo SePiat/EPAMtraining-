@@ -7,6 +7,6 @@ namespace TextProcessor
     public interface ISentenceElement
     {
         List<Symbol> symbols { get; set; }
-        int IndexInSentence { get; set; }
+        //int IndexInSentence { get; set; }
     }
 }
