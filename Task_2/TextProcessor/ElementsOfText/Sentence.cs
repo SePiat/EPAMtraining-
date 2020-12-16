@@ -2,13 +2,13 @@
 
 namespace TextProcessor
 {
-    public class Sentence
+    public class Sentence:ISentence
     {
-        public List<ISentenceElement> sentence { get;private set; }
+        public List<ISentenceElement> SentenceElements { get; set; }
        // public int index { get; private set; }
         public Sentence(List<ISentenceElement> sentence)
         {
-            this.sentence = sentence;           
+            this.SentenceElements = sentence;           
         }
     }
 }

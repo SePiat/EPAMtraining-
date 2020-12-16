@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Text;
+using TextProcessor.Core;
 
 namespace TextProcessor
 {
-    public class ReaderText
+    public class ReaderText: IReaderText
     {
-        private string filePath= ConfigurationManager.AppSettings.Get("PathFile");
+        private readonly string filePath= ConfigurationManager.AppSettings.Get("PathRead");
         public string ReadText()
         {
             string text;
             try
             {
-                using (StreamReader sr = new StreamReader(filePath))
+                using (StreamReader streamReader = new StreamReader(filePath))
                 {
-                    text = sr.ReadToEnd();
+                    text = streamReader.ReadToEnd();
                 }
                 return text;
             }

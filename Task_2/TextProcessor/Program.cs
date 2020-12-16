@@ -8,7 +8,7 @@ namespace TextProcessor
         static void Main(string[] args)
         {
             TextModelCreator tmc = new TextModelCreator();
-            TextModel textModel= tmc.CreateTextModel();
+            ITextModel textModel = tmc.CreateTextModel();
 
             /*ReaderText reader = new ReaderText();
             TextСleaner tcleaner = new TextСleaner();

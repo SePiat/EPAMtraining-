@@ -7,12 +7,12 @@ namespace TextProcessor
 {
     public class Word : ISentenceElement
     {
-        public Word(List<Symbol> word)
+        public Word(List<ISymbol> word)
         {
-            symbols = new List<Symbol>();
-            symbols.AddRange(word);
+            Symbols = new List<ISymbol>();
+            Symbols.AddRange(word);
         }
-        public List<Symbol> symbols { get; set; }
+        public List<ISymbol> Symbols { get; set; }
         //public int IndexInSentence { get; set; }
     }
 }

@@ -10,36 +10,36 @@ namespace TextProcessor
     public class Parser
     {     
        
-        private string patternSentence = @"([A-Za-z\d\\s]+[^.!?]*[.?!\n])";      
-        
-
-
+        private string patternSentence = @"([A-Za-z\d\\s“]+[^.!?]*[”.?!\n]+)"; 
         public List<string> TextParserBySubSentence(string text)
-        {            
-            var SplitTextSubSentence = new Regex(patternSentence).Split(text).ToList();           
-            return SplitTextSubSentence;
+        {
+            if (text!=null)
+            {
+                var SplitTextSubSentence = new Regex(patternSentence).Split(text).ToList();
+                return SplitTextSubSentence;
+            }
+            return null;           
         }
 
 
-        public List<Symbol> TextParserSentenceBySymbols(string sentence)
+        public List<ISymbol> TextParserSentenceBySymbols(string sentence)
         {
-            List<Symbol> CollectionSymbolFromText = new List<Symbol>();
+            List<ISymbol> CollectionSymbolFromText = new List<ISymbol>();
             for (int i = 0; i < sentence.Length; i++)
-            {
-                char x = sentence[i];
-                CollectionSymbolFromText.Add(new Symbol { character = sentence[i], indexInSentence = i });
+            {                
+                CollectionSymbolFromText.Add(new Symbol { Character = sentence[i]});
             }
             return CollectionSymbolFromText;
         }
 
 
-        public List<ISentenceElement> SentenceOfSybolsParserBySentenceElement(List<Symbol> sentence)
+        public List<ISentenceElement> SentenceOfSybolsParserBySentenceElement(List<ISymbol> sentence)
         {
             List<ISentenceElement> sentenceElements = new List<ISentenceElement>();
-            List<Symbol> bufferLetters = new List<Symbol>();
+            List<ISymbol> bufferLetters = new List<ISymbol>();
             foreach (var symbol in sentence)
             {
-                if (Regex.IsMatch(symbol.character.ToString(), "[a-zA-Z]"))
+                if (Regex.IsMatch(symbol.Character.ToString(), "[a-zA-Z]"))
                 {
                     bufferLetters.Add(symbol);
                 }

@@ -4,12 +4,8 @@ using System.Text;
 
 namespace TextProcessor
 {
-    public class Symbol
+    public class Symbol: ISymbol
     {
-        public char character { get; set; }
-        public int indexInSentence { get; set; }
-        public int indexInWord { get; set; }
-
-        
+        public char Character { get; set; }        
     }
 }

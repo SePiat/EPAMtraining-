@@ -4,10 +4,8 @@ using System.Text;
 
 namespace TextProcessor
 {
-    public class TextModel
+    public class TextModel: ITextModel
     {
-        public List<Sentence> text=new List<Sentence>();
-
-       
+        public List<ISentence> Text { get; set; } = new List<ISentence>();       
     }
 }
