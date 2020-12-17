@@ -11,7 +11,6 @@ namespace TextProcessor
             Symbols.Add(punctuationOrSpace);
         }
         public List<ISymbol> Symbols { get; set; }= new List<ISymbol>();
-
-        //public int IndexInSentence { get; set; }
+        
     }
 }

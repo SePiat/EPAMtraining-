@@ -4,6 +4,6 @@ namespace TextProcessor
 {
     public interface ITextModel
     {
-        List<ISentence> Text { get; set; }
+         List<ISentence> Text { get; set; }
     }
 }

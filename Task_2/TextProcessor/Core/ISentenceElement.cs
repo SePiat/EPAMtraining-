@@ -6,6 +6,6 @@ namespace TextProcessor
 {
     public interface ISentenceElement
     {
-        List<ISymbol> Symbols { get; set; }        
+         List<ISymbol> Symbols { get; set; }        
     }
 }

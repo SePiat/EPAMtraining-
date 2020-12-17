@@ -4,15 +4,16 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using TextProcessor.Core;
 
 namespace TextProcessor
 {
-    public class Parser
+    public class Parser:IParser
     {     
        
-        private string patternSentence = @"([A-Za-z\d\\s“]+[^.!?]*[”.?!\n]+)"; 
-        public List<string> TextParserBySubSentence(string text)
-        {
+        private string patternSentence = @"([A-Za-z\d\\s“]+[^.!?]*[”.?!\n]+)";
+        //private string patternSentence = @"([A-Za-z\d\\s]+[^.!?]*[.?!\n]+)"; //без ковычек
+        public List<string> TextParserBySubSentence(string text)        {
             if (text!=null)
             {
                 var SplitTextSubSentence = new Regex(patternSentence).Split(text).ToList();
@@ -39,7 +40,7 @@ namespace TextProcessor
             List<ISymbol> bufferLetters = new List<ISymbol>();
             foreach (var symbol in sentence)
             {
-                if (Regex.IsMatch(symbol.Character.ToString(), "[a-zA-Z]"))
+                if (Regex.IsMatch(symbol.Character.ToString(), @"[a-zA-Z\d]"))
                 {
                     bufferLetters.Add(symbol);
                 }
@@ -55,9 +56,9 @@ namespace TextProcessor
             }
             return sentenceElements;
         }
-        public Sentence GetSentenceByISentenceElemtnt(List<ISentenceElement> sentenceElements)
+        public ISentence GetSentenceByISentenceElemtnt(List<ISentenceElement> sentenceElements)
         {
-            Sentence sentence = new Sentence(sentenceElements);
+            ISentence sentence = new Sentence(sentenceElements);
             return sentence;
         }
 
