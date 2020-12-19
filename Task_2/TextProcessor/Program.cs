@@ -13,10 +13,15 @@ namespace TextProcessor
             IWriterText writer = new WriterText();
 
             performer.Perform();
-            var result= performer.SentencesOrderByTheNumberOfWords(performer.TextModel);
-            writer.WriteListISentenceText(result);
-            var result2 = performer.WordsSetLengthByQuestionableSentence(performer.TextModel);
-            writer.WriteWordsSetLengthByQuestionableSentence(result2);
+            writer.WriteTextModel(performer.TextModel);
+            var result = performer.SentencesOrderByTheNumberOfWords(performer.TextModel); //Предложения заданного текста в порядке возрастания количества слов в каждом из них.
+            writer.WriteSentencesOrderByTheNumberOfWords(result);
+
+            var result2 = performer.WordsSetLengthByQuestionableSentences(performer.TextModel);// Слова заданной длины из вопросительных предложений
+            writer.WriteWordsSetLengthByQuestionableSentences(result2);
+
+            performer.TextModelWithoutWordsOfSetLengthWithСonsonantLetter(performer.TextModel); // Удаляет из текста слова заданной длины, начинающиеся на согласную
+            writer.WriteTextModelWithoutWordsOfSetLengthWithСonsonantLetter(performer.TextModel);
 
             Console.WriteLine();
         }

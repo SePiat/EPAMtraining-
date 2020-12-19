@@ -4,11 +4,12 @@ namespace TextProcessor.TextHandler
 {
     public interface IPerformer
     {
-        public ITextModelCreator Creator { get; set; }
-        public ITextModel TextModel { get; set; }
+         ITextModelCreator Creator { get; set; }
+        ITextModel TextModel { get; set; }
         void Perform();
         List<ISentence> SentencesOrderByTheNumberOfWords(ITextModel textModel);
-        List<string> WordsSetLengthByQuestionableSentence(ITextModel textModel);
+        List<string> WordsSetLengthByQuestionableSentences(ITextModel textModel);
+        void TextModelWithoutWordsOfSetLengthWithСonsonantLetter(ITextModel textModel);
 
     }
 }

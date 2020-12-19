@@ -4,8 +4,10 @@ namespace TextProcessor.ReaderWriter
 {
     public interface IWriterText
     {
-        void WriteStringText(string text);
-        void WriteWordsSetLengthByQuestionableSentence(List<string> text);
-        void WriteListISentenceText(List<ISentence> text);
+        void WriteQuestionableSentences(List<ISentence> text);
+        void WriteWordsSetLengthByQuestionableSentences(List<string> text);
+        void WriteSentencesOrderByTheNumberOfWords(List<ISentence> text);
+        void WriteTextModelWithoutWordsOfSetLengthWithСonsonantLetter(ITextModel textModel);
+        void WriteTextModel(ITextModel textModel);
     }
 }
