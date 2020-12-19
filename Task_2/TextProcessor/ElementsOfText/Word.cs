@@ -10,8 +10,9 @@ namespace TextProcessor
         public Word(List<ISymbol> word)
         {          
             Symbols.AddRange(word);
+            word.ForEach(x => stringWord += x.Character);
         }
-        public List<ISymbol> Symbols { get; set; } = new List<ISymbol>();
-        
+        public List<ISymbol> Symbols { get; set; } = new List<ISymbol>();       
+        public string stringWord;
     }
 }

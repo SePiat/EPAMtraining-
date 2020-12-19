@@ -11,8 +11,8 @@ namespace TextProcessor
     public class Parser:IParser
     {     
        
-        private string patternSentence = @"([A-Za-z\d\\s“]+[^.!?]*[”.?!\n]+)";
-        //private string patternSentence = @"([A-Za-z\d\\s]+[^.!?]*[.?!\n]+)"; //без ковычек
+      // private string patternSentence = @"([A-Za-z\d\\s“]+[^.!?]*[”.?!\n]+)";//с ковычками
+       private string patternSentence = @"([A-Za-z\d\\s]+[^.!?]*[.?!\n]+)"; //без ковычек
         public List<string> TextParserBySubSentence(string text)        {
             if (text!=null)
             {

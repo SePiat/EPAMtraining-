@@ -11,9 +11,13 @@ namespace TextProcessor
         {
             IPerformer performer = new Performer();
             IWriterText writer = new WriterText();
+
             performer.Perform();
-            var result= performer.SentencesOrderByTheNumberOfWords(performer.textModel);
-            writer.WriteListISentenceText(result, "ListString");
+            var result= performer.SentencesOrderByTheNumberOfWords(performer.TextModel);
+            writer.WriteListISentenceText(result);
+            var result2 = performer.WordsSetLengthByQuestionableSentence(performer.TextModel);
+            writer.WriteWordsSetLengthByQuestionableSentence(result2);
+
             Console.WriteLine();
         }
     }
