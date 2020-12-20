@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TextProcessor.Core;
 using TextProcessor.ReaderWriter;
 
 namespace TextProcessor.TextHandler
@@ -62,7 +63,7 @@ namespace TextProcessor.TextHandler
 
         public void TextModelWithoutWordsOfSetLengthWithСonsonantLetter(ITextModel textModel)// удаляет из текста слова заданной длины, начинающиеся на согласную
         {           
-            List<ISentenceElement> words = new List<ISentenceElement>();
+            List<ISentenceElement> selectedWords = new List<ISentenceElement>();
             Console.WriteLine("Для удаления из текста всех слова заданной длины, начинающиеся на согласную букву задайте длину слова");
             bool iswordLengthSuccess = int.TryParse(Console.ReadLine(), out int wordLength);
             if (iswordLengthSuccess)
@@ -71,21 +72,43 @@ namespace TextProcessor.TextHandler
                                         'b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z' };
                 foreach (var sentence in textModel.Text)
                 {
-                    /*foreach (var sentenceElement in sentence.SentenceElements)
-                    {
-                        if (consonantsEnglish.Contains(sentenceElement.Symbols[0].Character) && sentenceElement.Symbols.Count() == wordLength)
-                        {
-                            sentence.SentenceElements.Remove(sentenceElement);
-                        }
-                    }*/// не может удалить элемент во время перечисления
-                    words.AddRange(sentence.SentenceElements.
+                    selectedWords.AddRange(sentence.SentenceElements.
                     Where(x => consonantsEnglish.Contains(x.Symbols[0].Character) && x.Symbols.Count() == wordLength));
 
-                    words.ForEach(x => sentence.SentenceElements.Remove(x));
-                    words.Clear();
+                    selectedWords.ForEach(x => sentence.SentenceElements.Remove(x));
+                    selectedWords.Clear();
                 } 
             }
             else Console.WriteLine("Ошибка. Введено не числовое значение");           
+        }
+
+        public void TextModelExchangeWordOfSetLengthWhithString(ITextModel textModel)
+        {
+            List<ISentenceElement> selectedWords = new List<ISentenceElement>();
+            Console.WriteLine("Для замены слов заданной длины в указанном предложении указанной строкой укажите номер предложения");
+            bool isNubmerOfSentenceSuccess = int.TryParse(Console.ReadLine(), out int NubmerOfSentence);
+            Console.WriteLine("Укажите длину заменяемых слов");
+            bool iswordLengthSuccess = int.TryParse(Console.ReadLine(), out int wordLength);
+            Console.WriteLine("Введите, вставляемую строку");
+            string embedString = Console.ReadLine()+" ";
+
+            IParser parser = new Parser();
+            List<ISymbol> embedStringBySymbols= parser.TextParserSentenceBySymbols(embedString);
+            List<ISentenceElement> embedStringBySentenceElements = parser.SentenceOfSybolsParserBySentenceElement(embedStringBySymbols);
+
+            if (isNubmerOfSentenceSuccess&& iswordLengthSuccess)
+            {
+                var selectedSentence= textModel.Text[NubmerOfSentence];
+                selectedWords.AddRange(selectedSentence.SentenceElements.Where(x => x.Symbols.Count() == wordLength)); // находим и записывыем словa в указанном предложении подходящие по длине
+                foreach (var selectedWord in selectedWords)
+                {
+                    int indexToRewrite = selectedSentence.SentenceElements.IndexOf(selectedWord);//определяем индес слова подходящего по длине
+                    selectedSentence.SentenceElements.Remove(selectedWord);//удаляем слово подходящего по длине
+                    selectedSentence.SentenceElements.InsertRange(indexToRewrite, embedStringBySentenceElements);//на место удаленного слова вставляем заданное предложение                       
+                }
+            }
+            else Console.WriteLine("Ошибка. Введены некорректные исхоные данные");
+
         }
 
     }

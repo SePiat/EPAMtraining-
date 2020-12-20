@@ -89,6 +89,19 @@ namespace TextProcessor.ReaderWriter
             }
         }
 
+        public void WriteTextModelExchangeWordOfSetLengthWhithString(ITextModel textModel)
+        {
+            try
+            {
+                string filePath = ConfigurationManager.AppSettings.Get("TextModelExchangeWordOfSetLengthWhithString");
+                WriteTextModel(textModel, filePath);
+            }
+            catch
+            {
+                throw new Exception("Error in method WriteTextModelExchangeWordOfSetLengthWhithString()");
+            }
+        }
+
 
 
 
@@ -96,15 +109,7 @@ namespace TextProcessor.ReaderWriter
         {
             using (StreamWriter streamWriter = new StreamWriter(filePath))
             {
-                textModel.Text.ForEach(x => x.SentenceElements.ForEach(x => x.Symbols.ForEach(x => streamWriter.Write(x.Character))));
-                /*foreach (var sentences in textModel.Text)
-                {
-                    foreach (var sentenceElement in sentences.SentenceElements)
-                    {
-                        streamWriter.WriteLine();
-                        sentenceElement.Symbols.ForEach(x => streamWriter.Write(x.Character));
-                    }                    
-                }*/
+                textModel.Text.ForEach(x => x.SentenceElements.ForEach(x => x.Symbols.ForEach(x => streamWriter.Write(x.Character))));                
             }
         }
 

@@ -40,7 +40,7 @@ namespace TextProcessor
             List<ISymbol> bufferLetters = new List<ISymbol>();
             foreach (var symbol in sentence)
             {
-                if (Regex.IsMatch(symbol.Character.ToString(), @"[a-zA-Z\d]"))
+                if (Regex.IsMatch(symbol.Character.ToString(), @"[a-zA-Z\dа-яА-Я]"))
                 {
                     bufferLetters.Add(symbol);
                 }

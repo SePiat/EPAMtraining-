@@ -10,6 +10,7 @@ namespace TextProcessor.TextHandler
         List<ISentence> SentencesOrderByTheNumberOfWords(ITextModel textModel);
         List<string> WordsSetLengthByQuestionableSentences(ITextModel textModel);
         void TextModelWithoutWordsOfSetLengthWithСonsonantLetter(ITextModel textModel);
+        void TextModelExchangeWordOfSetLengthWhithString(ITextModel textModel);
 
     }
 }

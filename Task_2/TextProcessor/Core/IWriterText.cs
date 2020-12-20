@@ -9,5 +9,6 @@ namespace TextProcessor.ReaderWriter
         void WriteSentencesOrderByTheNumberOfWords(List<ISentence> text);
         void WriteTextModelWithoutWordsOfSetLengthWithСonsonantLetter(ITextModel textModel);
         void WriteTextModel(ITextModel textModel);
+        void WriteTextModelExchangeWordOfSetLengthWhithString(ITextModel textModel);
     }
 }

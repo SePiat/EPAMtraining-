@@ -17,11 +17,14 @@ namespace TextProcessor
             var result = performer.SentencesOrderByTheNumberOfWords(performer.TextModel); //Предложения заданного текста в порядке возрастания количества слов в каждом из них.
             writer.WriteSentencesOrderByTheNumberOfWords(result);
 
-            var result2 = performer.WordsSetLengthByQuestionableSentences(performer.TextModel);// Слова заданной длины из вопросительных предложений
+          /*  var result2 = performer.WordsSetLengthByQuestionableSentences(performer.TextModel);// Слова заданной длины из вопросительных предложений
             writer.WriteWordsSetLengthByQuestionableSentences(result2);
 
             performer.TextModelWithoutWordsOfSetLengthWithСonsonantLetter(performer.TextModel); // Удаляет из текста слова заданной длины, начинающиеся на согласную
-            writer.WriteTextModelWithoutWordsOfSetLengthWithСonsonantLetter(performer.TextModel);
+            writer.WriteTextModelWithoutWordsOfSetLengthWithСonsonantLetter(performer.TextModel);*/
+
+            performer.TextModelExchangeWordOfSetLengthWhithString(performer.TextModel);
+            writer.WriteTextModelExchangeWordOfSetLengthWhithString(performer.TextModel);
 
             Console.WriteLine();
         }
