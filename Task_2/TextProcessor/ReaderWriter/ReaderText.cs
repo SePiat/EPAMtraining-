@@ -10,7 +10,9 @@ namespace TextProcessor
     public class ReaderText: IReaderText
     {
         private readonly string filePath= ConfigurationManager.AppSettings.Get("PathRead");
-        public string ReadText()
+
+        //Первый метод/////////////////////////////////////////////////////////////////////////
+        /*public string ReadTextAll()
         {
             string text;
             try
@@ -21,12 +23,33 @@ namespace TextProcessor
                 }
                 return text;
             }
-            catch (Exception)
+            catch
             {
-                throw new Exception("Wrong source path");
+                throw new Exception("Error in method ReadTextString()");
             }            
-        } 
-       
+        }*/
+
+        //Второй метод///////////////////////////////////////////////////////////////////////// 
+        public string ReadTextString(IParser parser)
+        {            
+            try
+            {
+                using (StreamReader streamReader = new StreamReader(filePath))
+                {
+                    string line;
+                    while ((line = streamReader.ReadLine()) != null)
+                    {
+                        parser.ParserTextBySymbols(line);
+                    }
+                }
+                return  null;
+            }
+            catch
+            {
+                throw new Exception("Error in method ReadTextString() ");
+            }
+        }
+
     }
 }
 

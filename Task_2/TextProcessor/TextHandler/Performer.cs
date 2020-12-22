@@ -93,8 +93,8 @@ namespace TextProcessor.TextHandler
             string embedString = Console.ReadLine()+" ";
 
             IParser parser = new Parser();
-            List<ISymbol> embedStringBySymbols= parser.TextParserSentenceBySymbols(embedString);
-            List<ISentenceElement> embedStringBySentenceElements = parser.SentenceOfSybolsParserBySentenceElement(embedStringBySymbols);
+            List<ISymbol> embedStringBySymbols= parser.ParserTextBySymbols(embedString);
+            List<ISentenceElement> embedStringBySentenceElements = parser.CollectionSymbolFromTextParserBySentenceElement(embedStringBySymbols); 
 
             if (isNubmerOfSentenceSuccess&& iswordLengthSuccess)
             {

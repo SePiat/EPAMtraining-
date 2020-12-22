@@ -16,6 +16,7 @@ around
 coldly
 hollow
 sacred
+looked
 little
 bright
 rudely
@@ -95,7 +96,6 @@ beaded
 sleeve
 afeard
 asleep
-ground
 Number
 Follow
 moment
@@ -112,7 +112,6 @@ crying
 notice
 during
 insect
-object
 killed
 yonder
 sounds
