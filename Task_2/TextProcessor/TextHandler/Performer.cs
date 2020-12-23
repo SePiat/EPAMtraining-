@@ -40,7 +40,7 @@ namespace TextProcessor.TextHandler
                 List<ISentence> questionableSentence = textModel.Text.
                 Where(x => x.SentenceElements.
                 Where(x => x.Symbols.
-                Where(x => x.Character == '?').Count() > 0).Count() > 0).ToList(); //выбираем все вопросительные предложения                
+                Where(x => x.Character == "?").Count() > 0).Count() > 0).ToList(); //выбираем все вопросительные предложения                
 
                 writer.WriteQuestionableSentences(questionableSentence);
 
@@ -67,9 +67,10 @@ namespace TextProcessor.TextHandler
             Console.WriteLine("Для удаления из текста всех слова заданной длины, начинающиеся на согласную букву задайте длину слова");
             bool iswordLengthSuccess = int.TryParse(Console.ReadLine(), out int wordLength);
             if (iswordLengthSuccess)
-            {               
-                char[] consonantsEnglish = { 'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M','N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z', 
-                                        'b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z' };
+            {
+                string consonantsEnglish = "BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz";
+                /*string consonantsEnglish = { 'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M','N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z', 
+                                        'b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z' };*/
                 foreach (var sentence in textModel.Text)
                 {
                     selectedWords.AddRange(sentence.SentenceElements.

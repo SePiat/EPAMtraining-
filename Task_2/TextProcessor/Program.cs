@@ -15,6 +15,7 @@ namespace TextProcessor
             IWriterText writer = new WriterText();
 
             performer.Perform();
+            /*var cleaText= TextСleaner.CleanText(performer.TextModel);*/
             writer.WriteTextModel(performer.TextModel);
             var result = performer.SentencesOrderByTheNumberOfWords(performer.TextModel); //Предложения заданного текста в порядке возрастания количества слов в каждом из них.
             writer.WriteSentencesOrderByTheNumberOfWords(result);

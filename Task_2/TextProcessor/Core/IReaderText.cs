@@ -7,6 +7,6 @@ namespace TextProcessor.Core
     public interface IReaderText
     {
         //string ReadTextAll();
-        string ReadTextString(IParser parser);
+        void ReadTextString(IParser parser);
     }
 }

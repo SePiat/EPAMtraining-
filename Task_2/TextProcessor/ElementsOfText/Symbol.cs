@@ -6,6 +6,6 @@ namespace TextProcessor
 {
     public class Symbol: ISymbol
     {
-        public char Character { get; set; }        
+        public string Character { get; set; }        
     }
 }

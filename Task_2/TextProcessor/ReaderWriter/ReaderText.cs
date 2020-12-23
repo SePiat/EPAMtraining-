@@ -30,7 +30,7 @@ namespace TextProcessor
         }*/
 
         //Второй метод///////////////////////////////////////////////////////////////////////// 
-        public string ReadTextString(IParser parser)
+        public void ReadTextString(IParser parser)
         {            
             try
             {
@@ -42,7 +42,7 @@ namespace TextProcessor
                         parser.ParserTextBySymbols(line);
                     }
                 }
-                return  null;
+               
             }
             catch
             {
