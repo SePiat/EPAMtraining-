@@ -17,9 +17,9 @@ namespace TextProcessor.ReaderWriter
                 string filePath = ConfigurationManager.AppSettings.Get("WordsSetLengthByQuestionableSentences");
                 WriteListString(text, filePath);
             }
-            catch
+            catch(Exception ex)
             {
-                throw new Exception($"Error in method WriteWordsSetLengthByQuestionableSentences()");
+                Console.WriteLine($"Error in method WriteWordsSetLengthByQuestionableSentences() :{ex}");
             }
         }
 
@@ -30,9 +30,9 @@ namespace TextProcessor.ReaderWriter
                 string filePath = ConfigurationManager.AppSettings.Get("SentencesOrderByTheNumberOfWords");
                 WriteListISentenceText(text, filePath);
             }
-            catch
+            catch (Exception ex)
             {
-                throw new Exception ("Error in method file WriteSentencesOrderByTheNumberOfWords()");
+                Console.WriteLine($"Error in method file WriteSentencesOrderByTheNumberOfWords() :{ex}");
             }
         }
 
@@ -44,9 +44,9 @@ namespace TextProcessor.ReaderWriter
                 string filePath = ConfigurationManager.AppSettings.Get("QuestionableSentences");
                 WriteListISentenceText(text, filePath);
             }
-            catch
+            catch (Exception ex)
             {
-                throw new Exception("Error in method file WriteQuestionableSentences()");
+                Console.WriteLine($"Error in method file WriteQuestionableSentences()  :{ex}");
             }
         }
 
@@ -57,9 +57,9 @@ namespace TextProcessor.ReaderWriter
                 string filePath = ConfigurationManager.AppSettings.Get("WordsSetLengthByQuestionableSentences");
                 WriteISentenceElement(words, filePath);
             }
-            catch
+            catch (Exception ex)
             {
-                throw new Exception("Error in method WriteWordsSetLengthByQuestionableSentences()");
+                Console.WriteLine($"Error in method WriteWordsSetLengthByQuestionableSentences()  :{ex}");
             }
         }
 
@@ -71,9 +71,9 @@ namespace TextProcessor.ReaderWriter
                 string filePath = ConfigurationManager.AppSettings.Get("TextModel");
                 WriteTextModel(textModel, filePath);
             }
-            catch
+            catch (Exception ex)
             {
-                throw new Exception("Error in method WriteTextModel()");
+                Console.WriteLine($"Error in method WriteTextModel() :{ex}");
             }
         }
         public void WriteTextModelWithoutWordsOfSetLengthWithСonsonantLetter(ITextModel textModel)
@@ -83,9 +83,9 @@ namespace TextProcessor.ReaderWriter
                 string filePath = ConfigurationManager.AppSettings.Get("TextModelWithoutWordsOfSetLengthWithСonsonantLetter");
                 WriteTextModel(textModel,  filePath);
             }
-            catch
+            catch (Exception ex)
             {
-                throw new Exception("Error in method WriteTextModelWithoutWordsOfSetLengthWithСonsonantLetter()");
+                Console.WriteLine($"Error in method WriteTextModelWithoutWordsOfSetLengthWithСonsonantLetter()  :{ex}");
             }
         }
 
@@ -96,9 +96,9 @@ namespace TextProcessor.ReaderWriter
                 string filePath = ConfigurationManager.AppSettings.Get("TextModelExchangeWordOfSetLengthWhithString");
                 WriteTextModel(textModel, filePath);
             }
-            catch
+            catch (Exception ex)
             {
-                throw new Exception("Error in method WriteTextModelExchangeWordOfSetLengthWhithString()");
+                Console.WriteLine($"Error in method WriteTextModelExchangeWordOfSetLengthWhithString()  :{ex}");
             }
         }
 
@@ -107,25 +107,26 @@ namespace TextProcessor.ReaderWriter
 
         private void WriteTextModel(ITextModel textModel, string filePath)
         {
-            using (StreamWriter streamWriter = new StreamWriter(filePath))
+            if (textModel!=null)
             {
-                textModel.Text.ForEach(x => x.SentenceElements.ForEach(x => x.Symbols.ForEach(x => streamWriter.Write(x.Character))));                
+                using (StreamWriter streamWriter = new StreamWriter(filePath))
+                {
+                    textModel.Text.ForEach(x => x.SentenceElements.ForEach(x => x.Symbols.ForEach(x => streamWriter.Write(x.Character))));
+                }
             }
+           
         }
-
-        private void WriteString(string text, string filePath)
-        {
-            using (StreamWriter streamWriter = new StreamWriter(filePath))
-            {
-                streamWriter.Write(text);
-            }
-        }
+        
         private void WriteListString(List<string> text, string filePath)
         {
-            using (StreamWriter streamWriter = new StreamWriter(filePath))
+            if (text!=null)
             {
-                text.ForEach(x => streamWriter.WriteLine(x));
+                using (StreamWriter streamWriter = new StreamWriter(filePath))
+                {
+                    text.ForEach(x => streamWriter.WriteLine(x));
+                }
             }
+            
         }
 
         private void WriteISentenceElement(List<ISentenceElement> sentenceElements, string filePath)
@@ -142,12 +143,15 @@ namespace TextProcessor.ReaderWriter
 
         private void WriteListISentenceText(List<ISentence> text, string filePath)
         {
-            using (StreamWriter streamWriter = new StreamWriter(filePath))
+            if (text != null)
             {
-                foreach (var sentence in text)
+                using (StreamWriter streamWriter = new StreamWriter(filePath))
                 {
-                    streamWriter.WriteLine();
-                    sentence.SentenceElements.ForEach(x => x.Symbols.ForEach(x => streamWriter.Write(x.Character)));
+                    foreach (var sentence in text)
+                    {
+                        streamWriter.WriteLine();
+                        sentence.SentenceElements.ForEach(x => x.Symbols.ForEach(x => streamWriter.Write(x.Character)));
+                    }
                 }
             }
         }

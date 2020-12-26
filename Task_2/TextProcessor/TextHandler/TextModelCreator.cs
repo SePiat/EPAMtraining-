@@ -35,12 +35,18 @@ namespace TextProcessor
         //второй метод////////////////////////////////
         public ITextModel CreateTextModel()
         {
-            reader.ReadTextString(parser);//читаем текст из файла
-            List<ISymbol> collextionSymbols = parser.CollectionSymbolFromText;//преобразуем считанный текст в символы
-            List<ISentenceElement> SentenceElements = parser.CollectionSymbolFromTextParserBySentenceElement(collextionSymbols);//создаем из колекции символов элементы предложения
-            List<ISentence> sentences = parser.GetColletionSentencesByISentenceElemtnts(SentenceElements);// групперуем элементы предложения в предложения
-            textModel.Text.AddRange(sentences);
-           
+            try
+            {
+                reader.ReadTextString(parser);//читаем текст из файла и преобразуем считанный текст в символы
+                List<ISymbol> collextionSymbols = parser.CollectionSymbolFromText;
+                List<ISentenceElement> SentenceElements = parser.CollectionSymbolFromTextParserBySentenceElement(collextionSymbols);//создаем из колекции символов элементы предложения
+                List<ISentence> sentences = parser.GetColletionSentencesByISentenceElemtnts(SentenceElements);// групперуем элементы предложения в предложения
+                textModel.Text.AddRange(sentences);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка в методе CreateTextModel() : {ex}");
+            }           
             return textModel;
         }
 

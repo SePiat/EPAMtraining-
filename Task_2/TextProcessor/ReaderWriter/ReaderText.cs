@@ -23,31 +23,33 @@ namespace TextProcessor
                 }
                 return text;
             }
-            catch
+            catch(Exception e)
             {
-                throw new Exception("Error in method ReadTextString()");
-            }            
+                Console.WriteLine($"Error in method ReadTextString() whith {e} ");
+            }         
         }*/
 
         //Второй метод///////////////////////////////////////////////////////////////////////// 
         public void ReadTextString(IParser parser)
-        {            
-            try
+        {
+            if (parser!=null)
             {
-                using (StreamReader streamReader = new StreamReader(filePath))
+                try
                 {
-                    string line;
-                    while ((line = streamReader.ReadLine()) != null)
+                    using (StreamReader streamReader = new StreamReader(filePath))
                     {
-                        parser.ParserLineTextBySymbols(line);
+                        string line;
+                        while ((line = streamReader.ReadLine()) != null)
+                        {
+                            parser.ParserLineTextBySymbols(line);
+                        }
                     }
                 }
-               
-            }
-            catch
-            {
-                throw new Exception("Error in method ReadTextString() ");
-            }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Error in method ReadTextString() whith {e} ");
+                }
+            }           
         }
 
     }
