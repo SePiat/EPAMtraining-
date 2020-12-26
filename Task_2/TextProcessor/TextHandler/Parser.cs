@@ -13,13 +13,12 @@ namespace TextProcessor
 
         //Второй метод/////////////////////////////////////////////////////////////////////////
         public List<ISymbol> CollectionSymbolFromText { get; set; } = new List<ISymbol>();
-        public List<ISymbol> ParserTextBySymbols(string sentence)
+        public List<ISymbol> ParserLineTextBySymbols(string line)
         {
             
-            for (int i = 0; i < sentence.Length; i++)
-            {
-                var x = sentence[i];
-                CollectionSymbolFromText.Add(new Symbol { Character = sentence[i].ToString() });
+            for (int i = 0; i < line.Length; i++)
+            {               
+                CollectionSymbolFromText.Add(new Symbol { Character = line[i].ToString() });
             }
             if (CollectionSymbolFromText[CollectionSymbolFromText.Count()-1].Character!="\r\n")//фильтр на множественные переносы строк
             {
@@ -78,62 +77,70 @@ namespace TextProcessor
             return sentences;
         }
 
+        public List<ISymbol> ParserInputTextBySymbols(string inputString)
+        {
+            CollectionSymbolFromText.Clear();
+            for (int i = 0; i < inputString.Length; i++)
+            {                
+                CollectionSymbolFromText.Add(new Symbol { Character = inputString[i].ToString() });
+            } 
+            return CollectionSymbolFromText;
+        }
+
 
 
 
 
 
         //Первый метод/////////////////////////////////////////////////////////////////////////        
-       /* private string patternSentence = @"([A-Za-z\d\\s]+[^.!?]*[.?!\n]+)"; //без ковычек
-        public List<string> TextParserBySubSentence(string text)
-        {
-            if (text != null)
-            {
-                var SplitTextSubSentence = new Regex(patternSentence).Split(text).ToList();
-                return SplitTextSubSentence;
-            }
-            return null;
-        }
+        /* private string patternSentence = @"([A-Za-z\d\\s]+[^.!?]*[.?!\n]+)"; //без ковычек
+         public List<string> TextParserBySubSentence(string text)
+         {
+             if (text != null)
+             {
+                 var SplitTextSubSentence = new Regex(patternSentence).Split(text).ToList();
+                 return SplitTextSubSentence;
+             }
+             return null;
+         }
 
+         public List<ISymbol> TextParserSentenceBySymbols(string sentence)
+         {
+             List<ISymbol> CollectionSymbolFromText = new List<ISymbol>();
+             for (int i = 0; i < sentence.Length; i++)
+             {
+                 CollectionSymbolFromText.Add(new Symbol { Character = sentence[i] });
+             }
+             return CollectionSymbolFromText;
+         }
 
-        public List<ISymbol> TextParserSentenceBySymbols(string sentence)
-        {
-            List<ISymbol> CollectionSymbolFromText = new List<ISymbol>();
-            for (int i = 0; i < sentence.Length; i++)
-            {
-                CollectionSymbolFromText.Add(new Symbol { Character = sentence[i] });
-            }
-            return CollectionSymbolFromText;
-        }
-
-
-        public List<ISentenceElement> SentenceOfSybolsParserBySentenceElement(List<ISymbol> sentence)
-        {
-            List<ISentenceElement> sentenceElements = new List<ISentenceElement>();
-            List<ISymbol> bufferLetters = new List<ISymbol>();
-            foreach (var symbol in sentence)
-            {
-                if (Regex.IsMatch(symbol.Character.ToString(), @"[a-zA-Z\dа-яА-Я]"))
-                {
-                    bufferLetters.Add(symbol);
-                }
-                else
-                {
-                    if (bufferLetters.Count() > 0)
-                    {
-                        sentenceElements.Add(new Word(bufferLetters));
-                        bufferLetters.Clear();
-                    }
-                    sentenceElements.Add(new PunctuationOrSpace(symbol));
-                }
-            }
-            return sentenceElements;
-        }
-        public ISentence GetSentenceByISentenceElemtnt(List<ISentenceElement> sentenceElements)
-        {
-            ISentence sentence = new Sentence(sentenceElements);
-            return sentence;
-        }*/
+         public List<ISentenceElement> SentenceOfSybolsParserBySentenceElement(List<ISymbol> sentence)
+         {
+             List<ISentenceElement> sentenceElements = new List<ISentenceElement>();
+             List<ISymbol> bufferLetters = new List<ISymbol>();
+             foreach (var symbol in sentence)
+             {
+                 if (Regex.IsMatch(symbol.Character.ToString(), @"[a-zA-Z\dа-яА-Я]"))
+                 {
+                     bufferLetters.Add(symbol);
+                 }
+                 else
+                 {
+                     if (bufferLetters.Count() > 0)
+                     {
+                         sentenceElements.Add(new Word(bufferLetters));
+                         bufferLetters.Clear();
+                     }
+                     sentenceElements.Add(new PunctuationOrSpace(symbol));
+                 }
+             }
+             return sentenceElements;
+         }
+         public ISentence GetSentenceByISentenceElemtnt(List<ISentenceElement> sentenceElements)
+         {
+             ISentence sentence = new Sentence(sentenceElements);
+             return sentence;
+         }*/
 
 
 

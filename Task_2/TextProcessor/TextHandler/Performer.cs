@@ -69,8 +69,7 @@ namespace TextProcessor.TextHandler
             if (iswordLengthSuccess)
             {
                 string consonantsEnglish = "BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz";
-                /*string consonantsEnglish = { 'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M','N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z', 
-                                        'b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z' };*/
+                
                 foreach (var sentence in textModel.Text)
                 {
                     selectedWords.AddRange(sentence.SentenceElements.
@@ -94,7 +93,7 @@ namespace TextProcessor.TextHandler
             string embedString = Console.ReadLine()+" ";
 
             IParser parser = new Parser();
-            List<ISymbol> embedStringBySymbols= parser.ParserTextBySymbols(embedString);
+            List<ISymbol> embedStringBySymbols= parser.ParserInputTextBySymbols(embedString);
             List<ISentenceElement> embedStringBySentenceElements = parser.CollectionSymbolFromTextParserBySentenceElement(embedStringBySymbols); 
 
             if (isNubmerOfSentenceSuccess&& iswordLengthSuccess)

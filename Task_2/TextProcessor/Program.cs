@@ -15,18 +15,20 @@ namespace TextProcessor
             IWriterText writer = new WriterText();
 
             performer.Perform();
-            /*var cleaText= TextСleaner.CleanText(performer.TextModel);*/
+            
             writer.WriteTextModel(performer.TextModel);
-            var result = performer.SentencesOrderByTheNumberOfWords(performer.TextModel); //Предложения заданного текста в порядке возрастания количества слов в каждом из них.
+            TextСleaner.CleanText(performer.TextModel);//Фильтр, заменяющий множественные пробелы и табуляции одним пробелом
+
+            /*var result = performer.SentencesOrderByTheNumberOfWords(performer.TextModel); //Предложения заданного текста в порядке возрастания количества слов в каждом из них.
             writer.WriteSentencesOrderByTheNumberOfWords(result);
 
             var result2 = performer.WordsSetLengthByQuestionableSentences(performer.TextModel);// Слова заданной длины из вопросительных предложений
             writer.WriteWordsSetLengthByQuestionableSentences(result2);
 
             performer.TextModelWithoutWordsOfSetLengthWithСonsonantLetter(performer.TextModel); // Удаляет из текста слова заданной длины, начинающиеся на согласную
-            writer.WriteTextModelWithoutWordsOfSetLengthWithСonsonantLetter(performer.TextModel);
+            writer.WriteTextModelWithoutWordsOfSetLengthWithСonsonantLetter(performer.TextModel);*/
 
-            performer.TextModelExchangeWordOfSetLengthWhithString(performer.TextModel);
+            performer.TextModelExchangeWordOfSetLengthWhithString(performer.TextModel);//В указанном предложении слова указанной длины заменяет указанной строкой
             writer.WriteTextModelExchangeWordOfSetLengthWhithString(performer.TextModel);
 
             Console.WriteLine();

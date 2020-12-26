@@ -39,7 +39,7 @@ namespace TextProcessor
                     string line;
                     while ((line = streamReader.ReadLine()) != null)
                     {
-                        parser.ParserTextBySymbols(line);
+                        parser.ParserLineTextBySymbols(line);
                     }
                 }
                

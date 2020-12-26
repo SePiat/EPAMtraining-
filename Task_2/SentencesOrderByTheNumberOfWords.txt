@@ -21,10 +21,6 @@ SH’T!
 SH’T!
 Shall!
 Yes.
-Mr.
-Mr.
-Mr.
-Mr.
 Amen.
 TOM!
 Hours.
@@ -68,7 +64,6 @@ Yes’m.
 Heaps.
 Say?
 Who?
-Mrs.
 Baby!
 Wait!
 Quick!
@@ -78,11 +73,7 @@ Yes.
 Yes.
 Yes.
 Shucks!
-Mr.
 Good!
-Mr.
-etc.
-etc.
 Talk?
 My!
 Where?
@@ -124,20 +115,11 @@ Yes.
 Horsewhipped!
 Kill?
 Splendid!
-Mrs.
-Thatcher.
-Harper.
-Mrs.
 No’m.
-Mrs.
-Mrs.
-Mrs.
 Liquor!
 Well.
 Listen!
 No!
-Harper’s.
-Mrs.
 Why?
 2!
 What!
@@ -145,10 +127,7 @@ Money.
 What!
 Good!
 Yes.
-Mr.
-Mr.
 Shucks!
-Mr.
 Petersburg.
 No!
 THE AUTHOR.
@@ -241,7 +220,6 @@ It’s p’ison.
 gasped Huckleberry.
 Please, Tom.
 whispered Tom.
-If Mr.
 Oh, my!
 whispered Huckleberry.
 Do, Tom!
@@ -271,8 +249,6 @@ Oh no!
 said Huck.
 said Tom.
 That’s it!
-And Mrs.
-Oh, Mrs.
 Tom shuddered.
 Oh, shucks!
 There now!
@@ -287,14 +263,12 @@ Then another.
 exclaimed Tom.
 Oh, lots.
 Go on!
-And Mrs.
 Why, no!
 Did you?
 Did you?
 And me?
 And Joe?
 What bark?
-Thomas Sawyer.
 Nobody’ll answer.
 Too late.
 A denial.
@@ -358,7 +332,6 @@ and welcome!
 Oh, please!
 Your Becky?
 Why, no.
-Goodmorning, Mrs.
 said he.
 Tom shouted.
 we’re lost!
@@ -379,7 +352,6 @@ What orgies?
 I dono.
 Oh, bother!
 Sid appeared.
-Now, Mr.
 Well, what?
 Huck’s rich.
 Like it!
@@ -580,7 +552,6 @@ look at this!
 I hate you!
 I didn’t, honest.
 I won’t look.
-The master, Mr.
 Hateful, hateful, hateful!
 What’s a licking!
 She’ll get licked.
@@ -669,7 +640,7 @@ Oh no, no!
 Please don’t tell!
 That was it.
 But an Injun!
-Thatcher swooned away.
+Goodmorning, Missis Harper.
 He never does.
 What was it?
 Becky grew apprehensive.
@@ -683,7 +654,6 @@ Yes, they will!
 Certainly they will!
 I don’t know.
 Petersburg still mourned.
-Thatcher’s nearly so.
 Here, run, somebody!
 Huck’s face saddened.
 You followed him?
@@ -701,12 +671,9 @@ I’m hungry, too.
 or old metal?
 The Welshman laughed.
 All right, then.
-Douglas’ drawing-room.
 Get into them.
 Then she left.
 It ain’t anything.
-Why, old Mr.
-I reckon Mr.
 said Aunt Polly.
 Blame it all!
 Tom Sawyer’s Gang!
@@ -898,8 +865,6 @@ Why, she was here!
 I’ve got it now!
 It blowed the candle!
 And so it was!
-And then—”
-“Then Mrs.
 I lay I did!
 It happened just so!
 Where did you sit?
@@ -910,7 +875,6 @@ Here was his opportunity.
 Well, you’ve done enough.
 Why, yes, I did.
 So he said nothing.
-By and by, Mr.
 he had an inspiration!
 Joseph Harper, did you?
 But enough of this.
@@ -980,7 +944,6 @@ what’d you see, Tom?
 Did he wake up?
 All right, I will.
 In Ben Rogers’ hayloft.
-The last thing Mrs.
 She’ll have ice-cream!
 How’ll she ever know?
 I know she would!
@@ -1003,6 +966,7 @@ It’s only Huck Finn!
 So did the boys.
 Were they looking suspicious?
 They’ve just come back.
+Missis Thatcher swooned away.
 That’s the Lord’s mark.
 Yes,” said the widow.
 Hush, hush, child, hush!
@@ -1082,7 +1046,6 @@ Tom was a trifle disconcerted.
 What’ll you take for her?
 He’s a going up there.
 You mustn’t forget your manners.
-Walters’ heart sank within him.
 And now the minister prayed.
 Here was a vague possibility.
 But Sid slept on unconscious.
@@ -1333,9 +1296,6 @@ Huck accompanied them no further.
 Huck waited for no particulars.
 That’s a different matter altogether.
 So the news had spread.
-Aunt Polly said:
-“Goodmorning, Mrs.
-Harper, beginning to look uneasy.
 He don’t leave it off.
 The widow burst into tears.
 You are very, very sick!
@@ -1372,10 +1332,8 @@ No, Huck—leave them there.
 It’s getting late, I reckon.
 I don’t know about that.
 I’ll take care of you.
-At the proper time Mr.
 You just wait a minute.
 Tom ran out of doors.
-When he had finished, Mr.
 Every “haunted” house in St.
 Can’t let me in, Tom?
 pretty low characters in it!
@@ -1419,6 +1377,7 @@ All right, I’ll tackle it again.
 And so forth and so on.
 The lady was leading a child.
 Tom most of all (she thought).
+Mister Walters’ heart sank within him.
 Tom moaned out:
 “Oh, don’t, Sid.
 Don’t groan so, Tom, it’s awful.
@@ -1654,9 +1613,10 @@ What were you expecting we’d found?
 But you’ll come out of it.
 We judged it warn’t worth while.
 The stirring event was well canvassed.
+Aunt Polly said:
+“Goodmorning, Missis Thatcher.
 I’ve got to settle with him.
 When did you see him last?
-Thatcher and tried to comfort them.
 No one had heart for anything.
 Can you find the way, Tom?
 Becky, I was such a fool!
@@ -1685,7 +1645,6 @@ Mis-givings gathered in his mind.
 Tom, I didn’t think of that.
 That ain’t no bad notion, Tom!
 Say—let’s not fool around here.
-Jones, we haven’t been doing nothing.
 But they’ll fit both of you.
 I ain’t going down there, Tom.
 I don’t mind it a bit.
@@ -1896,9 +1855,7 @@ No—I’d protect you—I’d protect you.
 But what did give you that turn?
 Don’t say a word about it, madam.
 Why didn’t you come and wake me?
-He didn’t stay with us,” said Mrs.
 Children were anxiously questioned, and young teachers.
-Many women visited Aunt Polly and Mrs.
 Huck started up in bed, wildeyed:
 “What?
 and the place has been shut up.
@@ -1919,7 +1876,6 @@ Come along, Becky—we’re all right now!
 Tom was paralyzed; he could not move.
 Without doubt, that was it, he reasoned.
 The lost children had not been found.
-Aunt Polly’s happiness was complete, and Mrs.
 But we have taken care of that.
 Tom turned as white as a sheet.
 What was the matter with you, Tom?
@@ -1943,8 +1899,6 @@ Huck, I always reckoned we’d get it.
 It’s an awful snug place for orgies.
 Well, I don’t know, Huck, my boy.
 Ain’t you and the widow good friends?
-They’re Huck’s—no, no thanks, Huck—Mr.
-Jones bought one and I the other.
 The window ain’t high from the ground.
 what do you want to slope for?
 But the silence was a little awkward.
@@ -2056,10 +2010,8 @@ I wonder what makes the bread do that.
 Tom disappeared under the bed just in time.
 Only just giddy, and harum-scarum, you know.
 He warn’t any more responsible than a colt.
-Harper sobbed as if her heart would break.
 I don’t know how to give him up!
 But it’s so hard—Oh, it’s so hard!
-Harper, I know just exactly how you feel.
 But he’s out of all his troubles now.
 His heart was full of pity for her.
 So he stepped ashore and entered the woods.
@@ -2176,15 +2128,12 @@ I’ve got a boy that’s turned up missing.
 And now he’s afraid to come to church.
 A marked anxiety came into Aunt Polly’s face.
 The people had stopped moving out of church.
-Thatcher was almost crazed; and Aunt Polly, also.
-Thatcher recognized the ribbon and cried over it.
 I’ve told you before, you must not talk.
 So the treasure was gone forever—gone forever!
 It’s all a mixed-up crookedness to me.
 Oh, why did we ever leave the others!
 Cheer up, Becky, and let’s go on trying.
 Becky’s face paled, but she thought she could.
-Thatcher discovered that Becky was not at Mrs.
 The poor morsel of food only whetted desire.
 The joy of the prisoners was almost overwhelming.
 There were some side passages near at hand.
@@ -2204,7 +2153,6 @@ Well, she’s ben good friends to me, anyway.
 What do you want to be afraid for?
 They were covered with clay and candle-grease.
 And you did just right,” said the widow.
-Siddy, you jist ’tend to your own business.
 About Huck tracking the robbers to the widow’s.
 The tale was long, but brimful of interest.
 I ain’t everybody, and I can’t stand it.
@@ -2239,7 +2187,6 @@ Tom sulked in a corner and exalted his woes.
 The strangling hero sprang up with a relieving snort.
 What do you want to be so mean for?
 What is it, Mary, tell me what it is.
-There was only one thing wanting to make Mr.
 This was a thunderbolt out of a clear sky.
 The boy stammered, gasped, and got it out:
 “Tom.
@@ -2321,8 +2268,6 @@ Presently Huck said:
 This took dim shape, presently—it was budding homesickness.
 But they don’t say anything over it,” said Huck.
 Mutiny was effectually laid to rest for the moment.
-Harper, I don’t know how to give him up!
-Harper gave a sobbing goodnight and turned to go.
 But something occurred to him, and he lingered considering.
 But Joe’s spirits had gone down almost beyond resurrection.
 Finally he said:
@@ -2346,10 +2291,8 @@ And Sid would have come and done it, too.
 And I dreamt that Joe Harper’s mother was here.
 Just let me study a moment—just a moment.
 You was a prophesying—that’s what you was doing!
-Harper and vanquish her realism with Tom’s marvellous dream.
 You going to have all the girls and boys?
 You never think of anything but your own selfishness.
-Dobbins, had reached middle age with an unsatisfied ambition.
 How could I know you was looking at anything?
 If Tom only had the wasted opportunity back again!
 There was no help for Becky now, he said.
@@ -2416,6 +2359,8 @@ Huck sank back, panting gently, but deeply, unutterably grateful.
 I just expected she would be tired to death.
 Joe Harper, have you seen my Tom this morning?
 Aunt Polly fell to crying and wringing her hands.
+Missis Thatcher was almost crazed; and Aunt Polly, also.
+Missis Thatcher recognized the ribbon and cried over it.
 I wonder how long we’ve been down here, Tom?
 I never thought we might want to come back!
 We never can get out of this awful place!
@@ -2439,7 +2384,6 @@ Well, this comes nearest to being under the cross.
 I bet you the money is under the rock.
 Now less fetch the guns and things,” said Huck.
 Why, it’s not as light as it might be.
-Jones left the wagon near the door and followed.
 Say—ain’t this grease and clay, on your clothes?
 Sid chuckled in a very contented and satisfied way.
 Half of it’s Huck’s and half of it’s mine!
@@ -2477,9 +2421,7 @@ He wondered if she would pity him if she knew?
 You know if I say it’s nice, it is nice.
 But Mary said, persuasively:
 “Please, Tom—that’s a good boy.
-Walters’ speech was finished, he introduced them to the school.
 Tom was tugging at a button-hole and looking sheepish.
-Petersburg could boast; the bent and venerable Major and Mrs.
 He spied the beetle; the drooping tail lifted and wagged.
 But they soon grew feeble, and presently died wholly away.
 This course worked well, and Tom began to groan again.
@@ -2545,9 +2487,10 @@ He sat up and rubbed his eyes and looked around.
 But the talk soon began to drag, and then died.
 It was worth while to be a pirate, after all.
 He laid himself down under the thwarts and waited, panting.
+And Missis Harper sobbed as if her heart would break.
 Not a word against my Tom, now that he’s gone!
 God’ll take care of him—never you trouble yourself, sir!
-Yes, yes, yes, I know just how you feel, Mrs.
+Missis Harper gave a sobbing goodnight and turned to go.
 exclaimed Tom, with fine dramatic effect, stepping grandly into camp.
 Tom was downhearted, but tried hard not to show it.
 Huck said, “Y-e-s”—without any heart in it.
@@ -2629,7 +2572,6 @@ He hid behind a great bowlder and fell to listening.
 Huck was silent while he framed a duly cautious reply.
 In a moment he said:
 “It’s all plain enough, now.
-Thatcher shook her head feebly and turned paler than ever.
 All the long afternoon the village seemed empty and dead.
 Lie down, child—what a turn you did give me!
 Only tell me just one thing—only just one—please!
@@ -2647,6 +2589,7 @@ They listened; evidently the distant shoutings were growing more distant!
 a moment or two more and they had gone altogether.
 CHAPTER XXXII
 TUESDAY afternoon came, and waned to the twilight.
+Aunt Polly’s happiness was complete, and Missis Thatcher’s nearly so.
 The Widow Douglas stayed by to see that he obeyed.
 Tom Sawyer was in the skiff that bore Judge Thatcher.
 Don’t you remember you was to watch there that night?
@@ -2662,8 +2605,10 @@ Come along, Huck, we’ve been in here a long time.
 We’ll eat and smoke when we get to the skiff.
 Come along with me, boys, you are keeping everybody waiting.
 The boys wanted to know what the hurry was about.
+Mister Jones left the wagon near the door and followed.
 We’ll wait—come down when you are slicked up enough.
 Well, I ain’t used to that kind of a crowd.
+Now, Mister Siddy, you jist ’tend to your own business.
 It’s one of the widow’s parties that she’s always having.
 Oh, you needn’t smile—I reckon I can show you.
 The sum amounted to a little over twelve thousand dollars.
@@ -2696,7 +2641,6 @@ At last he rose up sighing and departed in the darkness.
 Oh, Tom, you poor thick-headed thing, I’m not teasing you.
 Tom’s whole class were of a pattern—restless, noisy, and troublesome.
 That is the way good little boys and girls should do.
-But now every sound ceased suddenly, with the subsidence of Mr.
 This was the great Judge Thatcher, brother of their own lawyer.
 Two thousand verses is a great many—very, very great many.
 The names of the first two disciples were—”
@@ -2757,6 +2701,7 @@ No,” assented Tom, “they don’t kill the women—they’re too noble.
 ’Tain’t thunder,” said Huckleberry, in an awed tone, “becuz thunder—”
 “Hark!
 By jings, I wish I was over there, now,” said Joe.
+Oh, Missis Harper, I don’t know how to give him up!
 But he wrote it again, nevertheless; he could not help it.
 Tom tried one or two other seductions; but they failed, too.
 Oh no, Joe, you’ll feel better by and by,” said Tom.
@@ -2785,7 +2730,6 @@ She hurled one in return, and the angry breach was complete.
 In a few moments the master arrived and school “took in.
 The denial only seemed to make the thing worse for Tom.
 They threw away no opportunity to do the master a mischief.
-A little shamefaced girl lisped, “Mary had a little lamb,” etc.
 There was a weak attempt at applause, but it died early.
 At last he was pronounced upon the mend—and then convalescent.
 Moreover, he wanted to assure himself that Huck had remained discreet.
@@ -2824,8 +2768,6 @@ He did not care to have Huck’s company in public places.
 Huck stood sentry and Tom felt his way into the alley.
 My aunt would make me mighty sick if I lost it.
 Don’t you see, now, what’s the matter with that ha’nted room?
-Thatcher said to Becky, was:
-“You’ll not get back till late.
 Tom Sawyer knew as much of the cave as any one.
 Huck waited what seemed a weary long time, but nothing happened.
 Good, thought Huck, they will bury it in the old quarry.
@@ -2846,6 +2788,7 @@ Presently the Welshman said:
 They found none, but captured a bulky bundle of—
 “Of what?
 Rest and sleep will fetch you out all right, I hope.
+Missis Thatcher shook her head feebly and turned paler than ever.
 Joe tried to remember, but was not sure he could say.
 Puts it somewhere on every creature that comes from his hands.
 and the girl shuddered at the thought of the dreadful possibilities.
@@ -2970,6 +2913,7 @@ At recess Tom continued his flirtation with Amy with jubilant self-satisfaction.
 Before she was half way home, however, she had changed her mind.
 The bark I had wrote on to tell you we’d gone pirating.
 He presently encountered her and delivered a stinging remark as he passed.
+The master, Mister Dobbins, had reached middle age with an unsatisfied ambition.
 That’s just like a girl—they’re so thin-skinned and chicken-hearted.
 He could get up no exultation that was really worthy the name.
 There was that in it which smote even the innocent with fear.
@@ -3020,8 +2964,8 @@ You know something about that Spaniard that you want to keep dark.
 The Welshman eyed him gravely, curiously—and presently said:
 “Yes, burglar’s tools.
 Just as breakfast was completed there was a knock at the door.
-When the sermon was finished, Judge Thatcher’s wife dropped alongside of Mrs.
 Yes,” with a startled look—“didn’t she stay with you last night?
+He didn’t stay with us,” said Missis Harper, beginning to look uneasy.
 Whispers passed along, and a boding uneasiness took possession of every countenance.
 They cried with them, too, and that was still better than words.
 They smoked their own names under an overhanging shelf and moved on.
@@ -3039,7 +2983,6 @@ Tom whooped until he was hoarse, but it was of no use.
 But hunger and wretchedness rise superior to fears in the long run.
 Another tedious wait at the spring and another long sleep brought changes.
 She had sunk into a dreary apathy and would not be roused.
-Thatcher was very ill, and a great part of the time delirious.
 The village went to its rest on Tuesday night, sad and forlorn.
 Injun Joe’s bowie-knife lay close by, its blade broken in two.
 Tom, something’s always told me we’d never get holt of that swag.
@@ -3151,7 +3094,6 @@ He reminded them of the imposing secret, and raised a ray of cheer.
 It ain’t much—a cat does that much—but it’s better than nothing.
 I’d like to see her get around this with her rubbage ’bout superstition.
 Go ’long Sid, Mary, Tom—take yourselves off—you’ve hendered me long enough.
-The children left for school, and the old lady to call on Mrs.
 Now that he was distinguished, maybe she would be wanting to “make up.
 And besides, I didn’t come over here to laugh at you that night.
 So I just put the bark back in my pocket and kept mum.
@@ -3203,6 +3145,7 @@ I and the boys hoped you’d turn up and stop here last night.
 Off with you, boys, and tell the sheriff—get your breakfast tomorrow morning!
 The Welshman had to tell the story of the night to the visitors.
 I reckon my Tom stayed at your house last night—one of you.
+Many women visited Aunt Polly and Missis Thatcher and tried to comfort them.
 CHAPTER XXXI
 NOW to return to Tom and Becky’s share in the picnic.
 They found one presently, and Tom said it was time to rest again.
@@ -3210,6 +3153,7 @@ Then he said:
 “Becky, can you bear it if I tell you something?
 But anyway, your mother would miss you as soon as they got home.
 He was careful to keep from Becky what it was he had seen.
+Missis Thatcher was very ill, and a great part of the time delirious.
 Judge Thatcher’s house was on Tom’s way, and he stopped to see Becky.
 and has it another important object to accomplish ten thousand years to come?
 It was that very night that I follered Injun Joe to the widder’s.
@@ -3234,7 +3178,6 @@ Tom said to himself that it was not such a hollow world, after all.
 There’s no getting round it, you can work when you’re a mind to, Tom.
 He got it out, rumpled and wilted, and it mightily increased his dismal felicity.
 Sabbath-school hours were from nine to half-past ten; and then church service.
-The visitors were given the highest seat of honor, and as soon as Mr.
 he’s a going to shake hands with him—he is shaking hands with him!
 Walters was not expecting an application from this source for the next ten years.
 But you’ve another one I daresay, and you’ll tell it to me, won’t you?
@@ -3356,6 +3299,7 @@ We’ll keep them there all the time, and we’ll hold our orgies there, too.
 But robbers always have orgies, and of course we’ve got to have them, too.
 As the sun dipped toward the horizon they pushed out and got under way.
 Aunt Polly blushed crimson with humiliation, and frowned and shook her head at Tom.
+They’re Huck’s—no, no thanks, Huck—Mister Jones bought one and I the other.
 CHAPTER XXXIV
 HUCK said: “Tom, we can slope, if we can find a rope.
 Everybody knows—the widow, too, for all she tries to let on she don’t.
@@ -3464,6 +3408,8 @@ A feller don’t have only one chance for such a pile—and that one’s lost.
 Just as they got within its shelter the storm burst and the rain poured down.
 Any time you see something’s up, in the night, just skip right around and maow.
 It was not the custom for elderly people to mar the picnics with their presence.
+The last thing Missis Thatcher said to Becky, was:
+“You’ll not get back till late.
 Bundles of candles were procured, and straightway there was a general scamper up the hill.
 Huck was already upon his watch when the ferryboat’s lights went glinting past the wharf.
 He knew he was within five steps of the stile leading into Widow Douglas’ grounds.
@@ -3492,8 +3438,6 @@ Tom proudly marched into a thick clump of sumach bushes and said:
 “Here you are!
 But presently an idea occurred to him—
 “Lookyhere, Huck, what fools we’re making of ourselves!
-Huck said with some apprehension—for he was long used to being falsely accused:
-“Mr.
 There was scarcely an interruption from any one to break the charm of its flow.
 Judge Thatcher hoped to see Tom a great lawyer or a great soldier some day.
 No, Tom, I won’t be rich, and I won’t live in them cussed smothery houses.
@@ -3506,7 +3450,6 @@ I reckon you’re a kind of a singed cat, as the saying is—better’n you look
 I dare you to knock it off—and anybody that’ll take a dare will suck eggs.
 His right hand, mean-time, describing stately circles—for it was representing a forty-foot wheel.
 If he hadn’t run out of whitewash he would have bankrupted every boy in the village.
-Walters’ voice, and the conclusion of the speech was received with a burst of silent gratitude.
 It would have been music to his soul to hear the whisperings:
 “Look at him, Jim!
 He would have liked to fall down and worship him, if it were in the dark.
@@ -3576,7 +3519,6 @@ The hard lines in his aunt’s face relaxed and a sudden tenderness dawned in he
 Then she stopped, with it in her hand, and said to herself:
 “No, I don’t dare.
 She came at once upon a handsomely engraved and colored frontispiece—a human figure, stark naked.
-performed a compassion-inspiring curtsy, got her meed of applause, and sat down flushed and happy.
 The prime feature of the evening was in order, now—original “compositions” by the young ladies.
 Sad, yes, sad thoughts of thee my heart doth swell,
 And burning recollections throng my brow!
@@ -3615,7 +3557,6 @@ Tom divided the cake and Becky ate with good appetite, while Tom nibbled at his 
 Their speed was slow, however, because pitfalls were somewhat common, and had to be guarded against.
 She said she would wait, now, where she was, and die—it would not be long.
 Aunt Polly had drooped into a settled melancholy, and her gray hair had grown almost white.
-Thatcher’s hand, tried to speak but couldn’t—and drifted out raining tears all over the place.
 The Judge said:
 “Well, there are others just like you, Tom, I’ve not the least doubt.
 Injun Joe was believed to have killed five citizens of the village, but what of that?
@@ -3637,7 +3578,6 @@ Tom turned in without the added vexation of prayers, and Sid made mental note of
 Then Tom girded up his loins, so to speak, and went to work to “get his verses.
 It was of a pattern which does not vary, and so it is familiar to us all.
 But when he saw this small newcomer his soul was all ablaze with bliss in a moment.
-Walters’ ecstasy complete, and that was a chance to deliver a Bible-prize and exhibit a prodigy.
 He would have given worlds, now, to have that German lad back again with a sound mind.
 These despised themselves, as being the dupes of a wily fraud, a guileful snake in the grass.
 His head nodded, and little by little his chin descended and touched the enemy, who seized it.
@@ -3787,6 +3727,7 @@ They waited a time that seemed an age, and then the same muffled boom troubled t
 Presently a revealing thought flashed through Tom’s mind, and he exclaimed:
 “Boys, I know who’s drownded—it’s us!
 Tom felt happy in his success, for he knew it was the boat’s last trip for the night.
+Yes, yes, yes, I know just how you feel, Missis Harper, I know just exactly how you feel.
 His face lighted with a happy solution of his thought; he put the bark hastily in his pocket.
 He said, with a great show of cheerfulness:
 “I bet there’s been pirates on this island before, boys.
@@ -3858,7 +3799,6 @@ They went on, and presently entered and followed Tom’s other corridor until th
 Tom’s “real Barlow” was out at once, and he had not dug four inches before he struck wood.
 I thought so,” he said; “They carried it like it was heavy, that day at the ha’nted house.
 Tom skimmed up the shore through the long twilight, chatting cheerily with Huck, and landed shortly after dark.
-Jones was bound Huck should be here—couldn’t get along with his grand secret without Huck, you know!
 The company looked at each other with a perplexed interest—and inquiringly at Huck, who was tongue-tied.
 Tom poured the mass of yellow coin upon the table and said:
 “There—what did I tell you?
@@ -3931,8 +3871,6 @@ Sid had better judgment than to utter the thought that was in his mind as he lef
 Amy chatted happily along, as they walked, for her heart was singing, but Tom’s tongue had lost its function.
 He started to school and had the luck of coming upon Becky Thatcher at the head of Meadow Lane.
 I won’t ever, ever do that way again, as long as ever I live—please make up, won’t you?
-The girl stopped and looked him scornfully in the face:
-“I’ll thank you to keep yourself to yourself, Mr.
 Tom was so stunned that he had not even presence of mind enough to say “Who cares, Miss Smarty?
 If she had had any lingering notion of exposing Alfred Temple, Tom’s offensive fling had driven it entirely away.
 Well, it’s a kind of a tight place for Becky Thatcher, because there ain’t any way out of it.
@@ -3959,7 +3897,6 @@ He was about to spring with winged feet, when a man cleared his throat not four 
 I tell you again, as I’ve told you before, I don’t care for her swag—you may have it.
 When he emerged at the quarry he felt secure, and so he picked up his nimble heels and flew.
 They fired a shot apiece as they started, but their bullets whizzed by and didn’t do us any harm.
-Thatcher turned pale, and sank into a pew, just as Aunt Polly, talking briskly with a friend, passed by.
 These thoughts worked their dim way through Huck’s mind, and under the weariness they gave him he fell asleep.
 Becky responded to his call, and they made a smoke-mark for future guidance, and started upon their quest.
 Becky said:
@@ -3971,6 +3908,7 @@ It would be better to explore some of these than bear the weight of the heavy ti
 Tom wondered that Joe had not recognized his voice and come over and killed him for testifying in court.
 He had also contrived to catch a few bats, and these, also, he had eaten, leaving only their claws.
 Now, Huck, where we’re a-standing you could touch that hole I got out of with a fishing-pole.
+Mister Jones was bound Huck should be here—couldn’t get along with his grand secret without Huck, you know!
 You can’t do any but mean things, and you can’t bear to see anybody praised for doing good ones.
 I never—”
 Tom entered, struggling with the weight of his sacks, and Aunt Polly did not finish her sentence.
@@ -4034,8 +3972,6 @@ Without a moment’s hesitation he ran to her and said:
 “I acted mighty mean today, Becky, and I’m so sorry.
 He moped into the schoolyard wishing she were a boy, and imagining how he would trounce her if she were.
 Most of the pupils glanced up languidly, but there were two among them that watched his movements with intent eyes.
-Dobbins fingered his book absently for a while, then took it out and settled himself in his chair to read!
-Inspired by the splendor of his own act, he took without an outcry the most merciless flaying that even Mr.
 The consequence was, that the smaller boys spent their days in terror and suffering and their nights in plotting revenge.
 At eight in the evening the schoolhouse was brilliantly lighted, and adorned with wreaths and festoons of foliage and flowers.
 There was a buzz of gratification from time to time during the reading, accompanied by whispered ejaculations of “How sweet!
@@ -4063,8 +3999,7 @@ This Spaniard is not deaf and dumb; you’ve let that slip without intending it;
 If the words had been lightning they could not have leaped with a more stunning suddenness from Huck’s blanched lips.
 In fact, everything seemed to be drifting just in the right direction, now; the treasure must be still in No.
 Huck jumped for a hiding-place, for he had no mind to be connected even remotely with the late event.
-Harper as she moved down the aisle with the crowd and said:
-“Is my Becky going to sleep all day?
+Missis Thatcher turned pale, and sank into a pew, just as Aunt Polly, talking briskly with a friend, passed by.
 Then nothing but liquor had been found; there would have been a great powwow if it had been the gold.
 Tom found a subterranean lake, shortly, which stretched its dim length away until its shape was lost in the shadows.
 He wanted to explore its borders, but concluded that it would be best to sit down and rest awhile, first.
@@ -4078,8 +4013,6 @@ The boys began to quiet down to whispers, now, for the stillness and gloom of th
 Huck stared at the mystic sign awhile, and then said with a shaky voice:
 “Tom, less git out of here!
 It would ha’nt the place where he died—away out at the mouth of the cave—five mile from here.
-This question was not entirely answered in Huck’s slow mind before he found himself pushed, along with Tom, into Mrs.
-Jones was going to make a grand time over his surprise, but I bet you it will drop pretty flat.
 If you had been in Huck’s place you’d ’a’ sneaked down the hill and never told anybody on the robbers.
 Now these clothes suits me, and this bar’l suits me, and I ain’t ever going to shake ’em any more.
 He’ll play hookey this evening, * and [* Southwestern for “afternoon”] I’ll just be obleeged to make him work, tomorrow, to punish him.
@@ -4135,9 +4068,12 @@ When poor Alfred, seeing that he was losing her, he did not know how, kept excla
 She started homeward, now, intending to find Tom and tell him; Tom would be thankful and their troubles would be healed.
 She resolved to let him get whipped on the damaged spelling-book’s account, and to hate him forever, into the bargain.
 Poor boy, I reckon he’s lied about it—but it’s a blessed, blessed lie, there’s such a comfort come from it.
+The girl stopped and looked him scornfully in the face:
+“I’ll thank you to keep yourself to yourself, Mister Thomas Sawyer.
 There was not an urchin in school but was perishing to have a glimpse of it, but the chance never came.
 Considering all things, he did not want to pity her, and yet it was all he could do to help it.
 A whole hour drifted by, the master sat nodding in his throne, the air was drowsy with the hum of study.
+Mister Dobbins fingered his book absently for a while, then took it out and settled himself in his chair to read!
 He sponged out lines and remade them; but he only distorted them more than ever, and the tittering was more pronounced.
 And that night there came on a terrific storm, with driving rain, awful claps of thunder and blinding sheets of lightning.
 Lord, I hear ’em say he’s the bloodiest looking villain in this country, and they wonder he wasn’t ever hung before.
@@ -4163,9 +4099,9 @@ Because I had its big door sheathed with boiler iron two weeks ago, and triple-l
 I reckon Injun Joe’s left friends behind him, and I don’t want ’em souring on me and doing me mean tricks.
 Then Huck told his entire adventure in confidence to Tom, who had only heard of the Welshman’s part of it before.
 They toiled their way to the farther end of the tunnel, then made their spliced kite-strings fast and moved on.
+Huck said with some apprehension—for he was long used to being falsely accused:
+“Mister Jones, we haven’t been doing nothing.
 There—no thanks, as the widow says”—and Tom cuffed Sid’s ears and helped him to the door with several kicks.
-Jones said:
-“I thought I had fixed up a little surprise for this occasion, but it don’t amount to anything now.
 And besides, that school’s going to open, and I’d a had to go to it—well, I wouldn’t stand that, Tom.
 If she’ll let up on some of the roughest things, I’ll smoke private and cuss private, and crowd through or bust.
 A new-comer of any age or either sex was an im-pressive curiosity in the poor little shabby village of St.
@@ -4205,6 +4141,7 @@ When the Sunday-school hour was finished, the next morning, the bell began to to
 And then—and then—well I won’t be certain, but it seems like as if you made Sid go and—and—”
 “Well?
 Here’s a big Milum apple I’ve been saving for you, Tom, if you was ever found again—now go ’long to school.
+The children left for school, and the old lady to call on Missis Harper and vanquish her realism with Tom’s marvellous dream.
 Boys of his own size pretended not to know he had been away at all; but they were consuming with envy, nevertheless.
 At last he must be attending to those things—and she said artlessly that she would be “around” when school let out.
 I’ll just take and—”
@@ -4312,8 +4249,9 @@ When all else had been learned, the widow said:
 “I went to sleep reading in bed and slept straight through all that noise.
 Still drifting along and talking, they scarcely noticed that they were now in a part of the cave whose walls were not frescoed.
 Tom believed that it must be Wednesday or Thursday or even Friday or Saturday, now, and that the search had been given over.
-During the first half-hour a procession of villagers filed through Judge Thatcher’s house, seized the saved ones and kissed them, squeezed Mrs.
 The candles revealed the fact that it was not really a precipice, but only a steep clay hill twenty or thirty feet high.
+This question was not entirely answered in Huck’s slow mind before he found himself pushed, along with Tom, into Missis Douglas’ drawing-room.
+I reckon Mister Jones was going to make a grand time over his surprise, but I bet you it will drop pretty flat.
 CHAPTER XXXV
 THE reader may rest satisfied that Tom’s and Huck’s windfall made a mighty stir in the poor little village of St.
 It was talked about, gloated over, glorified, until the reason of many of the citizens tottered under the strain of the unhealthy excitement.
@@ -4329,6 +4267,7 @@ He had had a nice, good, idle time all the while—plenty of company—and the f
 His soul was at peace, now that he had settled with Sid for calling attention to his black thread and getting him into trouble.
 He knew that in her heart his aunt was on her knees to him, and he was morosely gratified by the consciousness of it.
 Then Tom traded a couple of white alleys for three red tickets, and some small trifle or other for a couple of blue ones.
+The visitors were given the highest seat of honor, and as soon as Mister Walters’ speech was finished, he introduced them to the school.
 It was a great many years ago, and I can scarcely remember anything about it, but I think it was in some foreign country.
 The old lady made one end of the silk thread fast to Tom’s tooth with a loop and tied the other to the bedpost.
 Yes, that’s it, Huck—that’s it; though when you’re burying it if you say ‘Down bean; off wart; come no more to bother me!
@@ -4347,15 +4286,12 @@ He rested again until the sun was well up and gilding the great river with its s
 Tom found himself writing “BECKY” in the sand with his big toe; he scratched it out, and was angry with himself for his weakness.
 Say—boys, don’t say anything about it, and some time when they’re around, I’ll come up to you and say, ‘Joe, got a pipe?
 The boys huddled themselves together and sought the friendly companionship of the fire, though the dull dead heat of the breathless atmosphere was stifling.
-Harper told about Joe scaring her with a firecracker, and you told about Peter and the Pain-killer—”
-“Just as true as I live!
 He easily guessed his way to the truth—the girl had simply made a convenience of him to vent her spite upon Tom Sawyer.
 The moment he was gone, she ran to a closet and got out the ruin of a jacket which Tom had gone pirating in.
 The darling of his desires was, to be a doctor, but poverty had decreed that he should be nothing higher than a village schoolmaster.
 At that moment a shadow fell on the page and Tom Sawyer stepped in at the door and caught a glimpse of the picture.
 Tom Sawyer, you are just as mean as you can be, to sneak up on a person and look at what they’re looking at.
 The schoolmaster, always severe, grew severer and more exacting than ever, for he wanted the school to make a good showing on “Examination” day.
-A very little boy stood up and sheepishly recited, “You’d scarce expect one of my age to speak in public on the stage,” etc.
 Becky Thatcher was gone to her Constantinople home to stay with her parents during vacation—so there was no bright side to life anywhere.
 The prisoner raised his eyes for a moment, but dropped them again when his own counsel said:
 “I have no questions to ask him.
@@ -4421,8 +4357,6 @@ But there was no whispering in the house; only the funereal rustling of dresses 
 She roused up, now, with a vindictive cast in her eye, and gave her plaited tails a shake and said she knew what she’d do.
 But she did see, nevertheless; and she knew she was winning her fight, too, and was glad to see him suffer as she had suffered.
 Becky supposed she would be glad of that, and she tried to believe she was glad of it, but she found she was not certain.
-Dobbins straightened himself up, yawned, then unlocked his desk, and reached for his book, but seemed undecided whether to take it out or leave it.
-accompanying himself with the painfully exact and spasmodic gestures which a machine might have used—supposing the machine to be a trifle out of order.
 They felt cowardly and treacherous to the last degree when Potter said:
 “You’ve been mighty good to me, boys—better’n anybody else in this town.
 We’ve got to do it tonight, too, because if somebody sees these holes they’ll know in a minute what’s here and they’ll go for it.
@@ -4454,6 +4388,7 @@ Blessed are they that mourn, for they—they—”
 “S, H, A—”
 “For they S, H—Oh, I don’t know what it is!
 Tom contrived to scarify the cupboard with it, and was arranging to begin on the bureau, when he was called off to dress for Sunday-school.
+There was only one thing wanting to make Mister Walters’ ecstasy complete, and that was a chance to deliver a Bible-prize and exhibit a prodigy.
 Tom Sawyer went home quite cheerful, thinking to himself that there was some satisfaction about divine service when there was a bit of variety in it.
 He generally began that day with wishing he had had no intervening holiday, it made the going into captivity and fetters again so much more odious.
 Tom’s bosom friend sat next him, suffering just as Tom had been, and now he was deeply and gratefully interested in this entertainment in an instant.
@@ -4476,12 +4411,14 @@ As the sun began to steal in upon the boys, drowsiness came over them, and they 
 Now, auntie, that ain’t any harm,” pleaded Mary; “it’s only Tom’s giddy way—he is always in such a rush that he never thinks of anything.
 Why, Wednesday night I dreamt that you was sitting over there by the bed, and Sid was sitting by the woodbox, and Mary next to him.
 Next you said I warn’t bad, only mischeevous and harum-scarum, and not any more responsible than—than—I think it was a colt, or something.
+And Missis Harper told about Joe scaring her with a firecracker, and you told about Peter and the Pain-killer—”
+“Just as true as I live!
 He did not go skipping and prancing, but moved with a dignified swagger as became a pirate who felt that the public eye was on him.
 CHAPTER XX
 THERE was something about Aunt Polly’s manner, when she kissed Tom, that swept away his low spirits and made him lighthearted and happy again.
 He had his own reasons for being delighted, for the master boarded in his father’s family and had given the boy ample cause to hate him.
+A little shamefaced girl lisped, “Mary had a little lamb,” , performed a compassion-inspiring curtsy, got her meed of applause, and sat down flushed and happy.
 Even the boisterous winds unanimously came forth from their mystic homes, and blustered about as if to enhance by their aid the wildness of the scene.
-Benton, an actual United States Senator, proved an overwhelming disappointment—for he was not twenty-five feet high, nor even anywhere in the neighborhood of it.
 There were some boys-and-girls’ parties, but they were so few and so delightful that they only made the aching voids between ache the harder.
 CHAPTER XXV
 THERE comes a time in every rightly-constructed boy’s life when he has a raging desire to go somewhere and dig for hidden treasure.
@@ -4500,12 +4437,15 @@ When you talked about notching ears and slitting noses I judged that that was yo
 Come to think, Becky, we are away down below them—and I don’t know how far away north, or south, or east, or whichever it is.
 It was but a little while before a certain indecision in his manner revealed another fearful fact to Becky—he could not find his way back!
 I ben on my pins a little, three or four days, now, but I can’t walk more’n a mile, Tom—least I don’t think I could.
+When he had finished, Mister Jones said:
+“I thought I had fixed up a little surprise for this occasion, but it don’t amount to anything now.
 Huck had slept there; he had just breakfasted upon some stolen odds and ends of food, and was lying off, now, in comfort, with his pipe.
 It being strictly a history of a boy, it must stop here; the story could not go much further without becoming the history of a man.
 And it flattered her to reflect that she had discovered that the shirt was dry without anybody knowing that that was what she had in her mind.
 She had thought that of course Tom had deserted long ago, and she wondered at seeing him place himself in her power again in this intrepid way.
 Presently she stepped into the kitchen, and Sid, happy in his immunity, reached for the sugar-bowl—a sort of glorying over Tom which was wellnigh unbearable.
 He hoped that Mary would forget his shoes, but the hope was blighted; she coated them thoroughly with tallow, as was the custom, and brought them out.
+But now every sound ceased suddenly, with the subsidence of Mister Walters’ voice, and the conclusion of the speech was received with a burst of silent gratitude.
 Tom had been restless and full of chafings and repinings; conscience-smitten, too—he could not meet Amy Lawrence’s eye, he could not brook her loving gaze.
 CHAPTER V
 ABOUT half-past ten the cracked bell of the small church began to ring, and presently the people began to gather for the morning sermon.
@@ -4520,7 +4460,6 @@ Finally a spade struck upon the coffin with a dull woody accent, and within anot
 Huckleberry’s hard pantings were his only reply, and the boys fixed their eyes on the goal of their hopes and bent to their work to win it.
 They gained steadily on it, and at last, breast to breast, they burst through the open door and fell grateful and exhausted in the sheltering shadows beyond.
 That Injun devil wouldn’t make any more of drownding us than a couple of cats, if we was to squeak ’bout this and they didn’t hang him.
-Harbison owned a slave named Bull, Tom would have spoken of him as “Harbison’s Bull,” but a son or a dog of that name was “Bull Harbison.
 A gory knife had been found close to the murdered man, and it had been recognized by somebody as belonging to Muff Potter—so the story ran.
 He was now become, to them, the most balefully interesting object they had ever looked upon, and they could not take their fascinated eyes from his face.
 She gathered together her quack periodicals and her quack medicines, and thus armed with death, went about on her pale horse, metaphorically speaking, with “hell following after.
@@ -4573,7 +4512,6 @@ So they stood, each with a foot placed at an angle as a brace, and both shoving 
 Cardiff Hill, beyond the village and above it, was green with vegetation and it lay just far enough away to seem a Delectable Land, dreamy, reposeful, and inviting.
 And he did “tackle it again”—and under the double pressure of curiosity and prospective gain he did it with such spirit that he accomplished a shining success.
 Mary gave him a brand-new “Barlow” knife worth twelve and a half cents; and the convulsion of delight that swept his system shook him to his foundations.
-Walters fell to “showing off,” with all sorts of official bustlings and activities, giving orders, delivering judgments, discharging directions here, there, everywhere that he could find a target.
 The librarian “showed off”—running hither and thither with his arms full of books and making a deal of the splutter and fuss that insect authority delights in.
 The young lady teachers “showed off”—bending sweetly over pupils that were lately being boxed, lifting pretty warning fingers at bad little boys and patting good ones lovingly.
 And now at this moment, when hope was dead, Tom Sawyer came forward with nine yellow tickets, nine red tickets, and ten blue ones, and demanded a Bible.
@@ -4637,11 +4575,13 @@ Tom drew a line in the dust with his big toe, and said:
 “I dare you to step over that, and I’ll lick you till you can’t stand up.
 You see, Aunt Polly’s awful particular about this fence—right here on the street, you know—but if it was the back fence I wouldn’t mind and she wouldn’t.
 And yet Mary had acquired two Bibles in this way—it was the patient work of two years—and a boy of German parentage had won four or five.
+Mister Walters fell to “showing off,” with all sorts of official bustlings and activities, giving orders, delivering judgments, discharging directions here, there, everywhere that he could find a target.
 Then they sat together, with a slate before them, and Tom gave Becky the pencil and held her hand in his, guiding it, and so created another surprising house.
 How gloriously he would go plowing the dancing seas, in his long, low, black-hulled racer, the Spirit of the Storm, with his grisly flag flying at the fore!
 But it occurred to him that he might as well have the marble he had just thrown away, and therefore he went and made a patient search for it.
 and the next moment he had grappled with the doctor and the two were struggling with might and main, trampling the grass and tearing the ground with their heels.
 Huck Finn and Tom Sawyer swears they will keep mum about This and They wish They may Drop down dead in Their Tracks if They ever Tell and Rot.
+If Mister Harbison owned a slave named Bull, Tom would have spoken of him as “Harbison’s Bull,” but a son or a dog of that name was “Bull Harbison.
 Tom’s heartbreak vanished and he joined the procession, not because he would not a thousand times rather go anywhere else, but because an awful, unaccountable fascination drew him on.
 Tom got out of the presence as quick as he plausibly could, and after that he complained of toothache for a week, and tied up his jaws every night.
 Tom watched and watched, hoping whenever a frisking frock came in sight, and hating the owner of it as soon as he saw she was not the right one.
@@ -4653,8 +4593,8 @@ There was a rustle in the gallery, which nobody noticed; a moment later the chur
 And indeed it was; he tried not to seem to see the looks or hear the remarks as he passed along, but they were food and drink to him.
 They would have given anything to have that swarthy sun-tanned skin of his, and his glittering notoriety; and Tom would not have parted with either for a circus.
 Then he’ll do just the way he always does—ask first one and then t’other, and when he comes to the right girl he’ll know it, without any telling.
+By and by, Mister Dobbins straightened himself up, yawned, then unlocked his desk, and reached for his book, but seemed undecided whether to take it out or leave it.
 Three rows of benches on each side and six rows in front of him were occupied by the dignitaries of the town and by the parents of the pupils.
-Friendship” was one; “Memories of Other Days”; “Religion in History”; “Dream Land”; “The Advantages of Culture”; “Forms of Political Government Compared and Contrasted”; “Melancholy”; “Filial Love”; “Heart Longings,” etc.
 ’ Her graceful form, arrayed in snowy robes, is whirling through the mazes of the joyous dance; her eye is brightest, her step is lightest in the gay assembly.
 Just fishes a little, to get money to get drunk on—and loafs around considerable; but lord, we all do that—leastways most of us—preachers and such like.
 Finally Huck leaned on his shovel, swabbed the beaded drops from his brow with his sleeve, and said:
@@ -4733,8 +4673,6 @@ By and by Joe timidly ventured upon a roundabout “feeler” as to how the othe
 Tom withered him with derision!
 Then he tiptoed his way cautiously among the trees till he felt that he was out of hearing, and straightway broke into a keen run in the direction of the sandbar.
 However, there was no other way; so with such show of cheerfulness as they could muster they called for the pipe and took their whiff as it passed, in due form.
-Harper she began to cry, and said Joe was just the same, and she wished she hadn’t whipped him for taking cream when she’d throwed it out her own self—”
-“Tom!
 It seemed to Becky, in her hot resentment, that she could hardly wait for school to “take in,” she was so impatient to see Tom flogged for the injured spelling-book.
 Well, of course I ain’t going to tell old Dobbins on this little fool, because there’s other ways of getting even on her, that ain’t so mean; but what of it?
 Rebecca Thatcher” [Tom glanced at her face—it was white with terror]—“did you tear—no, look me in the face” [her hands rose in appeal]—“did you tear this book?
@@ -4745,7 +4683,6 @@ Whose vales I leave—whose spires fade fast from me
 And cold must be mine eyes, and heart, and tete,
 When, dear Alabama!
 A strange sadness rested upon her features, like icy tears upon the robe of December, as she pointed to the contending elements without, and bade me contemplate the two beings presented.
-Even the Glorious Fourth was in some sense a failure, for it rained hard, there was no procession in consequence, and the greatest man in the world (as Tom supposed), Mr.
 Pap would come back to thish-yer town some day and get his claws on it if I didn’t hurry up, and I tell you he’d clean it out pretty quick.
 Spirits whispered in the rustling leaves, ghosts lurked in the murky nooks, the deep baying of a hound floated up out of the distance, an owl answered with his sepulchral note.
 So they played Robin Hood all the afternoon, now and then casting a yearning eye down upon the haunted house and passing a remark about the morrow’s prospects and possibilities there.
@@ -4780,8 +4717,9 @@ He would have hidden the silver with the gold to wait there till his “revenge�
 In his uneasiness Huck found himself drawing closer and closer to the alley; fearing all sorts of dreadful things, and momentarily expecting some catastrophe to happen that would take away his breath.
 They got a posse together, and went off to guard the river bank, and as soon as it is light the sheriff and a gang are going to beat up the woods.
 He had only thought it was not the treasure, however—he had not known that it wasn’t—and so the suggestion of a captured bundle was too much for his self-possession.
+When the sermon was finished, Judge Thatcher’s wife dropped alongside of Missis Harper as she moved down the aisle with the crowd and said:
+“Is my Becky going to sleep all day?
 But he felt less and less hopeful with each failure, and presently began to turn off into diverging avenues at sheer random, in desperate hope of finding the one that was wanted.
-In a moment a new burst of grief from Becky showed Tom that the thing in his mind had struck hers also—that the Sabbath morning might be half spent before Mrs.
 Public prayers had been offered up for them, and many and many a private prayer that had the petitioner’s whole heart in it; but still no good news came from the cave.
 People said it was heartbreaking to hear her call her child, and raise her head and listen a whole minute at a time, then lay it wearily down again with a moan.
 Away in the middle of the night a wild peal burst from the village bells, and in a moment the streets were swarming with frantic half-clad people, who shouted, “Turn out!
@@ -4822,8 +4760,6 @@ She said she would do her best by him, because, whether he was good, bad, or ind
 Before day-dawn, Judge Thatcher and the handful of searchers with him were tracked out, in the cave, by the twine clews they had strung behind them, and informed of the great news.
 CHAPTER XXXIII
 WITHIN a few minutes the news had spread, and a dozen skiff-loads of men were on their way to McDougal’s cave, and the ferryboat, well filled with passengers, soon followed.
-Jones said:
-“Tom wasn’t at home, yet, so I gave him up; but I stumbled on him and Huck right at my door, and so I just brought them along in a hurry.
 While Tom was eating his supper, and stealing sugar as opportunity offered, Aunt Polly asked him questions that were full of guile, and very deep—for she wanted to trap him into damaging revealments.
 He presently got safely beyond the reach of capture and punishment, and hastened toward the public square of the village, where two “military” companies of boys had met for conflict, according to previous appointment.
 This picture brought such an agony of pleasurable suffering that he worked it over and over again in his mind and set it up in new and varied lights, till he wore it threadbare.
@@ -4852,6 +4788,8 @@ Four times he had his hands on that rich treasure and four times it wasted to no
 In a lucid interval, Huck feebly led up to the subject of taverns, and finally asked—dimly dreading the worst—if anything had been discovered at the Temperance Tavern since he had been ill.
 Under the roof vast knots of bats had packed themselves together, thousands in a bunch; the lights disturbed the creatures and they came flocking down by hundreds, squeaking and darting furiously at the candles.
 He said to himself that if he had strength enough to get back to the spring he would stay there, and nothing should tempt him to run the risk of meeting Injun Joe again.
+Mister Jones said:
+“Tom wasn’t at home, yet, so I gave him up; but I stumbled on him and Huck right at my door, and so I just brought them along in a hurry.
 Petersburg and the neighboring villages was dissected, plank by plank, and its foundations dug up and ransacked for hidden treasure—and not by boys, but men—pretty grave, unromantic men, too, some of them.
 Finally he said:
 “Well, I’ll go back to the widder for a month and tackle it and see if I can come to stand it, if you’ll let me b’long to the gang, Tom.
@@ -4867,6 +4805,9 @@ He reeled and fell partly upon Potter, flooding him with his blood, and in the s
 They knew well enough that the raftsmen were all down at the village laying in stores or having a spree, but still that was no excuse for their conducting this thing in an unpiratical way.
 You see a pirate don’t have to do anything, Joe, when he’s ashore, but a hermit he has to be praying considerable, and then he don’t have any fun, anyway, all by himself that way.
 For some time, now, the boys had been dully conscious of a peculiar sound in the distance, just as one sometimes is of the ticking of a clock which he takes no distinct note of.
+And then—”
+“Then Missis Harper she began to cry, and said Joe was just the same, and she wished she hadn’t whipped him for taking cream when she’d throwed it out her own self—”
+“Tom!
 Tom, Tom, I would be the thankfullest soul in this world if I could believe you ever had as good a thought as that, but you know you never did—and I know it, Tom.
 Why, you see, when you got to talking about the funeral, I just got all full of the idea of our coming and hiding in the church, and I couldn’t somehow bear to spoil it.
 The glaring insincerity of these sermons was not sufficient to compass the banishment of the fashion from the schools, and it is not sufficient today; it never will be sufficient while the world stands, perhaps.
@@ -4883,7 +4824,6 @@ He still said it was “all right,” but there was such a leaden dread at his h
 At home Tom learned of the Cardiff Hill event; also that the “ragged man’s” body had eventually been found in the river near the ferry-landing; he had been drowned while trying to escape, perhaps.
 When they were several miles below “Cave Hollow,” Tom said:
 “Now you see this bluff here looks all alike all the way down from the cave hollow—no houses, no wood-yards, bushes all alike.
-Jones is going to try to spring something on the people here tonight, but I overheard him tell auntie today about it, as a secret, but I reckon it’s not much of a secret now.
 Some minutes later the widow’s guests were at the supper-table, and a dozen children were propped up at little side-tables in the same room, after the fashion of that country and that day.
 The widow said she meant to give Huck a home under her roof and have him educated; and that when she could spare the money she would start him in business in a modest way.
 Huck Finn is drawn from life; Tom Sawyer also, but not from an individual—he is a combination of the characteristics of three boys whom I knew, and therefore belongs to the composite order of architecture.
@@ -4902,7 +4842,6 @@ The boys thought that this happy circumstance would turn suspicion in the right 
 Every day or two, during this time of sorrow, Tom watched his opportunity and went to the little grated jail-window and smuggled such small comforts through to the “murderer” as he could get hold of.
 It was believed that the search for the bodies had been a fruitless effort merely because the drowning must have occurred in mid-channel, since the boys, being good swimmers, would otherwise have escaped to shore.
 Then a faint moan came sighing through the branches of the forest and the boys felt a fleeting breath upon their cheeks, and shuddered with the fancy that the Spirit of the Night had gone by.
-Dobbins’ lashings were very vigorous ones, too; for although he carried, under his wig, a perfectly bald and shiny head, he had only reached middle age, and there was no sign of feebleness in his muscle.
 Tom Sawyer stepped forward with conceited confidence and soared into the unquenchable and indestructible “Give me liberty or give me death” speech, with fine fury and frantic gesticulation, and broke down in the middle of it.
 Next appeared a dark-complexioned, black-eyed, black-haired young lady, who paused an impressive moment, assumed a tragic expression, and began to read in a measured, solemn tone:
 “A VISION
@@ -4919,8 +4858,6 @@ About a fortnight after Tom’s rescue from the cave, he started off to visit Hu
 It is falling now; it will still be falling when all these things shall have sunk down the afternoon of history, and the twilight of tradition, and been swallowed up in the thick night of oblivion.
 If he had been Satan himself there would have been plenty of weaklings ready to scribble their names to a pardon-petition, and drip a tear on it from their permanently impaired and leaky water-works.
 We’ve got it now, and we’ll keep it quiet, only we’ll let Joe Harper and Ben Rogers in—because of course there’s got to be a Gang, or else there wouldn’t be any style about it.
-Jones made his little speech, in which he thanked the widow for the honor she was doing himself and his sons, but said that there was another person whose modesty—
-And so forth and so on.
 And he remembered that although the pump was only a hundred and fifty yards off, Jim never got back with a bucket of water under an hour—and even then somebody generally had to go after him.
 Soon the free boys would come tripping along on all sorts of delicious expeditions, and they would make a world of fun of him for having to work—the very thought of it burnt him like fire.
 Yes, she’s awful particular about this fence; it’s got to be done very careful; I reckon there ain’t one boy in a thousand, maybe two thousand, that can do it the way it’s got to be done.
@@ -4935,6 +4872,7 @@ It seemed glorious sport to be feasting in that wild, free way in the virgin for
 While Joe was slicing bacon for breakfast, Tom and Huck asked him to hold on a minute; they stepped to a promising nook in the river-bank and threw in their lines; almost immediately they had reward.
 Aunt Polly knelt down and prayed for Tom so touchingly, so appealingly, and with such measureless love in her words and her old trembling voice, that he was weltering in tears again, long before she was through.
 Tom got more cuffs and kisses that day—according to Aunt Polly’s varying moods—than he had earned before in a year; and he hardly knew which expressed the most gratefulness to God and affection for himself.
+Mister Dobbins’ lashings were very vigorous ones, too; for although he carried, under his wig, a perfectly bald and shiny head, he had only reached middle age, and there was no sign of feebleness in his muscle.
 Now the master, mellow almost to the verge of geniality, put his chair aside, turned his back to the audience, and began to draw a map of America on the blackboard, to exercise the geography class upon.
 Well, we’ve tried Jackson’s Island a little, and we can try it again some time; and there’s the old ha’nted house up the Still-House branch, and there’s lots of dead-limb trees—dead loads of ’em.
 The thing failed this time, however, so the boys shouldered their tools and went away feeling that they had not trifled with fortune, but had fulfilled all the requirements that belong to the business of treasure-hunting.
@@ -4969,6 +4907,7 @@ I dogged ’em to the widder’s stile, and stood in the dark and heard the ragg
 “What!
 They tripped along the murky aisles with the rest of the company, visiting the familiar wonders of the cave—wonders dubbed with rather over-descriptive names, such as “The Drawing-Room,” “The Cathedral,” “Aladdin’s Palace,” and so on.
 He told how he went back for Becky and broke the good news and she told him not to fret her with such stuff, for she was tired, and knew she was going to die, and wanted to.
+Why, old Mister Jones is going to try to spring something on the people here tonight, but I overheard him tell auntie today about it, as a secret, but I reckon it’s not much of a secret now.
 Huck Finn’s wealth and the fact that he was now under the Widow Douglas’ protection introduced him into society—no, dragged him into it, hurled him into it—and his sufferings were almost more than he could bear.
 Sighing, he dipped his brush and passed it along the topmost plank; repeated the operation; did it again; compared the insignificant whitewashed streak with the far-reaching continent of unwhitewashed fence, and sat down on a tree-box discouraged.
 Aunt Polly came, and Tom and Sid and Mary sat with her—Tom being placed next the aisle, in order that he might be as far away from the open window and the seductive outside summer scenes as possible.
@@ -4990,6 +4929,7 @@ The night promised to be a fair one; so Tom went home with the understanding tha
 Tom’s excitement enabled him to keep awake until a pretty late hour, and he had good hopes of hearing Huck’s “maow,” and of having his treasure to astonish Becky and the picnickers with, next day; but he was disappointed.
 Ten o’clock came, and the noise of vehicles ceased, scattered lights began to wink out, all straggling foot-passengers disappeared, the village betook itself to its slumbers and left the small watcher alone with the silence and the ghosts.
 He was trying his best to keep the old man from getting the faintest hint of who the Spaniard might be, and yet his tongue seemed determined to get him into trouble in spite of all he could do.
+During the first half-hour a procession of villagers filed through Judge Thatcher’s house, seized the saved ones and kissed them, squeezed Missis Thatcher’s hand, tried to speak but couldn’t—and drifted out raining tears all over the place.
 Tom got about, a little, on Thursday, was downtown Friday, and nearly as whole as ever Saturday; but Becky did not leave her room until Sunday, and then she looked as if she had passed through a wasting illness.
 The widow’s servants kept him clean and neat, combed and brushed, and they bedded him nightly in unsympathetic sheets that had not one little spot or stain which he could press to his heart and know for a friend.
 I’ll stick to the widder till I rot, Tom; and if I git to be a reg’lar ripper of a robber, and everybody talking ’bout it, I reckon she’ll be proud she snaked me in out of the wet.
@@ -5029,9 +4969,12 @@ Tom stood a moment, to gather his dismembered faculties; and when he stepped for
 At such a time, so dark, so dreary, for human sympathy my very spirit sighed; but instead thereof,
 “‘My dearest friend, my counsellor, my comforter and guide—My joy in grief, my second bliss in joy,’ came to my side.
 Tom soon found himself tormented with a desire to drink and swear; the desire grew to be so intense that nothing but the hope of a chance to display himself in his red sash kept him from withdrawing from the order.
+In a moment a new burst of grief from Becky showed Tom that the thing in his mind had struck hers also—that the Sabbath morning might be half spent before Missis Thatcher discovered that Becky was not at Missis Harper’s.
 Injun Joe lay stretched upon the ground, dead, with his face close to the crack of the door, as if his longing eyes had been fixed, to the latest moment, upon the light and the cheer of the free world outside.
 Huck had learned all about Tom’s adventure from the Welshman and the Widow Douglas, by this time, but Tom said he reckoned there was one thing they had not told him; that thing was what he wanted to talk about now.
 I judged so; the boys in this town will take more trouble and fool away more time hunting up six bits’ worth of old iron to sell to the foundry than they would to make twice the money at regular work.
+At the proper time Mister Jones made his little speech, in which he thanked the widow for the honor she was doing himself and his sons, but said that there was another person whose modesty—
+And so forth and so on.
 He sprung his secret about Huck’s share in the adventure in the finest dramatic manner he was master of, but the surprise it occasioned was largely counterfeit and not as clamorous and effusive as it might have been under happier circumstances.
 He said he meant to look to it that Tom should be admitted to the National Military Academy and afterward trained in the best law school in the country, in order that he might be ready for either career or both.
 Mary took him in hand, and when she was done with him he was a man and a brother, without distinction of color, and his saturated hair was neatly brushed, and its short curls wrought into a dainty and symmetrical general effect.
@@ -5110,7 +5053,6 @@ Every stump that started up in their path seemed a man and an enemy, and made th
 They were attracted by this idea; so it was not long before they were stripped, and striped from head to heel with black mud, like so many zebras—all of them chiefs, of course—and then they went tearing through the woods to attack an English settlement.
 She was sitting cosily on a little bench behind the schoolhouse looking at a picture-book with Alfred Temple—and so absorbed were they, and their heads so close together over the book, that they did not seem to be conscious of anything in the world besides.
 You could think to come all the way over here from Jackson’s Island in the night to laugh at our troubles, and you could think to fool me with a lie about a dream; but you couldn’t ever think to pity us and save us from sorrow.
-Dobbins had ever administered; and also received with indifference the added cruelty of a command to remain two hours after school should be dismissed—for he knew who would wait for him outside till his captivity was done, and not count the tedious time as loss, either.
 The mayor of the village, in delivering the prize to the author of it, made a warm speech in which he said that it was by far the most “eloquent” thing he had ever listened to, and that Daniel Webster himself might well be proud of it.
 You see we knew right where to put our hands on them, by your description; so we crept along on tiptoe till we got within fifteen feet of them—dark as a cellar that sumach path was—and just then I found I was going to sneeze.
 During breakfast the talk went on, and in the course of it the old man said that the last thing which he and his sons had done, before going to bed, was to get a lantern and examine the stile and its vicinity for marks of blood.
@@ -5129,6 +5071,7 @@ Tom was about to take refuge in a lie, when he saw two long tails of yellow hair
 Now,” said he, “as long as he is on your side you can stir him up and I’ll let him alone; but if you let him get away and get on my side, you’re to leave him alone as long as I can keep him from crossing over.
 The boys went back to camp, a good deal awed; but they found there was still something to be thankful for, because the great sycamore, the shelter of their beds, was a ruin, now, blasted by the lightnings, and they were not under it when the catastrophe happened.
 Here I go over to Sereny Harper, like an old softy, expecting I’m going to make her believe all that rubbage about that dream, when lo and behold you she’d found out from Joe that you was over here and heard all the talk we had that night.
+A very little boy stood up and sheepishly recited, “You’d scarce expect one of my age to speak in public on the stage,” —accompanying himself with the painfully exact and spasmodic gestures which a machine might have used—supposing the machine to be a trifle out of order.
 After a long wait the jury filed in and took their places; shortly afterward, Potter, pale and haggard, timid and hopeless, was brought in, with chains upon him, and seated where all the curious eyes could stare at him; no less conspicuous was Injun Joe, stolid as ever.
 Then he said:
 “Well, you see, I’m a kind of a hard lot,—least everybody says so, and I don’t see nothing agin it—and sometimes I can’t sleep much, on account of thinking about it and sort of trying to strike out a new way of doing.
@@ -5150,7 +5093,6 @@ In the course of it Aunt Polly said:
 Poor Huck was too distressed to smile, but the old man laughed loud and joyously, shook up the details of his anatomy from head to foot, and ended by saying that such a laugh was money in a-man’s pocket, because it cut down the doctor’s bill like everything.
 There are wealthy gentlemen in England who drive four-horse passenger-coaches twenty or thirty miles on a daily line, in the summer, because the privilege costs them considerable money; but if they were offered wages for the service, that would turn it into work and then they would resign.
 But when he emerged from the towel, he was not yet satisfactory, for the clean territory stopped short at his chin and his jaws, like a mask; below and beyond this line there was a dark expanse of unirrigated soil that spread downward in front and backward around his neck.
-Walters was very earnest of mien, and very sincere and honest at heart; and he held sacred things and places in such reverence, and so separated them from worldly matters, that unconsciously to himself his Sunday-school voice had acquired a peculiar intonation which was wholly absent on week-days.
 Joe was for being a hermit, and living on crusts in a remote cave, and dying, some time, of cold and want and grief; but after listening to Tom, he conceded that there were some conspicuous advantages about a life of crime, and so he consented to be a pirate.
 First one and then another pair of eyes followed the minister’s, and then almost with one impulse the congregation rose and stared while the three dead boys came marching up the aisle, Tom in the lead, Joe next, and Huck, a ruin of drooping rags, sneaking sheepishly in the rear!
 Around the throne on high not a single star quivered; but the deep intonations of the heavy thunder constantly vibrated upon the ear; whilst the terrific lightning revelled in angry mood through the cloudy chambers of heaven, seeming to scorn the power exerted over its terror by the illustrious Franklin!
@@ -5161,6 +5103,7 @@ By the time Ben was fagged out, Tom had traded the next chance to Billy Fisher f
 She was so overcome by the splendor of his achievement that she took him into the closet and selected a choice apple and delivered it to him, along with an improving lecture upon the added value and flavor a treat took to itself when it came without sin through virtuous effort.
 He had been months winning her; she had confessed hardly a week ago; he had been the happiest and the proudest boy in the world only seven short days, and here in one instant of time she had gone out of his heart like a casual stranger whose visit is done.
 True, the knife would not cut anything, but it was a “sure-enough” Barlow, and there was inconceivable grandeur in that—though where the Western boys ever got the idea that such a weapon could possibly be counterfeited to its injury is an imposing mystery and will always remain so, perhaps.
+Mister Walters was very earnest of mien, and very sincere and honest at heart; and he held sacred things and places in such reverence, and so separated them from worldly matters, that unconsciously to himself his Sunday-school voice had acquired a peculiar intonation which was wholly absent on week-days.
 Tom went to the door and began to softly lift the latch; then he pressed gently and the door yielded a crack; he continued pushing cautiously, and quaking every time it creaked, till he judged he might squeeze through on his knees; so he put his head through and began, warily.
 There was finally a waiting pause, an expectant dumbness, and then Aunt Polly entered, followed by Sid and Mary, and they by the Harper family, all in deep black, and the whole congregation, the old minister as well, rose reverently and stood until the mourners were seated in the front pew.
 There is no school in all our land where the young ladies do not feel obliged to close their compositions with a sermon; and you will find that the sermon of the most frivolous and the least religious girl in the school is always the longest and the most relentlessly pious.
@@ -5169,7 +5112,6 @@ However, the widow made a pretty fair show of astonishment, and heaped so many c
 Not because his troubles were one whit less heavy and bitter to him than a man’s are to a man, but because a new and powerful interest bore them down and drove them out of his mind for the time—just as men’s misfortunes are forgotten in the excitement of new enterprises.
 He said to himself that he would not speak a word, even when his aunt came in, but would sit perfectly still till she asked who did the mischief; and then he would tell, and there would be nothing so good in the world as to see that pet model “catch it.
 A good part of the whispering had been occasioned by an event which was more or less rare—the entrance of visitors: lawyer Thatcher, accompanied by a very feeble and aged man; a fine, portly, middle-aged gentleman with iron-gray hair; and a dignified lady who was doubtless the latter’s wife.
-Sprague turned himself into a bulletin-board, and read off “notices” of meetings and societies and things till it seemed that the list would stretch out to the crack of doom—a queer custom which is still kept up in America, even in cities, away here in this age of abundant newspapers.
 So he went to the beetle and began a wary attack on it again; jumping at it from every point of a circle, lighting with his fore-paws within an inch of the creature, making even closer snatches at it with his teeth, and jerking his head till his ears flapped again.
 If you buried a marble with certain necessary incantations, and left it alone a fortnight, and then opened the place with the incantation he had just used, you would find that all the marbles you had ever lost had gathered themselves together there, meantime, no matter how widely they had been separated.
 The Black Avenger stood still with folded arms, “looking his last” upon the scene of his former joys and his later sufferings, and wishing “she” could see him now, abroad on the wild sea, facing peril and death with dauntless heart, going to his doom with a grim smile on his lips.
@@ -5177,6 +5119,7 @@ She told Tom to go with the kite-line and explore if he chose; but she implored 
 Nobody told me it was you; but I just knowed it must ’a’ ben you, soon as I heard ’bout that whiskey business; and I knowed you hadn’t got the money becuz you’d ’a’ got at me some way or other and told me even if you was mum to everybody else.
 He got home pretty late that night, and when he climbed cautiously in at the window, he uncovered an ambuscade, in the person of his aunt; and when she saw the state his clothes were in her resolution to turn his Saturday holiday into captivity at hard labor became adamantine in its firmness.
 Not long after, as Tom, all undressed for bed, was surveying his drenched garments by the light of a tallow dip, Sid woke up; but if he had any dim idea of making any “references to allusions,” he thought better of it and held his peace, for there was danger in Tom’s eye.
+Mister Sprague turned himself into a bulletin-board, and read off “notices” of meetings and societies and things till it seemed that the list would stretch out to the crack of doom—a queer custom which is still kept up in America, even in cities, away here in this age of abundant newspapers.
 The discourse was resumed presently, but it went lame and halting, all possibility of impressiveness being at an end; for even the gravest sentiments were constantly being received with a smothered burst of unholy mirth, under cover of some remote pew-back, as if the poor parson had said a rarely facetious thing.
 He had never seen as much as fifty dollars in one mass before, and he was like all boys of his age and station in life, in that he imagined that all references to “hundreds” and “thousands” were mere fanciful forms of speech, and that no such sums really existed in the world.
 His pity was moved, but nevertheless he felt an abounding sense of relief and security, now, which revealed to him in a degree which he had not fully appreciated before how vast a weight of dread had been lying upon him since the day he lifted his voice against this bloody-minded outcast.
@@ -5208,6 +5151,7 @@ The next instant he was out, and “going on” like an Indian; yelling, laughin
 They said their prayers inwardly, and lying down, since there was nobody there with authority to make them kneel and recite aloud; in truth, they had a mind not to say them at all, but they were afraid to proceed to such lengths as that, lest they might call down a sudden and special thunderbolt from heaven.
 Becky’s lips trembled and the tears came to her eyes; she hid these signs with a forced gayety and went on chattering, but the life had gone out of the picnic, now, and out of everything else; she got away as soon as she could and hid herself and had what her sex call “a good cry.
 Tom took his whipping and went back to his seat not at all broken-hearted, for he thought it was possible that he had unknowingly upset the ink on the spelling-book himself, in some skylarking bout—he had denied it for form’s sake and because it was custom, and had stuck to the denial from principle.
+Even the Glorious Fourth was in some sense a failure, for it rained hard, there was no procession in consequence, and the greatest man in the world (as Tom supposed), Mister Benton, an actual United States Senator, proved an overwhelming disappointment—for he was not twenty-five feet high, nor even anywhere in the neighborhood of it.
 It was said that one might wander days and nights together through its intricate tangle of rifts and chasms, and never find the end of the cave; and that he might go down, and down, and still down, into the earth, and it was just the same—labyrinth under labyrinth, and no end to any of them.
 Huck was in a close place—the inquiring eye was upon him—he would have given anything for material for a plausible answer—nothing suggested itself—the inquiring eye was boring deeper and deeper—a senseless reply offered—there was no time to weigh it, so at a venture he uttered it—feebly:
 “Sunday-school books, maybe.
@@ -5253,6 +5197,7 @@ They had a smoke and a chat in the shade, and then dug a little in their last ho
 Only the older pupils managed to keep their tickets and stick to their tedious work long enough to get a Bible, and so the delivery of one of these prizes was a rare and noteworthy circumstance; the successful pupil was so great and conspicuous for that day that on the spot every scholar’s heart was fired with a fresh ambition that often lasted a couple of weeks.
 When a Sunday-school superintendent makes his customary little speech, a hymn-book in the hand is as necessary as is the inevitable sheet of music in the hand of a singer who stands forward on the platform and sings a solo at a concert—though why, is a mystery: for neither the hymn-book nor the sheet of music is ever referred to by the sufferer.
 He was a forsaken, friendless boy, he said; nobody loved him; when they found out what they had driven him to, perhaps they would be sorry; he had tried to do right and get along, but they would not let him; since nothing would do them but to be rid of him, let it be so; and let them blame him for the consequences—why shouldn’t they?
+Inspired by the splendor of his own act, he took without an outcry the most merciless flaying that even Mister Dobbins had ever administered; and also received with indifference the added cruelty of a command to remain two hours after school should be dismissed—for he knew who would wait for him outside till his captivity was done, and not count the tedious time as loss, either.
 His mother had whipped him for drinking some cream which he had never tasted and knew nothing about; it was plain that she was tired of him and wished him to go; if she felt that way, there was nothing for him to do but succumb; he hoped she would be happy, and never regret having driven her poor boy out into the unfeeling world to suffer and die.
 Here was a gorgeous triumph; they were missed; they were mourned; hearts were breaking on their account; tears were being shed; accusing memories of unkindness to these poor lost lads were rising up, and unavailing regrets and remorse were being indulged; and best of all, the departed were the talk of the whole town, and the envy of all the boys, as far as this dazzling notoriety was concerned.
 Mary gave him a tin basin of water and a piece of soap, and he went outside the door and set the basin on a little bench there; then he dipped the soap in the water and laid it down; turned up his sleeves; poured out the water on the ground, gently, and then entered the kitchen and began to wipe his face diligently on the towel behind the door.
@@ -5262,7 +5207,6 @@ They were eloquent in their distress; but they presently discovered that the fir
 Then there was a dispute about who saw the dead boys last in life, and many claimed that dismal distinction, and offered evidences, more or less tampered with by the witness; and when it was ultimately decided who did see the departed last, and exchanged the last words with them, the lucky parties took upon themselves a sort of sacred importance, and were gaped at and envied by all the rest.
 He surveyed the prize; walked around it; smelt at it from a safe distance; walked around it again; grew bolder, and took a closer smell; then lifted his lip and made a gingerly snatch at it, just missing it; made another, and another; began to enjoy the diversion; subsided to his stomach with the beetle between his paws, and continued his experiments; grew weary at last, and then indifferent and absent-minded.
 And now and then they stooped in a group and splashed water in each other’s faces with their palms, gradually approaching each other, with averted faces to avoid the strangling sprays, and finally gripping and struggling till the best man ducked his neighbor, and then they all went under in a tangle of white legs and arms and came up blowing, sputtering, laughing, and gasping for breath at one and the same time.
-A prevalent feature in these compositions was a nursed and petted melancholy; another was a wasteful and opulent gush of “fine language”; another was a tendency to lug in by the ears particularly prized words and phrases until they were worn entirely out; and a peculiarity that conspicuously marked and marred them was the inveterate and intolerable sermon that wagged its crippled tail at the end of each and every one of them.
 She had him out at daylight every morning, stood him up in the wood-shed and drowned him with a deluge of cold water; then she scrubbed him down with a towel like a file, and so brought him to; then she rolled him up in a wet sheet and put him away under blankets till she sweated his soul clean and “the yellow stains of it came through his pores”—as Tom said.
 They tried to argue it away by reminding conscience that they had purloined sweetmeats and apples scores of times; but conscience was not to be appeased by such thin plausibilities; it seemed to them, in the end, that there was no getting around the stubborn fact that taking sweetmeats was only “hooking,” while taking bacon and hams and such valuables was plain simple stealing—and there was a command against that in the Bible.
 I’m thankful to the good God and Father of us all I’ve got you back, that’s long-suffering and merciful to them that believe on Him and keep His word, though goodness knows I’m unworthy of it, but if only the worthy ones got His blessings and had His hand to help them over the rough places, there’s few enough would smile here or ever enter into His rest when the long night comes.
@@ -5284,11 +5228,13 @@ Why, you take your cat and go and get in the grave-yard ’long about midnight w
 He had besides the things before mentioned, twelve marbles, part of a jews-harp, a piece of blue bottle-glass to look through, a spool cannon, a key that wouldn’t unlock anything, a fragment of chalk, a glass stopper of a decanter, a tin soldier, a couple of tadpoles, six fire-crackers, a kitten with only one eye, a brass door-knob, a dog-collar—but no dog—the handle of a knife, four pieces of orange-peel, and a dilapidated old window sash.
 To his left, back of the rows of citizens, was a spacious temporary platform upon which were seated the scholars who were to take part in the exercises of the evening; rows of small boys, washed and dressed to an intolerable state of discomfort; rows of gawky big boys; snowbanks of girls and young ladies clad in lawn and muslin and conspicuously conscious of their bare arms, their grandmothers’ ancient trinkets, their bits of pink and blue ribbon and the flowers in their hair.
 And such a luxury to him was this petting of his sorrows, that he could not bear to have any worldly cheeriness or any grating delight intrude upon it; it was too sacred for such contact; and so, presently, when his cousin Mary danced in, all alive with the joy of seeing home again after an age-long visit of one week to the country, he got up and moved in clouds and darkness out at one door as she brought song and sunshine in at the other.
-Ward; lawyer Riverson, the new notable from a distance; next the belle of the village, followed by a troop of lawn-clad and ribbon-decked young heart-breakers; then all the young clerks in town in a body—for they had stood in the vestibule sucking their cane-heads, a circling wall of oiled and simpering admirers, till the last girl had run their gantlet; and last of all came the Model Boy, Willie Mufferson, taking as heedful care of his mother as if she were cut glass.
 When Becky told her father, in strict confidence, how Tom had taken her whipping at school, the Judge was visibly moved; and when she pleaded grace for the mighty lie which Tom had told in order to shift that whipping from her shoulders to his own, the Judge said with a fine outburst that it was a noble, a generous, a magnanimous lie—a lie that was worthy to hold up its head and march down through history breast to breast with George Washington’s lauded Truth about the hatchet!
 In the midst of the prayer a fly had lit on the back of the pew in front of him and tortured his spirit by calmly rubbing its hands together, embracing its head with its arms, and polishing it so vigorously that it seemed to almost part company with the body, and the slender thread of a neck was exposed to view; scraping its wings with its hind legs and smoothing them to its body as if they had been coat-tails; going through its whole toilet as tranquilly as if it knew it was perfectly safe.
+Petersburg could boast; the bent and venerable Major and Missis Ward; lawyer Riverson, the new notable from a distance; next the belle of the village, followed by a troop of lawn-clad and ribbon-decked young heart-breakers; then all the young clerks in town in a body—for they had stood in the vestibule sucking their cane-heads, a circling wall of oiled and simpering admirers, till the last girl had run their gantlet; and last of all came the Model Boy, Willie Mufferson, taking as heedful care of his mother as if she were cut glass.
 She makes me get up just at the same time every morning; she makes me wash, they comb me all to thunder; she won’t let me sleep in the woodshed; I got to wear them blamed clothes that just smothers me, Tom; they don’t seem to any air git through ’em, somehow; and they’re so rotten nice that I can’t set down, nor lay down, nor roll around anywher’s; I hain’t slid on a cellar-door for—well, it ’pears to be years; I got to go to church and sweat and sweat—I hate them ornery sermons!
 He slept on doorsteps in fine weather and in empty hogsheads in wet; he did not have to go to school or to church, or call any being master or obey anybody; he could go fishing or swimming when and where he chose, and stay as long as it suited him; nobody forbade him to fight; he could sit up as late as he pleased; he was always the first boy that went barefoot in the spring and the last to resume leather in the fall; he never had to wash, nor put on clean clothes; he could swear wonderfully.
+Friendship” was one; “Memories of Other Days”; “Religion in History”; “Dream Land”; “The Advantages of Culture”; “Forms of Political Government Compared and Contrasted”; “Melancholy”; “Filial Love”; “Heart Longings,” , 
+A prevalent feature in these compositions was a nursed and petted melancholy; another was a wasteful and opulent gush of “fine language”; another was a tendency to lug in by the ears particularly prized words and phrases until they were worn entirely out; and a peculiarity that conspicuously marked and marred them was the inveterate and intolerable sermon that wagged its crippled tail at the end of each and every one of them.
 A catbird, the Northern mocker, lit in a tree over Tom’s head, and trilled out her imitations of her neighbors in a rapture of enjoyment; then a shrill jay swept down, a flash of blue flame, and stopped on a twig almost within the boy’s reach, cocked his head to one side and eyed the strangers with a consuming curiosity; a gray squirrel and a big fellow of the “fox” kind came skurrying along, sitting up at intervals to inspect and chatter at the boys, for the wild things had probably never seen a human being before and scarcely knew whether to be afraid or not.
 Tom lay upon a sofa with an eager auditory about him and told the history of the wonderful adventure, putting in many striking additions to adorn it withal; and closed with a description of how he left Becky and went on an exploring expedition; how he followed two avenues as far as his kite-line would reach; how he followed a third to the fullest stretch of the kite-line, and was about to turn back when he glimpsed a far-off speck that looked like daylight; dropped the line and groped toward it, pushed his head and shoulders through a small hole, and saw the broad Mississippi rolling by!
 And you never can be sorry for the trouble you took to learn them; for knowledge is worth more than anything there is in the world; it’s what makes great men and good men; you’ll be a great man and a good man yourself, some day, Thomas, and then you’ll look back and say, It’s all owing to the precious Sunday-school privileges of my boyhood—it’s all owing to my dear teachers that taught me to learn—it’s all owing to the good superintendent, who encouraged me, and watched over me, and gave me a beautiful Bible—a splendid elegant Bible—to keep and have it all for my own, always—it’s all owing to right bringing up!

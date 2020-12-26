@@ -6,68 +6,103 @@ using System.Text.RegularExpressions;
 
 namespace TextProcessor
 {
+
     public static class TextСleaner
     {
+        //первый вариант
+
         /*private static string pattern1 = @"(\r\n)+";
         private static string pattern2 = @"( {2,})";
+        private static string pattern3 = @"(\t)+";
         public static string CleanText(string text)
         {
-            string cleanedText = Regex.Replace(text, pattern1, "\r\n"); //удаляет множественные переносы строки
-            cleanedText = Regex.Replace(cleanedText, pattern2, " "); //удаляет множественные пробелы
+            string cleanedText1 = Regex.Replace(text, pattern1, "\r\n"); //удаляет множественные переносы строки
+            cleanedText2 = Regex.Replace(cleanedText1, pattern2, " "); //удаляет множественные пробелы
+            cleanedText = Regex.Replace(cleanedText2, pattern3, " "); //удаляет множественные пробелы
             return cleanedText;
         }*/
+
+
+
+        //второй вариант
+        private static bool isPreviousSenteceElementlSpaceOrTab = false;        
+        private static Dictionary<int, List<int>> sentenceElementsToRemove = new Dictionary<int, List<int>>();// словарь с номером предложения и номерами элементов предложения подлежащих удалению
         private static int counter;
-        private static int counter2;
-        private static int counter3;
-        private static List<int> buffer = new List<int>();
+      
         public static void CleanText(ITextModel textModel)
-        {            
+        {
             foreach (var setence in textModel.Text)
             {
-                if (setence.SentenceElements.Count() == 1 && setence.SentenceElements.Where(x => x.Symbols.Where(x => x.Character == "\r\n").Count() > 0).Count() > 0)//выбераем предлжение длиной в один символ и символом равном переносу строки
+                foreach (var sentenceElement in setence.SentenceElements)
                 {
-                    counter++;
-                    if (counter > 1)
+                    if (sentenceElement.Symbols.Count() == 1 && sentenceElement.Symbols[0].Character == " " || sentenceElement.Symbols[0].Character == "\t")
                     {
-                        buffer.Add(textModel.Text.IndexOf(setence));
-                    }
-                }
-                else 
-                {
-                    counter = 0;
-                }
-               
-            }
-            foreach (var indexSentens in buffer)
-            {             
-                textModel.Text.RemoveAt(indexSentens- counter2);
-                counter2++;
-            }
-            counter2 = 0;
-            buffer.Clear();           
-        }
-
-        /*private static void CleanSentence(ISentence sentence)
-        {
-            
-            foreach (var sentenceElement in sentence.SentenceElements)
-            {
-                foreach (var symbol in sentenceElement.Symbols)
-                {
-                    counter3++;
-                    if (counter > 1)
-                    {
-                        buffer.Add(textModel.Text.IndexOf(setence));
+                        //сохраняем номер предложения, номер элемента в предложении подлежащий для удалению
+                        if (isPreviousSenteceElementlSpaceOrTab) 
+                        {
+                            if (sentenceElementsToRemove.ContainsKey(textModel.Text.IndexOf(setence)))
+                            {                                
+                                sentenceElementsToRemove[textModel.Text.IndexOf(setence)].Add(setence.SentenceElements.IndexOf(sentenceElement));
+                            }
+                            else
+                            {
+                                sentenceElementsToRemove.Add(textModel.Text.IndexOf(setence), new List<int> { setence.SentenceElements.IndexOf(sentenceElement) });
+                            }
+                        }
+                        isPreviousSenteceElementlSpaceOrTab = true;
                     }
                     else
                     {
-                        counter = 0;
+                        isPreviousSenteceElementlSpaceOrTab = false;
                     }
                 }
-
-               
-                
             }
-        }*/
+
+            //удаляем повторяющиеся элементы
+            foreach (var item in sentenceElementsToRemove)
+            {
+                foreach (var indexSentenceElement in item.Value)
+                {
+                    textModel.Text[item.Key].SentenceElements.RemoveAt(indexSentenceElement-counter);
+                    counter++;
+                }
+                counter = 0;
+            }
+            sentenceElementsToRemove.Clear();
+
+
+            //заменяем одиночные TAB на пробел
+            // textModel.Text.Select(x => x.SentenceElements.Select(x => x.Symbols.Select(x => x.Character.Replace("\t", " "))));
+
+
+            foreach (var setence in textModel.Text)
+            {
+                foreach (var sentenceElement in setence.SentenceElements)
+                {
+                    if (sentenceElement.Symbols.Count() == 1 && sentenceElement.Symbols[0].Character == "\t")
+                    {
+                        if (sentenceElementsToRemove.ContainsKey(textModel.Text.IndexOf(setence)))
+                        {
+                            sentenceElementsToRemove[textModel.Text.IndexOf(setence)].Add(setence.SentenceElements.IndexOf(sentenceElement));
+                        }
+                        else
+                        {
+                            sentenceElementsToRemove.Add(textModel.Text.IndexOf(setence), new List<int> { setence.SentenceElements.IndexOf(sentenceElement) });
+                        }
+                    }
+                }
+            }           
+            
+            foreach (var item in sentenceElementsToRemove)
+            {
+                foreach (var indexSentenceElement in item.Value)
+                {
+                    textModel.Text[item.Key].SentenceElements[indexSentenceElement].Symbols[0].Character.Remove(0);
+                    textModel.Text[item.Key].SentenceElements[indexSentenceElement].Symbols[0].Character= " ";
+
+                    //textModel.Text[item.Key].SentenceElements[indexSentenceElement].Symbols.Select(x => x.Character.Replace("\t", " "));
+                }
+            } 
+        }
     }
 }
