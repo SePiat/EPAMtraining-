@@ -8,23 +8,7 @@ namespace TextProcessor
 {
 
     public static class TextСleaner
-    {
-        //первый вариант
-
-        /*private static string pattern1 = @"(\r\n)+";
-        private static string pattern2 = @"( {2,})";
-        private static string pattern3 = @"(\t)+";
-        public static string CleanText(string text)
-        {
-            string cleanedText1 = Regex.Replace(text, pattern1, "\r\n"); //удаляет множественные переносы строки
-            cleanedText2 = Regex.Replace(cleanedText1, pattern2, " "); //удаляет множественные пробелы
-            cleanedText = Regex.Replace(cleanedText2, pattern3, " "); //удаляет множественные пробелы
-            return cleanedText;
-        }*/
-
-
-
-        //второй вариант
+    {        
         private static bool isPreviousSenteceElementlSpaceOrTab = false;        
         private static Dictionary<int, List<int>> sentenceElementsToRemove = new Dictionary<int, List<int>>();// словарь с номером предложения и номерами элементов предложения подлежащих удалению
         private static int counter;
@@ -71,9 +55,7 @@ namespace TextProcessor
             sentenceElementsToRemove.Clear();
 
 
-            //заменяем одиночные TAB на пробел
-            // textModel.Text.Select(x => x.SentenceElements.Select(x => x.Symbols.Select(x => x.Character.Replace("\t", " "))));
-
+            //заменяем одиночные TAB на пробел 
 
             foreach (var setence in textModel.Text)
             {
@@ -91,18 +73,28 @@ namespace TextProcessor
                         }
                     }
                 }
-            }           
-            
+            }            
             foreach (var item in sentenceElementsToRemove)
             {
                 foreach (var indexSentenceElement in item.Value)
                 {
                     textModel.Text[item.Key].SentenceElements[indexSentenceElement].Symbols[0].Character.Remove(0);
-                    textModel.Text[item.Key].SentenceElements[indexSentenceElement].Symbols[0].Character= " ";
-
-                    //textModel.Text[item.Key].SentenceElements[indexSentenceElement].Symbols.Select(x => x.Character.Replace("\t", " "));
+                    textModel.Text[item.Key].SentenceElements[indexSentenceElement].Symbols[0].Character= " ";                    
                 }
             } 
         }
     }
+
+    //первый вариант
+
+    /*private static string pattern1 = @"(\r\n)+";
+    private static string pattern2 = @"( {2,})";
+    private static string pattern3 = @"(\t)+";
+    public static string CleanText(string text)
+    {
+        string cleanedText1 = Regex.Replace(text, pattern1, "\r\n"); //удаляет множественные переносы строки
+        cleanedText2 = Regex.Replace(cleanedText1, pattern2, " "); //удаляет множественные пробелы
+        cleanedText = Regex.Replace(cleanedText2, pattern3, " "); //удаляет множественные пробелы
+        return cleanedText;
+    }*/
 }

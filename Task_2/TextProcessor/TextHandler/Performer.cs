@@ -11,6 +11,7 @@ namespace TextProcessor.TextHandler
     {
         public ITextModelCreator Creator { get; set; } = new TextModelCreator();
         public ITextModel TextModel { get; set; } = new TextModel();
+
         private IWriterText writer = new WriterText();
 
         public void Perform()
@@ -26,7 +27,7 @@ namespace TextProcessor.TextHandler
              Where(x => x is Word).Count() > 0).OrderBy(x => x.SentenceElements.Where(x => (x is Word)).Count()).ToList();
                 return result;
             }
-            Console.WriteLine("Ошибка при выполнении метода SentencesOrderByTheNumberOfWords(ITextModel textModel): " +
+            Console.WriteLine("Внимание! При выполнении метода SentencesOrderByTheNumberOfWords(ITextModel textModel): " +
                 "textModel равен нулю или количестово предложений в textModel равно нулю");
             return null;
         }
@@ -65,7 +66,7 @@ namespace TextProcessor.TextHandler
                 else Console.WriteLine("Ошибка. Введено не числовое значение");
                 return listWordsDistinct;
             }
-            Console.WriteLine("Ошибка при выполнении метода WordsSetLengthByQuestionableSentences(ITextModel textModel): " +
+            Console.WriteLine("Внимание! При выполнении метода WordsSetLengthByQuestionableSentences(ITextModel textModel): " +
                 "textModel равен нулю или количестово предложений в textModel равно нулю");
             return null;
         }
@@ -92,8 +93,12 @@ namespace TextProcessor.TextHandler
                 }
                 else Console.WriteLine("Ошибка. Введено не числовое значение");
             }
-            Console.WriteLine("Ошибка при выполнении метода TextModelWithoutWordsOfSetLengthWithСonsonantLetter(ITextModel textModel): " +
+            else
+            {
+                Console.WriteLine("Внимание! При выполнении метода TextModelWithoutWordsOfSetLengthWithСonsonantLetter(ITextModel textModel): " +
                 "textModel равен нулю или количестово предложений в textModel равно нулю");
+            }
+            
 
         }
 
@@ -130,7 +135,7 @@ namespace TextProcessor.TextHandler
                 }
                 else Console.WriteLine("Ошибка. Введены некорректные исхоные данные");
             }
-            else Console.WriteLine("Ошибка при выполнении метода TextModelExchangeWordOfSetLengthWhithString(ITextModel textModel): " +
+            else Console.WriteLine("Внимание! При выполнении метода TextModelExchangeWordOfSetLengthWhithString(ITextModel textModel): " +
                 "textModel равен нулю или количестово предложений в textModel равно нулю");
 
         }

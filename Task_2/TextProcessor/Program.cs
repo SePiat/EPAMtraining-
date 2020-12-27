@@ -9,8 +9,6 @@ namespace TextProcessor
     {
         static void Main(string[] args)
         {
-
-
             IPerformer performer = new Performer();
             IWriterText writer = new WriterText();
 
@@ -31,7 +29,7 @@ namespace TextProcessor
             performer.TextModelExchangeWordOfSetLengthWhithString(performer.TextModel);//В указанном предложении слова указанной длины заменяет указанной строкой
             writer.WriteTextModelExchangeWordOfSetLengthWhithString(performer.TextModel);
 
-            Console.WriteLine();
+            Console.ReadKey();
         }
     }
 }

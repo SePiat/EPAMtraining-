@@ -9,7 +9,6 @@ namespace TextProcessor.ReaderWriter
 {
     public class WriterText: IWriterText
     {     
-
         public void WriteWordsSetLengthByQuestionableSentences(List<string> text)
         {
             try

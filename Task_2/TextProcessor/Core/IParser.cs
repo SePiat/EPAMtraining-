@@ -4,14 +4,7 @@ using System.Collections.Generic;
 namespace TextProcessor.Core
 {
     public interface IParser
-    {
-        //первый метод метод
-       /* List<string> TextParserBySubSentence(string text);
-        List<ISymbol> TextParserSentenceBySymbols(string sentence);
-        List<ISentenceElement> SentenceOfSybolsParserBySentenceElement(List<ISymbol> sentence);
-        ISentence GetSentenceByISentenceElemtnt(List<ISentenceElement> sentenceElements);*/
-
-        //второй метод
+    {           
         List<ISymbol> ParserLineTextBySymbols(string sentence);
         List<ISymbol> ParserInputTextBySymbols(string inputString);
         List<ISentenceElement> CollectionSymbolFromTextParserBySentenceElement(List<ISymbol> CollectionSymbolFromText);

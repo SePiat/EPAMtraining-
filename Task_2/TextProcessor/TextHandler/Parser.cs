@@ -9,9 +9,7 @@ using TextProcessor.Core;
 namespace TextProcessor
 {
     public class Parser : IParser
-    {
-
-        //Второй метод/////////////////////////////////////////////////////////////////////////
+    {    
         public List<ISymbol> CollectionSymbolFromText { get; set; } = new List<ISymbol>();
         public List<ISymbol> ParserLineTextBySymbols(string line)
         {
@@ -105,8 +103,8 @@ namespace TextProcessor
 
 
 
-        //Первый метод/////////////////////////////////////////////////////////////////////////        
-        /* private string patternSentence = @"([A-Za-z\d\\s]+[^.!?]*[.?!\n]+)"; //без ковычек
+        //Первый вариант/////////////////////////////////////////////////////////////////////////        
+        /* private string patternSentence = @"([A-Za-z\d\\s]+[^.!?]*[.?!\n]+)"; 
          public List<string> TextParserBySubSentence(string text)
          {
              if (text != null)
