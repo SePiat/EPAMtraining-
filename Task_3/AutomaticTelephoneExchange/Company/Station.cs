@@ -8,20 +8,38 @@ namespace AutomaticTelephoneExchange.Company
 {
     public class Station : IStation
     {
-        public Station(IPort port)
+        public PortController PortController;
+        public CallController CallController;
+        public Station()
         {
-            port.PortEventCall += CallHandler;
-        }
+            PortController = new PortController();
+            CallController = new CallController();
+
+        }        
+        public ICollection<IClientTerminal> ClientTerminals { get; set; } = new List<IClientTerminal>();
 
 
 
-        private void CallHandler(object sender, int e)
+
+
+       /* public Station(IPort port)
         {
+            
+            Port.PortEventOutgoingCall += CallHandler;
+        }       
+
+        private void CallHandler(object sender, ICallInfo callInfo)
+        {
+            if (sender is ClientTerminal)
+            {
+                Console.WriteLine($"ClientNumber {((ClientTerminal)sender).ClientNumberOfTelephone} IncominNuber ClientTerminal");
+            }
+            
             if (sender is Port)
             {
-                Console.WriteLine($"Port number {((Port)sender).PortNumber}+ IncominNuber{e}");
+                Console.WriteLine($"Port number {((Port)sender).PortNumber}+ OutgoingNumber{callInfo.OutgoingNumber}, ClientNumberOfTelephone {callInfo.ClientNumberOfTelephone}  ");
             }
 
-        }
+        }*/
     }
 }
