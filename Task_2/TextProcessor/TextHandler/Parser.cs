@@ -104,7 +104,7 @@ namespace TextProcessor
 
 
         //Первый вариант/////////////////////////////////////////////////////////////////////////        
-        /* private string patternSentence = @"([A-Za-z\d\\s]+[^.!?]*[.?!\n]+)"; 
+        /* private string patternSentence = @"([A-Za-z\d]+[^.!?]*[.?!\n]+)"; 
          public List<string> TextParserBySubSentence(string text)
          {
              if (text != null)

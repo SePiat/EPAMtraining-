@@ -55,7 +55,7 @@ namespace TextProcessor
             sentenceElementsToRemove.Clear();
 
 
-            //заменяем одиночные TAB на пробел 
+            //заменяем одиночные TAB на пробел  
 
             foreach (var setence in textModel.Text)
             {
