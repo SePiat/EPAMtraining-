@@ -27,7 +27,12 @@ namespace AutomaticTelephoneExchange.Company.CallController_
 
         public void Drop(object sender, ICallInfo callInfo)
         {            
-            MessageHandler?.Invoke(sender, $"Соедиение абонента {callInfo.ClientNumberOfTelephone} c абоненстом {callInfo.OutgoingNumber} сброшено, порт надоступен");           
+            MessageHandler?.Invoke(sender, $"Соедиение абонента {callInfo.ClientNumberOfTelephone} c абоненстом {callInfo.OutgoingNumber} сброшено, абонент надоступен");
+            IPort port = Ports.FirstOrDefault(x => x.Terminal.ClientNumberOfTelephone == callInfo.ClientNumberOfTelephone);
+            if (port!=null)
+            {
+                port.Busy = false;
+            }            
             callInfo = null;            
         }
         public IPort GetPortByOutgoingNumber(int OutgoingNumber)

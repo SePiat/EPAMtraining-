@@ -15,7 +15,7 @@ namespace AutomaticTelephoneExchange.Company
         public Station()
         {
             PortController = new PortController();
-            CallController = new CallController();            
+            CallController = new CallController(PortController);            
         }        
         public ICollection<IClientTerminal> ClientTerminals { get; set; } = new List<IClientTerminal>();
 

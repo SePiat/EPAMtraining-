@@ -43,6 +43,7 @@ namespace AutomaticTelephoneExchange.Company.CallController_
         {            
             if (On)
             {
+                Busy = true;
                 PortEventOutgoingCall?.Invoke(sender, callInfo);
             };
         }
@@ -60,9 +61,7 @@ namespace AutomaticTelephoneExchange.Company.CallController_
                 throw new Exception("In Method PlugTerminal terminal is null");
             }
            
-        }
-
-       
+        }      
 
         public void UnPlugTerminal(IClientTerminal terminal)
         {
