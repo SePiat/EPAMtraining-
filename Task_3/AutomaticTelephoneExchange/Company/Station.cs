@@ -1,4 +1,5 @@
 ﻿using AutomaticTelephoneExchange.Client;
+using AutomaticTelephoneExchange.Company.CallController_;
 using AutomaticTelephoneExchange.Core;
 using System;
 using System.Collections.Generic;
@@ -13,8 +14,7 @@ namespace AutomaticTelephoneExchange.Company
         public Station()
         {
             PortController = new PortController();
-            CallController = new CallController();
-
+            CallController = new CallController();            
         }        
         public ICollection<IClientTerminal> ClientTerminals { get; set; } = new List<IClientTerminal>();
 
@@ -22,24 +22,6 @@ namespace AutomaticTelephoneExchange.Company
 
 
 
-       /* public Station(IPort port)
-        {
-            
-            Port.PortEventOutgoingCall += CallHandler;
-        }       
-
-        private void CallHandler(object sender, ICallInfo callInfo)
-        {
-            if (sender is ClientTerminal)
-            {
-                Console.WriteLine($"ClientNumber {((ClientTerminal)sender).ClientNumberOfTelephone} IncominNuber ClientTerminal");
-            }
-            
-            if (sender is Port)
-            {
-                Console.WriteLine($"Port number {((Port)sender).PortNumber}+ OutgoingNumber{callInfo.OutgoingNumber}, ClientNumberOfTelephone {callInfo.ClientNumberOfTelephone}  ");
-            }
-
-        }*/
+      
     }
 }

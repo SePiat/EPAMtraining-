@@ -9,7 +9,6 @@ namespace AutomaticTelephoneExchange.Company
     {
         public int ClientNumberOfTelephone { get; set; }
         public int OutgoingNumber { get; set; }
-        public DateTime StartConnection { get; set; }
-        public TimeSpan DurationConnection { get; set; }
+       
     }
 }

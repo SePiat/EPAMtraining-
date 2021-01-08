@@ -4,21 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace AutomaticTelephoneExchange.Company
+namespace AutomaticTelephoneExchange.Company.CallController_
 {
-    public class PortController
+    public class PortController: IPortController
     {
         public ICollection<IPort> Ports { get; set; }
         
-        public static event EventHandler<ICallInfo> IncomingCall;
+        public event EventHandler<ICallInfo> IncomingCall;
 
         public PortController()
         {
             Ports = new List<IPort>();           
-            Port.PortEventOutgoingCall += CallHandler;
+            //Port.PortEventOutgoingCall += CallHandler;
         }
 
-        private void CallHandler(object sender, ICallInfo callInfo)
+        public void CallHandler(object sender, ICallInfo callInfo)
         {
             IPort port = GetPortByOutgoingNumber(callInfo.OutgoingNumber);
             if (!port.Busy&&port.On)
@@ -28,7 +28,7 @@ namespace AutomaticTelephoneExchange.Company
             
         }
 
-        private IPort GetPortByOutgoingNumber(int OutgoingNumber)
+        public IPort GetPortByOutgoingNumber(int OutgoingNumber)
         {
             IPort port = Ports.FirstOrDefault(x => x.Terminal.ClientNumberOfTelephone == OutgoingNumber);
             return port;

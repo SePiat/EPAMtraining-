@@ -4,21 +4,21 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AutomaticTelephoneExchange.Company
+namespace AutomaticTelephoneExchange.Company.CallController_
 {
     public class Port : IPort
-    {
-        
-        public static event EventHandler<ICallInfo> PortEventOutgoingCall;
+    {        
+        public event EventHandler<ICallInfo> PortEventOutgoingCall;
         public event EventHandler<ICallInfo> PortEventIncomingCall;
         public Guid PortNumber { get;  set; }
         public bool On { get; set; } = true;
         public bool Busy { get; set; } = false;
         public IClientTerminal Terminal { get; set; }
-        public Port()
+        public Port(IPortController portController)
         {
             PortNumber = Guid.NewGuid();
-            PortController.IncomingCall += IncomingCall;
+            portController.IncomingCall += IncomingCall;
+            PortEventOutgoingCall += portController.CallHandler;
         }
 
         private void IncomingCall(object sender, ICallInfo callInfo)
@@ -37,6 +37,7 @@ namespace AutomaticTelephoneExchange.Company
                 PortEventOutgoingCall?.Invoke(sender, callInfo);
             };
         }
+
         public void PlugTerminal(IClientTerminal terminal)
         {
             Terminal = terminal;

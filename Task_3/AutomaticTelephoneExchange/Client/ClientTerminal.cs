@@ -8,6 +8,7 @@ namespace AutomaticTelephoneExchange.Client
 {
     public class ClientTerminal: IClientTerminal
     {
+        public static event EventHandler<ICallInfo> EventConnection;
         public event EventHandler<ICallInfo> EventCall;
         public ClientTerminal(int numberOfTelephone)
         {
@@ -25,6 +26,7 @@ namespace AutomaticTelephoneExchange.Client
 
         public void IncomingCall(object sender, ICallInfo callInfo)
         {
+            EventConnection?.Invoke(sender, callInfo);
             Console.WriteLine($"Установлено соединение между абоненсом с номером {callInfo.ClientNumberOfTelephone} с абонентом {callInfo.OutgoingNumber}");
         }
     }

@@ -12,6 +12,7 @@ namespace AutomaticTelephoneExchange.Core
         public bool Busy { get; set; }        
         public void PlugTerminal(IClientTerminal terminal);
         public IClientTerminal Terminal { get; set; }
+        public event EventHandler<ICallInfo> PortEventOutgoingCall;
         public event EventHandler<ICallInfo> PortEventIncomingCall;
     }
 }
