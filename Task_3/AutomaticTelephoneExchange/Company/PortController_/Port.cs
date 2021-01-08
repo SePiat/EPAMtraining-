@@ -10,6 +10,7 @@ namespace AutomaticTelephoneExchange.Company.CallController_
     {        
         public event EventHandler<ICallInfo> PortEventOutgoingCall;
         public event EventHandler<ICallInfo> PortEventIncomingCall;
+        public event EventHandler<ICallInfo> DropIncomingCall;
         public Guid PortNumber { get;  set; }
         public bool On { get; set; } = true;
         public bool Busy { get; set; } = false;
@@ -18,17 +19,25 @@ namespace AutomaticTelephoneExchange.Company.CallController_
         {
             PortNumber = Guid.NewGuid();
             portController.IncomingCall += IncomingCall;
+            DropIncomingCall += portController.Drop;
             PortEventOutgoingCall += portController.CallHandler;
         }
 
         private void IncomingCall(object sender, ICallInfo callInfo)
         {
-            if (sender is Port port&&port.PortNumber == PortNumber)
+            if (sender is IPort port&&port.PortNumber == PortNumber)
             {
-                PortEventIncomingCall?.Invoke(sender, callInfo);
+                if (On&&!Busy)
+                {
+                    Busy = true;
+                    PortEventIncomingCall?.Invoke(sender, callInfo);
+                }
+                else
+                {
+                    DropIncomingCall?.Invoke(sender, callInfo);
+                }
             }
         }
-
        
         private void OutgoingCallHandler(object sender, ICallInfo callInfo)
         {            
@@ -40,18 +49,34 @@ namespace AutomaticTelephoneExchange.Company.CallController_
 
         public void PlugTerminal(IClientTerminal terminal)
         {
-            Terminal = terminal;
-            terminal.EventCall += OutgoingCallHandler;
-            PortEventIncomingCall += terminal.IncomingCall;
+            if (terminal!=null)
+            {
+                Terminal = terminal;
+                terminal.EventCall += OutgoingCallHandler;
+                PortEventIncomingCall += terminal.IncomingCall;
+            }
+            else
+            {
+                throw new Exception("In Method PlugTerminal terminal is null");
+            }
+           
         }
 
        
 
         public void UnPlugTerminal(IClientTerminal terminal)
-        {            
-            terminal.EventCall -= OutgoingCallHandler;
-            PortEventIncomingCall -= terminal.IncomingCall;
-            Terminal = null;
+        {
+            if (terminal != null)
+            {
+                terminal.EventCall -= OutgoingCallHandler;
+                PortEventIncomingCall -= terminal.IncomingCall;
+                Terminal = null;
+            }
+            else
+            {
+                throw new Exception("In Method UnPlugTerminal terminal is null");
+            }
+
         }
 
 

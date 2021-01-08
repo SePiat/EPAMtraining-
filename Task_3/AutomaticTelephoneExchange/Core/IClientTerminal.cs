@@ -8,8 +8,13 @@ namespace AutomaticTelephoneExchange.Core
     {
         
         public int ClientNumberOfTelephone { get; set; }
-        public event EventHandler<ICallInfo> EventCall;
+        public ICallInfo CurrentCallInfo { get; set; }
         public void OutgoingCall(int callNumber);
-        public void IncomingCall(object sender, ICallInfo e);
+        public void IncomingCall(object sender, ICallInfo callInfo);
+        public void FinishConversation();
+
+        public event EventHandler<ICallInfo> EventConnection;
+        public event EventHandler<ICallInfo> EventCall;
+        public event EventHandler<string> MessageHandler;
     }
 }

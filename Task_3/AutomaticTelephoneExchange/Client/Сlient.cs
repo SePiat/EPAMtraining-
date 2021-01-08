@@ -10,8 +10,8 @@ namespace AutomaticTelephoneExchange.Client
         public string Name { get; set ; }
         public string LastName { get; set; }
         public string Birthday { get; set; }
-        public IClientTerminal clientTerminal { get; set; }
-        public IPort port { get; set; }
+        public IClientTerminal ClientTerminal { get; set; }
+        public IPort Port { get; set; }
 
     }
 }
