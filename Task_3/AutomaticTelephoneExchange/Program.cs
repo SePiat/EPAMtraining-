@@ -16,7 +16,9 @@ namespace AutomaticTelephoneExchange
         static void Main(string[] args)
         {           
 
-            Station station = new Station();
+            IStation station = new Station();
+           
+
            
 
             IPort port1 =station.GetFreePort();

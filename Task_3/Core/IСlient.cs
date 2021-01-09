@@ -9,7 +9,6 @@ namespace AutomaticTelephoneExchange.Core
          string Name {get;set;}
          string LastName {get;set;}
          string Birthday {get;set; }
-         IClientTerminal ClientTerminal { get; set; }
-         IPort Port { get; set; }
+        
     }
 }

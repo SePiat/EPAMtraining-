@@ -7,11 +7,16 @@ namespace Billing
 {
     public class Client: IСlient
     {
-                 
+        public Client(string name, string lastName, string birthday)
+        {
+            Name = name;
+            LastName = lastName;
+            Birthday = birthday;
+        }
+
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Birthday { get; set; }
-        public IClientTerminal ClientTerminal { get; set; }
-        public IPort Port { get; set; }
+       
     }
 }
