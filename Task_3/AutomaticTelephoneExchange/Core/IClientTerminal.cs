@@ -6,15 +6,15 @@ namespace AutomaticTelephoneExchange.Core
 {
     public interface IClientTerminal
     {
-        
-        public int ClientNumberOfTelephone { get; set; }
-        public ICallInfo CurrentCallInfo { get; set; }
-        public void OutgoingCall(int callNumber);
-        public void IncomingCall(object sender, ICallInfo callInfo);
-        public void FinishConversation();
 
-        public event EventHandler<ICallInfo> EventConnection;
-        public event EventHandler<ICallInfo> EventCall;
-        public event EventHandler<string> MessageHandler;
+        int ClientNumberOfTelephone { get; set; }
+        ICallInfo CurrentCallInfo { get; set; }
+        void OutgoingCall(int callNumber);
+        void IncomingCall(object sender, ICallInfo callInfo);
+        void FinishConversation();       
+
+        event EventHandler<ICallInfo> ConnectionEvent;
+        event EventHandler<ICallInfo> CallEvent;
+        event EventHandler<string> MessageHandlerEvent;
     }
 }

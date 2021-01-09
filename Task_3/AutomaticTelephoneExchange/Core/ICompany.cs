@@ -6,7 +6,7 @@ namespace AutomaticTelephoneExchange.Core
 {
     public interface ICompany
     {
-        public string Name { get; set; }
-        public IStation Station { get; set; }
+         string Name { get; set; }
+         IStation Station { get; set; }
     }
 }

@@ -6,7 +6,7 @@ namespace AutomaticTelephoneExchange.Core
 {
     public interface ICallInfo
     {
-        public int ClientNumberOfTelephone { get; set; }
-        public int OutgoingNumber { get; set; }      
+         int ClientNumberOfTelephone { get; set; }
+         int OutgoingNumber { get; set; }      
     }
 }

@@ -6,6 +6,9 @@ namespace AutomaticTelephoneExchange.Core
 {
     public interface IStation
     {
-      
+        ICollection<IClientTerminal> ClientTerminals { get; set; }
+        public IPort GetFreePort();
+        IClientTerminal GetClientTerminal(int ClientNumberOfTelephone);
+
     }
 }

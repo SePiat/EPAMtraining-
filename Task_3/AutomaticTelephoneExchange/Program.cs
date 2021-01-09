@@ -25,13 +25,13 @@ namespace AutomaticTelephoneExchange
             IPort port2 = station.GetFreePort();            
             IClientTerminal terminal2 = station.GetClientTerminal(677220);
             port2.PlugTerminal(terminal2);
-            IPort port3 = station.GetFreePort();
-            IClientTerminal terminal3 = station.GetClientTerminal(398829);
-            port3.PlugTerminal(terminal3);
+           // IPort port3 = station.GetFreePort();
+           // IClientTerminal terminal3 = station.GetClientTerminal(398829);
+           // port3.PlugTerminal(terminal3);
 
             terminal1.OutgoingCall(677220);
-            terminal3.OutgoingCall(677220);
-            Thread.Sleep(10000);
+           // terminal3.OutgoingCall(677220);
+            Thread.Sleep(5000);
 
             terminal1.FinishConversation();
 

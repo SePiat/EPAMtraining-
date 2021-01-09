@@ -6,10 +6,10 @@ namespace AutomaticTelephoneExchange.Core
 {
     public interface IConnection
     {
-        public int ClientNumberOfTelephone { get; set; }
-        public int OutgoingNumber { get; set; }
-        public DateTime StartConnection { get; set; }
-        public DateTime FinishConnection { get; set; }
-        public TimeSpan DurationConnection { get; set; }
+         int ClientNumberOfTelephone { get; set; }
+         int OutgoingNumber { get; set; }
+         DateTime StartConnection { get; set; }
+         DateTime FinishConnection { get; set; }
+         TimeSpan DurationConnection { get; set; }
     }
 }

@@ -49,5 +49,23 @@ namespace AutomaticTelephoneExchange.Company.CallController_
             }
         }
 
+        public void DropCall(object sender, ICallInfo callInfo)
+        {
+            try
+            {
+                IPort port1 = PortController_.Ports.FirstOrDefault(x => x.Terminal.ClientNumberOfTelephone == callInfo.ClientNumberOfTelephone);
+                IPort port2 = PortController_.Ports.FirstOrDefault(x => x.Terminal.ClientNumberOfTelephone == callInfo.OutgoingNumber);
+                port1.RidPort();
+                port2.RidPort();
+                MessageHandler(this, $"Абонент {callInfo.OutgoingNumber} отклонил вызов от абонента {callInfo.ClientNumberOfTelephone}");
+            }
+            catch 
+            {
+                throw new Exception("Exception on method DropCall");
+            }
+           
+
+        }
+
     }
 }

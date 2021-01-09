@@ -58,10 +58,10 @@ namespace AutomaticTelephoneExchange.Company.CallController_
 
         public void PlugTerminal(IClientTerminal terminal)
         {
-            if (terminal!=null)
+            if (terminal!=null&&Terminal == null)
             {
                 Terminal = terminal;
-                terminal.EventCall += OutgoingCallHandler;
+                terminal.CallEvent += OutgoingCallHandler;
                 PortIncomingCallEvent += terminal.IncomingCall;
                 PlugTerminalEvent?.Invoke(this, terminal);
             }
@@ -76,7 +76,7 @@ namespace AutomaticTelephoneExchange.Company.CallController_
         {
             if (terminal != null)
             {
-                terminal.EventCall -= OutgoingCallHandler;
+                terminal.CallEvent -= OutgoingCallHandler;
                 PortIncomingCallEvent -= terminal.IncomingCall;
                 UnPlugTerminalEvent?.Invoke(this, terminal);
                 Terminal = null;
@@ -93,7 +93,7 @@ namespace AutomaticTelephoneExchange.Company.CallController_
             On = true;
             OnOfPortEvent?.Invoke(this, On);
         }
-        public void OfPort()
+        public void OffPort()
         {
             On = false;
             OnOfPortEvent?.Invoke(this, On);

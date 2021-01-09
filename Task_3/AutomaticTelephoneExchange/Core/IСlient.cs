@@ -6,9 +6,10 @@ namespace AutomaticTelephoneExchange.Core
 {
     public interface IСlient
     {
-        public string Name {get;set;}
-        public string LastName {get;set;}
-        public string Birthday {get;set; }
-        public IClientTerminal ClientTerminal { get; set; }
+         string Name {get;set;}
+         string LastName {get;set;}
+         string Birthday {get;set; }
+         IClientTerminal ClientTerminal { get; set; }
+         IPort Port { get; set; }
     }
 }
