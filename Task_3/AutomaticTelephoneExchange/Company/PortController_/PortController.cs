@@ -31,7 +31,7 @@ namespace AutomaticTelephoneExchange.Company.CallController_
             IPort port = Ports.FirstOrDefault(x => x.Terminal.ClientNumberOfTelephone == callInfo.ClientNumberOfTelephone);
             if (port!=null)
             {
-                port.Busy = false;
+                port.RidPort();
             }            
             callInfo = null;            
         }
@@ -41,15 +41,48 @@ namespace AutomaticTelephoneExchange.Company.CallController_
             return port;
         }
 
-        
+        public void OnOfPortEventHandler(object sender, bool on)
+        {
+            if (sender is Port port)
+            {
+                string state = on ? "ВКЛЮЧЕН" : "ВЫКЛЮЧЕН";
+                MessageHandler?.Invoke(sender, $"Порт {port.PortNumber} изменил состояние на {state}");
+            }
+            
+        }
+        public void BusyPortEventHandler(object sender, bool busy)
+        {
+            if (sender is Port port)
+            {
+                string state = busy ? "ЗАНЯТ" : "СВОБОДЕН";
+                MessageHandler?.Invoke(sender, $"Порт {port.PortNumber} изменил состояние на {state}");
+            }
+        }
+        public void PlugTerminalEventHandler(object sender, IClientTerminal terminal)
+        {
+            if (sender is Port port)
+            {                
+                MessageHandler?.Invoke(sender, $"Терминал {terminal.ClientNumberOfTelephone} подключен к порту {port.PortNumber}");
+            }
+        }
+        public void UnPlugTerminalEventHandler(object sender, IClientTerminal terminal)
+        {
+            if (sender is Port port)
+            {
+                MessageHandler?.Invoke(sender, $"Терминал {terminal.ClientNumberOfTelephone} отключен от порта {port.PortNumber}");
+            }
+        }
 
-       
 
 
-        
 
 
-        
+
+
+
+
+
+
 
 
     }

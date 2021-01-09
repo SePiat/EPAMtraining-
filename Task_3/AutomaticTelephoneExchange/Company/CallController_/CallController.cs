@@ -38,8 +38,8 @@ namespace AutomaticTelephoneExchange.Company.CallController_
                     СompletedConnections.Add(connection);
                     IPort port1 = PortController_.Ports.FirstOrDefault(x => x.Terminal.ClientNumberOfTelephone == callInfo.ClientNumberOfTelephone);
                     IPort port2 = PortController_.Ports.FirstOrDefault(x => x.Terminal.ClientNumberOfTelephone == callInfo.OutgoingNumber);
-                    port1.Busy = false;
-                    port2.Busy = false;
+                    port1.RidPort();
+                    port2.RidPort();
                     MessageHandler(this, $"Завершено соединение абонента {callInfo.ClientNumberOfTelephone} с абонентом {callInfo.OutgoingNumber}");
                 }               
             }

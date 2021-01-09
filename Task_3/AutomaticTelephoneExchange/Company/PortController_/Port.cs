@@ -8,9 +8,13 @@ namespace AutomaticTelephoneExchange.Company.CallController_
 {
     public class Port : IPort
     {        
-        public event EventHandler<ICallInfo> PortEventOutgoingCall;
-        public event EventHandler<ICallInfo> PortEventIncomingCall;
-        public event EventHandler<ICallInfo> DropIncomingCall;
+        public event EventHandler<ICallInfo> PortOutgoingCallEvent;
+        public event EventHandler<ICallInfo> PortIncomingCallEvent;
+        public event EventHandler<ICallInfo> DropIncomingCallEvent;
+        public event EventHandler<bool> OnOfPortEvent;
+        public event EventHandler<bool> BusyPortEvent;
+        public event EventHandler<IClientTerminal> PlugTerminalEvent;
+        public event EventHandler<IClientTerminal> UnPlugTerminalEvent;
         public Guid PortNumber { get;  set; }
         public bool On { get; set; } = true;
         public bool Busy { get; set; } = false;
@@ -19,8 +23,12 @@ namespace AutomaticTelephoneExchange.Company.CallController_
         {
             PortNumber = Guid.NewGuid();
             portController.IncomingCall += IncomingCall;
-            DropIncomingCall += portController.Drop;
-            PortEventOutgoingCall += portController.CallHandler;
+            DropIncomingCallEvent += portController.Drop;
+            OnOfPortEvent += portController.OnOfPortEventHandler;
+            BusyPortEvent += portController.BusyPortEventHandler;
+            PortOutgoingCallEvent += portController.CallHandler;
+            PlugTerminalEvent += portController.PlugTerminalEventHandler;
+            UnPlugTerminalEvent += portController.UnPlugTerminalEventHandler;
         }
 
         private void IncomingCall(object sender, ICallInfo callInfo)
@@ -29,12 +37,12 @@ namespace AutomaticTelephoneExchange.Company.CallController_
             {
                 if (On&&!Busy)
                 {
-                    Busy = true;
-                    PortEventIncomingCall?.Invoke(sender, callInfo);
+                    BusyPort();
+                    PortIncomingCallEvent?.Invoke(sender, callInfo);
                 }
                 else
                 {
-                    DropIncomingCall?.Invoke(sender, callInfo);
+                    DropIncomingCallEvent?.Invoke(sender, callInfo);
                 }
             }
         }
@@ -43,8 +51,8 @@ namespace AutomaticTelephoneExchange.Company.CallController_
         {            
             if (On)
             {
-                Busy = true;
-                PortEventOutgoingCall?.Invoke(sender, callInfo);
+                BusyPort();
+                PortOutgoingCallEvent?.Invoke(sender, callInfo);
             };
         }
 
@@ -54,7 +62,8 @@ namespace AutomaticTelephoneExchange.Company.CallController_
             {
                 Terminal = terminal;
                 terminal.EventCall += OutgoingCallHandler;
-                PortEventIncomingCall += terminal.IncomingCall;
+                PortIncomingCallEvent += terminal.IncomingCall;
+                PlugTerminalEvent?.Invoke(this, terminal);
             }
             else
             {
@@ -68,7 +77,8 @@ namespace AutomaticTelephoneExchange.Company.CallController_
             if (terminal != null)
             {
                 terminal.EventCall -= OutgoingCallHandler;
-                PortEventIncomingCall -= terminal.IncomingCall;
+                PortIncomingCallEvent -= terminal.IncomingCall;
+                UnPlugTerminalEvent?.Invoke(this, terminal);
                 Terminal = null;
             }
             else
@@ -76,6 +86,27 @@ namespace AutomaticTelephoneExchange.Company.CallController_
                 throw new Exception("In Method UnPlugTerminal terminal is null");
             }
 
+        }
+
+        public void OnPort()
+        {
+            On = true;
+            OnOfPortEvent?.Invoke(this, On);
+        }
+        public void OfPort()
+        {
+            On = false;
+            OnOfPortEvent?.Invoke(this, On);
+        }
+        public void BusyPort()
+        {
+            Busy = true;
+            BusyPortEvent?.Invoke(this, Busy);
+        }
+        public void RidPort()
+        {
+            Busy = false;
+            BusyPortEvent?.Invoke(this, Busy);
         }
 
 
