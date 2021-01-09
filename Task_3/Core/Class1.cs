@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Core
 {
-    public interface ITariffPlan
+    class Class1
     {
     }
 }

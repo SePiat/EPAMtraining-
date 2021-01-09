@@ -1,7 +1,7 @@
 ﻿using AutomaticTelephoneExchange.Client;
 using AutomaticTelephoneExchange.Company;
 using AutomaticTelephoneExchange.Company.CallController_;
-using AutomaticTelephoneExchange.Core;
+using Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,10 +16,10 @@ namespace AutomaticTelephoneExchange
         static void Main(string[] args)
         {           
 
-            IStation station = new Station();
-           
+            IStation station = new Station();            
 
-           
+
+
 
             IPort port1 =station.GetFreePort();
             IClientTerminal terminal1 = station.GetClientTerminal(691375); 

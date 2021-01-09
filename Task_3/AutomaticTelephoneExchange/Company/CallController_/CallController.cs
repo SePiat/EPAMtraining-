@@ -1,13 +1,11 @@
-﻿using AutomaticTelephoneExchange.Client;
-using AutomaticTelephoneExchange.Core;
+﻿using Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace AutomaticTelephoneExchange.Company.CallController_
 {
-    public class CallController:ICallController
+    public class CallController : ICallController
     {
         public event EventHandler<string> MessageHandler;
         public CallController(IPortController portController)
@@ -18,10 +16,10 @@ namespace AutomaticTelephoneExchange.Company.CallController_
 
         public IPortController PortController_ { get; set; }
         public ICollection<IConnection> OnlineConnections { get; set; } = new List<IConnection>();
-        public ICollection<IConnection> СompletedConnections { get; set; } = new List<IConnection>();        
+        public ICollection<IConnection> СompletedConnections { get; set; } = new List<IConnection>();
 
         public void ConnectionCreator(object sender, ICallInfo callInfo)
-        {            
+        {
             OnlineConnections.Add(new Connection(callInfo.ClientNumberOfTelephone, callInfo.OutgoingNumber, DateTime.Now));
         }
 
@@ -30,7 +28,7 @@ namespace AutomaticTelephoneExchange.Company.CallController_
             try
             {
                 IConnection connection = OnlineConnections.FirstOrDefault(x => x.ClientNumberOfTelephone == callInfo.ClientNumberOfTelephone && x.OutgoingNumber == callInfo.OutgoingNumber);
-                if (connection!=null)
+                if (connection != null)
                 {
                     connection.FinishConnection = DateTime.Now;
                     connection.DurationConnection = connection.FinishConnection - connection.StartConnection;
@@ -41,9 +39,9 @@ namespace AutomaticTelephoneExchange.Company.CallController_
                     port1.RidPort();
                     port2.RidPort();
                     MessageHandler(this, $"Завершено соединение абонента {callInfo.ClientNumberOfTelephone} с абонентом {callInfo.OutgoingNumber}");
-                }               
+                }
             }
-            catch 
+            catch
             {
                 throw new Exception("Exception on method ConnectionCompletion");
             }
@@ -59,11 +57,11 @@ namespace AutomaticTelephoneExchange.Company.CallController_
                 port2.RidPort();
                 MessageHandler(this, $"Абонент {callInfo.OutgoingNumber} отклонил вызов от абонента {callInfo.ClientNumberOfTelephone}");
             }
-            catch 
+            catch
             {
                 throw new Exception("Exception on method DropCall");
             }
-           
+
 
         }
 

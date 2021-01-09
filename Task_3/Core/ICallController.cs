@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AutomaticTelephoneExchange.Core
+namespace Core
 {
     public interface ICallController
     {

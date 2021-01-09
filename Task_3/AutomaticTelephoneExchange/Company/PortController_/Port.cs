@@ -1,5 +1,5 @@
 ﻿using AutomaticTelephoneExchange.Client;
-using AutomaticTelephoneExchange.Core;
+using Core;
 using System;
 using System.Collections.Generic;
 using System.Text;

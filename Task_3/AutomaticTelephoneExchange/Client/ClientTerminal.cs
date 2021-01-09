@@ -1,5 +1,5 @@
 ﻿using AutomaticTelephoneExchange.Company;
-using AutomaticTelephoneExchange.Core;
+using Core;
 using System;
 
 namespace AutomaticTelephoneExchange.Client
@@ -36,17 +36,17 @@ namespace AutomaticTelephoneExchange.Client
         {
             MessageHandlerEvent(sender, $"Запрос входящего соединения на терминале {callInfo.OutgoingNumber} от абонента {callInfo.ClientNumberOfTelephone}");
             MessageHandlerEvent(sender, $"Принять звонок Y/N");
-            string answer=null;
-            while(answer!= "Y" && answer != "y" && answer != "N" && answer != "n")
+            string answer = null;
+            while (answer != "Y" && answer != "y" && answer != "N" && answer != "n")
             {
-                answer= Console.ReadLine().ToString();
+                answer = Console.ReadLine().ToString();
 
-               
-                if (answer == "Y"|| answer == "y")
+
+                if (answer == "Y" || answer == "y")
                 {
                     Answer(sender, callInfo);
                 }
-                else if(answer == "N" || answer == "n")
+                else if (answer == "N" || answer == "n")
                 {
                     Drop(sender, callInfo);
                 }
@@ -54,7 +54,7 @@ namespace AutomaticTelephoneExchange.Client
                 {
                     MessageHandlerEvent(sender, "Некорректный ввод");
                 }
-            }            
+            }
         }
 
         public void FinishConversation()
@@ -62,7 +62,7 @@ namespace AutomaticTelephoneExchange.Client
             FinishConversationEvent?.Invoke(this, CurrentCallInfo);
             CurrentCallInfo = null;
         }
-       
+
         private void Answer(object sender, ICallInfo callInfo)
         {
             CurrentCallInfo = callInfo;
