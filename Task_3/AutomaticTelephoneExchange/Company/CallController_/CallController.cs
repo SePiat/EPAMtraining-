@@ -9,9 +9,11 @@ namespace AutomaticTelephoneExchange.Company.CallController_
 {
     public class CallController:ICallController
     {
-        public CallController(PortController portController)
+        public event EventHandler<string> MessageHandler;
+        public CallController(IPortController portController)
         {
             PortController_ = portController;
+            MessageHandler += ConsoleMessagePrinter.WriteMessageInConsole;
         }
 
         public IPortController PortController_ { get; set; }
@@ -28,14 +30,18 @@ namespace AutomaticTelephoneExchange.Company.CallController_
             try
             {
                 IConnection connection = OnlineConnections.FirstOrDefault(x => x.ClientNumberOfTelephone == callInfo.ClientNumberOfTelephone && x.OutgoingNumber == callInfo.OutgoingNumber);
-                connection.FinishConnection = DateTime.Now;
-                connection.DurationConnection = connection.FinishConnection - connection.StartConnection;
-                OnlineConnections.Remove(connection);
-                СompletedConnections.Add(connection);
-                IPort port1 = PortController_.Ports.FirstOrDefault(x => x.Terminal.ClientNumberOfTelephone == callInfo.ClientNumberOfTelephone);
-                IPort port2 = PortController_.Ports.FirstOrDefault(x => x.Terminal.ClientNumberOfTelephone == callInfo.OutgoingNumber);
-                port1.Busy = false;
-                port2.Busy = false;
+                if (connection!=null)
+                {
+                    connection.FinishConnection = DateTime.Now;
+                    connection.DurationConnection = connection.FinishConnection - connection.StartConnection;
+                    OnlineConnections.Remove(connection);
+                    СompletedConnections.Add(connection);
+                    IPort port1 = PortController_.Ports.FirstOrDefault(x => x.Terminal.ClientNumberOfTelephone == callInfo.ClientNumberOfTelephone);
+                    IPort port2 = PortController_.Ports.FirstOrDefault(x => x.Terminal.ClientNumberOfTelephone == callInfo.OutgoingNumber);
+                    port1.Busy = false;
+                    port2.Busy = false;
+                    MessageHandler(this, $"Завершено соединение абонента {callInfo.ClientNumberOfTelephone} с абонентом {callInfo.OutgoingNumber}");
+                }               
             }
             catch 
             {

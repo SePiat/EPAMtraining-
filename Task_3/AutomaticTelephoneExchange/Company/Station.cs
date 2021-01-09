@@ -19,7 +19,7 @@ namespace AutomaticTelephoneExchange.Company
         }        
         public ICollection<IClientTerminal> ClientTerminals { get; set; } = new List<IClientTerminal>();
 
-        public IPort GeFreePort()
+        public IPort GetFreePort()
         {            
             try
             {

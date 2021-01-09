@@ -27,21 +27,22 @@ namespace AutomaticTelephoneExchange.Client
         public void OutgoingCall(int outgoingNumber)
         {
             ICallInfo callInfo = new CallInfo() {ClientNumberOfTelephone= ClientNumberOfTelephone , OutgoingNumber= outgoingNumber };
+            MessageHandler(this, $"Попытка вызова абонентом  {callInfo.ClientNumberOfTelephone} абонента {callInfo.OutgoingNumber}");
             EventCall?.Invoke(this, callInfo);
             CurrentCallInfo = callInfo;
+            
         }
 
         public void IncomingCall(object sender, ICallInfo callInfo)
         {
             CurrentCallInfo = callInfo;
             EventConnection?.Invoke(sender, callInfo);
-            MessageHandler(sender, $"Установлено ConnectionCompletion соединение между абоненсом с номером {callInfo.ClientNumberOfTelephone} с абонентом {callInfo.OutgoingNumber}");            
+            MessageHandler(sender, $"Установлено соединение между абонентом {callInfo.ClientNumberOfTelephone} с абонентом {callInfo.OutgoingNumber}");            
         }
 
         public void FinishConversation()
         {
-            EventFinishConversation?.Invoke(this, CurrentCallInfo);
-            MessageHandler(this, $"Завершено соединение абонента {CurrentCallInfo.ClientNumberOfTelephone} с абонентом {CurrentCallInfo.OutgoingNumber}");
+            EventFinishConversation?.Invoke(this, CurrentCallInfo);            
             CurrentCallInfo = null;
         }
 

@@ -10,5 +10,6 @@ namespace AutomaticTelephoneExchange.Core
         public ICollection<IConnection> СompletedConnections { get; set; }
         public void ConnectionCreator(object sender, ICallInfo callInfo);
         public void ConnectionCompletion(object sender, ICallInfo callInfo);
+        public event EventHandler<string> MessageHandler;
     }
 }

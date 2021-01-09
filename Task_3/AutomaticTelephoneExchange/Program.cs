@@ -19,13 +19,13 @@ namespace AutomaticTelephoneExchange
             Station station = new Station();
            
 
-            IPort port1 =station.GeFreePort();
+            IPort port1 =station.GetFreePort();
             IClientTerminal terminal1 = station.GetClientTerminal(691375); 
-            port1.PlugTerminal(terminal1);
-            IPort port2 = station.GeFreePort();
+            port1.PlugTerminal(terminal1);            
+            IPort port2 = station.GetFreePort();            
             IClientTerminal terminal2 = station.GetClientTerminal(677220);
             port2.PlugTerminal(terminal2);
-            IPort port3 = station.GeFreePort();
+            IPort port3 = station.GetFreePort();
             IClientTerminal terminal3 = station.GetClientTerminal(398829);
             port3.PlugTerminal(terminal3);
 
