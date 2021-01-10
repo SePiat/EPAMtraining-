@@ -1,11 +1,9 @@
 ﻿using Core;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AutomaticTelephoneExchange.Company.CallController_
 {
-    public class Connection: IConnection
+    public class Connection : IConnection
     {
         public Connection(int clientNumberOfTelephone, int outgoingNumber, DateTime startConnection)
         {

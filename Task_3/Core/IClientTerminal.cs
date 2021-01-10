@@ -9,6 +9,7 @@ namespace Core
 
         int ClientNumberOfTelephone { get; set; }
         ICallInfo CurrentCallInfo { get; set; }
+        public bool Rent { get; set; }
         void OutgoingCall(int callNumber);
         void IncomingCall(object sender, ICallInfo callInfo);
         void FinishConversation();       

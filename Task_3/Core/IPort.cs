@@ -10,7 +10,8 @@ namespace Core
          Guid PortNumber { get; set; }     
          bool On { get; set; }
          bool Busy { get; set; }
-         void OnPort();
+         bool Rent { get; set; }
+        void OnPort();
          void OffPort();
          void BusyPort();
          void RidPort();

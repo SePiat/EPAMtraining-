@@ -23,7 +23,7 @@ namespace AutomaticTelephoneExchange.Company
         {            
             try
             {
-                IPort port = PortController.Ports.FirstOrDefault(x => x.Terminal == null);
+                IPort port = PortController.Ports.FirstOrDefault(x => x.Terminal == null&&x.Rent==false);
                 if (port!=null)
                 {
                     return port;
@@ -31,7 +31,7 @@ namespace AutomaticTelephoneExchange.Company
                 else
                 {
                     IPort port1 = new Port(PortController);
-                    PortController.Ports.Add(port1);
+                    PortController.Ports.Add(port1);                   
                     return port1;
                 }                
             }
@@ -42,31 +42,24 @@ namespace AutomaticTelephoneExchange.Company
         }
         public IClientTerminal GetClientTerminal(int ClientNumberOfTelephone)
         {
-            try
+            IClientTerminal terminal = ClientTerminals.FirstOrDefault(x => x.ClientNumberOfTelephone == ClientNumberOfTelephone);
+            if (terminal != null)
             {
-                IClientTerminal terminal = ClientTerminals.FirstOrDefault(x => x.ClientNumberOfTelephone == ClientNumberOfTelephone);
-                if (terminal != null)
+                if (terminal.Rent == false)
                 {
                     return terminal;
                 }
                 else
                 {
-                    IClientTerminal terminal1 = new ClientTerminal(ClientNumberOfTelephone, CallController);
-                    ClientTerminals.Add(terminal1);                    
-                    return terminal1;
+                    throw new Exception("Терминал с таким номером уже существует");
                 }
             }
-            catch
+            else
             {
-                throw new Exception("Exception in method GetClientTerminal");
+                IClientTerminal terminal1 = new ClientTerminal(ClientNumberOfTelephone, CallController);
+                ClientTerminals.Add(terminal1);
+                return terminal1;
             }
-            
         }
-
-
-
-
-
-      
     }
 }

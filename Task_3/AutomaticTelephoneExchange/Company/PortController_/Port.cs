@@ -1,13 +1,10 @@
-﻿using AutomaticTelephoneExchange.Client;
-using Core;
+﻿using Core;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AutomaticTelephoneExchange.Company.CallController_
 {
     public class Port : IPort
-    {        
+    {
         public event EventHandler<ICallInfo> PortOutgoingCallEvent;
         public event EventHandler<ICallInfo> PortIncomingCallEvent;
         public event EventHandler<ICallInfo> DropIncomingCallEvent;
@@ -15,9 +12,10 @@ namespace AutomaticTelephoneExchange.Company.CallController_
         public event EventHandler<bool> BusyPortEvent;
         public event EventHandler<IClientTerminal> PlugTerminalEvent;
         public event EventHandler<IClientTerminal> UnPlugTerminalEvent;
-        public Guid PortNumber { get;  set; }
+        public Guid PortNumber { get; set; }
         public bool On { get; set; } = true;
         public bool Busy { get; set; } = false;
+        public bool Rent { get; set; } = false;
         public IClientTerminal Terminal { get; set; }
         public Port(IPortController portController)
         {
@@ -33,9 +31,9 @@ namespace AutomaticTelephoneExchange.Company.CallController_
 
         private void IncomingCall(object sender, ICallInfo callInfo)
         {
-            if (sender is IPort port&&port.PortNumber == PortNumber)
+            if (sender is IPort port && port.PortNumber == PortNumber)
             {
-                if (On&&!Busy)
+                if (On && !Busy)
                 {
                     BusyPort();
                     PortIncomingCallEvent?.Invoke(sender, callInfo);
@@ -46,9 +44,9 @@ namespace AutomaticTelephoneExchange.Company.CallController_
                 }
             }
         }
-       
+
         private void OutgoingCallHandler(object sender, ICallInfo callInfo)
-        {            
+        {
             if (On)
             {
                 BusyPort();
@@ -58,7 +56,7 @@ namespace AutomaticTelephoneExchange.Company.CallController_
 
         public void PlugTerminal(IClientTerminal terminal)
         {
-            if (terminal!=null&&Terminal == null)
+            if (terminal != null && Terminal == null)
             {
                 Terminal = terminal;
                 terminal.CallEvent += OutgoingCallHandler;
@@ -69,8 +67,8 @@ namespace AutomaticTelephoneExchange.Company.CallController_
             {
                 throw new Exception("In Method PlugTerminal terminal is null");
             }
-           
-        }      
+
+        }
 
         public void UnPlugTerminal(IClientTerminal terminal)
         {

@@ -6,7 +6,8 @@ namespace Core
 {
     public interface ICompany
     {
-         string Name { get; set; }
-         IStation Station { get; set; }
+        string Name { get; set; }
+        IStation Station { get; set; }
+        ICollection<IContract> Contracts { get; set; }
     }
 }

@@ -5,23 +5,20 @@ using System.Text;
 
 namespace Billing
 {
-    public class Contract
+    public class Contract: IContract
     {
-        public Contract(ICompany company, IСlient client, DateTime dateCreate, IClientTerminal clientTerminal, IPort port)
+        public Contract(ICompany company, IСlient client, DateTime dateCreate)
         {
             Company = company;
             Client = client;
             DateCreate = dateCreate;
-            ClientTerminal = clientTerminal;
-            Port = port;
+            
         }
 
         public ICompany Company { get; set; }
         public IСlient Client { get; set; }
         public DateTime DateCreate { get; set; }
-        public IClientTerminal ClientTerminal { get; set; }
-        public IPort Port { get; set; }
-
+       
         public ITariffPlan TariffPlan {get;set;}
 
     }

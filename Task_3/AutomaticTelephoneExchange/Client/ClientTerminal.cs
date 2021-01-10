@@ -22,6 +22,8 @@ namespace AutomaticTelephoneExchange.Client
         }
 
         public int ClientNumberOfTelephone { get; set; }
+        public bool Rent { get; set; } = false;
+
 
         public void OutgoingCall(int outgoingNumber)
         {
