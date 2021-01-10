@@ -17,8 +17,7 @@ namespace Billing
 
         public ICompany Company { get; set; }
         public IСlient Client { get; set; }
-        public DateTime DateCreate { get; set; }
-       
+        public DateTime DateCreate { get; set; }       
         public ITariffPlan TariffPlan {get;set;}
 
     }

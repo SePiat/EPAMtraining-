@@ -9,21 +9,21 @@ namespace AutomaticTelephoneExchange
     class Program
     {
         static void Main(string[] args)
-        {
+        {   
 
-            IStation Station = new Station();
-            ICompany Company = new Billing.Company("Белтелеком", Station);
-
-            IPort port1 = Station.GetFreePort();
-            IClientTerminal terminal1 = Station.GetClientTerminal(691375);
+            IStation _Station = new Station();
+            ICompany Company = new Billing.Company("Белтелеком", _Station);
+           
+            IPort port1 = _Station.GetFreePort();
+            IClientTerminal terminal1 = _Station.GetClientTerminal(691375);
 
             IСlient Client1 = new Billing.Client("Вася", "Пупкин", "10.10.1990");
             Company.Contracts.Add(new Contract(Company, Client1, DateTime.Now));
             Client1.AcceptClientTerminalAndPort(terminal1, port1);
-            Client1.PlugClientTerminalInPort();
+            Client1.PlugClientTerminalInPort();            
 
-            IPort port2 = Station.GetFreePort();
-            IClientTerminal terminal2 = Station.GetClientTerminal(677220);
+            IPort port2 = _Station.GetFreePort();
+            IClientTerminal terminal2 = _Station.GetClientTerminal(677220);
 
             IСlient Client2 = new Billing.Client("Федя", "Тапкин", "11.11.1995");
             Company.Contracts.Add(new Contract(Company, Client2, DateTime.Now));
@@ -37,6 +37,9 @@ namespace AutomaticTelephoneExchange
 
             Client1.ClientTerminal.FinishConversation();
 
+            Client2.ClientTerminal.OutgoingCall(691375);
+            Thread.Sleep(10000);
+            Client2.ClientTerminal.FinishConversation();
 
 
 
@@ -45,14 +48,7 @@ namespace AutomaticTelephoneExchange
 
 
 
-
-            // IPort port3 = station.GetFreePort();
-            // IClientTerminal terminal3 = station.GetClientTerminal(398829);
-            // port3.PlugTerminal(terminal3);
-
-            // terminal1.OutgoingCall(677220);
-            // terminal3.OutgoingCall(677220);
-
+            Company.CalculateForEstimatedPeriod();
 
 
             Console.ReadKey();

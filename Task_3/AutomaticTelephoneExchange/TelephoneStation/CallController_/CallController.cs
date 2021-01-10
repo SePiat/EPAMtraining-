@@ -3,11 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AutomaticTelephoneExchange.Company.CallController_
+namespace AutomaticTelephoneExchange.TelephoneStation.CallController_
 {
     public class CallController : ICallController
     {
         public event EventHandler<string> MessageHandler;
+        public event EventHandler<IConnection> CreateConnection;
         public CallController(IPortController portController)
         {
             PortController_ = portController;
@@ -27,13 +28,14 @@ namespace AutomaticTelephoneExchange.Company.CallController_
         {
             try
             {
-                IConnection connection = OnlineConnections.FirstOrDefault(x => x.ClientNumberOfTelephone == callInfo.ClientNumberOfTelephone && x.OutgoingNumber == callInfo.OutgoingNumber);
+                IConnection connection = OnlineConnections.FirstOrDefault(x => x.ClientNumberOfTelephone == callInfo.ClientNumberOfTelephone && x.OutgoingNumber == callInfo.OutgoingNumber);                          
                 if (connection != null)
-                {
+                {                    
                     connection.FinishConnection = DateTime.Now;
                     connection.DurationConnection = connection.FinishConnection - connection.StartConnection;
                     OnlineConnections.Remove(connection);
                     СompletedConnections.Add(connection);
+                    CreateConnection?.Invoke(sender, connection);
                     IPort port1 = PortController_.Ports.FirstOrDefault(x => x.Terminal.ClientNumberOfTelephone == callInfo.ClientNumberOfTelephone);
                     IPort port2 = PortController_.Ports.FirstOrDefault(x => x.Terminal.ClientNumberOfTelephone == callInfo.OutgoingNumber);
                     port1.RidPort();

@@ -1,7 +1,7 @@
 ﻿using Core;
 using System;
 
-namespace AutomaticTelephoneExchange.Company.CallController_
+namespace AutomaticTelephoneExchange.TelephoneStation.CallController_
 {
     public class Connection : IConnection
     {

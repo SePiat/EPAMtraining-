@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AutomaticTelephoneExchange.Company.CallController_
+namespace AutomaticTelephoneExchange.TelephoneStation.CallController_
 {
     public class PortController : IPortController
     {

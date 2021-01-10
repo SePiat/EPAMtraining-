@@ -16,9 +16,9 @@ namespace Billing
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Birthday { get; set; }
+        public decimal Money { get; set; } = 100;
         public IClientTerminal ClientTerminal { get; set; }
-        public IPort Port { get; set; }
-        public IContract Contract {get;set;}
+        public IPort Port { get; set; }        
 
         public void AcceptClientTerminalAndPort(IClientTerminal terminal, IPort port)
         {           
@@ -66,6 +66,27 @@ namespace Billing
             {
                 throw new Exception("У абонента не имеется необходимого для подлкючения оборудования");
             }
+        }
+        public void UnPlugClientTerminalInPort()
+        {
+            if (ClientTerminal != null && Port != null)
+            {               
+                Port.UnPlugTerminal(ClientTerminal);
+            }
+            else
+            {
+                throw new Exception("У абонента не имеется необходимого для подлкючения оборудования");
+            }
+        }
+       
+        public void PutMoney(decimal money)
+        {
+            Money += money;
+        }
+       
+        public void TakeMoney(decimal money)
+        {            
+            Money -= money;
         }
     }
 }

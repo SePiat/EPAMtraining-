@@ -12,5 +12,6 @@ namespace Core
          void ConnectionCompletion(object sender, ICallInfo callInfo);
          void DropCall(object sender, ICallInfo callInfo);
          event EventHandler<string> MessageHandler;
+         event EventHandler<IConnection> CreateConnection;
     }
 }

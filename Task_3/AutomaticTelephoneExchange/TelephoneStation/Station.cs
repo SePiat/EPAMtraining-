@@ -1,5 +1,5 @@
 ﻿using AutomaticTelephoneExchange.Client;
-using AutomaticTelephoneExchange.Company.CallController_;
+using AutomaticTelephoneExchange.TelephoneStation.CallController_;
 using Core;
 using System;
 using System.Collections.Generic;
@@ -10,8 +10,8 @@ namespace AutomaticTelephoneExchange.Company
 {
     public class Station : IStation
     {
-        public PortController PortController;
-        public CallController CallController;
+        public IPortController PortController { get; set; }
+        public ICallController CallController { get; set; }
         public Station()
         {
             PortController = new PortController();
