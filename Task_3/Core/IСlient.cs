@@ -1,6 +1,6 @@
 ﻿namespace Core
 {
-    public interface IСlient
+    public interface IClient
     {
         string Name { get; set; }
         string LastName { get; set; }

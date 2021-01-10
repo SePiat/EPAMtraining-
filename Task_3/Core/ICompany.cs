@@ -9,6 +9,7 @@ namespace Core
         string Name { get; set; }
         IStation Station { get; set; }
         ICollection<IContract> Contracts { get; set; }
+        ICollection<IReport> Reports { get; set; }
         void CalculateForEstimatedPeriod();
     }
 }

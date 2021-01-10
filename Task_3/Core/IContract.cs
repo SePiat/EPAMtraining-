@@ -7,7 +7,7 @@ namespace Core
     public interface IContract
     {
          ICompany Company { get; set; }
-         IСlient Client { get; set; }
+        IClient Client { get; set; }
          DateTime DateCreate { get; set; }
 
          ITariffPlan TariffPlan { get; set; }

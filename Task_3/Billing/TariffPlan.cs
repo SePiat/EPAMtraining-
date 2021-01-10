@@ -7,7 +7,7 @@ namespace Billing
 {
     public class TariffPlan: ITariffPlan
     {
-        public decimal SubscriptionFeeMonthly = 3;
-        public decimal TariffForMinute = 0.005M;
+        public decimal SubscriptionFeeMonthly { get; set; } = 3;
+        public decimal TariffForMinute { get; set; } = 0.005M;
     }
 }

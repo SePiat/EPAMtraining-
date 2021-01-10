@@ -6,7 +6,7 @@ namespace Core
 {
     public interface IClientLog
     {
-        IСlient Client { get; set; }
+        IClient Client { get; set; }
         IConnection Connections { get; set; }
         ITariffPlan TariffPlan { get; set; }
     }

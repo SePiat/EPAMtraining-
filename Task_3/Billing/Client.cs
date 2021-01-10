@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Billing
 {
-    public class Client : IСlient
+    public class Client : IClient
     {
         public Client(string name, string lastName, string birthday)
         {
