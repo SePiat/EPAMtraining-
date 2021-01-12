@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AutomaticTelephoneExchange
+namespace Core
 {
     public static class ConsoleMessagePrinter
     {

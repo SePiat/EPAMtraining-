@@ -43,13 +43,8 @@ namespace AutomaticTelephoneExchange
             Client2.ClientTerminal.FinishConversation();
 
 
-
-
-
-
-
-
             Company.CalculateForReportPeriod();
+            Company.GetDetailedСallReport(Client1, "Январь 2021");
 
 
             Console.ReadKey();

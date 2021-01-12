@@ -11,5 +11,6 @@ namespace Core
         ICollection<IContract> Contracts { get; set; }
         ICollection<IReportCalls> Reports { get; set; }
         void CalculateForReportPeriod();
+        void GetDetailedСallReport(IClient client, string reportPeriod);
     }
 }
