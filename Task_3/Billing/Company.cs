@@ -12,21 +12,21 @@ namespace Billing
         {
             Name = name;
             Station = station;
-            Station.CallController.CreateConnection += ConnectionHandler;
+            Station.CallController.SaveConnection += ConnectionHandler;
         }
 
-        public string Name { get; set; }
+        public string Name { get;}
         public IStation Station { get; set; }
         public ICollection<IContract> Contracts { get; set; } = new List<IContract>();
         public ICollection<IClientLog> ClientLogs { get; set; } = new List<IClientLog>();
         public ICollection<string> ReportPeriods { get; set; } = new List<string>();
-        public ICollection<IReport> Reports { get; set; } = new List<IReport>();
+        public ICollection<IReportCalls> Reports { get; set; } = new List<IReportCalls>();
         private void ConnectionHandler(object sender, IConnection connection)
         {
             IContract contract = Contracts.FirstOrDefault(x => x.Client.ClientTerminal.ClientNumberOfTelephone == connection.ClientNumberOfTelephone);
             if (contract!=null)
             {
-                ClientLogs.Add(new ClientLog(contract.Client, connection, contract.TariffPlan));
+                ClientLogs.Add(new ClientLog(contract.Client, connection));
             }
             else
             {
@@ -34,7 +34,37 @@ namespace Billing
             }
         }
 
-        public void CalculateForEstimatedPeriod()
+        private void CalculateClientForReportPeriod(IClient client, DateTime reportPeriod)
+        {
+            var ReportPeriodClientLogs = ClientLogs.Where(x => x.Client == client).Where(x => x.Connections.FinishConnection.Month == reportPeriod.Month);
+            ITariffPlan tariffPlan = Contracts.FirstOrDefault(x => x.Client == client).TariffPlan;
+            var reportItems = GetReportItems(ReportPeriodClientLogs, client);
+            decimal totalSummCollect = reportItems.ToList().Sum(x=>x.Cost)+ tariffPlan.SubscriptionFeeMonthly;
+            decimal DurationOfConversations = reportItems.Sum(x=>x.DurationOfConversations);
+            client.Money = client.Money - totalSummCollect;
+            Reports.Add(new ReportCalls(
+                client, 
+                reportPeriod.ToString("y"),
+                tariffPlan,
+                DurationOfConversations,
+                client.Money, totalSummCollect, reportItems));
+        }
+        private IList<IReportItem> GetReportItems(IEnumerable<IClientLog> ClientLogs, IClient client)
+        {
+            IList<IReportItem> reportItems = new List<IReportItem>();
+            ITariffPlan tariffPlan = Contracts.FirstOrDefault(x => x.Client == client).TariffPlan;          
+
+            ClientLogs.ToList().ForEach(x => reportItems.
+            Add(new ReportItem(x.Connections.OutgoingNumber, 
+            x.Connections.DurationConnection.Seconds,
+             x.Connections.DurationConnection.Seconds * tariffPlan.TariffForSecond)));
+            return reportItems;
+        }
+
+
+
+
+        public void CalculateForReportPeriod()
         {
             try
             {
@@ -43,34 +73,30 @@ namespace Billing
                 var previosMonthYear = previosMonthDate.ToString("y");
                 if (ReportPeriods.Contains(previosMonthYear))
                 {
-                    throw new Exception("Расчет за данный период уже было произведен");
+                    throw new Exception("Расчет за данный период уже был произведен");
                 }
                 else
                 {
                     //var previosMonth = CurrentDate.AddMonths(-1).Month; //Расчетный период-прошлый месяц
-                    var ReportPeriodClientLogs = ClientLogs.Where(x => x.Connections.FinishConnection.Month == сurrentDate.Month/* previosMonthDate.Month*/);
+                   
+                    IList<IClient> ClientsToCalculte = ClientLogs.
+                        Where(x => x.Connections.FinishConnection.Month == сurrentDate.Month/* previosMonthDate.Month*/)
+                        .Select(x => x.Client).ToList();
 
-                    ICollection<IClient> ClientsToCalculte = ReportPeriodClientLogs.Select(x => x.Client).ToList();
-
-                    foreach (var client in ClientsToCalculte)
-                    {
-                        ICollection<TimeSpan> ListDurationOfConversations = ReportPeriodClientLogs.Where(x => x.Client == client).Select(x => x.Connections.DurationConnection).ToList();
-                        var DurationOfConversations = Convert.ToDecimal(ListDurationOfConversations.Sum(x => x.TotalMinutes));
-                        ITariffPlan tariffPlan = Contracts.FirstOrDefault(x => x.Client == client).TariffPlan;
-                        decimal totalSummCollect = tariffPlan.SubscriptionFeeMonthly + (DurationOfConversations * tariffPlan.TariffForMinute);
-                        client.Money = client.Money - totalSummCollect;
-                        Reports.Add(new Report(client, previosMonthDate, DurationOfConversations, client.Money, totalSummCollect));
-                    }
+                    ClientsToCalculte.ToList().ForEach(x => CalculateClientForReportPeriod(x, сurrentDate));                   
                     ReportPeriods.Add(previosMonthYear);
                 }
             }
             catch
             {
-                throw new Exception("Ошибка в методе CalculateForEstimatedPeriod");
+                throw new Exception("Ошибка в методе CalculateForReportPeriod");
             }
            
         }
 
+      
+        
+       
 
 
 

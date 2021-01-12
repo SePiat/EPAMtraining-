@@ -8,7 +8,7 @@ namespace AutomaticTelephoneExchange.TelephoneStation.CallController_
     public class CallController : ICallController
     {
         public event EventHandler<string> MessageHandler;
-        public event EventHandler<IConnection> CreateConnection;
+        public event EventHandler<IConnection> SaveConnection;
         public CallController(IPortController portController)
         {
             PortController_ = portController;
@@ -35,7 +35,7 @@ namespace AutomaticTelephoneExchange.TelephoneStation.CallController_
                     connection.DurationConnection = connection.FinishConnection - connection.StartConnection;
                     OnlineConnections.Remove(connection);
                     СompletedConnections.Add(connection);
-                    CreateConnection?.Invoke(sender, connection);
+                    SaveConnection?.Invoke(sender, connection);
                     IPort port1 = PortController_.Ports.FirstOrDefault(x => x.Terminal.ClientNumberOfTelephone == callInfo.ClientNumberOfTelephone);
                     IPort port2 = PortController_.Ports.FirstOrDefault(x => x.Terminal.ClientNumberOfTelephone == callInfo.OutgoingNumber);
                     port1.RidPort();

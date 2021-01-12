@@ -7,15 +7,12 @@ namespace Billing
 {
     public class ClientLog: IClientLog
     {
-        public ClientLog(IClient client, IConnection connections, ITariffPlan tariffPlan)
+        public ClientLog(IClient client, IConnection connections)
         {
             Client = client;
-            Connections = connections;
-            TariffPlan = tariffPlan;
+            Connections = connections;            
         }
-
         public IClient Client { get; set; }
-        public IConnection Connections { get; set; }
-        public ITariffPlan TariffPlan { get; set; }
+        public IConnection Connections { get; set; }        
     }
 }

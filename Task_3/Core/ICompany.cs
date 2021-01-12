@@ -6,10 +6,10 @@ namespace Core
 {
     public interface ICompany
     {
-        string Name { get; set; }
+        string Name { get;}
         IStation Station { get; set; }
         ICollection<IContract> Contracts { get; set; }
-        ICollection<IReport> Reports { get; set; }
-        void CalculateForEstimatedPeriod();
+        ICollection<IReportCalls> Reports { get; set; }
+        void CalculateForReportPeriod();
     }
 }

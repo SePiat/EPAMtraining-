@@ -49,7 +49,7 @@ namespace AutomaticTelephoneExchange
 
 
 
-            Company.CalculateForEstimatedPeriod();
+            Company.CalculateForReportPeriod();
 
 
             Console.ReadKey();
