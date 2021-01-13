@@ -12,5 +12,7 @@ namespace Core
         ICollection<IReportCalls> Reports { get; set; }
         void CalculateForReportPeriod();
         void GetDetailedСallReport(IClient client, string reportPeriod);
+        void GetDetailedСallReportForPreviosMonth(IClient client);
+        void GetDetailedСallReportByCallDate(DateTime dateTime);
     }
 }

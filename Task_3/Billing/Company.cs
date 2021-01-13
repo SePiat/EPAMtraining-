@@ -36,21 +36,92 @@ namespace Billing
             }
         }
 
-        public void GetDetailedСallReport(IClient client, string reportPeriod)
+        public void GetDetailedСallReportByCallDate(DateTime dateTime) 
         {
-            var raport = Reports.Where(x => x.Client_ == client).FirstOrDefault(x=>x.ReportPeriod==reportPeriod);
-            MessageHandlerEvent(this,$"Клиент {client.Name} {client.LastName}");
-            MessageHandlerEvent(this,$"Расчетный период  {reportPeriod}");            
-            foreach (var log in raport.Logs)
+            try
             {
-                MessageHandlerEvent(this, $"Исходящий номер {log.OutgoingNumber}, продолжительность соединения {log.DurationOfConversations}с, стоимость {log.Cost}руб.");
-                MessageHandlerEvent(this, $"Исходящий номер {log.OutgoingNumber}, продолжительность соединения {log.DurationOfConversations}с, стоимость {log.Cost}руб.");
-            }        
-
+                var raports = Reports.Where(x => x.ReportPeriod == dateTime.ToString("y"));                
+                if (raports != null)
+                {
+                    foreach (var raport in raports)
+                    {                        
+                        MessageHandlerEvent(this, $"Клиент {raport.Client_.Name} {raport.Client_.LastName}");
+                        MessageHandlerEvent(this, $"Дата поиска {dateTime.ToString("dd.MM.yyyy")}");
+                        var calls = raport.Logs.Where(x => x.DateConnection.ToString("dd.MM.yyyy") == dateTime.ToString("dd.MM.yyyy"));
+                        if (calls!=null)
+                        {
+                            foreach (var log in calls)
+                            {
+                                MessageHandlerEvent(this, $"Исходящий номер {log.OutgoingNumber}, дата звонка {log.DateConnection.ToString("dd.MM.yyyy HH:mm")}, продолжительность соединения {log.DurationOfConversations}с, стоимость {log.Cost}руб.");                                
+                            }
+                            MessageHandlerEvent(this, "");
+                        }                       
+                    }                    
+                }
+                else
+                {
+                    MessageHandlerEvent(this, $"На данную дату отчетов не обнаружено");
+                }
+            }
+            catch
+            {
+                throw new Exception("Ошибка в методе GetDetailedСallReportForPreviosMonth");
+            }
         }
 
-
-
+        public void GetDetailedСallReportForPreviosMonth(IClient client)
+        {
+            try
+            {
+                string previosMonth = DateTime.Now.AddMonths(-1).ToString("y");
+                var raport = Reports.Where(x => x.Client_ == client).FirstOrDefault(x => x.ReportPeriod == previosMonth);
+                MessageHandlerEvent(this, $"Клиент {client.Name} {client.LastName}");
+                MessageHandlerEvent(this, $"Расчетный период  {previosMonth}");
+                if (raport!=null)
+                {
+                    foreach (var log in raport.Logs)
+                    {
+                        MessageHandlerEvent(this, $"Исходящий номер {log.OutgoingNumber}, дата звонка {log.DateConnection.ToString("MM.dd.yyyy HH:mm")}, продолжительность соединения {log.DurationOfConversations}с, стоимость {log.Cost}руб.");
+                    }
+                    MessageHandlerEvent(this, "");
+                }
+                else
+                {
+                    MessageHandlerEvent(this, $"Для клиента {client.Name} {client.LastName} на данный расчетный период отчетов не обнаружено"); 
+                }
+               
+            }
+            catch
+            {
+                throw new Exception("Ошибка в методе GetDetailedСallReportForPreviosMonth");
+            }
+        }
+        public void GetDetailedСallReport(IClient client, string reportPeriod)
+        {
+            try
+            {
+                var raport = Reports.Where(x => x.Client_ == client).FirstOrDefault(x => x.ReportPeriod == reportPeriod);
+                MessageHandlerEvent(this, $"Клиент {client.Name} {client.LastName}");
+                MessageHandlerEvent(this, $"Расчетный период  {reportPeriod}");
+                if (raport != null)
+                {
+                    foreach (var log in raport.Logs)
+                    {
+                        MessageHandlerEvent(this, $"Исходящий номер {log.OutgoingNumber}, дата звонка {log.DateConnection.ToString("MM.dd.yyyy HH:mm")}, продолжительность соединения {log.DurationOfConversations}с, стоимость {log.Cost}руб.");
+                    }
+                    MessageHandlerEvent(this, "");
+                }
+                else
+                {
+                    MessageHandlerEvent(this, $"Для клиента {client.Name} {client.LastName} на данный расчетный период отчетов не обнаруженолибо периодн задан некорректно(Пример:'Сентябрь 2025')");
+                }
+                
+            }
+            catch
+            {
+                throw new Exception("Ошибка в методе GetDetailedСallReport");
+            }           
+        }
         public void CalculateForReportPeriod()
         {
             try
@@ -67,7 +138,7 @@ namespace Billing
                     //var previosMonth = CurrentDate.AddMonths(-1).Month; //Расчетный период-прошлый месяц                   
                     IList<IClient> ClientsToCalculte = ClientLogs.
                         Where(x => x.Connections.FinishConnection.Month == сurrentDate.Month/* previosMonthDate.Month*/)
-                        .Select(x => x.Client).ToList();
+                        .Select(x => x.Client).Distinct().ToList();
 
                     ClientsToCalculte.ToList().ForEach(x => CalculateClientForReportPeriod(x, сurrentDate));
                     ReportPeriods.Add(previosMonthYear);
@@ -113,6 +184,7 @@ namespace Billing
 
                 ClientLogs.ToList().ForEach(x => reportItems.
                 Add(new ReportItem(x.Connections.OutgoingNumber,
+                x.Connections.FinishConnection,
                 x.Connections.DurationConnection.Seconds,
                 x.Connections.DurationConnection.Seconds * tariffPlan.TariffForSecond)));               
             }

@@ -6,8 +6,9 @@ namespace Core
 {
     public interface IReportItem
     {
-         int OutgoingNumber { get; set; }
-         decimal DurationOfConversations { get; set; }
-         decimal Cost { get; set; }
+        int OutgoingNumber { get; set; }
+        DateTime DateConnection { get; set; }
+        decimal DurationOfConversations { get; set; }
+        decimal Cost { get; set; }
     }
 }
