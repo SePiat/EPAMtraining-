@@ -60,13 +60,9 @@ namespace AutomaticTelephoneExchange
             Company.CalculateForReportPeriod();
             //Company.GetDetailedСallReportForPreviosMonth(Client1);
             Company.GetDetailedСallReport(Client1, "Январь 2021");
-
-            DateTime timeForSerch = new DateTime(2021,01,13);
-            Company.GetDetailedСallReportByCallDate(timeForSerch);
-
-
-
-            
+            Company.GetDetailedСallReportByCallDate();
+            Company.GetDetailedСallReportByCallCost();
+            Company.GetDetailedСallReportByClient(Client1);
 
 
             Console.ReadKey();

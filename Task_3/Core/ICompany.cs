@@ -13,6 +13,8 @@ namespace Core
         void CalculateForReportPeriod();
         void GetDetailedСallReport(IClient client, string reportPeriod);
         void GetDetailedСallReportForPreviosMonth(IClient client);
-        void GetDetailedСallReportByCallDate(DateTime dateTime);
+        void GetDetailedСallReportByCallDate();
+        void GetDetailedСallReportByCallCost();
+        void GetDetailedСallReportByClient(IClient client);
     }
 }

@@ -36,36 +36,116 @@ namespace Billing
             }
         }
 
-        public void GetDetailedСallReportByCallDate(DateTime dateTime) 
+        public void GetDetailedСallReportByClient(IClient client)
         {
+            MessageHandlerEvent(this, $"Поиск по клиенту {client.Name} {client.LastName}");
+            var reports = Reports.Where(x => x.Client_ == client);
+
             try
             {
-                var raports = Reports.Where(x => x.ReportPeriod == dateTime.ToString("y"));                
-                if (raports != null)
+                MessageHandlerEvent(this, $"Клиент {client.Name} {client.LastName}");                
+                if (reports != null)
                 {
-                    foreach (var raport in raports)
-                    {                        
-                        MessageHandlerEvent(this, $"Клиент {raport.Client_.Name} {raport.Client_.LastName}");
-                        MessageHandlerEvent(this, $"Дата поиска {dateTime.ToString("dd.MM.yyyy")}");
-                        var calls = raport.Logs.Where(x => x.DateConnection.ToString("dd.MM.yyyy") == dateTime.ToString("dd.MM.yyyy"));
-                        if (calls!=null)
+                    foreach (var report in reports)
+                    {
+                        foreach (var log in report.Logs)
                         {
-                            foreach (var log in calls)
-                            {
-                                MessageHandlerEvent(this, $"Исходящий номер {log.OutgoingNumber}, дата звонка {log.DateConnection.ToString("dd.MM.yyyy HH:mm")}, продолжительность соединения {log.DurationOfConversations}с, стоимость {log.Cost}руб.");                                
-                            }
-                            MessageHandlerEvent(this, "");
-                        }                       
+                            MessageHandlerEvent(this, $"Исходящий номер {log.OutgoingNumber}, дата звонка {log.DateConnection.ToString("MM.dd.yyyy HH:mm")}, продолжительность соединения {log.DurationOfConversations}с, стоимость {log.Cost}руб.");
+                        }
                     }                    
+                    MessageHandlerEvent(this, "");
                 }
                 else
                 {
-                    MessageHandlerEvent(this, $"На данную дату отчетов не обнаружено");
+                    MessageHandlerEvent(this, $"Для клиента {client.Name} {client.LastName} отчетов не обнаружено");
                 }
             }
             catch
             {
-                throw new Exception("Ошибка в методе GetDetailedСallReportForPreviosMonth");
+                throw new Exception("GetDetailedСallReportByClient");
+            }
+        }
+        public void GetDetailedСallReportByCallCost()
+        {
+            Console.WriteLine("Введите стоимость для поиска звонков (пример 0,05)");
+            bool isCost = false;
+            while (isCost == false)
+            {
+                isCost = Decimal.TryParse(Console.ReadLine(), out decimal costCall);
+                if (isCost)
+                {
+                    try
+                    {
+                        foreach (var raport in Reports)
+                        {                            
+                            var calls = raport.Logs.Where(x => x.Cost==costCall).ToList();
+                            if (calls.Count()!=0)
+                            {
+                                MessageHandlerEvent(this, $"Клиент {raport.Client_.Name} {raport.Client_.LastName}");
+                                MessageHandlerEvent(this, $"Поиск по стоимости звонка {costCall}");
+                                foreach (var log in calls)
+                                {
+                                    MessageHandlerEvent(this, $"Исходящий номер {log.OutgoingNumber}, дата звонка {log.DateConnection.ToString("dd.MM.yyyy HH:mm")}, продолжительность соединения {log.DurationOfConversations}с, стоимость {log.Cost}руб.");
+                                }
+                                MessageHandlerEvent(this, "");
+                            }
+                        }
+                    }
+                    catch
+                    {
+                        throw new Exception("GetDetailedСallReportByCallCost");
+                    }
+                }
+                else
+                {
+                    MessageHandlerEvent(this, $"Не корректный ввод, введите стоимость звонка в предложенном формате (пример 0,05)");
+                }
+            }
+        }
+
+        public void GetDetailedСallReportByCallDate() 
+        {
+            Console.WriteLine("Введите дату для поиска звонков (пример 15.01.2021)");
+            bool isTime = false;
+            while (isTime==false)
+            { 
+                 isTime = DateTime.TryParse(Console.ReadLine(), out DateTime dateTime);
+            if (isTime)
+            {
+                try
+                {
+                    var raports = Reports.Where(x => x.ReportPeriod == dateTime.ToString("y"));
+                    if (raports != null)
+                    {
+                        foreach (var raport in raports)
+                        {
+                            MessageHandlerEvent(this, $"Клиент {raport.Client_.Name} {raport.Client_.LastName}");
+                            MessageHandlerEvent(this, $"Дата поиска {dateTime.ToString("dd.MM.yyyy")}");
+                            var calls = raport.Logs.Where(x => x.DateConnection.ToString("dd.MM.yyyy") == dateTime.ToString("dd.MM.yyyy"));
+                            if (calls != null)
+                            {
+                                foreach (var log in calls)
+                                {
+                                    MessageHandlerEvent(this, $"Исходящий номер {log.OutgoingNumber}, дата звонка {log.DateConnection.ToString("dd.MM.yyyy HH:mm")}, продолжительность соединения {log.DurationOfConversations}с, стоимость {log.Cost}руб.");
+                                }
+                                MessageHandlerEvent(this, "");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageHandlerEvent(this, $"На данную дату отчетов не обнаружено");
+                    }
+                }
+                catch
+                {
+                    throw new Exception("Ошибка в методе GetDetailedСallReportForPreviosMonth");
+                }
+            }
+            else
+            {
+                MessageHandlerEvent(this, $"Не корректный ввод, введите дату в предложенном формате (пример 15.01.2021)");
+            }
             }
         }
 
