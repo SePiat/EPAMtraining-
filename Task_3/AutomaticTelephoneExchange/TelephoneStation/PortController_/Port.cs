@@ -12,7 +12,7 @@ namespace AutomaticTelephoneExchange.TelephoneStation.CallController_
         public event EventHandler<bool> BusyPortEvent;
         public event EventHandler<IClientTerminal> PlugTerminalEvent;
         public event EventHandler<IClientTerminal> UnPlugTerminalEvent;
-        public Guid PortNumber { get; set; }
+        public Guid PortNumber { get;}
         public bool On { get; set; } = true;
         public bool Busy { get; set; } = false;
         public bool Rent { get; set; } = false;
@@ -50,7 +50,7 @@ namespace AutomaticTelephoneExchange.TelephoneStation.CallController_
             if (On)
             {
                 BusyPort();
-                PortOutgoingCallEvent?.Invoke(sender, callInfo);
+                PortOutgoingCallEvent?.Invoke(this, callInfo);
             };
         }
 
@@ -105,6 +105,17 @@ namespace AutomaticTelephoneExchange.TelephoneStation.CallController_
         {
             Busy = false;
             BusyPortEvent?.Invoke(this, Busy);
+        }
+
+        public void ClearEvents()
+        {
+            PortOutgoingCallEvent = null;
+            PortIncomingCallEvent = null;
+            DropIncomingCallEvent = null;
+            OnOfPortEvent = null;
+            BusyPortEvent = null;
+            PlugTerminalEvent = null;
+            UnPlugTerminalEvent = null;
         }
 
 

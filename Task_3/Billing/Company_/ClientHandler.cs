@@ -226,5 +226,10 @@ namespace Billing.Company_
                 throw new Exception("Ошибка в методе CalculateSubscriptionFeeMonthlyForReportPeriod");
             }
         }
+        public void ClearEvents() 
+        {
+            MessageHandlerEvent = null;
+            Company.Station.CallController.SaveConnection-= ConnectionHandler;
+        }
     }
 }

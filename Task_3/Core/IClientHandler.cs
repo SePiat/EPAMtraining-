@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Core
 {
@@ -11,5 +12,7 @@ namespace Core
         void GetDetailedСallReportByCallCost();
         void GetDetailedСallReportByClient(IClient client);
         void GetDetailedСallReportForReportPeriod(IClient client);
+        public void ClearEvents();
+        event EventHandler<string> MessageHandlerEvent;
     }
 }

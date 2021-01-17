@@ -21,7 +21,7 @@ namespace AutomaticTelephoneExchange.Client
             MessageHandlerEvent += ConsoleMessagePrinter.WriteMessageInConsole;
         }
 
-        public int ClientNumberOfTelephone { get; set; }
+        public int ClientNumberOfTelephone { get;}
         public bool Rent { get; set; } = false;
 
 
@@ -36,8 +36,8 @@ namespace AutomaticTelephoneExchange.Client
 
         public void IncomingCall(object sender, ICallInfo callInfo)
         {
-            MessageHandlerEvent(sender, $"Запрос входящего соединения на терминале {callInfo.OutgoingNumber} от абонента {callInfo.ClientNumberOfTelephone}");
-            MessageHandlerEvent(sender, $"Принять звонок Y/N");
+            MessageHandlerEvent(this, $"Запрос входящего соединения на терминале {callInfo.OutgoingNumber} от абонента {callInfo.ClientNumberOfTelephone}");
+            MessageHandlerEvent(this, $"Принять звонок Y/N");
             string answer = null;
             while (answer != "Y" && answer != "y" && answer != "N" && answer != "n")
             {
@@ -46,15 +46,15 @@ namespace AutomaticTelephoneExchange.Client
 
                 if (answer == "Y" || answer == "y")
                 {
-                    Answer(sender, callInfo);
+                    Answer(this, callInfo);
                 }
                 else if (answer == "N" || answer == "n")
                 {
-                    Drop(sender, callInfo);
+                    Drop(this, callInfo);
                 }
                 else
                 {
-                    MessageHandlerEvent(sender, "Некорректный ввод");
+                    MessageHandlerEvent(this, "Некорректный ввод");
                 }
             }
         }
@@ -68,13 +68,21 @@ namespace AutomaticTelephoneExchange.Client
         private void Answer(object sender, ICallInfo callInfo)
         {
             CurrentCallInfo = callInfo;
-            ConnectionEvent?.Invoke(sender, callInfo);
-            MessageHandlerEvent(sender, $"Установлено соединение между абонентом {callInfo.ClientNumberOfTelephone} с абонентом {callInfo.OutgoingNumber}");
+            ConnectionEvent?.Invoke(this, callInfo);
+            MessageHandlerEvent(this, $"Установлено соединение между абонентом {callInfo.ClientNumberOfTelephone} с абонентом {callInfo.OutgoingNumber}");
         }
         private void Drop(object sender, ICallInfo callInfo)
         {
             DropCallEvent?.Invoke(this, callInfo);
             CurrentCallInfo = null;
+        }
+
+        public void ClearEvents()
+        {
+            ConnectionEvent = null;
+            FinishConversationEvent = null;
+            DropCallEvent = null;
+            MessageHandlerEvent = null;
         }
 
     }

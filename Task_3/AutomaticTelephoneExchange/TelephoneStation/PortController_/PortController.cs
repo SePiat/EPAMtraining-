@@ -87,17 +87,10 @@ namespace AutomaticTelephoneExchange.TelephoneStation.CallController_
             }
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
+        public void ClearEvents()
+        {
+            IncomingCall = null;
+            MessageHandler = null;           
+        }
     }
 }

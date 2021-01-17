@@ -63,8 +63,12 @@ namespace AutomaticTelephoneExchange.TelephoneStation.CallController_
             {
                 throw new Exception("Exception on method DropCall");
             }
+        }
 
-
+        public void ClearEvents()
+        {
+            SaveConnection = null;
+            MessageHandler = null;
         }
 
     }

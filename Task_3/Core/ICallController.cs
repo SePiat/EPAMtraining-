@@ -12,5 +12,6 @@ namespace Core
         void DropCall(object sender, ICallInfo callInfo);
         event EventHandler<string> MessageHandler;
         event EventHandler<IConnection> SaveConnection;
+        void ClearEvents();
     }
 }
