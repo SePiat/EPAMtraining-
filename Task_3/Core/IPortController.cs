@@ -14,8 +14,7 @@ namespace Core
         void PlugTerminalEventHandler(object sender, IClientTerminal terminal);
         void UnPlugTerminalEventHandler(object sender, IClientTerminal terminal);
         void Drop(object sender, ICallInfo callInfo);
-        void ClearEvents();
-        event EventHandler<ICallInfo> IncomingCall;
+        void ClearEvents();        
         event EventHandler<string> MessageHandler;
     }
 }

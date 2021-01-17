@@ -15,7 +15,7 @@ namespace AutomaticTelephoneExchange
 
             IStation _Station = new Station();
             ICompany Company = new Billing.Company_.Company("Белтелеком", _Station);
-            ITariffPlan TarriffPlan = new Billing.Client_.TariffPlan();
+            ITariffPlan TarriffPlan = new TariffPlan();
            
             IPort port1 = _Station.GetFreePort();
             IClientTerminal terminal1 = _Station.GetClientTerminal(111111);
@@ -62,16 +62,9 @@ namespace AutomaticTelephoneExchange
             Company.ClientHandler.GetDetailedСallReportForReportPeriod(Client1);
             Company.ClientHandler.GetDetailedСallReportByCallDate();
             Company.ClientHandler.GetDetailedСallReportByClient(Client1);
-            Company.ClientHandler.GetDetailedСallReportByCallCost();
-
-            Company.ClientHandler.CalculateSubscriptionFeeMonthlyForReportPeriod();
-
-           
-
+            Company.ClientHandler.GetDetailedСallReportByCallCost(); 
 
             Console.ReadKey();
-
-
         }
 
     }

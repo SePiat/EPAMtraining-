@@ -6,8 +6,7 @@ namespace Core
     public interface IClientHandler
     {
         ICollection<IContract> Contracts { get; set; }
-        ICollection<IReportCalls> Reports { get; set; }
-        void CalculateSubscriptionFeeMonthlyForReportPeriod();
+        ICollection<IReportCalls> Reports { get; set; }        
         void GetDetailedСallReportByCallDate();
         void GetDetailedСallReportByCallCost();
         void GetDetailedСallReportByClient(IClient client);

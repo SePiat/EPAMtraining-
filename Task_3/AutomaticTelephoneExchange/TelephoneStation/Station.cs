@@ -4,7 +4,6 @@ using Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace AutomaticTelephoneExchange.Company
 {
@@ -15,30 +14,30 @@ namespace AutomaticTelephoneExchange.Company
         public Station()
         {
             PortController = new PortController();
-            CallController = new CallController(PortController);            
-        }        
+            CallController = new CallController(PortController);
+        }
         public ICollection<IClientTerminal> ClientTerminals { get; set; } = new List<IClientTerminal>();
 
         public IPort GetFreePort()
-        {            
+        {
             try
             {
-                IPort port = PortController.Ports.FirstOrDefault(x => x.Terminal == null&&x.Rent==false);
-                if (port!=null)
+                IPort port = PortController.Ports.FirstOrDefault(x => x.Terminal == null && x.Rent == false);
+                if (port != null)
                 {
                     return port;
                 }
                 else
                 {
                     IPort port1 = new Port(PortController);
-                    PortController.Ports.Add(port1);                   
+                    PortController.Ports.Add(port1);
                     return port1;
-                }                
+                }
             }
-            catch 
+            catch
             {
                 throw new Exception("Exception on method GetFreePort");
-            }           
+            }
         }
         public IClientTerminal GetClientTerminal(int ClientNumberOfTelephone)
         {

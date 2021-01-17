@@ -203,29 +203,7 @@ namespace Billing.Company_
                 }
             }
         }
-        public void CalculateSubscriptionFeeMonthlyForReportPeriod()
-        {
-            try
-            {
-                var сurrentDate = DateTime.Now;
-                var previosMonthDate = сurrentDate.AddMonths(-1);
-                var previosMonthYear = previosMonthDate.ToString("y");
-                if (ReportPeriods.Contains(previosMonthYear))
-                {
-                    throw new Exception("Расчет абонентской платы за данный период уже был произведен");
-                }
-                else
-                {
-                    IList<IClient> ClientsToCalculte = Contracts.Where(x => x.DateCreate.Month == сurrentDate/*previosMonthDate*/.Month).Select(x => x.Client).ToList();
-                    ClientsToCalculte.ToList().ForEach(x => x.Money -= x.TariffPlan.SubscriptionFeeMonthly);
-                    ReportPeriods.Add(previosMonthYear);
-                }
-            }
-            catch
-            {
-                throw new Exception("Ошибка в методе CalculateSubscriptionFeeMonthlyForReportPeriod");
-            }
-        }
+        
         public void ClearEvents() 
         {
             MessageHandlerEvent = null;

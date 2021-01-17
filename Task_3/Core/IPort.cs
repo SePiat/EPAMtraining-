@@ -16,6 +16,7 @@ namespace Core
         void PlugTerminal(IClientTerminal terminal);
         void UnPlugTerminal(IClientTerminal terminal);
         void ClearEvents();
+        void IncomingCall(ICallInfo callInfo);       
         IClientTerminal Terminal { get; set; }
         event EventHandler<ICallInfo> PortOutgoingCallEvent;
         event EventHandler<ICallInfo> PortIncomingCallEvent;

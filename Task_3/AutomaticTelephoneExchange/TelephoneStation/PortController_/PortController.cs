@@ -8,8 +8,7 @@ namespace AutomaticTelephoneExchange.TelephoneStation.CallController_
     public class PortController : IPortController
     {
         public ICollection<IPort> Ports { get; set; }
-
-        public event EventHandler<ICallInfo> IncomingCall;
+        
         public event EventHandler<string> MessageHandler;
 
         public PortController()
@@ -23,7 +22,7 @@ namespace AutomaticTelephoneExchange.TelephoneStation.CallController_
             IPort port = GetPortByOutgoingNumber(callInfo.OutgoingNumber);
             if (port!=null)
             {
-                IncomingCall?.Invoke(port, callInfo);
+                port.IncomingCall(callInfo);                
             }
             else
             {
@@ -88,8 +87,7 @@ namespace AutomaticTelephoneExchange.TelephoneStation.CallController_
         }
 
         public void ClearEvents()
-        {
-            IncomingCall = null;
+        {            
             MessageHandler = null;           
         }
     }

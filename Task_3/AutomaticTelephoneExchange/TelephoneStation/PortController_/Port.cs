@@ -19,8 +19,7 @@ namespace AutomaticTelephoneExchange.TelephoneStation.CallController_
         public IClientTerminal Terminal { get; set; }
         public Port(IPortController portController)
         {
-            PortNumber = Guid.NewGuid();
-            portController.IncomingCall += IncomingCall;
+            PortNumber = Guid.NewGuid();            
             DropIncomingCallEvent += portController.Drop;
             OnOfPortEvent += portController.OnOfPortEventHandler;
             BusyPortEvent += portController.BusyPortEventHandler;
@@ -29,19 +28,16 @@ namespace AutomaticTelephoneExchange.TelephoneStation.CallController_
             UnPlugTerminalEvent += portController.UnPlugTerminalEventHandler;
         }
 
-        private void IncomingCall(object sender, ICallInfo callInfo)
+        public void IncomingCall(ICallInfo callInfo)
         {
-            if (sender is IPort port && port.PortNumber == PortNumber)
+            if (On && !Busy)
             {
-                if (On && !Busy)
-                {
-                    BusyPort();
-                    PortIncomingCallEvent?.Invoke(sender, callInfo);
-                }
-                else
-                {
-                    DropIncomingCallEvent?.Invoke(sender, callInfo);
-                }
+                BusyPort();
+                PortIncomingCallEvent?.Invoke(this, callInfo);
+            }
+            else
+            {
+                DropIncomingCallEvent?.Invoke(this, callInfo);
             }
         }
 
