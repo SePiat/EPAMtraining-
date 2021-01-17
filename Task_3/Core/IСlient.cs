@@ -8,7 +8,8 @@
         decimal Money { get; set; }
         IClientTerminal ClientTerminal { get; set; }
         IPort Port { get; set; }
-        void AcceptClientTerminalAndPort(IClientTerminal terminal, IPort port);
+        ITariffPlan TariffPlan { get; set; }
+        void AcceptClientTerminalAndPort(IClientTerminal terminal, IPort port, ITariffPlan tariffPlan);
         void ReturnClientTerminalAndPort();
         void PlugClientTerminalInPort();
         void UnPlugClientTerminalInPort();

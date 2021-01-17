@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Core
 {
@@ -12,7 +10,7 @@ namespace Core
         public bool Rent { get; set; }
         void OutgoingCall(int callNumber);
         void IncomingCall(object sender, ICallInfo callInfo);
-        void FinishConversation();       
+        void FinishConversation();
 
         event EventHandler<ICallInfo> ConnectionEvent;
         event EventHandler<ICallInfo> CallEvent;

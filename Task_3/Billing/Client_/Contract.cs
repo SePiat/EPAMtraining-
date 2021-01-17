@@ -1,11 +1,9 @@
 ﻿using Core;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Billing
+namespace Billing.Client_
 {
-    public class Contract: IContract
+    public class Contract : IContract
     {
         public Contract(ICompany company, IClient client, DateTime dateCreate, ITariffPlan tariffPlan)
         {
@@ -17,8 +15,8 @@ namespace Billing
 
         public ICompany Company { get; set; }
         public IClient Client { get; set; }
-        public DateTime DateCreate { get; set; }       
-        public ITariffPlan TariffPlan {get;set;}
+        public DateTime DateCreate { get; set; }
+        public ITariffPlan TariffPlan { get; set; }
 
     }
 }

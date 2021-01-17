@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Core
+﻿namespace Core
 {
     public interface ITariffPlan
     {
-         decimal SubscriptionFeeMonthly { get; set; }
-         decimal TariffForSecond { get; set; }
+        decimal SubscriptionFeeMonthly { get; set; }
+        decimal TariffForSecond { get; set; }
     }
 }

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Core
+﻿namespace Core
 {
     public interface IClientLog
     {
-        IClient Client { get; set; }
-        IConnection Connections { get; set; }       
+        IClient Client { get; }
+        IConnection Connections { get; }
+        decimal Cost { get; }
     }
 }

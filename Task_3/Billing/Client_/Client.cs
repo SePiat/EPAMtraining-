@@ -1,9 +1,7 @@
 ﻿using Core;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Billing
+namespace Billing.Client_
 {
     public class Client : IClient
     {
@@ -18,14 +16,16 @@ namespace Billing
         public string Birthday { get; set; }
         public decimal Money { get; set; } = 100;
         public IClientTerminal ClientTerminal { get; set; }
-        public IPort Port { get; set; }        
+        public IPort Port { get; set; }
+        public ITariffPlan TariffPlan { get; set; }
 
-        public void AcceptClientTerminalAndPort(IClientTerminal terminal, IPort port)
-        {           
-            if (terminal.Rent!=true)
+        public void AcceptClientTerminalAndPort(IClientTerminal terminal, IPort port, ITariffPlan tariffPlan)
+        {
+            if (terminal.Rent != true)
             {
                 terminal.Rent = true;
                 ClientTerminal = terminal;
+                TariffPlan = tariffPlan;
             }
             else
             {
@@ -44,7 +44,7 @@ namespace Billing
         }
         public void ReturnClientTerminalAndPort()
         {
-            if (Port!=null)
+            if (Port != null)
             {
                 Port.Rent = false;
                 Port = null;
@@ -58,7 +58,7 @@ namespace Billing
 
         public void PlugClientTerminalInPort()
         {
-            if (ClientTerminal!=null&&Port!=null)
+            if (ClientTerminal != null && Port != null)
             {
                 Port.PlugTerminal(ClientTerminal);
             }
@@ -70,7 +70,7 @@ namespace Billing
         public void UnPlugClientTerminalInPort()
         {
             if (ClientTerminal != null && Port != null)
-            {               
+            {
                 Port.UnPlugTerminal(ClientTerminal);
             }
             else
@@ -78,14 +78,14 @@ namespace Billing
                 throw new Exception("У абонента не имеется необходимого для подлкючения оборудования");
             }
         }
-       
+
         public void PutMoney(decimal money)
         {
             Money += money;
         }
-       
+
         public void TakeMoney(decimal money)
-        {            
+        {
             Money -= money;
         }
     }

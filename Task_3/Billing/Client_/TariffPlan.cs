@@ -1,6 +1,6 @@
 ﻿using Core;
 
-namespace Billing
+namespace Billing.Client_
 {
     public class TariffPlan : ITariffPlan
     {
