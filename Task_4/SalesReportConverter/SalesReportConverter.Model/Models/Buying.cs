@@ -6,6 +6,7 @@ namespace SalesReportConverter.Model.Models
 {
     public class Buying
     {
+        public int Id { get; set; }
         public virtual Manager Manager {get;set;}
         public virtual Buyer Buyer { get; set; }
         public virtual Product Product { get; set; }
