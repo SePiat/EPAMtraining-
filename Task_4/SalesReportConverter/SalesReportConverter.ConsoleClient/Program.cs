@@ -1,8 +1,13 @@
-﻿using SalesReportConverter.DAL.Context;
+﻿/*using SalesReportConverter.DAL.Context;
 using SalesReportConverter.DAL.Repositories;
 using SalesReportConverter.DAL.Repositories.Abstractions;
-using SalesReportConverter.Model.Models;
+using SalesReportConverter.Model.Models;*/
 using System;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Configuration;
+using SalesReportConverter.BL;
+using System.IO;
 
 namespace SalesReportConverter.ConsoleClient
 {
@@ -10,21 +15,25 @@ namespace SalesReportConverter.ConsoleClient
     {
         static void Main(string[] args)
         {
+            string filePath = ConfigurationManager.AppSettings.Get("WatcherFolderPath");
+            
+            
+            
+             
+            Watcher watcher = new Watcher(filePath);
 
-           
-            using (ApplicationDbContext db = new ApplicationDbContext())
+              watcher.AsyncWatch();
+
+         /*   using (StreamWriter sr = new StreamWriter(ConfigurationManager.AppSettings.Get("Test")))
             {
-                IUnitOfWork unit = new UnitOfWork(db);
-
-                
-
-                Buyer buyer = new Buyer() { Name="UnitOfWorkIsWorks", SecondName= "UnitOfWorkIsWorks" };
-                unit.Buyers.Add(buyer);
-                unit.Save();                
-            }
+                sr.Write("TestLine");
+            } */          
            
             Console.WriteLine("Hello World!");
+            Console.ReadLine();
+            watcher.StopWatch();
+            watcher.Dispose();
         }
-            
+
     }
 }

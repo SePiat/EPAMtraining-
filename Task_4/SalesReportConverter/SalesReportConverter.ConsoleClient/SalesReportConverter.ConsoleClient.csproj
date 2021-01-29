@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SalesReportConverter.DAL\SalesReportConverter.DAL.csproj" />
+    <ProjectReference Include="..\SalesReportConverter.BL\SalesReportConverter.BL.csproj" />
   </ItemGroup>
 
 </Project>
