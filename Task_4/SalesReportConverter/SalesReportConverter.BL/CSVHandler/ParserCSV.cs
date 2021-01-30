@@ -1,4 +1,5 @@
-﻿using SalesReportConverter.BL.WatcherService;
+﻿using SalesReportConverter.BL.Abstractions;
+using SalesReportConverter.BL.WatcherService;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -8,33 +9,36 @@ using System.Text;
 
 namespace SalesReportConverter.BL.CSVHandler
 {
-    public class ParserCSV
-    {
-        public ParserCSV(Watcher watcher)
+    public class ParserCSV: IParserCSV
+    {  
+        public ICollection<CSVModel> GetCSVModels(FileSystemEventArgs e)
         {
-            watcher.OnCreatedReportEvent += CSVModelBuilder;
-        }
-        public ICollection<CSVModel> CSVmodels = new List<CSVModel>();
-
-        private void CSVModelBuilder(object sender, FileSystemEventArgs e)
-        {
-            Reader reader = new Reader();
-            ICollection<string> CSVItems = reader.ReadStrings(e.Name);
-            string nameManager = GetNameFromFileName(e.Name);
-            DateTime reportDate = GetDateTimeFromFileName(e.Name);
-
-            foreach (var item in CSVItems)
+            ICollection<CSVModel> CSVmodels = new List<CSVModel>();
+            try
             {
-                var splitSting = item.Split(new char[] { ';', ',' }); ;
-                DateTime purchaseDate = GetPurchaseDateTimeFromString(splitSting[0]);
-                string client = splitSting[1];
-                string product = splitSting[2];
-                decimal cost = GetCostFromString(splitSting[3]);
+                IReader reader = new Reader();
+                ICollection<string> CSVItems = reader.ReadStrings(e.Name);
+                string nameManager = GetNameFromFileName(e.Name);
+                DateTime reportDate = GetDateTimeFromFileName(e.Name);
 
-                CSVmodels.Add(new CSVModel(nameManager, reportDate, purchaseDate, client, product, cost));
-                Console.WriteLine(item);
-            }            
-        }        
+                foreach (var item in CSVItems)
+                {
+                    var splitSting = item.Split(new char[] { ';', ',' }); ;
+                    DateTime purchaseDate = GetPurchaseDateTimeFromString(splitSting[0]);
+                    string client = splitSting[1];
+                    string product = splitSting[2];
+                    decimal cost = GetCostFromString(splitSting[3]);
+                    CSVmodels.Add(new CSVModel(nameManager, reportDate, purchaseDate, client, product, cost));
+                }
+            }
+            catch
+            {
+                throw new Exception("Ошибка в методе GetCSVModels");
+            }
+            BackUp(e);
+            return CSVmodels;            
+        }
+
         private DateTime GetPurchaseDateTimeFromString(string date)
         {
             var stringPurchaseDate = date.Split('.');
@@ -108,6 +112,21 @@ namespace SalesReportConverter.BL.CSVHandler
                 throw new Exception("Неверный формат названия файла отёта (пример:Ivanov_19112012.csv ) ");
             }
             
+        }
+
+        private void BackUp(FileSystemEventArgs e)
+        {
+            try
+            {
+                string filePath = ConfigurationManager.AppSettings.Get("WatcherFolderPath");
+                string filePuth= ConfigurationManager.AppSettings.Get("WatcherFolderPath") +"\\"+e.Name;
+                FileInfo fileInfo = new FileInfo(ConfigurationManager.AppSettings.Get("WatcherFolderPath") + "\\" + e.Name);
+                fileInfo.MoveTo(ConfigurationManager.AppSettings.Get("HandledFilesPath")+e.Name);
+            }
+            catch (IOException ex)
+            {
+                throw new InvalidOperationException("Ошибка в методе BackUp", ex);
+            }
         }
 
     }

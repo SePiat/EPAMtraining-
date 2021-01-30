@@ -1,13 +1,14 @@
-﻿using System;
+﻿using SalesReportConverter.BL.Abstractions;
+using System;
 using System.Configuration;
 using System.IO;
 
 
 namespace SalesReportConverter.BL.WatcherService
 {
-    public class Watcher
+    public class Watcher: IWatcher
     {
-        public EventHandler<FileSystemEventArgs> OnCreatedReportEvent;
+        public EventHandler<FileSystemEventArgs> OnCreatedReportEvent { get; set; }
         public Watcher()
         {            
             watcher = new FileSystemWatcher();           
@@ -16,8 +17,7 @@ namespace SalesReportConverter.BL.WatcherService
             watcher.Filter = "*.csv";
             watcher.Created += OnCreated;
             watcher.Deleted += OnDeleted;
-        }
-        string path = ConfigurationManager.AppSettings.Get("Test");
+        }       
         
         private FileSystemWatcher watcher;        
         public void Watch()

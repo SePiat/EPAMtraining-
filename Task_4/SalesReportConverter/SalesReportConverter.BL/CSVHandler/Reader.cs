@@ -1,4 +1,5 @@
-﻿using SalesReportConverter.BL.WatcherService;
+﻿using SalesReportConverter.BL.Abstractions;
+using SalesReportConverter.BL.WatcherService;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace SalesReportConverter.BL.CSVHandler
 {
-    public class Reader
+    public class Reader:IReader
     {  
         private readonly string filePath = ConfigurationManager.AppSettings.Get("WatcherFolderPath");
         public ICollection<string> ReadStrings(string nameFile)
@@ -24,11 +25,13 @@ namespace SalesReportConverter.BL.CSVHandler
                     }                    
                 }                
             }
-            catch (Exception e)
+            catch (IOException e)
             {
-                Console.WriteLine($"Error in method ReadTextString() whith {e} ");
+                throw new InvalidOperationException($"Ошибка в методе ReadStrings, {e}");
             }
             return strings;
         }
+
+
     }
 }

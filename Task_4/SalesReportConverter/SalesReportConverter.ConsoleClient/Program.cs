@@ -10,6 +10,7 @@ using SalesReportConverter.BL;
 using System.IO;
 using SalesReportConverter.BL.WatcherService;
 using SalesReportConverter.BL.CSVHandler;
+using SalesReportConverter.BL.Abstractions;
 
 namespace SalesReportConverter.ConsoleClient
 {
@@ -22,13 +23,18 @@ namespace SalesReportConverter.ConsoleClient
 
 
 
-            Watcher watcher = new Watcher();
+            IWatcher watcher = new Watcher();
             watcher.Watch();
-            ParserCSV parser = new ParserCSV(watcher);
+            TaskManager taskManager = new TaskManager(watcher);
 
+            
 
             Console.WriteLine("Hello World!");
+
+           
             Console.ReadLine();
+            Task.WaitAll();
+            var result = taskManager.CSVModels;
             watcher.StopWatch();
             watcher.Dispose();
         }

@@ -1,4 +1,5 @@
-﻿using SalesReportConverter.BL.CSVHandler;
+﻿using SalesReportConverter.BL.Abstractions;
+using SalesReportConverter.BL.CSVHandler;
 using SalesReportConverter.BL.WatcherService;
 using System;
 using System.Collections.Generic;
@@ -10,21 +11,37 @@ namespace SalesReportConverter.BL
 {
     public class TaskManager
     {
-        /*public TaskManager(Watcher watcher)
+        private IWatcher _watcher;
+        public TaskManager(IWatcher watcher)
         {
+            _watcher = watcher;
             watcher.OnCreatedReportEvent += CSVTaskHandler;
         }
+       public List<CSVModel> CSVModels { get; set; } = new List<CSVModel>();
 
         private void CSVTaskHandler(object sender, FileSystemEventArgs e)
         {
-            Reader reader = new Reader();
-            ICollection<string> CSVReport = reader.ReadStrings(e.Name);
-            foreach (var item in CSVReport)
+            var task1 =Task.Factory.StartNew(() =>
             {
-                Console.WriteLine(item);
-            }
+                ParserCSV parserCSV = new ParserCSV();
+                ICollection<CSVModel> models = parserCSV.GetCSVModels(e);
+                lock (this)
+                {
+                    CSVModels.AddRange(models);
+                }
+               
+                Console.WriteLine(CSVModels.Count);
+            });            
+        }
 
-            // var SCVTasck = Task.Factory.StartNew(() => Console.WriteLine("Hello Task!"));
-        }*/
+        public void Dispose()
+        {
+            if (_watcher != null)
+            {
+                _watcher.OnCreatedReportEvent += CSVTaskHandler;
+                GC.SuppressFinalize(this);
+                _watcher = null;
+            }
+        }
     }
 }
