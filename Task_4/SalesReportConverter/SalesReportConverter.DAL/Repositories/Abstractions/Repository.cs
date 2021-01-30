@@ -29,12 +29,12 @@ namespace SalesReportConverter.DAL.Repositories.Abstractions
             table.Remove(existing);
         }
 
-        public T FirstOrDefault(IEnumerable<T> obj)
+        public T FirstOrDefault_(IEnumerable<T> obj)
         {
             return obj.FirstOrDefault();
         }
 
-        public T FirstOrDefault_(System.Linq.Expressions.Expression<Func<T, bool>> predicate)
+        public T FirstOrDefault(System.Linq.Expressions.Expression<Func<T, bool>> predicate)
         {
 
             return table.FirstOrDefault(predicate);

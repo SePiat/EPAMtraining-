@@ -1,6 +1,9 @@
 ﻿using SalesReportConverter.BL.Abstractions;
 using SalesReportConverter.BL.CSVHandler;
 using SalesReportConverter.BL.WatcherService;
+using SalesReportConverter.DAL.Context;
+using SalesReportConverter.DAL.Repositories;
+using SalesReportConverter.DAL.Repositories.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,10 +13,10 @@ using System.Threading.Tasks;
 namespace SalesReportConverter.BL
 {
     public class TaskManager
-    {
+    {        
         private IWatcher _watcher;
         public TaskManager(IWatcher watcher)
-        {
+        {            
             _watcher = watcher;
             watcher.OnCreatedReportEvent += CSVTaskHandler;
         }
@@ -25,11 +28,8 @@ namespace SalesReportConverter.BL
             {
                 ParserCSV parserCSV = new ParserCSV();
                 ICollection<CSVModel> models = parserCSV.GetCSVModels(e);
-                lock (this)
-                {
-                    CSVModels.AddRange(models);
-                }
-               
+                TransactionManager transactionManager = new TransactionManager();
+                transactionManager.CreateTransaction(models); 
                 Console.WriteLine(CSVModels.Count);
             });            
         }

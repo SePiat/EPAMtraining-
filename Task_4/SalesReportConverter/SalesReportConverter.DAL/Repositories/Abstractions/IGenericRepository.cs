@@ -21,8 +21,8 @@ namespace SalesReportConverter.DAL.Repositories.Abstractions
         IEnumerable<T> Where1(Func<T, bool> predicate);
         IEnumerable<T> Where(System.Linq.Expressions.Expression<Func<T, bool>> predicate);
         IEnumerable<T> Skip(int count);
-        T FirstOrDefault(IEnumerable<T> obj);
-        T FirstOrDefault_(System.Linq.Expressions.Expression<Func<T, bool>> predicate);
+        T FirstOrDefault_(IEnumerable<T> obj);
+        T FirstOrDefault(System.Linq.Expressions.Expression<Func<T, bool>> predicate);
         IQueryable<T> AsQueryable();
         IEnumerable<T> OrderBy(Func<T, string> predicate);
         IEnumerable<T> OrderByDescending(Func<T, string> predicate);

@@ -10,7 +10,7 @@ namespace SalesReportConverter.Model.Models
         public virtual Manager Manager {get;set;}
         public virtual Buyer Buyer { get; set; }
         public virtual Product Product { get; set; }
-        public DateTime DateTime { get; set; }
+        public DateTime PurchaseDate { get; set; }
         public decimal Cost { get; set; }
     }
 }
