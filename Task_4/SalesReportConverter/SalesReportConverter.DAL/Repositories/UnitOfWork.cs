@@ -1,6 +1,5 @@
 ﻿using SalesReportConverter.DAL.Context;
 using SalesReportConverter.DAL.Repositories.Abstractions;
-using SalesReportConverter.DAL.Repositories.ConcreteRepositories;
 using SalesReportConverter.Model.Models;
 using System;
 using System.Threading.Tasks;
@@ -10,10 +9,10 @@ namespace SalesReportConverter.DAL.Repositories
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDbContext _context;
-        private  IGenericRepository<Buyer> buyersRepository;
-        private  IGenericRepository<Buying> buyingsRepository;
-        private  IGenericRepository<Manager> managersRepository;
-        private  IGenericRepository<Product> productsRepository;
+        private IGenericRepository<Buyer> buyersRepository;
+        private IGenericRepository<Buying> buyingsRepository;
+        private IGenericRepository<Manager> managersRepository;
+        private IGenericRepository<Product> productsRepository;
 
         public IGenericRepository<Buyer> Buyers
         {
@@ -60,25 +59,12 @@ namespace SalesReportConverter.DAL.Repositories
             }
         }
 
-      /*  public IGenericRepository<Buyer> Buyers => buyersRepository;
-        public IGenericRepository<Buying> Buyings => buyingsRepository;
-        public IGenericRepository<Manager> Managers => managersRepository;
-        public IGenericRepository<Product> Products => productsRepository;*/
-
-        public UnitOfWork(ApplicationDbContext context/*,
-          IGenericRepository<Buyer> buyersRepository,
-          IGenericRepository<Buying> buyingsRepository,
-          IGenericRepository<Manager> managersRepository,
-          IGenericRepository<Product> productsRepository*/)
+        public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
-           /* this.buyersRepository = buyersRepository;
-            this.buyingsRepository = buyingsRepository;
-            this.managersRepository = managersRepository;
-            this.productsRepository = productsRepository;*/
         }
 
-        private bool disposed = false;      
+        private bool disposed = false;
 
         public virtual void Dispose(bool disposing)
         {

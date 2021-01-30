@@ -1,38 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-//using System.Configuration;
+using System.Configuration;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 
-namespace SalesReportConverter.BL
+namespace SalesReportConverter.BL.WatcherService
 {
     public class Watcher
     {
-        public Watcher(string path)
-        {
-            Path = path;
-        }
-        FileSystemWatcher watcher = new FileSystemWatcher();
-        private bool IsWatch = true;
-        private string Path { get; set; }
-
-        public async Task AsyncWatch()
-        {
-            await Task.Run(() => Watch());
-        }
-        public void Watch()
+        public EventHandler<FileSystemEventArgs> OnCreatedReportEvent;
+        public Watcher()
         {            
-            watcher.Path = Path;
+            watcher = new FileSystemWatcher();           
+            watcher.Path = ConfigurationManager.AppSettings.Get("WatcherFolderPath");
             watcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.DirectoryName;
-            watcher.Filter = "*.txt";
+            watcher.Filter = "*.csv";
             watcher.Created += OnCreated;
             watcher.Deleted += OnDeleted;
+        }
+        string path = ConfigurationManager.AppSettings.Get("Test");
+        
+        private FileSystemWatcher watcher;        
+        public void Watch()
+        {
             watcher.EnableRaisingEvents = true;
-            while (IsWatch) ;
         }
 
         private void OnDeleted(object sender, FileSystemEventArgs e)
@@ -43,7 +33,8 @@ namespace SalesReportConverter.BL
         private void OnCreated(object source, FileSystemEventArgs e)
         {
             Console.WriteLine($"File: {e.FullPath} {e.ChangeType}");
-        }       
+            OnCreatedReportEvent?.Invoke(this, e);
+        }
 
         public void StopWatch()
         {

@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using System.Configuration;
 using SalesReportConverter.BL;
 using System.IO;
+using SalesReportConverter.BL.WatcherService;
+using SalesReportConverter.BL.CSVHandler;
 
 namespace SalesReportConverter.ConsoleClient
 {
@@ -16,19 +18,15 @@ namespace SalesReportConverter.ConsoleClient
         static void Main(string[] args)
         {
             string filePath = ConfigurationManager.AppSettings.Get("WatcherFolderPath");
-            
-            
-            
-             
-            Watcher watcher = new Watcher(filePath);
 
-              watcher.AsyncWatch();
 
-         /*   using (StreamWriter sr = new StreamWriter(ConfigurationManager.AppSettings.Get("Test")))
-            {
-                sr.Write("TestLine");
-            } */          
-           
+
+
+            Watcher watcher = new Watcher();
+            watcher.Watch();
+            ParserCSV parser = new ParserCSV(watcher);
+
+
             Console.WriteLine("Hello World!");
             Console.ReadLine();
             watcher.StopWatch();
