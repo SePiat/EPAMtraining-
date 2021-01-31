@@ -18,15 +18,15 @@ namespace SalesReportConverter.BL
         public TaskManager(IWatcher watcher)
         {            
             _watcher = watcher;
-            watcher.OnCreatedReportEvent += CreateTask;
+            watcher.ThereIsFileToHandlingEvent += CreateTask;
         }    
 
-        public void CreateTask(object sender, FileSystemEventArgs e)
+        public void CreateTask(object sender, string fileName)
         {
             var task1 =Task.Factory.StartNew(() =>
             {
                 ParserCSV parserCSV = new ParserCSV();
-                ICollection<CSVModel> modelsCSV = parserCSV.GetModels(e);
+                ICollection<CSVModel> modelsCSV = parserCSV.GetModels(fileName);
                 IDataModelsManager<CSVModel> dataModelsManager = new DataModelsManagerCSV();
                 dataModelsManager.HandleDataModels(modelsCSV);                
             });            
@@ -36,7 +36,7 @@ namespace SalesReportConverter.BL
         {
             if (_watcher != null)
             {
-                _watcher.OnCreatedReportEvent += CreateTask;
+                _watcher.ThereIsFileToHandlingEvent -= CreateTask;
                 GC.SuppressFinalize(this);
                 _watcher = null;
             }

@@ -1,7 +1,7 @@
 ﻿
 namespace SalesReportConverter.ServiceClient
 {
-    partial class Service1
+    partial class ReportConverterService
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,8 +29,12 @@ namespace SalesReportConverter.ServiceClient
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.ServiceName = "Service1";
+            // 
+            // ReportConverterService
+            // 
+            this.CanPauseAndContinue = true;
+            this.ServiceName = "ReportConverterService";
+
         }
 
         #endregion

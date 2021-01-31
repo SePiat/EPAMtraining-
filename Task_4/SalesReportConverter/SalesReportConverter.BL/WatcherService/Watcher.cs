@@ -2,13 +2,13 @@
 using System;
 using System.Configuration;
 using System.IO;
-
+using System.Linq;
 
 namespace SalesReportConverter.BL.WatcherService
 {
     public class Watcher: IWatcher
     {
-        public event EventHandler<FileSystemEventArgs> OnCreatedReportEvent;
+        public event EventHandler<string> ThereIsFileToHandlingEvent;        
         public event EventHandler<string> MessageHandlerEvent;
         public Watcher()
         {            
@@ -20,10 +20,13 @@ namespace SalesReportConverter.BL.WatcherService
             watcher.Deleted += OnDeleted;           
         }       
         
-        private FileSystemWatcher watcher;        
+        private FileSystemWatcher watcher; 
+        
+        
         public void Watch()
-        {
+        {            
             watcher.EnableRaisingEvents = true;
+            CheckFolderByExistFiles();
         }
 
         private void OnDeleted(object sender, FileSystemEventArgs e)
@@ -34,12 +37,24 @@ namespace SalesReportConverter.BL.WatcherService
         private void OnCreated(object source, FileSystemEventArgs e)
         {
             MessageHandlerEvent?.Invoke(this, $"File: {e.FullPath} {e.ChangeType}");
-            OnCreatedReportEvent?.Invoke(this, e);
+            ThereIsFileToHandlingEvent?.Invoke(this, e.Name);
         }
 
         public void StopWatch()
         {
             watcher.EnableRaisingEvents = false;
+        }
+
+        private void CheckFolderByExistFiles()
+        {
+            if (new DirectoryInfo(ConfigurationManager.AppSettings.Get("WatcherFolderPath")).GetFiles("*.csv").Any(x => x.Extension == ".csv"))
+            {
+                FileInfo[] files = new DirectoryInfo(ConfigurationManager.AppSettings.Get("WatcherFolderPath")).GetFiles("*.csv");
+                foreach (var file in files)
+                {
+                    ThereIsFileToHandlingEvent?.Invoke(this, file.Name);
+                }
+            }
         }
         public void Dispose()
         {

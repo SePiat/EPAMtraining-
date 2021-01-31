@@ -11,15 +11,15 @@ namespace SalesReportConverter.BL.CSVHandler
 {
     public class ParserCSV: IParser<CSVModel>
     {  
-        public ICollection<CSVModel> GetModels(FileSystemEventArgs e)
+        public ICollection<CSVModel> GetModels(string fileName)
         {
             ICollection<CSVModel> CSVmodels = new List<CSVModel>();
             try
             {
                 IReader reader = new Reader();
-                ICollection<string> CSVItems = reader.ReadStrings(e.Name);
-                string nameManager = GetNameFromFileName(e.Name);
-                DateTime reportDate = GetDateTimeFromFileName(e.Name);
+                ICollection<string> CSVItems = reader.ReadStrings(fileName);
+                string nameManager = GetNameFromFileName(fileName);
+                DateTime reportDate = GetDateTimeFromFileName(fileName);
 
                 foreach (var item in CSVItems)
                 {
@@ -31,11 +31,11 @@ namespace SalesReportConverter.BL.CSVHandler
                     CSVmodels.Add(new CSVModel(nameManager, reportDate, purchaseDate, client, product, cost));
                 }
             }
-            catch
+            catch (IOException ex)
             {
-                throw new Exception("Ошибка в методе GetModels");
+                throw new InvalidOperationException("Ошибка в методе GetModels", ex);
             }
-            BackUp(e);
+            BackUp(fileName);
             return CSVmodels;            
         }
 
@@ -114,14 +114,14 @@ namespace SalesReportConverter.BL.CSVHandler
             
         }
 
-        private void BackUp(FileSystemEventArgs e)
+        private void BackUp(string fileName)
         {
             try
             {
                 string filePath = ConfigurationManager.AppSettings.Get("WatcherFolderPath");
-                string filePuth= ConfigurationManager.AppSettings.Get("WatcherFolderPath") +"\\"+e.Name;
-                FileInfo fileInfo = new FileInfo(ConfigurationManager.AppSettings.Get("WatcherFolderPath") + "\\" + e.Name);
-                fileInfo.MoveTo(ConfigurationManager.AppSettings.Get("HandledFilesPath")+e.Name);
+                string filePuth= ConfigurationManager.AppSettings.Get("WatcherFolderPath") +"\\"+ fileName;
+                FileInfo fileInfo = new FileInfo(ConfigurationManager.AppSettings.Get("WatcherFolderPath") + "\\" + fileName);
+                fileInfo.MoveTo(ConfigurationManager.AppSettings.Get("HandledFilesPath")+ fileName);
             }
             catch (IOException ex)
             {
