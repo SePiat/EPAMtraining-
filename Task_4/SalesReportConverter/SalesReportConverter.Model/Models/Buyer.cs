@@ -6,12 +6,8 @@ namespace SalesReportConverter.Model.Models
 {
     public class Buyer
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string SecondName { get; set; }
-        public int Age { get; set; }
-        public virtual ICollection<Buying> Buyings { get; set; }
-        
+        public int Id { get; set; }        
+        public string FullName { get; set; }
 
     }
 }

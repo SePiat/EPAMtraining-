@@ -1,13 +1,12 @@
 ﻿using SalesReportConverter.BL.CSVHandler;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Text;
 
 namespace SalesReportConverter.BL.Abstractions
 {
-    public interface IParserCSV
+    public interface IDataModelsManager<T> where T : class
     {
-        ICollection<CSVModel> GetCSVModels(FileSystemEventArgs e);        
+        void HandleDataModels(ICollection<T> models);
     }
 }

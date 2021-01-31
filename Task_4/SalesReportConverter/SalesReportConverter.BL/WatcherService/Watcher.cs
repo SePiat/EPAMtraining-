@@ -8,7 +8,8 @@ namespace SalesReportConverter.BL.WatcherService
 {
     public class Watcher: IWatcher
     {
-        public EventHandler<FileSystemEventArgs> OnCreatedReportEvent { get; set; }
+        public event EventHandler<FileSystemEventArgs> OnCreatedReportEvent;
+        public event EventHandler<string> MessageHandlerEvent;
         public Watcher()
         {            
             watcher = new FileSystemWatcher();           
@@ -16,7 +17,7 @@ namespace SalesReportConverter.BL.WatcherService
             watcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.DirectoryName;
             watcher.Filter = "*.csv";
             watcher.Created += OnCreated;
-            watcher.Deleted += OnDeleted;
+            watcher.Deleted += OnDeleted;           
         }       
         
         private FileSystemWatcher watcher;        
@@ -27,12 +28,12 @@ namespace SalesReportConverter.BL.WatcherService
 
         private void OnDeleted(object sender, FileSystemEventArgs e)
         {
-            Console.WriteLine($"File: {e.FullPath} {e.ChangeType}");
+            MessageHandlerEvent?.Invoke(this, $"File: {e.FullPath} {e.ChangeType}");            
         }
 
         private void OnCreated(object source, FileSystemEventArgs e)
         {
-            Console.WriteLine($"File: {e.FullPath} {e.ChangeType}");
+            MessageHandlerEvent?.Invoke(this, $"File: {e.FullPath} {e.ChangeType}");
             OnCreatedReportEvent?.Invoke(this, e);
         }
 

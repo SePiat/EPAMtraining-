@@ -9,9 +9,9 @@ using System.Text;
 
 namespace SalesReportConverter.BL.CSVHandler
 {
-    public class ParserCSV: IParserCSV
+    public class ParserCSV: IParser<CSVModel>
     {  
-        public ICollection<CSVModel> GetCSVModels(FileSystemEventArgs e)
+        public ICollection<CSVModel> GetModels(FileSystemEventArgs e)
         {
             ICollection<CSVModel> CSVmodels = new List<CSVModel>();
             try
@@ -33,7 +33,7 @@ namespace SalesReportConverter.BL.CSVHandler
             }
             catch
             {
-                throw new Exception("Ошибка в методе GetCSVModels");
+                throw new Exception("Ошибка в методе GetModels");
             }
             BackUp(e);
             return CSVmodels;            

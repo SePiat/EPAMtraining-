@@ -12,25 +12,23 @@ using System.Threading.Tasks;
 
 namespace SalesReportConverter.BL
 {
-    public class TaskManager
+    public class TaskManager: ITaskManager
     {        
         private IWatcher _watcher;
         public TaskManager(IWatcher watcher)
         {            
             _watcher = watcher;
-            watcher.OnCreatedReportEvent += CSVTaskHandler;
-        }
-       public List<CSVModel> CSVModels { get; set; } = new List<CSVModel>();
+            watcher.OnCreatedReportEvent += CreateTask;
+        }    
 
-        private void CSVTaskHandler(object sender, FileSystemEventArgs e)
+        public void CreateTask(object sender, FileSystemEventArgs e)
         {
             var task1 =Task.Factory.StartNew(() =>
             {
                 ParserCSV parserCSV = new ParserCSV();
-                ICollection<CSVModel> models = parserCSV.GetCSVModels(e);
-                TransactionManager transactionManager = new TransactionManager();
-                transactionManager.CreateTransaction(models); 
-                Console.WriteLine(CSVModels.Count);
+                ICollection<CSVModel> modelsCSV = parserCSV.GetModels(e);
+                IDataModelsManager<CSVModel> dataModelsManager = new DataModelsManagerCSV();
+                dataModelsManager.HandleDataModels(modelsCSV);                
             });            
         }
 
@@ -38,7 +36,7 @@ namespace SalesReportConverter.BL
         {
             if (_watcher != null)
             {
-                _watcher.OnCreatedReportEvent += CSVTaskHandler;
+                _watcher.OnCreatedReportEvent += CreateTask;
                 GC.SuppressFinalize(this);
                 _watcher = null;
             }

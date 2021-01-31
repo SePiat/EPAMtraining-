@@ -9,6 +9,6 @@ namespace SalesReportConverter.Model.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string SecondName { get; set; }
-        public virtual ICollection<Buyer> Buyers { get; set; }
+       
     }
 }

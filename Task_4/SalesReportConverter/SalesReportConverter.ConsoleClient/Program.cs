@@ -22,27 +22,25 @@ namespace SalesReportConverter.ConsoleClient
         {
             string filePath = ConfigurationManager.AppSettings.Get("WatcherFolderPath");
 
-            ApplicationDbContext context = new ApplicationDbContext();
+           /* ApplicationDbContext context = new ApplicationDbContext();
             UnitOfWork unitOfWork = new UnitOfWork(context);
-            var ustr=unitOfWork.Managers.FirstOrDefault(x=>x.Name== "Vasiliy");
-            unitOfWork.Managers.Delete(ustr.Id);
-            unitOfWork.Save();
+            var ustr = unitOfWork.Managers.FirstOrDefault(x => x.Name == "Vasiliy");
+            unitOfWork.Managers.Delete(ustr);
+            unitOfWork.Save();*/
 
 
-            /*IWatcher watcher = new Watcher();
+            IWatcher watcher = new Watcher();
+            watcher.MessageHandlerEvent += ConsoleMessagePrinter.WriteMessageInConsole;
             watcher.Watch();
             TaskManager taskManager = new TaskManager(watcher);
 
-            */
-
-            Console.WriteLine("Hello World!");
-
+            Console.WriteLine("Console Client working");
            
             Console.ReadLine();
-           /* Task.WaitAll();
-            var result = taskManager.CSVModels;
+            Task.WaitAll();
+            watcher.MessageHandlerEvent -= ConsoleMessagePrinter.WriteMessageInConsole;
             watcher.StopWatch();
-            watcher.Dispose();*/
+            watcher.Dispose();
         }
 
     }

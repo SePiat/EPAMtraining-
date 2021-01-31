@@ -7,7 +7,8 @@ namespace SalesReportConverter.BL.Abstractions
 {
     public interface IWatcher
     {
-        EventHandler<FileSystemEventArgs> OnCreatedReportEvent { get; set; }
+        event EventHandler<FileSystemEventArgs> OnCreatedReportEvent;
+        event EventHandler<string> MessageHandlerEvent;
         void Watch();
         void StopWatch();
         void Dispose();
