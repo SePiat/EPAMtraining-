@@ -5,6 +5,7 @@ using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace SalesReportConverter.ServiceClient
 {
     static class Program
@@ -17,7 +18,7 @@ namespace SalesReportConverter.ServiceClient
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
-                new ReportConverterService()
+                new Service1()
             };
             ServiceBase.Run(ServicesToRun);
         }

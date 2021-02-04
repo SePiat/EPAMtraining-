@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SalesReportConverter.ServiceClient")]
+[assembly: AssemblyTitle("SalesReportConverter.ConsoleClient_")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SalesReportConverter.ServiceClient")]
+[assembly: AssemblyProduct("SalesReportConverter.ConsoleClient_")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8b80e2dc-399f-46bf-953c-5752b2f5d068")]
+[assembly: Guid("c246ddc8-b77a-4c03-a3ac-b19e081c2b80")]
 
 // Version information for an assembly consists of the following four values:
 //
