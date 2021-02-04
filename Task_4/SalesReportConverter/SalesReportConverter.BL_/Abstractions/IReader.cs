@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SalesReportConverter.BL.Abstractions
+namespace SalesReportConverter.BL_.Abstractions
 {
     public interface IReader
     {

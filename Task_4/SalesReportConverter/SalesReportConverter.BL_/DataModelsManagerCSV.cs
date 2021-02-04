@@ -1,14 +1,15 @@
-﻿using SalesReportConverter.BL.Abstractions;
-using SalesReportConverter.BL.CSVHandler;
-using SalesReportConverter.DAL.Context;
-using SalesReportConverter.DAL.Repositories;
-using SalesReportConverter.DAL.Repositories.Abstractions;
-using SalesReportConverter.Model.Models;
+﻿using SalesReportConverter.BL_.Abstractions;
+using SalesReportConverter.BL_.CSVHandler;
+using SalesReportConverter.DAL_.Context;
+using SalesReportConverter.DAL_.Repositories;
+using SalesReportConverter.DAL_.Repositories.Abstractions;
+using SalesReportConverter.Model_.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
-namespace SalesReportConverter.BL
+namespace SalesReportConverter.BL_
 {
     public class DataModelsManagerCSV : IDataModelsManager<CSVModel>
     {
@@ -29,7 +30,7 @@ namespace SalesReportConverter.BL
                 {
                     foreach (var model in models)
                     {
-
+                       
                         var manager = unitOfWork.Managers.FirstOrDefault(x => x.SecondName == model.Manager);
                         var client = unitOfWork.Buyers.FirstOrDefault(x => x.FullName == model.Client);
                         var product = unitOfWork.Products.FirstOrDefault(x => x.Name == model.Product);
@@ -38,7 +39,7 @@ namespace SalesReportConverter.BL
                         if (product == null) unitOfWork.Products.Add(new Product() { Name = model.Product, Cost = model.Cost });
 
                         var buying = unitOfWork.Buyings.FirstOrDefault(x => x.Buyer.FullName == model.Client && x.PurchaseDate == model.PurchaseDate);
-
+                        
                         if (buying == null)
                         {
                             unitOfWork.Buyings.Add(new Buying()

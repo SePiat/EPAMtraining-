@@ -1,7 +1,7 @@
-﻿using SalesReportConverter.Model.Models;
+﻿using SalesReportConverter.Model_.Models;
 using System.Data.Entity;
 
-namespace SalesReportConverter.DAL.Context
+namespace SalesReportConverter.DAL_.Context
 {
     public class ApplicationDbContext : DbContext
     {

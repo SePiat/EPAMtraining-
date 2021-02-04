@@ -1,10 +1,10 @@
-﻿using SalesReportConverter.DAL.Context;
+﻿using SalesReportConverter.DAL_.Context;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
-namespace SalesReportConverter.DAL.Repositories.Abstractions
+namespace SalesReportConverter.DAL_.Repositories.Abstractions
 
 {
     public class Repository<T> : IGenericRepository<T> where T : class

@@ -1,10 +1,10 @@
-﻿using SalesReportConverter.DAL.Context;
-using SalesReportConverter.DAL.Repositories.Abstractions;
-using SalesReportConverter.Model.Models;
+﻿using SalesReportConverter.DAL_.Context;
+using SalesReportConverter.DAL_.Repositories.Abstractions;
+using SalesReportConverter.Model_.Models;
 using System;
 using System.Threading.Tasks;
 
-namespace SalesReportConverter.DAL.Repositories
+namespace SalesReportConverter.DAL_.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {

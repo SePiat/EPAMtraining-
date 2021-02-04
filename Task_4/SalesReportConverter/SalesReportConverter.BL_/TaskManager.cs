@@ -1,10 +1,10 @@
-﻿using SalesReportConverter.BL.Abstractions;
-using SalesReportConverter.BL.CSVHandler;
+﻿using SalesReportConverter.BL_.Abstractions;
+using SalesReportConverter.BL_.CSVHandler;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace SalesReportConverter.BL
+namespace SalesReportConverter.BL_
 {
     public class TaskManager : ITaskManager
     {

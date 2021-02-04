@@ -5,13 +5,13 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesReportConverter.ServiceClient", "SalesReportConverter.ServiceClient\SalesReportConverter.ServiceClient.csproj", "{8B80E2DC-399F-46BF-953C-5752B2F5D068}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesReportConverter.BL", "SalesReportConverter.BL_\SalesReportConverter.BL.csproj", "{DFBC1795-29A6-449F-BE04-12E13A25CD06}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesReportConverter.BL_", "SalesReportConverter.BL_\SalesReportConverter.BL_.csproj", "{DFBC1795-29A6-449F-BE04-12E13A25CD06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesReportConverter.DAL", "SalesReportConverter.DAL_\SalesReportConverter.DAL.csproj", "{AA6FA20B-6A37-45E9-BBF8-03589A62C4E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesReportConverter.DAL_", "SalesReportConverter.DAL_\SalesReportConverter.DAL_.csproj", "{AA6FA20B-6A37-45E9-BBF8-03589A62C4E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesReportConverter.Model", "SalesReportConverter.Model_\SalesReportConverter.Model.csproj", "{DC8A5C79-AAF3-4792-B006-ADCFB0FFEDCD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesReportConverter.Model_", "SalesReportConverter.Model_\SalesReportConverter.Model_.csproj", "{DC8A5C79-AAF3-4792-B006-ADCFB0FFEDCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesReportConverter.ConsoleClient", "SalesReportConverter.ConsoleClient_\SalesReportConverter.ConsoleClient.csproj", "{C246DDC8-B77A-4C03-A3AC-B19E081C2B80}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesReportConverter.ConsoleClient_", "SalesReportConverter.ConsoleClient_\SalesReportConverter.ConsoleClient_.csproj", "{C246DDC8-B77A-4C03-A3AC-B19E081C2B80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

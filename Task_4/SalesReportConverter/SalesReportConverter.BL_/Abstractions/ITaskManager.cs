@@ -1,4 +1,4 @@
-﻿namespace SalesReportConverter.BL.Abstractions
+﻿namespace SalesReportConverter.BL_.Abstractions
 {
     public interface ITaskManager
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SalesReportConverter.BL.CSVHandler
+namespace SalesReportConverter.BL_.CSVHandler
 {
     public class CSVModel
     {

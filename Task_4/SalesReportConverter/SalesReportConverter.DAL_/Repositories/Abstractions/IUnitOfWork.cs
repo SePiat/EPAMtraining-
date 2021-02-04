@@ -1,8 +1,8 @@
-﻿using SalesReportConverter.Model.Models;
+﻿using SalesReportConverter.Model_.Models;
 using System;
 using System.Threading.Tasks;
 
-namespace SalesReportConverter.DAL.Repositories.Abstractions
+namespace SalesReportConverter.DAL_.Repositories.Abstractions
 {
     public interface IUnitOfWork : IDisposable
     {

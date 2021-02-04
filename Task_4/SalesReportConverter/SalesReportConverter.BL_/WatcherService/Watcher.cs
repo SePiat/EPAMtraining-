@@ -1,10 +1,10 @@
-﻿using SalesReportConverter.BL.Abstractions;
+﻿using SalesReportConverter.BL_.Abstractions;
 using System;
 using System.Configuration;
 using System.IO;
 using System.Linq;
 
-namespace SalesReportConverter.BL.WatcherService
+namespace SalesReportConverter.BL_.WatcherService
 {
     public class Watcher: IWatcher
     {

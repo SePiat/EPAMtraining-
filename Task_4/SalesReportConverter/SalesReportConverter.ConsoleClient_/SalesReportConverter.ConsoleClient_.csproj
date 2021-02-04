@@ -5,18 +5,19 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AA6FA20B-6A37-45E9-BBF8-03589A62C4E6}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SalesReportConverter.DAL</RootNamespace>
-    <AssemblyName>SalesReportConverter.DAL</AssemblyName>
+    <ProjectGuid>{C246DDC8-B77A-4C03-A3AC-B19E081C2B80}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SalesReportConverter.ConsoleClient_</RootNamespace>
+    <AssemblyName>SalesReportConverter.ConsoleClient_</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,6 +27,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -51,26 +53,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Context\ApplicationDbContext.cs" />
+    <Compile Include="ConsoleMessagePrinter.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\Abstractions\IGenericRepository.cs" />
-    <Compile Include="Repositories\Abstractions\IUnitOfWork.cs" />
-    <Compile Include="Repositories\Abstractions\Repository.cs" />
-    <Compile Include="Repositories\ConcreteRepositories\BuyerRepository.cs" />
-    <Compile Include="Repositories\ConcreteRepositories\BuyingRepository.cs" />
-    <Compile Include="Repositories\ConcreteRepositories\ManagerRepository.cs" />
-    <Compile Include="Repositories\ConcreteRepositories\ProductRepository.cs" />
-    <Compile Include="Repositories\UnitOfWork.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SalesReportConverter.Model_\SalesReportConverter.Model.csproj">
-      <Project>{dc8a5c79-aaf3-4792-b006-adcfb0ffedcd}</Project>
-      <Name>SalesReportConverter.Model</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SalesReportConverter.BL_\SalesReportConverter.BL_.csproj">
+      <Project>{dfbc1795-29a6-449f-be04-12e13a25cd06}</Project>
+      <Name>SalesReportConverter.BL_</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SalesReportConverter.DAL_\SalesReportConverter.DAL_.csproj">
+      <Project>{aa6fa20b-6a37-45e9-bbf8-03589a62c4e6}</Project>
+      <Name>SalesReportConverter.DAL_</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

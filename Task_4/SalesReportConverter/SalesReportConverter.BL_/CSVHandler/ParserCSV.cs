@@ -1,11 +1,11 @@
-﻿using SalesReportConverter.BL.Abstractions;
+﻿using SalesReportConverter.BL_.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Globalization;
 using System.IO;
 
-namespace SalesReportConverter.BL.CSVHandler
+namespace SalesReportConverter.BL_.CSVHandler
 {
     public class ParserCSV : IParser<CSVModel>
     {
