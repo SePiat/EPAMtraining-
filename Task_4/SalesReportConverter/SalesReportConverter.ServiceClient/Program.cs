@@ -1,4 +1,7 @@
-﻿using System;
+﻿using SalesReportConverter.BL_;
+using SalesReportConverter.BL_.Abstractions;
+using SalesReportConverter.BL_.WatcherService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceProcess;
@@ -13,7 +16,7 @@ namespace SalesReportConverter.ServiceClient
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        static void Main()
+        static void Main(string[] args)
         {
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]

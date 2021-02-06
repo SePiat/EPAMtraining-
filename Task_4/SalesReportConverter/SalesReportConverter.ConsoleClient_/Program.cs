@@ -1,16 +1,9 @@
 ﻿
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Configuration;
 using SalesReportConverter.BL_;
-using System.IO;
-using SalesReportConverter.BL_.WatcherService;
-using SalesReportConverter.BL_.CSVHandler;
 using SalesReportConverter.BL_.Abstractions;
-using SalesReportConverter.DAL_.Context;
-using SalesReportConverter.DAL_.Repositories;
-using System.Linq;
+using SalesReportConverter.BL_.WatcherService;
+using System;
+using System.Threading.Tasks;
 
 namespace SalesReportConverter.ConsoleClient
 {
