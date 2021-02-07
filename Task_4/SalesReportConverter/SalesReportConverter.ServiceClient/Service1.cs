@@ -3,7 +3,6 @@ using SalesReportConverter.BL_.Abstractions;
 using SalesReportConverter.BL_.WatcherService;
 using System;
 using System.ServiceProcess;
-using System.Threading.Tasks;
 
 namespace SalesReportConverter.ServiceClient
 {
@@ -28,13 +27,12 @@ namespace SalesReportConverter.ServiceClient
             {
                 throw new Exception($"Ошибка в методе OnStart, {ex}");
             }
-            
         }
 
         protected override void OnStop()
         {
             try
-            {                
+            {
                 watcher.StopWatch();
                 watcher.Dispose();
             }
@@ -42,7 +40,6 @@ namespace SalesReportConverter.ServiceClient
             {
                 throw new Exception($"Ошибка в методе OnStop, {ex}");
             }
-
         }
     }
 }

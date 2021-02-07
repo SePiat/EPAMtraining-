@@ -10,8 +10,7 @@ namespace SalesReportConverter.DAL_.Repositories.Abstractions
         IGenericRepository<Buying> Buyings { get; }
         IGenericRepository<Manager> Managers { get; }
         IGenericRepository<Product> Products { get; }
-        void Save();
-        Task SaveAsync();
+        void Save();       
 
     }
 }

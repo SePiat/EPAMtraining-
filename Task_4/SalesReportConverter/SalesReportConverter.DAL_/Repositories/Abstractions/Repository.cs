@@ -52,11 +52,7 @@ namespace SalesReportConverter.DAL_.Repositories.Abstractions
         public void Remove(IEnumerable<T> range)
         {
             table.RemoveRange(range);
-        }
-        public List<T> ToList()
-        {
-            return table.ToList();
-        }
+        }       
 
         private bool disposed = false;
 

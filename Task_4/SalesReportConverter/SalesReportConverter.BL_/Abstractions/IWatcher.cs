@@ -2,12 +2,11 @@
 
 namespace SalesReportConverter.BL_.Abstractions
 {
-    public interface IWatcher
+    public interface IWatcher : IDisposable
     {
         event EventHandler<string> ThereIsFileToHandlingEvent;
         event EventHandler<string> MessageHandlerEvent;
         void Watch();
-        void StopWatch();
-        void Dispose();
+        void StopWatch();       
     }
 }

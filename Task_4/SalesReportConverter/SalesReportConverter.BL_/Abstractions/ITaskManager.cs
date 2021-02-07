@@ -3,6 +3,5 @@
     public interface ITaskManager
     {
         void CreateTask(object sender, string fileName);
-
     }
 }
