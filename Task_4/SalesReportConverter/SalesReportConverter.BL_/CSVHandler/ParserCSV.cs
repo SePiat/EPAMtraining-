@@ -29,9 +29,9 @@ namespace SalesReportConverter.BL_.CSVHandler
                     CSVmodels.Add(new CSVModel(nameManager, reportDate, purchaseDate, client, product, cost));
                 }
             }
-            catch (IOException ex)
+            catch (Exception ex)
             {
-                throw new InvalidOperationException("Ошибка в методе GetModels", ex);
+                throw new Exception("Ошибка в методе GetModels", ex);
             }
             BackUp(fileName);
             return CSVmodels;
@@ -121,9 +121,9 @@ namespace SalesReportConverter.BL_.CSVHandler
                 FileInfo fileInfo = new FileInfo(ConfigurationManager.AppSettings.Get("WatcherFolderPath") + "\\" + fileName);
                 fileInfo.MoveTo(ConfigurationManager.AppSettings.Get("HandledFilesPath") + fileName);
             }
-            catch (IOException ex)
+            catch (Exception ex)
             {
-                throw new InvalidOperationException("Ошибка в методе BackUp", ex);
+                throw new Exception("Ошибка в методе BackUp", ex);
             }
         }
 

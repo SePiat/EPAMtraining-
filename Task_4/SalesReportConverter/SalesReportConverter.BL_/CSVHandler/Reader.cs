@@ -25,9 +25,9 @@ namespace SalesReportConverter.BL_.CSVHandler
                     }                    
                 }                
             }
-            catch (IOException e)
+            catch (Exception e)
             {
-                throw new InvalidOperationException($"Ошибка в методе ReadStrings, {e}");
+                throw new Exception($"Ошибка в методе ReadStrings, {e}");
             }
             return strings;
         }

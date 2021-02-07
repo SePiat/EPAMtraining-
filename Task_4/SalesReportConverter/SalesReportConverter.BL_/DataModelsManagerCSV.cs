@@ -24,22 +24,21 @@ namespace SalesReportConverter.BL_
 
         public void HandleDataModels(ICollection<CSVModel> models)
         {
-            try
+            lock (this)
             {
-                lock (this)
+                foreach (var model in models)
                 {
-                    foreach (var model in models)
+                    try
                     {
-                       
                         var manager = unitOfWork.Managers.FirstOrDefault(x => x.SecondName == model.Manager);
                         var client = unitOfWork.Buyers.FirstOrDefault(x => x.FullName == model.Client);
                         var product = unitOfWork.Products.FirstOrDefault(x => x.Name == model.Product);
                         if (manager == null) unitOfWork.Managers.Add(new Manager() { SecondName = model.Manager });
                         if (client == null) unitOfWork.Buyers.Add(new Buyer() { FullName = model.Client });
                         if (product == null) unitOfWork.Products.Add(new Product() { Name = model.Product, Cost = model.Cost });
-                        var testbuings = unitOfWork.Buyings.ToList();
+                        var testBuings = unitOfWork.Buyings.ToList();
                         var buying = unitOfWork.Buyings.FirstOrDefault(x => x.Buyer.FullName == model.Client && x.PurchaseDate == model.PurchaseDate);
-                        
+
                         if (buying == null)
                         {
                             unitOfWork.Buyings.Add(new Buying()
@@ -53,14 +52,13 @@ namespace SalesReportConverter.BL_
                         }
                         unitOfWork.Save();
                     }
+                    catch (Exception e)
+                    {
+                        throw new Exception($"Ошибка в методе HandleDataModels, {e}");
+                    }
                 }
+                unitOfWork.Dispose();
             }
-            catch (IOException e)
-            {
-                throw new InvalidOperationException($"Ошибка в методе HandleDataModels, {e}");
-            }
-
-            unitOfWork.Dispose();
         }
     }
 }

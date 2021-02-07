@@ -34,6 +34,10 @@ namespace SalesReportConverter.DAL_.Repositories
                 if (disposing)
                 {
                     _context.Dispose();
+                    Buyers.Dispose();
+                    Buyings.Dispose();
+                    Managers.Dispose();
+                    Products.Dispose();                    
                 }
                 disposed = true;
             }

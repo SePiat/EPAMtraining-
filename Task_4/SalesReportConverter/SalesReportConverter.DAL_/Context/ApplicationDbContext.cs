@@ -6,7 +6,8 @@ namespace SalesReportConverter.DAL_.Context
     public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext() : base("DbConnection")
-        { }
+        {            
+        }
 
         public DbSet<Buyer> Buyers { get; set; }
         public DbSet<Buying> Buyings { get; set; }

@@ -22,7 +22,7 @@ namespace SalesReportConverter.BL_
                  ParserCSV parserCSV = new ParserCSV();
                  ICollection<CSVModel> modelsCSV = parserCSV.GetModels(fileName);
                  IDataModelsManager<CSVModel> dataModelsManager = new DataModelsManagerCSV();
-                 dataModelsManager.HandleDataModels(modelsCSV);
+                 dataModelsManager.HandleDataModels(modelsCSV);                
              });
         }
 
