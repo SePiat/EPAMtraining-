@@ -12,5 +12,6 @@ namespace SalesReportConverter.DAL_.Repositories.Abstractions
         IGenericRepository<Product> Products { get; }
         void Save();
         Task SaveAsync();
+
     }
 }

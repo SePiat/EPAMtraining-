@@ -36,7 +36,7 @@ namespace SalesReportConverter.BL_
                         if (manager == null) unitOfWork.Managers.Add(new Manager() { SecondName = model.Manager });
                         if (client == null) unitOfWork.Buyers.Add(new Buyer() { FullName = model.Client });
                         if (product == null) unitOfWork.Products.Add(new Product() { Name = model.Product, Cost = model.Cost });
-                        var testBuings = unitOfWork.Buyings.ToList();
+                        var testBuings = unitOfWork.Buyings.ToList();                        
                         var buying = unitOfWork.Buyings.FirstOrDefault(x => x.Buyer.FullName == model.Client && x.PurchaseDate == model.PurchaseDate);
 
                         if (buying == null)
