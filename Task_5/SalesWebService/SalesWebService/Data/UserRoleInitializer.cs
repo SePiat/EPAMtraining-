@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace SalesWebService.Data
 {
-    public class RoleInitializer
+    public class UserRoleInitializer
     {
         public static async Task InitializeAsync(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
         {
