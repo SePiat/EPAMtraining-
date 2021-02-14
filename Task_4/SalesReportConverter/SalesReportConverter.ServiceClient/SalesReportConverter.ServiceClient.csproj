@@ -83,12 +83,6 @@
       <DependentUpon>Service1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SalesReportConverter.BL_\SalesReportConverter.BL_.csproj">
-      <Project>{dfbc1795-29a6-449f-be04-12e13a25cd06}</Project>
-      <Name>SalesReportConverter.BL_</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

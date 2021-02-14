@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-SalesWebService-497DF11E-51DD-4B16-8869-9AA952AE4C10</UserSecretsId>
+    <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.10" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="SalesReportConverter.DAL">
+      <HintPath>..\..\..\Task_4\SalesReportConverter\SalesReportConverter.DAL\bin\Debug\netcoreapp3.1\SalesReportConverter.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="SalesReportConverter.DAL_">
+      <HintPath>..\..\..\Task_4\SalesReportConverter\SalesReportConverter.DAL_\bin\Debug\SalesReportConverter.DAL_.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

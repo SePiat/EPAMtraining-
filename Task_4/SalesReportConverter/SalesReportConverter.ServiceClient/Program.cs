@@ -1,18 +1,10 @@
-﻿using SalesReportConverter.BL_;
-using SalesReportConverter.BL_.Abstractions;
-using SalesReportConverter.BL_.WatcherService;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.ServiceProcess;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ServiceProcess;
 
 
 namespace SalesReportConverter.ServiceClient
 {
     static class Program
-    {        
+    {
         static void Main(string[] args)
         {
             ServiceBase[] ServicesToRun;
