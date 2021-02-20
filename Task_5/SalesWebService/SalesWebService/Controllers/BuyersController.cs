@@ -55,8 +55,7 @@ namespace SalesWebService.Controllers
         }
 
         // POST: BuyersController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpPost]       
         public ActionResult Edit(Buyer model)
         {            
             using (var context = new ApplicationDbContext())
@@ -84,8 +83,7 @@ namespace SalesWebService.Controllers
         
 
         // POST: BuyersController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpPost]       
         public ActionResult Delete(int Id)
         {
             using (var context = new ApplicationDbContext())
@@ -99,14 +97,12 @@ namespace SalesWebService.Controllers
                 try
                 {
                     context.Buyers.Remove(buyer);
+                    context.SaveChanges();
                 }
                 catch (Exception e)
                 {
                     throw new Exception($"Ошибка при удалении покупателя: {e}");
-                }
-
-
-                context.SaveChanges();
+                }                
             }
             return View("Index");
         }
@@ -117,18 +113,27 @@ namespace SalesWebService.Controllers
         }
 
         // POST: BuyersController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        [HttpPost]       
+        public ActionResult Create(Buyer model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                Buyer buyer = new Buyer { FullName = model.FullName};
+                using (var context = new ApplicationDbContext())
+                {
+                    IUnitOfWork unitOfWork = new UnitOfWork(context);                    
+                    try
+                    {
+                        unitOfWork.Buyers.Add(buyer);
+                        context.SaveChanges();
+                    }
+                    catch (Exception e)
+                    {
+                        throw new Exception($"Ошибка при создании покупателя: {e}");
+                    }                   
+                }
             }
-            catch
-            {
-                return View();
-            }
+            return View("Index");
         }
     }
 }
