@@ -6,7 +6,7 @@
         <tr>
             <td>@buyer.FullName</td>
             <td>
-                <a class="btn btn-light" asp-controller="Buyers" asp-action="Index">Edit</a>
+                <a class="btn btn-light" asp-controller="Buyers" asp-action="Edit" asp-route-id="@buyer.Id">Edit</a>
             </td>
             <td>
                 <form asp-action="Delete" asp-route-id="@buyer.Id" method="post">
@@ -18,3 +18,5 @@
         </tr>
     }
 </table>
+<a class="btn btn-light" asp-controller="Buyers" asp-action="Create">Add Buyer</a>
+

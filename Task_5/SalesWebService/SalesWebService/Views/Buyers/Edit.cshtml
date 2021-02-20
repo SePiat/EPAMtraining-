@@ -1,0 +1,23 @@
+﻿@model SalesReportConverter.Model_.Models.Buyer
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+<form asp-action="Edit" asp-controller="Buyers">
+    <div asp-validation-summary="All" class="btn-dark"></div>
+    <div class="form-group">
+        <input type="hidden" asp-for="Id" />
+    </div>
+    <div class="form-group">
+        <h2>Currently Full Name: @Model.FullName </h2>
+    </div>
+    <div class="form-group">
+        <label asp-for="FullName" class="text-white">FullName</label>
+        <input type="text" asp-for="FullName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-light" />
+    </div>
+</form>
