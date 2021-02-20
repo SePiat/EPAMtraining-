@@ -27,8 +27,7 @@ namespace SalesWebService.Controllers
 
                 IUnitOfWork unitOfWork = new UnitOfWork(context);
                 var result = unitOfWork.Buyings.ToList();
-            }
-                
+            }               
 
 
             return View();

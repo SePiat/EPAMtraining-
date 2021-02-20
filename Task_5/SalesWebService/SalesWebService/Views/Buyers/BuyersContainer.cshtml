@@ -1,0 +1,20 @@
+﻿@model SalesWebService.Models.Buyers.BuyersIndexViewModel
+
+<table width="50%">
+    @foreach (var buyer in Model.buyers)
+    {
+        <tr>
+            <td>@buyer.FullName</td>
+            <td>
+                <a class="btn btn-light" asp-controller="Buyers" asp-action="Index">Edit</a>
+            </td>
+            <td>
+                <form asp-action="Delete" asp-route-id="@buyer.Id" method="post">
+                    <button type="submit" class="btn btn-danger">
+                        Delete
+                    </button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>
