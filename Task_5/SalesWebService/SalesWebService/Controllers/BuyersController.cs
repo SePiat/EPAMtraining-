@@ -58,8 +58,7 @@ namespace SalesWebService.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Buyer model)
-        {
-            //Buyer buyer;
+        {            
             using (var context = new ApplicationDbContext())
             {
                 IUnitOfWork unitOfWork = new UnitOfWork(context);
@@ -69,30 +68,47 @@ namespace SalesWebService.Controllers
                     return NotFound();
                 }
                 buyer.FullName = model.FullName;
-                context.SaveChanges();
+                try
+                {
+                    context.SaveChanges();
+                }
+                catch (Exception e)
+                {
+                    throw new Exception($"Ошибка при попытке сохранения нового имени покупателя: {e}");
+                }
+                
             }
             return View("Index");
         }
 
-        // GET: BuyersController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+        
 
         // POST: BuyersController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int Id)
         {
-            try
+            using (var context = new ApplicationDbContext())
             {
-                return RedirectToAction(nameof(Index));
+                IUnitOfWork unitOfWork = new UnitOfWork(context);
+                Buyer buyer = unitOfWork.Buyers.FirstOrDefault(x => x.Id == Id);
+                if (buyer == null)
+                {
+                    return NotFound();
+                }
+                try
+                {
+                    context.Buyers.Remove(buyer);
+                }
+                catch (Exception e)
+                {
+                    throw new Exception($"Ошибка при удалении покупателя: {e}");
+                }
+
+
+                context.SaveChanges();
             }
-            catch
-            {
-                return View();
-            }
+            return View("Index");
         }
 
         public ActionResult Create()
