@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using SalesReportConverter.DAL.Context;
+using SalesReportConverter.DAL.Repositories;
+using SalesReportConverter.DAL.Repositories.Abstractions;
 using SalesWebService.Models;
 using System;
 using System.Collections.Generic;
@@ -20,7 +23,12 @@ namespace SalesWebService.Controllers
 
         public IActionResult Index()
         {
+            using (var context = new ApplicationDbContext()) {
 
+                IUnitOfWork unitOfWork = new UnitOfWork(context);
+                var result = unitOfWork.Buyings.ToList();
+            }
+                
 
 
             return View();

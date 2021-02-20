@@ -54,6 +54,10 @@ namespace SalesReportConverter.DAL.Repositories.Abstractions
         {
             table.RemoveRange(range);
         }
+        public IList<T> ToList()
+        {
+            return table.ToList();
+        }
 
         private bool disposed = false;
 
@@ -71,8 +75,7 @@ namespace SalesReportConverter.DAL.Repositories.Abstractions
 
         public void Dispose()
         {
-            Dispose(true);
-            GC.SuppressFinalize(this);
+            Dispose(true);           
         }
     }
 }

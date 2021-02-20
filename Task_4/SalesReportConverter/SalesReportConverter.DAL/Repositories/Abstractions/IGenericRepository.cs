@@ -13,6 +13,7 @@ namespace SalesReportConverter.DAL.Repositories.Abstractions
         void Update(T obj);
         bool Contains(T obj);
         void Remove(IEnumerable<T> range);
+        IList<T> ToList();
 
     }
 }
