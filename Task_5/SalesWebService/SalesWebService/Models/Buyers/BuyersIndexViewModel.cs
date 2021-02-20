@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace SalesWebService.Models.Buyers
 {
     public class BuyersIndexViewModel
-    {
-        public List<Buyer> buyers = new List<Buyer>();
+    {        
+        public Buyer Buyer { get; set; }
+        public int CountBuyings { get; set; }
     }
 }

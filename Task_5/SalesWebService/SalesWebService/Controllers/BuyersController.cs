@@ -5,6 +5,7 @@ using SalesReportConverter.DAL.Repositories;
 using SalesReportConverter.DAL.Repositories.Abstractions;
 using SalesReportConverter.Model_.Models;
 using SalesWebService.Models.Buyers;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,12 +24,15 @@ namespace SalesWebService.Controllers
 
         public ActionResult ListOfBuyers()
         {
-            BuyersIndexViewModel model = new BuyersIndexViewModel();
+            IList<BuyersIndexViewModel> model = new List<BuyersIndexViewModel>();
             using (var context = new ApplicationDbContext())
             {
                 IUnitOfWork unitOfWork = new UnitOfWork(context);
                 var result = unitOfWork.Buyers.ToList();
-                model.buyers.AddRange(result);
+                foreach (var buyer in result)
+                {
+                    model.Add(new BuyersIndexViewModel { Buyer = buyer, CountBuyings = buyer.Buyings.Count() });
+                }               
             }
             return PartialView("BuyersContainer", model);
         }
@@ -73,9 +77,10 @@ namespace SalesWebService.Controllers
                 }
                 catch (Exception e)
                 {
+                    Log.Error($"BuyersController.Edit: Ошибка при попытке сохранения нового имени покупателя: {DateTime.Now}" +
+                           $"{Environment.NewLine}{e}{Environment.NewLine}");
                     throw new Exception($"Ошибка при попытке сохранения нового имени покупателя: {e}");
-                }
-                
+                }                
             }
             return View("Index");
         }
@@ -101,6 +106,8 @@ namespace SalesWebService.Controllers
                 }
                 catch (Exception e)
                 {
+                    Log.Error($"BuyersController.Delete :Ошибка при удалении покупателя: {DateTime.Now}" +
+                           $"{Environment.NewLine}{e}{Environment.NewLine}");
                     throw new Exception($"Ошибка при удалении покупателя: {e}");
                 }                
             }
@@ -121,16 +128,27 @@ namespace SalesWebService.Controllers
                 Buyer buyer = new Buyer { FullName = model.FullName};
                 using (var context = new ApplicationDbContext())
                 {
-                    IUnitOfWork unitOfWork = new UnitOfWork(context);                    
-                    try
+                    IUnitOfWork unitOfWork = new UnitOfWork(context);
+                    Buyer existBuyer = unitOfWork.Buyers.FirstOrDefault(x => x.FullName == model.FullName);
+                    if (existBuyer==null)
                     {
-                        unitOfWork.Buyers.Add(buyer);
-                        context.SaveChanges();
+                        try
+                        {
+                            unitOfWork.Buyers.Add(buyer);
+                            context.SaveChanges();
+                        }
+                        catch (Exception e)
+                        {
+                            Log.Error($"BuyersController.Create :Ошибка при создании покупателя: {DateTime.Now}" +
+                           $"{Environment.NewLine}{e}{Environment.NewLine}");
+                            throw new Exception($"Ошибка при создании покупателя: {e}");
+                        }
                     }
-                    catch (Exception e)
+                    else
                     {
-                        throw new Exception($"Ошибка при создании покупателя: {e}");
-                    }                   
+                        Log.Error($"BuyersController.Create :Покупатель с таким именем уже занесен в БД: {DateTime.Now}{Environment.NewLine}");                           
+                        throw new Exception($"Покупатель с таким именем уже занесен в БД");
+                    }                                     
                 }
             }
             return View("Index");
