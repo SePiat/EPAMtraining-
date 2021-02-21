@@ -1,0 +1,20 @@
+﻿
+@model SalesReportConverter.Model_.Models.Manager
+@{
+    ViewBag.Title = "Add manager";
+}
+
+<form asp-action="Create" asp-controller="Managers">
+    <div asp-validation-summary="All" class="btn-dark"></div>
+    <div class="form-group btn-light">
+        <label asp-for="Name">Name</label>
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group btn-light">
+        <label asp-for="SecondName">SecondName</label>
+        <input type="text" asp-for="SecondName" class="form-control" />
+    </div>
+    <div>
+        <input type="submit" value="Add" class="btn btn-info" />
+    </div>
+</form>

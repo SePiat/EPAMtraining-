@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SalesReportConverter.DAL.Context;
 using SalesReportConverter.DAL.Repositories;
@@ -15,13 +16,13 @@ using System.Threading.Tasks;
 namespace SalesWebService.Controllers
 {
     public class BuyersController : Controller
-    {
-        // GET: BuyersController
+    {        
+        [Authorize]
         public ActionResult Index()
         {            
             return View();
         }
-
+        
         public ActionResult ListOfBuyers()
         {
             IList<BuyersIndexViewModel> model = new List<BuyersIndexViewModel>();
@@ -37,11 +38,7 @@ namespace SalesWebService.Controllers
             return PartialView("BuyersContainer", model);
         }
         
-
-        // GET: BuyersController/Create
-       
-
-        // GET: BuyersController/Edit/5
+        [Authorize(Roles = "admin")]
         public ActionResult Edit(int id)
         {
             Buyer buyer;
@@ -56,11 +53,11 @@ namespace SalesWebService.Controllers
             }            
             return View(buyer);
             
-        }
+        }       
 
-        // POST: BuyersController/Edit/5
-        [HttpPost]       
-        public ActionResult Edit(Buyer model)
+        [HttpPost]
+        [Authorize(Roles = "admin")]
+        public async Task<ActionResult> Edit(Buyer model)
         {            
             using (var context = new ApplicationDbContext())
             {
@@ -73,7 +70,7 @@ namespace SalesWebService.Controllers
                 buyer.FullName = model.FullName;
                 try
                 {
-                    context.SaveChanges();
+                    await unitOfWork.SaveAsync();
                 }
                 catch (Exception e)
                 {
@@ -83,13 +80,11 @@ namespace SalesWebService.Controllers
                 }                
             }
             return View("Index");
-        }
+        }        
 
-        
-
-        // POST: BuyersController/Delete/5
-        [HttpPost]       
-        public ActionResult Delete(int Id)
+        [HttpPost]
+        [Authorize(Roles = "admin")]
+        public async Task<ActionResult> Delete(int Id)
         {
             using (var context = new ApplicationDbContext())
             {
@@ -102,7 +97,7 @@ namespace SalesWebService.Controllers
                 try
                 {
                     context.Buyers.Remove(buyer);
-                    context.SaveChanges();
+                    await unitOfWork.SaveAsync();
                 }
                 catch (Exception e)
                 {
@@ -113,15 +108,15 @@ namespace SalesWebService.Controllers
             }
             return View("Index");
         }
-
+        [Authorize(Roles = "admin")]
         public ActionResult Create()
         {
             return View();
         }
-
-        // POST: BuyersController/Create
-        [HttpPost]       
-        public ActionResult Create(Buyer model)
+        
+        [Authorize(Roles = "admin")]
+        [HttpPost]
+        public async Task<ActionResult> Create(Buyer model)
         {
             if (ModelState.IsValid)
             {
@@ -135,7 +130,7 @@ namespace SalesWebService.Controllers
                         try
                         {
                             unitOfWork.Buyers.Add(buyer);
-                            context.SaveChanges();
+                            await unitOfWork.SaveAsync();                                                       
                         }
                         catch (Exception e)
                         {
@@ -154,7 +149,7 @@ namespace SalesWebService.Controllers
             return View("Index");
         }
 
-
+        [Authorize]
         public ActionResult SearchByName(string SearchName)
         {
             if (SearchName!=null)
@@ -174,8 +169,10 @@ namespace SalesWebService.Controllers
             return RedirectToAction("ListOfBuyers");
         }
 
+        [Authorize]
         public ActionResult ResetListOfBuyers()=> RedirectToAction("ListOfBuyers");
-       
+
+        [Authorize]
         public ActionResult SearchByCountBuyings(string SearchCountBuyings)
         {
             if (SearchCountBuyings != null)
@@ -194,8 +191,7 @@ namespace SalesWebService.Controllers
                         }
                     }
                     return PartialView("BuyersContainer", model);
-                }
-               
+                }               
             }
             return RedirectToAction("ListOfBuyers");
         }
