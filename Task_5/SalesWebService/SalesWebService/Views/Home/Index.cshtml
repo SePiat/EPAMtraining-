@@ -1,22 +1,20 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<div >
 
-</div>
-<div class="text-center">
+<div align="center" >
     <h1 class="display-4">Welcome to sales service</h1>
+</div >
+<div align="center">
+    <a class="btn w-25 btn-light" asp-controller="Buyers" asp-action="Index">List of buyers</a>
 </div>
-<div>
-    <a class="btn btn-light" asp-controller="Buyers" asp-action="Index">List of buyers</a>
+<div align="center">
+    <a class="btn w-25 btn-light" asp-controller="Buyings" asp-action="Index">List of buyings</a>
+</div >
+<div align="center">
+    <a class="btn w-25 btn-light" asp-controller="Managers" asp-action="Index">List of managers</a>
 </div>
-<div>
-    <a class="btn btn-light" asp-controller="Buyings" asp-action="Index">List of buyings</a>
-</div>
-<div>
-    <a class="btn btn-light" asp-controller="Managers" asp-action="Index">List of managers</a>
-</div>
-<div>
-    <a class="btn btn-light" asp-controller="Product" asp-action="Index">List of products</a>
+<div align="center">
+    <a class="btn w-25 btn-light" asp-controller="Product" asp-action="Index">List of products</a>
 </div>
 

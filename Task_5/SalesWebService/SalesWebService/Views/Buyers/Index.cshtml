@@ -2,12 +2,27 @@
     ViewData["Title"] = "Index";
 }
 
-<h2 class="text-info">List of buyers</h2>
-<div>
-    <table id="buyersContainer" width="50%">
-    </table>
+
+<div align="center">
+    <h2 class="text-info">List of buyers</h2>
+    <div>
+        <table id="buyersContainer" width="50%">
+        </table>
+    </div>
+    <div  class="btn_filter_container">
+        <div class="btn_filter">
+            <button style="width:20%" id="btn_filterByName" type="button" class="btn btn-light">Filter by name</button>
+            <input style="width:20%" id="inp_filterByName" class="btn btn-light" />
+        </div>
+        <div class="btn_filter">
+            <button style="width:20%" id="btn_filterByCountBuyings" type="button" class="btn btn-light">Filter by count buyings</button>
+            <input style="width:20%" id="inp_filterByCountBuyings" class="btn btn-light" />
+        </div>
+        <div>
+            <button id="btn_reset" class="btn btn-light">Reset</button>
+        </div>
+    </div>
 </div>
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="~/js/buyers.js"></script>
+
+
 

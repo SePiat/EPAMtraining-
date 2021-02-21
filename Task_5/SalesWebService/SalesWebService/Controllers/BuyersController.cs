@@ -153,5 +153,51 @@ namespace SalesWebService.Controllers
             }
             return View("Index");
         }
+
+
+        public ActionResult SearchByName(string SearchName)
+        {
+            if (SearchName!=null)
+            {
+                IList<BuyersIndexViewModel> model = new List<BuyersIndexViewModel>();
+                using (var context = new ApplicationDbContext())
+                {
+                    IUnitOfWork unitOfWork = new UnitOfWork(context);
+                    var result = unitOfWork.Buyers.ToList().Where(x => x.FullName.Contains(SearchName));
+                    foreach (var buyer in result)
+                    {
+                        model.Add(new BuyersIndexViewModel { Buyer = buyer, CountBuyings = buyer.Buyings.Count() });
+                    }
+                }
+                return PartialView("BuyersContainer", model);
+            }
+            return RedirectToAction("ListOfBuyers");
+        }
+
+        public ActionResult ResetListOfBuyers()=> RedirectToAction("ListOfBuyers");
+       
+        public ActionResult SearchByCountBuyings(string SearchCountBuyings)
+        {
+            if (SearchCountBuyings != null)
+            {
+                bool isIntSearchCountBuyings = int.TryParse(SearchCountBuyings, out int count);
+                if (isIntSearchCountBuyings)
+                {
+                    IList<BuyersIndexViewModel> model = new List<BuyersIndexViewModel>();
+                    using (var context = new ApplicationDbContext())
+                    {
+                        IUnitOfWork unitOfWork = new UnitOfWork(context);
+                        var result = unitOfWork.Buyers.ToList().Where(x => x.Buyings.Count==count);
+                        foreach (var buyer in result)
+                        {
+                            model.Add(new BuyersIndexViewModel { Buyer = buyer, CountBuyings = buyer.Buyings.Count() });
+                        }
+                    }
+                    return PartialView("BuyersContainer", model);
+                }
+               
+            }
+            return RedirectToAction("ListOfBuyers");
+        }
     }
 }
