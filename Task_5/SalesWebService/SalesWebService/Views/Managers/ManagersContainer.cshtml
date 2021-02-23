@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<SalesWebService.Models.Managers.ManagersIndexViewModel>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
 
 <table width="50%">
     <thead>
@@ -14,23 +16,28 @@
     <tbody>
         @foreach (var manager in Model)
         {
-        <tr>
-            <td>@manager.Manager.Name</td>
-            <td align="center">@manager.Manager.SecondName</td>
-            <td align="center" width="20%">@manager.CountBuyers</td>
-            <td>
-                <a class="btn btn-light" asp-controller="Managers" asp-action="Edit" asp-route-id="@manager.Manager.Id">Edit</a>
-            </td>
-            <td>
-                <form asp-action="Delete" asp-route-id="@manager.Manager.Id" method="post">
-                    <button type="submit" class="btn btn-danger">
-                        Delete
-                    </button>
-                </form>
-            </td>
-        </tr>
+            <tr>
+                <td>@manager.Manager.Name</td>
+                <td align="center">@manager.Manager.SecondName</td>
+                <td align="center" width="20%">@manager.CountBuyers</td>
+                <td>
+                    <a class="btn btn-light" asp-controller="Managers" asp-action="Edit" asp-route-id="@manager.Manager.Id">Edit</a>
+                </td>
+                <td>
+                    <form asp-action="Delete" asp-route-id="@manager.Manager.Id" method="post">
+                        <button type="submit" class="btn btn-danger">
+                            Delete
+                        </button>
+                    </form>
+                </td>
+            </tr>
         }
     </tbody>
 </table>
 <a style="margin-bottom:10px" class="btn btn-light" asp-controller="Managers" asp-action="Create">Add Manager</a>
+
+@if (Model is IPagedList)
+{
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+}
 

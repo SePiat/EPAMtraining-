@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
     $.ajax({
         url: '/Buyers/ListOfBuyers',
-        type: "Get",
+        type: "Get",       
         success: function (data) {
             $('#buyersContainer').fadeOut(400,
                 function () {
@@ -11,8 +11,8 @@
         },
         error: errorFunc
     });
-    $('#btn_filterByName').click(
-        SearchByName
+    $('#btn_filterBuyerByName').click(
+        SearchBuyerByName
     );
     $('#btn_filterByCountBuyings').click(
         SearchByCountBuyings
@@ -22,9 +22,9 @@
     );
 });
 
-function SearchByName() {
+function SearchBuyerByName() {
     $.ajax({
-        url: '/Buyers/SearchByName?SearchName=' + $('#inp_filterByName').val(),
+        url: '/Buyers/SearchByName?SearchName=' + $('#inp_filterBuyerByName').val(),
         type: "Get",
         success: function (data) {
             $('#buyersContainer').fadeOut(400,

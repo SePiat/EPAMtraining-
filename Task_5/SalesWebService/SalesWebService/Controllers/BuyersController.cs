@@ -11,30 +11,38 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using X.PagedList.Mvc.Core;
+using X.PagedList;
 
 
 namespace SalesWebService.Controllers
 {
     public class BuyersController : Controller
-    {        
+    {
+        static int? globPage;
         [Authorize]
-        public ActionResult Index()
-        {            
+        public ActionResult Index(int? page)
+        {
+            globPage = page;
             return View();
         }
         
-        public ActionResult ListOfBuyers()
+        public ActionResult ListOfBuyers(int? page)
         {
-            IList<BuyersIndexViewModel> model = new List<BuyersIndexViewModel>();
+            IList<BuyersIndexViewModel> models = new List<BuyersIndexViewModel>();
             using (var context = new ApplicationDbContext())
             {
                 IUnitOfWork unitOfWork = new UnitOfWork(context);
                 var result = unitOfWork.Buyers.ToList();
                 foreach (var buyer in result)
                 {
-                    model.Add(new BuyersIndexViewModel { Buyer = buyer, CountBuyings = buyer.Buyings.Count() });
+                    models.Add(new BuyersIndexViewModel { Buyer = buyer, CountBuyings = buyer.Buyings.Count() });
                 }               
             }
+            int pageNumber = globPage ?? 1; 
+            var model = models.ToPagedList(pageNumber, 5);
+
+          
             return PartialView("BuyersContainer", model);
         }
         

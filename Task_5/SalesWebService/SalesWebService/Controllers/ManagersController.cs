@@ -10,20 +10,23 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using X.PagedList;
 
 namespace SalesWebService.Controllers
 {
     public class ManagersController : Controller
     {
+        static int? globPage;
         [Authorize]
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
+            globPage = page;
             return View();
         }
 
         public ActionResult ListOfManagers()
         {
-            IList<ManagersIndexViewModel> model = new List<ManagersIndexViewModel>();
+            IList<ManagersIndexViewModel> models = new List<ManagersIndexViewModel>();
             using (var context = new ApplicationDbContext())
             {
                 IUnitOfWork unitOfWork = new UnitOfWork(context);
@@ -31,9 +34,11 @@ namespace SalesWebService.Controllers
                 foreach (var manager in result)
                 {
                     int countBuyers = unitOfWork.Buyings.ToList().Where(x => x.Manager == manager).Select(x => x.Buyer).Distinct().Count();
-                    model.Add(new ManagersIndexViewModel { Manager = manager, CountBuyers = countBuyers});
+                    models.Add(new ManagersIndexViewModel { Manager = manager, CountBuyers = countBuyers});
                 }
             }
+            int pageNumber = globPage ?? 1;
+            var model = models.ToPagedList(pageNumber, 3);
             return PartialView("ManagersContainer", model);
         }
 
@@ -150,7 +155,7 @@ namespace SalesWebService.Controllers
         }
 
         [Authorize]
-        public ActionResult SearchByName(string SearchName)
+        public ActionResult SearchManagerByName(string SearchName)
         {
             if (SearchName != null)
             {
@@ -171,7 +176,7 @@ namespace SalesWebService.Controllers
         }
 
         [Authorize]
-        public ActionResult SearchBySecondName(string SecondName)
+        public ActionResult SearchManagerBySecondName(string SecondName)
         {
             if (SecondName != null)
             {

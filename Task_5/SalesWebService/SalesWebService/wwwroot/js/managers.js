@@ -11,11 +11,11 @@
         },
         error: errorFunc
     });
-    $('#btn_filterByName').click(
-        SearchByName
+    $('#btn_filterManagerByName').click(
+        SearchManagerByName
     );
-    $('#btn_filterBySecondName').click(
-        SearchBySecondName
+    $('#btn_filterManagerBySecondName').click(
+        SearchManagerBySecondName
     );
     $('#btn_filterByCountBuyers').click(
         SearchByCountBuyers
@@ -25,9 +25,9 @@
     );
 });
 
-function SearchByName() {
+function SearchManagerByName() {
     $.ajax({
-        url: '/Managers/SearchByName?SearchName=' + $('#inp_filterByName').val(),
+        url: '/Managers/SearchManagerByName?SearchName=' + $('#inp_filterManagerByName').val(),
         type: "Get",
         success: function (data) {
             $('#managersContainer').fadeOut(400,
@@ -40,9 +40,9 @@ function SearchByName() {
     });
 }
 
-function SearchBySecondName() {
+function SearchManagerBySecondName() {
     $.ajax({
-        url: '/Managers/SearchBySecondName?SecondName=' + $('#inp_filterBySecondName').val(),
+        url: '/Managers/SearchManagerBySecondName?SecondName=' + $('#inp_filterManagerBySecondName').val(),
         type: "Get",
         success: function (data) {
             $('#managersContainer').fadeOut(400,
