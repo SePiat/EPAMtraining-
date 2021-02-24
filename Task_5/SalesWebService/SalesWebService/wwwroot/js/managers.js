@@ -27,7 +27,7 @@
 
 function SearchManagerByName() {
     $.ajax({
-        url: '/Managers/SearchManagerByName?SearchName=' + $('#inp_filterManagerByName').val(),
+        url: '/Managers/SearchManagerByName?searchName=' + $('#inp_filterManagerByName').val(),
         type: "Get",
         success: function (data) {
             $('#managersContainer').fadeOut(400,
@@ -42,7 +42,7 @@ function SearchManagerByName() {
 
 function SearchManagerBySecondName() {
     $.ajax({
-        url: '/Managers/SearchManagerBySecondName?SecondName=' + $('#inp_filterManagerBySecondName').val(),
+        url: '/Managers/SearchManagerBySecondName?secondName=' + $('#inp_filterManagerBySecondName').val(),
         type: "Get",
         success: function (data) {
             $('#managersContainer').fadeOut(400,

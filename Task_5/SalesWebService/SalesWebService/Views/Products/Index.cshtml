@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div align="center">
+    <h2 class="text-info">List of products</h2>
+    <div>
+        <table id="productsContainer" width="50%">
+        </table>
+    </div>
+    <div class="btn_filter_container">
+        <div class="btn_filter">
+            <button style="width:20%" id="btn_filterProductByName" type="button" class="btn btn-light">Filter by name</button>
+            <input style="width:20%" id="inp_filterProductByName" class="btn btn-light" />
+        </div>
+        <div class="btn_filter">
+            <button style="width:20%" id="btn_filterProductByCost" type="button" class="btn btn-light">Filter by cost</button>
+            <input style="width:20%" id="inp_filterProductByCost" class="btn btn-light" />
+        </div>
+        <div class="btn_filter">
+            <button style="width:20%" id="btn_filterProductByCountBuyers" type="button" class="btn btn-light">Filter by count buyers</button>
+            <input style="width:20%" id="inp_filterProductByCountBuyers" class="btn btn-light" />
+        </div>
+        <div>
+            <button id="btn_reset" class="btn btn-light">Reset</button>
+        </div>
+    </div>
+</div>
+
+
+

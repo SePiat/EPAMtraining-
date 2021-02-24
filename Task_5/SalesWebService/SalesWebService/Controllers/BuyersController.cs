@@ -158,15 +158,15 @@ namespace SalesWebService.Controllers
         }
 
         [Authorize]
-        public ActionResult SearchByName(string SearchName)
+        public ActionResult SearchByName(string searchName)
         {
-            if (SearchName!=null)
+            if (searchName != null)
             {
                 IList<BuyersIndexViewModel> model = new List<BuyersIndexViewModel>();
                 using (var context = new ApplicationDbContext())
                 {
                     IUnitOfWork unitOfWork = new UnitOfWork(context);
-                    var result = unitOfWork.Buyers.ToList().Where(x => x.FullName.Contains(SearchName));
+                    var result = unitOfWork.Buyers.ToList().Where(x => x.FullName.Contains(searchName));
                     foreach (var buyer in result)
                     {
                         model.Add(new BuyersIndexViewModel { Buyer = buyer, CountBuyings = buyer.Buyings.Count() });
@@ -181,11 +181,11 @@ namespace SalesWebService.Controllers
         public ActionResult ResetListOfBuyers()=> RedirectToAction("ListOfBuyers");
 
         [Authorize]
-        public ActionResult SearchByCountBuyings(string SearchCountBuyings)
+        public ActionResult SearchByCountBuyings(string searchCountBuyings)
         {
-            if (SearchCountBuyings != null)
+            if (searchCountBuyings != null)
             {
-                bool isIntSearchCountBuyings = int.TryParse(SearchCountBuyings, out int count);
+                bool isIntSearchCountBuyings = int.TryParse(searchCountBuyings, out int count);
                 if (isIntSearchCountBuyings)
                 {
                     IList<BuyersIndexViewModel> model = new List<BuyersIndexViewModel>();

@@ -24,7 +24,7 @@
 
 function SearchBuyerByName() {
     $.ajax({
-        url: '/Buyers/SearchByName?SearchName=' + $('#inp_filterBuyerByName').val(),
+        url: '/Buyers/SearchByName?searchName=' + $('#inp_filterBuyerByName').val(),
         type: "Get",
         success: function (data) {
             $('#buyersContainer').fadeOut(400,
@@ -38,7 +38,7 @@ function SearchBuyerByName() {
 }
 function SearchByCountBuyings() {
     $.ajax({
-        url: '/Buyers/SearchByCountBuyings?SearchCountBuyings=' + $('#inp_filterByCountBuyings').val(),
+        url: '/Buyers/SearchByCountBuyings?searchCountBuyings=' + $('#inp_filterByCountBuyings').val(),
         type: "Get",
         success: function (data) {
             $('#buyersContainer').fadeOut(400,

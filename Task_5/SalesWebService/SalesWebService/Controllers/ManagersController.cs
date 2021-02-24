@@ -30,8 +30,8 @@ namespace SalesWebService.Controllers
             using (var context = new ApplicationDbContext())
             {
                 IUnitOfWork unitOfWork = new UnitOfWork(context);
-                var result = unitOfWork.Managers.ToList();
-                foreach (var manager in result)
+                var managers = unitOfWork.Managers.ToList();
+                foreach (var manager in managers)
                 {
                     int countBuyers = unitOfWork.Buyings.ToList().Where(x => x.Manager == manager).Select(x => x.Buyer).Distinct().Count();
                     models.Add(new ManagersIndexViewModel { Manager = manager, CountBuyers = countBuyers});
@@ -106,7 +106,7 @@ namespace SalesWebService.Controllers
                 }
                 catch (Exception e)
                 {
-                    Log.Error($"BuyersController.Delete :Ошибка при удалении покупателя: {DateTime.Now}" +
+                    Log.Error($"ManagersContainer.Delete :Ошибка при удалении покупателя: {DateTime.Now}" +
                            $"{Environment.NewLine}{e}{Environment.NewLine}");
                     throw new Exception($"Ошибка при удалении покупателя: {e}");
                 }
@@ -139,14 +139,14 @@ namespace SalesWebService.Controllers
                         }
                         catch (Exception e)
                         {
-                            Log.Error($"BuyersController.Create :Ошибка при создании менеджера: {DateTime.Now}" +
+                            Log.Error($"ManagersContainer.Create :Ошибка при создании менеджера: {DateTime.Now}" +
                            $"{Environment.NewLine}{e}{Environment.NewLine}");
                             throw new Exception($"Ошибка при создании менеджера: {e}");
                         }
                     }
                     else
                     {
-                        Log.Error($"BuyersController.Create :Менеджер с таким именем уже занесен в БД: {DateTime.Now}{Environment.NewLine}");
+                        Log.Error($"ManagersContainer.Create :Менеджер с таким именем уже занесен в БД: {DateTime.Now}{Environment.NewLine}");
                         throw new Exception($"Менеджер с таким именем уже занесен в БД");
                     }
                 }
@@ -155,15 +155,15 @@ namespace SalesWebService.Controllers
         }
 
         [Authorize]
-        public ActionResult SearchManagerByName(string SearchName)
+        public ActionResult SearchManagerByName(string searchName)
         {
-            if (SearchName != null)
+            if (searchName != null)
             {
                 IList<ManagersIndexViewModel> model = new List<ManagersIndexViewModel>();
                 using (var context = new ApplicationDbContext())
                 {
                     IUnitOfWork unitOfWork = new UnitOfWork(context);
-                    var result = unitOfWork.Managers.ToList().Where(x => x.Name.Contains(SearchName));
+                    var result = unitOfWork.Managers.ToList().Where(x => x.Name.Contains(searchName));
                     foreach (var manager in result)
                     {
                         int countBuyers = unitOfWork.Buyings.ToList().Where(x => x.Manager == manager).Select(x => x.Buyer).Distinct().Count();
@@ -176,15 +176,15 @@ namespace SalesWebService.Controllers
         }
 
         [Authorize]
-        public ActionResult SearchManagerBySecondName(string SecondName)
+        public ActionResult SearchManagerBySecondName(string secondName)
         {
-            if (SecondName != null)
+            if (secondName != null)
             {
                 IList<ManagersIndexViewModel> model = new List<ManagersIndexViewModel>();
                 using (var context = new ApplicationDbContext())
                 {
                     IUnitOfWork unitOfWork = new UnitOfWork(context);
-                    var result = unitOfWork.Managers.ToList().Where(x => x.SecondName.Contains(SecondName));
+                    var result = unitOfWork.Managers.ToList().Where(x => x.SecondName.Contains(secondName));
                     foreach (var manager in result)
                     {
                         int countBuyers = unitOfWork.Buyings.ToList().Where(x => x.Manager == manager).Select(x => x.Buyer).Distinct().Count();
