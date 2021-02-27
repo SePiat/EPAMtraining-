@@ -1,15 +1,14 @@
-﻿using System;
+﻿using SalesReportConverter.Model_.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using SalesReportConverter.Model_.Models;
 
 namespace SalesWebService.Models.Buyings
 {
-    public class BuyingsViewModel
-    {
-        public Buying Buying { get; set; }
+    public class BuyingsCreateViewModel
+    {        
         [Required]
         [StringLength(20, MinimumLength = 3)]
         public string ManagerName { get; set; }
@@ -22,7 +21,7 @@ namespace SalesWebService.Models.Buyings
         [Required]
         [StringLength(20, MinimumLength = 3)]
         public string Product { get; set; }
-       
+
         [Required]
         public DateTime PurchaseDate { get; set; }
         [Required]

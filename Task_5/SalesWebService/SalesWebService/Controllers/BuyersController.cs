@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SalesReportConverter.DAL.Context;
 using SalesReportConverter.DAL.Repositories;
@@ -11,7 +10,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using X.PagedList.Mvc.Core;
 using X.PagedList;
 
 
@@ -26,7 +24,7 @@ namespace SalesWebService.Controllers
             globPage = page;
             return View();
         }
-        
+
         public ActionResult ListOfBuyers(int? page)
         {
             IList<BuyersIndexViewModel> models = new List<BuyersIndexViewModel>();
@@ -37,15 +35,15 @@ namespace SalesWebService.Controllers
                 foreach (var buyer in result)
                 {
                     models.Add(new BuyersIndexViewModel { Buyer = buyer, CountBuyings = buyer.Buyings.Count() });
-                }               
+                }
             }
-            int pageNumber = globPage ?? 1; 
+            int pageNumber = globPage ?? 1;
             var model = models.ToPagedList(pageNumber, 5);
 
-          
+
             return PartialView("BuyersContainer", model);
         }
-        
+
         [Authorize(Roles = "admin")]
         public ActionResult Edit(int id)
         {
@@ -53,20 +51,20 @@ namespace SalesWebService.Controllers
             using (var context = new ApplicationDbContext())
             {
                 IUnitOfWork unitOfWork = new UnitOfWork(context);
-                buyer = unitOfWork.Buyers.FirstOrDefault(x=>x.Id==id);               
+                buyer = unitOfWork.Buyers.FirstOrDefault(x => x.Id == id);
             }
             if (buyer == null)
             {
                 return NotFound();
-            }            
+            }
             return View(buyer);
-            
-        }       
+
+        }
 
         [HttpPost]
         [Authorize(Roles = "admin")]
         public async Task<ActionResult> Edit(Buyer model)
-        {            
+        {
             using (var context = new ApplicationDbContext())
             {
                 IUnitOfWork unitOfWork = new UnitOfWork(context);
@@ -85,10 +83,10 @@ namespace SalesWebService.Controllers
                     Log.Error($"BuyersController.Edit: Ошибка при попытке сохранения нового имени покупателя: {DateTime.Now}" +
                            $"{Environment.NewLine}{e}{Environment.NewLine}");
                     throw new Exception($"Ошибка при попытке сохранения нового имени покупателя: {e}");
-                }                
+                }
             }
             return View("Index");
-        }        
+        }
 
         [HttpPost]
         [Authorize(Roles = "admin")]
@@ -112,7 +110,7 @@ namespace SalesWebService.Controllers
                     Log.Error($"BuyersController.Delete :Ошибка при удалении покупателя: {DateTime.Now}" +
                            $"{Environment.NewLine}{e}{Environment.NewLine}");
                     throw new Exception($"Ошибка при удалении покупателя: {e}");
-                }                
+                }
             }
             return View("Index");
         }
@@ -121,24 +119,23 @@ namespace SalesWebService.Controllers
         {
             return View();
         }
-        
+
         [Authorize(Roles = "admin")]
         [HttpPost]
-        public async Task<ActionResult> Create(Buyer model)
+        public async Task<ActionResult> Create(Buyer buyer)
         {
             if (ModelState.IsValid)
-            {
-                Buyer buyer = new Buyer { FullName = model.FullName};
+            {                
                 using (var context = new ApplicationDbContext())
                 {
                     IUnitOfWork unitOfWork = new UnitOfWork(context);
-                    Buyer existBuyer = unitOfWork.Buyers.FirstOrDefault(x => x.FullName == model.FullName);
-                    if (existBuyer==null)
+                    Buyer existBuyer = unitOfWork.Buyers.FirstOrDefault(x => x.FullName == buyer.FullName);
+                    if (existBuyer == null)
                     {
                         try
                         {
                             unitOfWork.Buyers.Add(buyer);
-                            await unitOfWork.SaveAsync();                                                       
+                            await unitOfWork.SaveAsync();
                         }
                         catch (Exception e)
                         {
@@ -149,9 +146,9 @@ namespace SalesWebService.Controllers
                     }
                     else
                     {
-                        Log.Error($"BuyersController.Create :Покупатель с таким именем уже занесен в БД: {DateTime.Now}{Environment.NewLine}");                           
+                        Log.Error($"BuyersController.Create :Покупатель с таким именем уже занесен в БД: {DateTime.Now}{Environment.NewLine}");
                         throw new Exception($"Покупатель с таким именем уже занесен в БД");
-                    }                                     
+                    }
                 }
             }
             return View("Index");
@@ -178,7 +175,7 @@ namespace SalesWebService.Controllers
         }
 
         [Authorize]
-        public ActionResult ResetListOfBuyers()=> RedirectToAction("ListOfBuyers");
+        public ActionResult ResetListOfBuyers() => RedirectToAction("ListOfBuyers");
 
         [Authorize]
         public ActionResult SearchByCountBuyings(string searchCountBuyings)
@@ -192,14 +189,14 @@ namespace SalesWebService.Controllers
                     using (var context = new ApplicationDbContext())
                     {
                         IUnitOfWork unitOfWork = new UnitOfWork(context);
-                        var result = unitOfWork.Buyers.ToList().Where(x => x.Buyings.Count==count);
+                        var result = unitOfWork.Buyers.ToList().Where(x => x.Buyings.Count == count);
                         foreach (var buyer in result)
                         {
                             model.Add(new BuyersIndexViewModel { Buyer = buyer, CountBuyings = buyer.Buyings.Count() });
                         }
                     }
                     return PartialView("BuyersContainer", model);
-                }               
+                }
             }
             return RedirectToAction("ListOfBuyers");
         }

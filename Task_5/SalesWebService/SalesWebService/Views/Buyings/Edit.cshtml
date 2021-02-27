@@ -15,6 +15,7 @@
     <div class="form-group">
         <label asp-for="ManagerName">Manager name</label>
         <input type="text" asp-for="ManagerName" class="form-control" />
+        <span asp-validation-for="ManagerName"></span>
     </div>
     <div class="form-group">
         <h2>Currently second name of manager: @Model.ManagerSecondName </h2>
@@ -22,6 +23,7 @@
     <div class="form-group">
         <label asp-for="ManagerSecondName">Manager second name</label>
         <input type="text" asp-for="ManagerSecondName" class="form-control" />
+        <span asp-validation-for="ManagerSecondName"></span>
     </div>
     <div class="form-group">
         <h2>Currently name of buyer: @Model.Buyer </h2>
@@ -29,6 +31,7 @@
     <div class="form-group">
         <label asp-for="Buyer">Buyer full name</label>
         <input type="text" asp-for="Buyer" class="form-control" />
+        <span asp-validation-for="Buyer"></span>
     </div>
     <div class="form-group">
         <h2>Currently product: @Model.Product </h2>
@@ -36,6 +39,7 @@
     <div class="form-group">
         <label asp-for="Product">Product name</label>
         <input type="text" asp-for="Product" class="form-control" />
+        <span asp-validation-for="Product"></span>
     </div>
     <div class="form-group">
         <h2>Currently date of purchase: @Model.PurchaseDate </h2>
@@ -43,16 +47,23 @@
     <div class="form-group">
         <label asp-for="PurchaseDate">Purchase date</label>
         <input type="text" asp-for="PurchaseDate" class="form-control" />
+        <span asp-validation-for="PurchaseDate"></span>
     </div>
     <div class="form-group">
         <h2>Currently cost of purchase: @Model.Cost </h2>
     </div>
     <div class="form-group">
         <label asp-for="Cost">Purchase cost</label>
-        <input type="text" asp-for="Cost" class="form-control" />
+        <input type="number" asp-for="Cost" class="form-control" />
+        <span asp-validation-for="Cost"></span>
     </div>
 
     <div class="form-group">
         <input type="submit" value="Save" class="btn btn-light" />
     </div>
 </form>
+@section scripts{
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

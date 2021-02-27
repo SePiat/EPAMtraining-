@@ -75,46 +75,49 @@ namespace SalesWebService.Controllers
         [Authorize(Roles = "admin")]
         public async Task<ActionResult> Edit(BuyingsViewModel model)
         {
-            using (var context = new ApplicationDbContext())
+            if (ModelState.IsValid)
             {
-                IUnitOfWork unitOfWork = new UnitOfWork(context);
-                Buying buying = unitOfWork.Buyings.FirstOrDefault(x => x.Id == model.Buying.Id);
-                if (buying == null)
+                using (var context = new ApplicationDbContext())
                 {
-                    return NotFound();
+                    IUnitOfWork unitOfWork = new UnitOfWork(context);
+                    Buying buying = unitOfWork.Buyings.FirstOrDefault(x => x.Id == model.Buying.Id);
+                    if (buying == null)
+                    {
+                        return NotFound();
+                    }
+                    Manager manager = unitOfWork.Managers.FirstOrDefault(x => x.Name == model.ManagerName && x.SecondName == model.ManagerSecondName);
+                    Buyer buyer = unitOfWork.Buyers.FirstOrDefault(x => x.FullName == model.Buyer);
+                    Product product = unitOfWork.Products.FirstOrDefault(x => x.Name == model.Product);
+                    if (manager == null)
+                    {
+                        buying.Manager = new Manager() { Name = model.ManagerName, SecondName = model.ManagerSecondName };
+                    }
+                    else buying.Manager = manager;
+                    if (buyer == null)
+                    {
+                        buying.Buyer = new Buyer() { FullName = model.Buyer };
+                    }
+                    else buying.Buyer = buyer;
+                    if (product == null)
+                    {
+                        buying.Product = new Product() { Name = model.Product, Cost = model.Cost };
+                    }
+                    else buying.Product = product;
+
+                    buying.PurchaseDate = model.PurchaseDate;
+                    buying.Cost = model.Cost;
+                    try
+                    {
+                        await unitOfWork.SaveAsync();
+                    }
+                    catch (Exception e)
+                    {
+                        Log.Error($"ManagersController.Edit: Ошибка при попытке сохранения изменений покупки: {DateTime.Now}" +
+                               $"{Environment.NewLine}{e}{Environment.NewLine}");
+                        throw new Exception($"Ошибка при попытке сохранения изменений покупки: {e}");
+                    }
                 }
-                Manager manager = unitOfWork.Managers.FirstOrDefault(x => x.Name == model.ManagerName && x.SecondName==model.ManagerSecondName);
-                Buyer buyer = unitOfWork.Buyers.FirstOrDefault(x => x.FullName == model.Buyer);
-                Product product = unitOfWork.Products.FirstOrDefault(x => x.Name == model.Product);
-                if (manager == null)
-                {
-                    buying.Manager = new Manager() { Name = model.ManagerName, SecondName = model.ManagerSecondName };
-                }
-                else buying.Manager = manager;
-                if (buyer == null)
-                {
-                    buying.Buyer = new Buyer() { FullName = model.Buyer };
-                }
-                else buying.Buyer = buyer;
-                if (product == null)
-                {
-                    buying.Product = new Product() { Name = model.Product, Cost = model.Cost };
-                }
-                else buying.Product = product;
-               
-                buying.PurchaseDate = model.PurchaseDate;
-                buying.Cost = model.Cost;
-                try
-                {
-                    await unitOfWork.SaveAsync();
-                }
-                catch (Exception e)
-                {
-                    Log.Error($"ManagersController.Edit: Ошибка при попытке сохранения изменений покупки: {DateTime.Now}" +
-                           $"{Environment.NewLine}{e}{Environment.NewLine}");
-                    throw new Exception($"Ошибка при попытке сохранения изменений покупки: {e}");
-                }
-            }
+            }            
             return View("Index");
         }
 
@@ -152,7 +155,7 @@ namespace SalesWebService.Controllers
 
         [Authorize(Roles = "admin")]
         [HttpPost]
-        public async Task<ActionResult> Create(BuyingsViewModel model)
+        public async Task<ActionResult> Create(BuyingsCreateViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -163,7 +166,6 @@ namespace SalesWebService.Controllers
                     Buying existBuying = unitOfWork.Buyings.FirstOrDefault(x => x.Buyer.FullName==model.Buyer&&x.Product.Name==model.Product&&x.PurchaseDate==model.PurchaseDate);
                     if (existBuying == null)
                     {
-
                         Manager manager = unitOfWork.Managers.FirstOrDefault(x => x.Name == model.ManagerName && x.SecondName == model.ManagerSecondName);
                         Buyer buyer = unitOfWork.Buyers.FirstOrDefault(x => x.FullName == model.Buyer);
                         Product product = unitOfWork.Products.FirstOrDefault(x => x.Name == model.Product);
