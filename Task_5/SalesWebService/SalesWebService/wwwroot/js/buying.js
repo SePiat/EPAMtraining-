@@ -23,13 +23,13 @@
         SearchBuyingByCost
     );   
     $('#btn_reset').click(
-        ResetListOfBuying
+        ResetListOfBuyings
     );
 });
 
 function SearchBuyingByManager() {
     $.ajax({
-        url: '/Buyings/SearchBuyingByManager?managerName=' + $('#inp_filterBuyingByManager').val(),
+        url: '/Buyings/SearchBuyingByManager?managerSecondName=' + $('#inp_filterBuyingsByManager').val(),
         type: "Get",
         success: function (data) {
             $('#buyingsContainer').fadeOut(400,
@@ -43,7 +43,7 @@ function SearchBuyingByManager() {
 }
 function SearchBuyingByBuyer() {
     $.ajax({
-        url: '/Buyings/SearchBuyingByBuyer?buyerName=' + $('#inp_filterBuyingByBuyer').val(),
+        url: '/Buyings/SearchBuyingByBuyer?buyerName=' + $('#inp_filterBuyingsByBuyer').val(),
         type: "Get",
         success: function (data) {
             $('#buyingsContainer').fadeOut(400,
@@ -57,7 +57,7 @@ function SearchBuyingByBuyer() {
 }
 function SearchBuyingByProduct() {
     $.ajax({
-        url: '/Buyings/SearchBuyingByProduct?productName=' + $('#inp_filterBuyingByProduct').val(),
+        url: '/Buyings/SearchBuyingByProduct?productName=' + $('#inp_filterBuyingsByProduct').val(),
         type: "Get",
         success: function (data) {
             $('#buyingsContainer').fadeOut(400,
@@ -72,7 +72,7 @@ function SearchBuyingByProduct() {
 
 function SearchBuyingByDate() {
     $.ajax({
-        url: '/Buyings/SearchBuyingByDate?date=' + $('#inp_filterBuyingByDate').val(),
+        url: '/Buyings/SearchBuyingByDate?date=' + $('#inp_filterBuyingsByDate').val(),
         type: "Get",
         success: function (data) {
             $('#buyingsContainer').fadeOut(400,
@@ -86,7 +86,22 @@ function SearchBuyingByDate() {
 }
 function SearchBuyingByCost() {
     $.ajax({
-        url: '/Buyings/SearchBuyingByCost?cost=' + $('#inp_filterBuyingByCost').val(),
+        url: '/Buyings/SearchBuyingByCost?cost=' + $('#inp_filterBuyingsByCost').val(),
+        type: "Get",
+        success: function (data) {
+            $('#buyingsContainer').fadeOut(400,
+                function () {
+                    $('#buyingsContainer').html(data);
+                    $(this).fadeIn(300);
+                });
+        },
+        error: errorFunc
+    });
+}
+
+function ResetListOfBuyings() {
+    $.ajax({
+        url: '/Buyings/ListOfBuyings',
         type: "Get",
         success: function (data) {
             $('#buyingsContainer').fadeOut(400,

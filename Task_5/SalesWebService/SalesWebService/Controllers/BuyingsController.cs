@@ -67,13 +67,8 @@ namespace SalesWebService.Controllers
                 model.Product = buying.Product.Name;
                 model.PurchaseDate = buying.PurchaseDate;
                 model.Cost = buying.Cost;
-
-            }
-            
-        
-           
+            } 
             return View(model);
-
         }
 
         [HttpPost]
@@ -212,77 +207,157 @@ namespace SalesWebService.Controllers
             return View("Index");
         }
 
-        /*[Authorize]
-        public ActionResult SearchManagerByName(string searchName)
+        [Authorize]
+        public ActionResult SearchBuyingByManager(string managerSecondName)
         {
-            if (searchName != null)
+            if (managerSecondName != null)
             {
-                IList<ManagersIndexViewModel> model = new List<ManagersIndexViewModel>();
+                IList<BuyingsViewModel> model = new List<BuyingsViewModel>();
                 using (var context = new ApplicationDbContext())
                 {
                     IUnitOfWork unitOfWork = new UnitOfWork(context);
-                    var result = unitOfWork.Managers.ToList().Where(x => x.Name.Contains(searchName));
-                    foreach (var manager in result)
-                    {
-                        int countBuyers = unitOfWork.Buyings.ToList().Where(x => x.Manager == manager).Select(x => x.Buyer).Distinct().Count();
-                        model.Add(new ManagersIndexViewModel { Manager = manager, CountBuyers = countBuyers });
+                    var buyings = unitOfWork.Buyings.ToList().Where(x => x.Manager.SecondName.Contains(managerSecondName));
+                    foreach (var buying in buyings)
+                    {                        
+                        model.Add(new BuyingsViewModel()
+                        {
+                            ManagerName = buying.Manager.Name,
+                            ManagerSecondName = buying.Manager.SecondName,
+                            Buyer = buying.Buyer.FullName,
+                            Product = buying.Product.Name,
+                            PurchaseDate = buying.PurchaseDate,
+                            Cost = buying.Cost,
+                            Buying = buying
+                        });
                     }
                 }
-                return PartialView("ManagersContainer", model);
+                return PartialView("BuyingsContainer", model);
             }
-            return RedirectToAction("ListOfManagers");
+            return RedirectToAction("ListOfBuyings");
         }
 
         [Authorize]
-        public ActionResult SearchManagerBySecondName(string secondName)
+        public ActionResult SearchBuyingByBuyer(string buyerName)
         {
-            if (secondName != null)
+            if (buyerName != null)
             {
-                IList<ManagersIndexViewModel> model = new List<ManagersIndexViewModel>();
+                IList<BuyingsViewModel> model = new List<BuyingsViewModel>();
                 using (var context = new ApplicationDbContext())
                 {
                     IUnitOfWork unitOfWork = new UnitOfWork(context);
-                    var result = unitOfWork.Managers.ToList().Where(x => x.SecondName.Contains(secondName));
-                    foreach (var manager in result)
+                    var buyings = unitOfWork.Buyings.ToList().Where(x => x.Buyer.FullName.Contains(buyerName));
+                    foreach (var buying in buyings)
                     {
-                        int countBuyers = unitOfWork.Buyings.ToList().Where(x => x.Manager == manager).Select(x => x.Buyer).Distinct().Count();
-                        model.Add(new ManagersIndexViewModel { Manager = manager, CountBuyers = countBuyers });
+                        model.Add(new BuyingsViewModel()
+                        {
+                            ManagerName = buying.Manager.Name,
+                            ManagerSecondName = buying.Manager.SecondName,
+                            Buyer = buying.Buyer.FullName,
+                            Product = buying.Product.Name,
+                            PurchaseDate = buying.PurchaseDate,
+                            Cost = buying.Cost,
+                            Buying = buying
+                        });
                     }
                 }
-                return PartialView("ManagersContainer", model);
+                return PartialView("BuyingsContainer", model);
             }
-            return RedirectToAction("ListOfManagers");
+            return RedirectToAction("ListOfBuyings");
         }
 
         [Authorize]
-        public ActionResult ResetListOfBuyers() => RedirectToAction("ListOfBuyers");
+        public ActionResult SearchBuyingByProduct(string productName)
+        {
+            if (productName != null)
+            {
+                IList<BuyingsViewModel> model = new List<BuyingsViewModel>();
+                using (var context = new ApplicationDbContext())
+                {
+                    IUnitOfWork unitOfWork = new UnitOfWork(context);
+                    var buyings = unitOfWork.Buyings.ToList().Where(x => x.Product.Name.Contains(productName));
+                    foreach (var buying in buyings)
+                    {
+                        model.Add(new BuyingsViewModel()
+                        {
+                            ManagerName = buying.Manager.Name,
+                            ManagerSecondName = buying.Manager.SecondName,
+                            Buyer = buying.Buyer.FullName,
+                            Product = buying.Product.Name,
+                            PurchaseDate = buying.PurchaseDate,
+                            Cost = buying.Cost,
+                            Buying = buying
+                        });
+                    }
+                }
+                return PartialView("BuyingsContainer", model);
+            }
+            return RedirectToAction("ListOfBuyings");
+        }
 
         [Authorize]
-        public ActionResult SearchByCountBuyers(string numberOfBuyers)
+        public ActionResult SearchBuyingByDate(string date)
         {
-            if (numberOfBuyers != null)
+            if (date != null)
             {
-                bool isIntSearchCountBuyers = int.TryParse(numberOfBuyers, out int count);
-                if (isIntSearchCountBuyers)
+                bool isDateTime = DateTime.TryParse(date, out DateTime inpDate);
+                if (isDateTime)
+                {                   
+                    IList<BuyingsViewModel> model = new List<BuyingsViewModel>();
+                    using (var context = new ApplicationDbContext())
+                    {                       
+                        IUnitOfWork unitOfWork = new UnitOfWork(context);
+                        var buyings = unitOfWork.Buyings.ToList().Where(x=>x.PurchaseDate.ToString("dd.MM.yyyy") == inpDate.ToString("dd.MM.yyyy"));                       
+                        foreach (var buying in buyings)
+                        {
+                            model.Add(new BuyingsViewModel()
+                            {
+                                ManagerName = buying.Manager.Name,
+                                ManagerSecondName = buying.Manager.SecondName,
+                                Buyer = buying.Buyer.FullName,
+                                Product = buying.Product.Name,
+                                PurchaseDate = buying.PurchaseDate,
+                                Cost = buying.Cost,
+                                Buying = buying
+                            });
+                        }
+                    }
+                    return PartialView("BuyingsContainer", model);
+                }
+            }                
+            return RedirectToAction("ListOfBuyings");
+        }
+
+        [Authorize]
+        public ActionResult SearchBuyingByCost(string cost)
+        {
+            if (cost != null)
+            {
+                bool isCostDecimal = decimal.TryParse(cost, out decimal inpCost);
+                if (isCostDecimal)
                 {
-                    IList<ManagersIndexViewModel> model = new List<ManagersIndexViewModel>();
+                    IList<BuyingsViewModel> model = new List<BuyingsViewModel>();
                     using (var context = new ApplicationDbContext())
                     {
                         IUnitOfWork unitOfWork = new UnitOfWork(context);
-                        var managers = unitOfWork.Managers.ToList();
-                        foreach (var manager in managers)
+                        var buyings = unitOfWork.Buyings.ToList().Where(x => x.Cost == inpCost);
+                        foreach (var buying in buyings)
                         {
-                            int countBuyers = unitOfWork.Buyings.ToList().Where(x => x.Manager == manager).Select(x => x.Buyer).Distinct().Count();
-                            if (countBuyers == count)
+                            model.Add(new BuyingsViewModel()
                             {
-                                model.Add(new ManagersIndexViewModel { Manager = manager, CountBuyers = countBuyers });
-                            }
+                                ManagerName = buying.Manager.Name,
+                                ManagerSecondName = buying.Manager.SecondName,
+                                Buyer = buying.Buyer.FullName,
+                                Product = buying.Product.Name,
+                                PurchaseDate = buying.PurchaseDate,
+                                Cost = buying.Cost,
+                                Buying = buying
+                            });
                         }
                     }
-                    return PartialView("ManagersContainer", model);
-                }
+                    return PartialView("BuyingsContainer", model);
+                }                    
             }
-            return RedirectToAction("ListOfManagers");
-        }*/
+            return RedirectToAction("ListOfBuyings");
+        }
     }
 }
