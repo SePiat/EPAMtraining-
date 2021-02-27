@@ -230,7 +230,7 @@ namespace SalesWebService.Controllers
                     return PartialView("ProductsContainer", model);
                 }
             }
-            return RedirectToAction("ListOfManagers");
+            return RedirectToAction("ListOfProducts");
         }
     }
 }

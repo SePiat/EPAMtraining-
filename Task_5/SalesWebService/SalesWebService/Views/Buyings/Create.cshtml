@@ -1,0 +1,37 @@
+﻿
+@model SalesWebService.Models.Buyings.BuyingsViewModel
+@{
+    ViewBag.Title = "Add buying";
+}
+
+<form asp-action="Create" asp-controller="Buyings">
+    <div asp-validation-summary="All" class="btn-dark"></div>
+    <div class="form-group btn-light">
+        <label asp-for="ManagerName">ManagerName</label>
+        <input type="text" asp-for="ManagerName" class="form-control" />
+    </div>
+    <div class="form-group btn-light">
+        <label asp-for="ManagerSecondName">Manager second name</label>
+        <input type="text" asp-for="ManagerSecondName" class="form-control" />
+    </div>
+    <div class="form-group btn-light">
+        <label asp-for="Buyer">Buyer full name</label>
+        <input type="text" asp-for="Buyer" class="form-control" />
+    </div>
+    <div class="form-group btn-light">
+        <label asp-for="Product">Product name</label>
+        <input type="text" asp-for="Product" class="form-control" />
+    </div>
+    <div class="form-group btn-light">
+        <label asp-for="PurchaseDate">Purchase date</label>
+        <input type="text" asp-for="PurchaseDate" class="form-control" />
+    </div>
+    <div class="form-group btn-light">
+        <label asp-for="Cost">Purchase cost</label>
+        <input type="text" asp-for="Cost" class="form-control" />
+    </div>
+
+    <div>
+        <input type="submit" value="Add" class="btn btn-info" />
+    </div>
+</form>

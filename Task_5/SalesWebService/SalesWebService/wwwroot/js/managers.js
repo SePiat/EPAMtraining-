@@ -3,11 +3,7 @@
         url: '/Managers/ListOfManagers',
         type: "Get",
         success: function (data) {
-            $('#managersContainer').fadeOut(400,
-                function () {
-                    $('#managersContainer').html(data);
-                    $(this).fadeIn(300);
-                });
+            $('#managersContainer').html(data);
         },
         error: errorFunc
     });
@@ -57,7 +53,7 @@ function SearchManagerBySecondName() {
 
 function SearchByCountBuyers() {
     $.ajax({
-        url: '/Managers/SearchByCountBuyers?SearchCountBuyers=' + $('#inp_filterByCountBuyers').val(),
+        url: '/Managers/SearchByCountBuyers?numberOfBuyers=' + $('#inp_filterByCountBuyers').val(),
         type: "Get",
         success: function (data) {
             $('#managersContainer').fadeOut(400,

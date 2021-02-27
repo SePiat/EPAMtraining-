@@ -3,11 +3,7 @@
         url: '/Products/ListOfProducts',
         type: "Get",
         success: function (data) {
-            $('#productsContainer').fadeOut(400,
-                function () {
-                    $('#productsContainer').html(data);
-                    $(this).fadeIn(300);
-                });
+            $('#productsContainer').html(data);
         },
         error: errorFunc
     });

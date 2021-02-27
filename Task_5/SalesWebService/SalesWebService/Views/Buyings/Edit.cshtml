@@ -1,0 +1,58 @@
+﻿@model SalesWebService.Models.Buyings.BuyingsViewModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+<form asp-action="Edit" asp-controller="Buyings">
+    <div asp-validation-summary="All" class="btn-dark"></div>
+    <div class="form-group">
+        <input type="hidden" asp-for="@Model.Buying.Id" />
+    </div>
+    <div class="form-group">
+        <h2>Currently name of manager: @Model.ManagerName </h2>
+    </div>
+    <div class="form-group">
+        <label asp-for="ManagerName">Manager name</label>
+        <input type="text" asp-for="ManagerName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <h2>Currently second name of manager: @Model.ManagerSecondName </h2>
+    </div>
+    <div class="form-group">
+        <label asp-for="ManagerSecondName">Manager second name</label>
+        <input type="text" asp-for="ManagerSecondName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <h2>Currently name of buyer: @Model.Buyer </h2>
+    </div>
+    <div class="form-group">
+        <label asp-for="Buyer">Buyer full name</label>
+        <input type="text" asp-for="Buyer" class="form-control" />
+    </div>
+    <div class="form-group">
+        <h2>Currently product: @Model.Product </h2>
+    </div>
+    <div class="form-group">
+        <label asp-for="Product">Product name</label>
+        <input type="text" asp-for="Product" class="form-control" />
+    </div>
+    <div class="form-group">
+        <h2>Currently date of purchase: @Model.PurchaseDate </h2>
+    </div>
+    <div class="form-group">
+        <label asp-for="PurchaseDate">Purchase date</label>
+        <input type="text" asp-for="PurchaseDate" class="form-control" />
+    </div>
+    <div class="form-group">
+        <h2>Currently cost of purchase: @Model.Cost </h2>
+    </div>
+    <div class="form-group">
+        <label asp-for="Cost">Purchase cost</label>
+        <input type="text" asp-for="Cost" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-light" />
+    </div>
+</form>

@@ -3,11 +3,7 @@
         url: '/Buyers/ListOfBuyers',
         type: "Get",       
         success: function (data) {
-            $('#buyersContainer').fadeOut(400,
-                function () {
-                    $('#buyersContainer').html(data);
-                    $(this).fadeIn(300);
-                });
+            $('#buyersContainer').html(data);            
         },
         error: errorFunc
     });
@@ -21,6 +17,7 @@
         ResetListOfBuyers
     );
 });
+
 
 function SearchBuyerByName() {
     $.ajax({

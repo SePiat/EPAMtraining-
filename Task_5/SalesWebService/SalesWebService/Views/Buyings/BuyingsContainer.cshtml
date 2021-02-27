@@ -1,0 +1,48 @@
+﻿@model IEnumerable<SalesWebService.Models.Buyings.BuyingsViewModel>
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+
+<table >
+    <thead>
+        <tr>
+            <td align="center"><h4 class="text-info">Manager</h4></td>
+            <td align="center"><h4 class="text-info">Buyer</h4></td>
+            <td align="center"><h4 class="text-info">Product</h4></td>
+            <td align="center"><h4 class="text-info">PurchaseDate</h4></td>
+            <td align="center"><h4 class="text-info">Cost</h4></td>
+            <td align="center"> </td>
+            <td align="center"> </td>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var buying in Model)
+        {
+            <tr>
+                <td align="center">@buying.ManagerName @buying.ManagerSecondName</td>
+                <td align="center">@buying.Buyer</td>
+                <td align="center">@buying.Product</td>
+                <td align="center">@buying.PurchaseDate</td>
+                <td align="center">@buying.Cost</td>
+
+                <td>
+                    <a class="btn btn-light" asp-controller="Buyings" asp-action="Edit" asp-route-id="@buying.Buying.Id">Edit</a>
+                </td>
+                <td>
+                    <form asp-action="Delete" asp-route-id="@buying.Buying.Id" method="post">
+                        <button type="submit" class="btn btn-danger">
+                            Delete
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a style="margin-bottom:10px" class="btn btn-light" asp-controller="Buyings" asp-action="Create">Add buying</a>
+
+@if (Model is IPagedList)
+{
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+}
+

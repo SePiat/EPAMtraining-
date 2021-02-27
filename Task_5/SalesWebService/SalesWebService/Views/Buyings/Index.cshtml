@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div align="center">
+    <h2 class="text-info">List of buyings</h2>
+    <div>
+        <table id="buyingsContainer" width="70%">
+        </table>
+    </div>
+    <div class="btn_filter_container">
+        <div class="btn_filter">
+            <button style="width:20%" id="btn_filterBuyingByManager" type="button" class="btn btn-light">Filter by manager name</button>
+            <input style="width:20%" id="inp_filterBuyingByManager" class="btn btn-light" />
+        </div>
+        <div class="btn_filter">
+            <button style="width:20%" id="btn_filterBuyingByBuyer" type="button" class="btn btn-light">Filter by buyer name</button>
+            <input style="width:20%" id="inp_filterBuyingByBuyer" class="btn btn-light" />
+        </div>
+        <div class="btn_filter">
+            <button style="width:20%" id="btn_filterBuyingByProduct" type="button" class="btn btn-light">Filter by product name</button>
+            <input style="width:20%" id="inp_filterBuyingByProduct" class="btn btn-light" />
+        </div>
+        <div class="btn_filter">
+            <button style="width:20%" id="btn_filterBuyingByDate" type="button" class="btn btn-light">Filter by date</button>
+            <input style="width:20%" id="inp_filterBuyingByDate" class="btn btn-light" />
+        </div>
+        <div class="btn_filter">
+            <button style="width:20%" id="btn_filterBuyingByCost" type="button" class="btn btn-light">Filter by cost</button>
+            <input style="width:20%" id="inp_filterBuyingByCost" class="btn btn-light" />
+        </div>
+        <div>
+            <button id="btn_reset" class="btn btn-light">Reset</button>
+        </div>
+    </div>
+</div>
+
+
+
+

@@ -23,10 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Buyings\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="SalesReportConverter.DAL">
       <HintPath>..\..\..\Task_4\SalesReportConverter\SalesReportConverter.DAL\bin\Debug\netcoreapp3.1\SalesReportConverter.DAL.dll</HintPath>
     </Reference>

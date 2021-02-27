@@ -4,7 +4,7 @@ using SalesReportConverter.DAL.Context;
 using SalesReportConverter.DAL.Repositories;
 using SalesReportConverter.DAL.Repositories.Abstractions;
 using SalesReportConverter.Model_.Models;
-using SalesWebService.Models.Managers;
+using SalesWebService.Models.Buyings;
 using Serilog;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ using X.PagedList;
 
 namespace SalesWebService.Controllers
 {
-    public class ManagersController : Controller
+    public class BuyingsController : Controller
     {
         static int? globPage;
         [Authorize]
@@ -24,64 +24,100 @@ namespace SalesWebService.Controllers
             return View();
         }
 
-        public ActionResult ListOfManagers()
+        public ActionResult ListOfBuyings()
         {
-            IList<ManagersIndexViewModel> models = new List<ManagersIndexViewModel>();
+            IList<BuyingsViewModel> models = new List<BuyingsViewModel>();
             using (var context = new ApplicationDbContext())
             {
                 IUnitOfWork unitOfWork = new UnitOfWork(context);
-                var managers = unitOfWork.Managers.ToList();
-                foreach (var manager in managers)
-                {
-                    int countBuyers = unitOfWork.Buyings.ToList().Where(x => x.Manager == manager).Select(x => x.Buyer).Distinct().Count();
-                    models.Add(new ManagersIndexViewModel { Manager = manager, CountBuyers = countBuyers});
+                var buyings = unitOfWork.Buyings.ToList();
+                foreach (var buying in buyings)
+                {                   
+                    models.Add(new BuyingsViewModel { ManagerName = buying.Manager.Name,
+                        ManagerSecondName=buying.Manager.SecondName,
+                        Buyer=buying.Buyer.FullName, 
+                        Product=buying.Product.Name, 
+                        PurchaseDate=buying.PurchaseDate, 
+                        Cost=buying.Cost, Buying=buying});
                 }
             }
             int pageNumber = globPage ?? 1;
-            var model = models.ToPagedList(pageNumber, 3);
-            return PartialView("ManagersContainer", model);
+            var model = models.ToPagedList(pageNumber, 5);
+            return PartialView("BuyingsContainer", model);
         }
 
         [Authorize(Roles = "admin")]
         public ActionResult Edit(int id)
         {
-            Manager manager;
+            Buying buying;
+            BuyingsViewModel model = new BuyingsViewModel();
+
             using (var context = new ApplicationDbContext())
             {
                 IUnitOfWork unitOfWork = new UnitOfWork(context);
-                manager = unitOfWork.Managers.FirstOrDefault(x => x.Id == id);
+                buying = unitOfWork.Buyings.FirstOrDefault(x => x.Id == id);
+                if (buying == null)
+                {
+                    return NotFound();
+                }
+                model.Buying = buying;
+                model.ManagerName = buying.Manager.Name;
+                model.ManagerSecondName = buying.Manager.SecondName;
+                model.Buyer = buying.Buyer.FullName;
+                model.Product = buying.Product.Name;
+                model.PurchaseDate = buying.PurchaseDate;
+                model.Cost = buying.Cost;
+
             }
-            if (manager == null)
-            {
-                return NotFound();
-            }
-            return View(manager);
+            
+        
+           
+            return View(model);
 
         }
 
         [HttpPost]
         [Authorize(Roles = "admin")]
-        public async Task<ActionResult> Edit(Manager model)
+        public async Task<ActionResult> Edit(BuyingsViewModel model)
         {
             using (var context = new ApplicationDbContext())
             {
                 IUnitOfWork unitOfWork = new UnitOfWork(context);
-                Manager manager = unitOfWork.Managers.FirstOrDefault(x => x.Id == model.Id);
-                if (manager == null)
+                Buying buying = unitOfWork.Buyings.FirstOrDefault(x => x.Id == model.Buying.Id);
+                if (buying == null)
                 {
                     return NotFound();
                 }
-                manager.Name = model.Name;
-                manager.SecondName = model.SecondName;
+                Manager manager = unitOfWork.Managers.FirstOrDefault(x => x.Name == model.ManagerName && x.SecondName==model.ManagerSecondName);
+                Buyer buyer = unitOfWork.Buyers.FirstOrDefault(x => x.FullName == model.Buyer);
+                Product product = unitOfWork.Products.FirstOrDefault(x => x.Name == model.Product);
+                if (manager == null)
+                {
+                    buying.Manager = new Manager() { Name = model.ManagerName, SecondName = model.ManagerSecondName };
+                }
+                else buying.Manager = manager;
+                if (buyer == null)
+                {
+                    buying.Buyer = new Buyer() { FullName = model.Buyer };
+                }
+                else buying.Buyer = buyer;
+                if (product == null)
+                {
+                    buying.Product = new Product() { Name = model.Product, Cost = model.Cost };
+                }
+                else buying.Product = product;
+               
+                buying.PurchaseDate = model.PurchaseDate;
+                buying.Cost = model.Cost;
                 try
                 {
                     await unitOfWork.SaveAsync();
                 }
                 catch (Exception e)
                 {
-                    Log.Error($"ManagersController.Edit: Ошибка при попытке сохранения изменений менеджера: {DateTime.Now}" +
+                    Log.Error($"ManagersController.Edit: Ошибка при попытке сохранения изменений покупки: {DateTime.Now}" +
                            $"{Environment.NewLine}{e}{Environment.NewLine}");
-                    throw new Exception($"Ошибка при попытке сохранения изменений менеджера: {e}");
+                    throw new Exception($"Ошибка при попытке сохранения изменений покупки: {e}");
                 }
             }
             return View("Index");
@@ -94,21 +130,21 @@ namespace SalesWebService.Controllers
             using (var context = new ApplicationDbContext())
             {
                 IUnitOfWork unitOfWork = new UnitOfWork(context);
-                Manager manager = unitOfWork.Managers.FirstOrDefault(x => x.Id == Id);
-                if (manager == null)
+                Buying buying = unitOfWork.Buyings.FirstOrDefault(x => x.Id ==Id);
+                if (buying == null)
                 {
                     return NotFound();
                 }
                 try
                 {
-                    context.Managers.Remove(manager);
+                    context.Buyings.Remove(buying);
                     await unitOfWork.SaveAsync();
                 }
                 catch (Exception e)
                 {
-                    Log.Error($"ManagersController.Delete :Ошибка при удалении покупателя: {DateTime.Now}" +
+                    Log.Error($"BuyingsController.Delete :Ошибка при удалении покупки: {DateTime.Now}" +
                            $"{Environment.NewLine}{e}{Environment.NewLine}");
-                    throw new Exception($"Ошибка при удалении покупателя: {e}");
+                    throw new Exception($"Ошибка при удалении покупки: {e}");
                 }
             }
             return View("Index");
@@ -121,40 +157,62 @@ namespace SalesWebService.Controllers
 
         [Authorize(Roles = "admin")]
         [HttpPost]
-        public async Task<ActionResult> Create(Manager model)
+        public async Task<ActionResult> Create(BuyingsViewModel model)
         {
             if (ModelState.IsValid)
             {
-                Manager manager = new Manager { Name = model.Name, SecondName=model.SecondName };
+                Buying buying = new Buying();
                 using (var context = new ApplicationDbContext())
                 {
                     IUnitOfWork unitOfWork = new UnitOfWork(context);
-                    Manager existManager = unitOfWork.Managers.FirstOrDefault(x => x.Name == model.Name&& x.SecondName==model.SecondName);
-                    if (existManager == null)
+                    Buying existBuying = unitOfWork.Buyings.FirstOrDefault(x => x.Buyer.FullName==model.Buyer&&x.Product.Name==model.Product&&x.PurchaseDate==model.PurchaseDate);
+                    if (existBuying == null)
                     {
+
+                        Manager manager = unitOfWork.Managers.FirstOrDefault(x => x.Name == model.ManagerName && x.SecondName == model.ManagerSecondName);
+                        Buyer buyer = unitOfWork.Buyers.FirstOrDefault(x => x.FullName == model.Buyer);
+                        Product product = unitOfWork.Products.FirstOrDefault(x => x.Name == model.Product);
+                        if (manager == null)
+                        {
+                            buying.Manager = new Manager() { Name = model.ManagerName, SecondName = model.ManagerSecondName };
+                        }
+                        else buying.Manager = manager;
+                        if (buyer == null)
+                        {
+                            buying.Buyer = new Buyer() { FullName = model.Buyer };
+                        }
+                        else buying.Buyer = buyer;
+                        if (product == null)
+                        {
+                            buying.Product = new Product() { Name = model.Product, Cost = model.Cost };
+                        }
+                        else buying.Product = product;
+
+                        buying.PurchaseDate = model.PurchaseDate;
+                        buying.Cost = model.Cost;
                         try
                         {
-                            unitOfWork.Managers.Add(manager);
+                            unitOfWork.Buyings.Add(buying);
                             await unitOfWork.SaveAsync();
                         }
                         catch (Exception e)
                         {
-                            Log.Error($"ManagersController.Create :Ошибка при создании менеджера: {DateTime.Now}" +
+                            Log.Error($"BuyingsController.Create :Ошибка при создании покупки: {DateTime.Now}" +
                            $"{Environment.NewLine}{e}{Environment.NewLine}");
-                            throw new Exception($"Ошибка при создании менеджера: {e}");
+                            throw new Exception($"Ошибка при создании покупки: {e}");
                         }
                     }
                     else
                     {
-                        Log.Error($"ManagersController.Create :Менеджер с таким именем уже занесен в БД: {DateTime.Now}{Environment.NewLine}");
-                        throw new Exception($"Менеджер с таким именем уже занесен в БД");
+                        Log.Error($"BuyingsController.Create :Данная покупка уже занесена в БД: {DateTime.Now}{Environment.NewLine}");
+                        throw new Exception($"Данная покупка уже занесена в БД");
                     }
                 }
             }
             return View("Index");
         }
 
-        [Authorize]
+        /*[Authorize]
         public ActionResult SearchManagerByName(string searchName)
         {
             if (searchName != null)
@@ -188,7 +246,7 @@ namespace SalesWebService.Controllers
                     foreach (var manager in result)
                     {
                         int countBuyers = unitOfWork.Buyings.ToList().Where(x => x.Manager == manager).Select(x => x.Buyer).Distinct().Count();
-                        model.Add(new ManagersIndexViewModel { Manager = manager, CountBuyers = countBuyers});
+                        model.Add(new ManagersIndexViewModel { Manager = manager, CountBuyers = countBuyers });
                     }
                 }
                 return PartialView("ManagersContainer", model);
@@ -215,16 +273,16 @@ namespace SalesWebService.Controllers
                         foreach (var manager in managers)
                         {
                             int countBuyers = unitOfWork.Buyings.ToList().Where(x => x.Manager == manager).Select(x => x.Buyer).Distinct().Count();
-                            if (countBuyers== count)
+                            if (countBuyers == count)
                             {
                                 model.Add(new ManagersIndexViewModel { Manager = manager, CountBuyers = countBuyers });
                             }
-                        }                       
+                        }
                     }
                     return PartialView("ManagersContainer", model);
                 }
             }
             return RedirectToAction("ListOfManagers");
-        }
+        }*/
     }
 }
