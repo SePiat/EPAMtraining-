@@ -1,4 +1,4 @@
-﻿@model SalesReportConverter.Model_.Models.Product
+﻿@model SalesWebService.Models.Products.ProductsCreateEditViewModel
 @{
     ViewData["Title"] = "Edit";
 }
@@ -15,16 +15,23 @@
     <div class="form-group">
         <label asp-for="Name">Name</label>
         <input type="text" asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name"></span>
     </div>
     <div class="form-group">
         <h2>Cost: @Model.Cost </h2>
     </div>
     <div class="form-group">
         <label asp-for="Cost">Cost</label>
-        <input type="text" asp-for="Cost" class="form-control" />
+        <input type="number" asp-for="Cost" class="form-control" />
+        <span asp-validation-for="Cost"></span>
+
     </div>
 
     <div class="form-group">
         <input type="submit" value="Save" class="btn btn-light" />
     </div>
 </form>
+@section scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

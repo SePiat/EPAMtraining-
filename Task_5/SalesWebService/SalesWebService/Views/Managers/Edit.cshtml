@@ -1,4 +1,4 @@
-﻿@model SalesReportConverter.Model_.Models.Manager
+﻿@model SalesWebService.Models.Managers.ManagersCreateEditViewModel
 @{
     ViewData["Title"] = "Edit";
 }
@@ -13,18 +13,24 @@
         <h2>Currently Name: @Model.Name </h2>
     </div>
     <div class="form-group">
-        <label asp-for="Name" >Name</label>
+        <label asp-for="Name">Name</label>
         <input type="text" asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name"></span>
     </div>
     <div class="form-group">
         <h2>Currently Second Name: @Model.SecondName </h2>
     </div>
     <div class="form-group">
-        <label asp-for="SecondName" >SecondName</label>
+        <label asp-for="SecondName">SecondName</label>
         <input type="text" asp-for="SecondName" class="form-control" />
+        <span asp-validation-for="SecondName"></span>
     </div>
 
     <div class="form-group">
         <input type="submit" value="Save" class="btn btn-light" />
     </div>
 </form>
+@section scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

@@ -46,6 +46,7 @@ namespace SalesWebService.Controllers
         public ActionResult Edit(int id)
         {
             Manager manager;
+            ManagersCreateEditViewModel model = new ManagersCreateEditViewModel();
             using (var context = new ApplicationDbContext())
             {
                 IUnitOfWork unitOfWork = new UnitOfWork(context);
@@ -55,33 +56,39 @@ namespace SalesWebService.Controllers
             {
                 return NotFound();
             }
-            return View(manager);
+            model.Id = id;
+            model.Name = manager.Name;
+            model.SecondName = manager.SecondName;
+            return View(model);
 
         }
 
         [HttpPost]
         [Authorize(Roles = "admin")]
-        public async Task<ActionResult> Edit(Manager model)
+        public async Task<ActionResult> Edit(ManagersCreateEditViewModel model)
         {
-            using (var context = new ApplicationDbContext())
+            if (ModelState.IsValid)
             {
-                IUnitOfWork unitOfWork = new UnitOfWork(context);
-                Manager manager = unitOfWork.Managers.FirstOrDefault(x => x.Id == model.Id);
-                if (manager == null)
+                using (var context = new ApplicationDbContext())
                 {
-                    return NotFound();
-                }
-                manager.Name = model.Name;
-                manager.SecondName = model.SecondName;
-                try
-                {
-                    await unitOfWork.SaveAsync();
-                }
-                catch (Exception e)
-                {
-                    Log.Error($"ManagersController.Edit: Ошибка при попытке сохранения изменений менеджера: {DateTime.Now}" +
-                           $"{Environment.NewLine}{e}{Environment.NewLine}");
-                    throw new Exception($"Ошибка при попытке сохранения изменений менеджера: {e}");
+                    IUnitOfWork unitOfWork = new UnitOfWork(context);
+                    Manager manager = unitOfWork.Managers.FirstOrDefault(x => x.Id == model.Id);
+                    if (manager == null)
+                    {
+                        return NotFound();
+                    }
+                    manager.Name = model.Name;
+                    manager.SecondName = model.SecondName;
+                    try
+                    {
+                        await unitOfWork.SaveAsync();
+                    }
+                    catch (Exception e)
+                    {
+                        Log.Error($"ManagersController.Edit: Ошибка при попытке сохранения изменений менеджера: {DateTime.Now}" +
+                               $"{Environment.NewLine}{e}{Environment.NewLine}");
+                        throw new Exception($"Ошибка при попытке сохранения изменений менеджера: {e}");
+                    }
                 }
             }
             return View("Index");

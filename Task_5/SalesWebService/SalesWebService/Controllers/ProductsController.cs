@@ -46,6 +46,7 @@ namespace SalesWebService.Controllers
         public ActionResult Edit(int id)
         {
             Product product;
+            ProductsCreateEditViewModel model = new ProductsCreateEditViewModel();
             using (var context = new ApplicationDbContext())
             {
                 IUnitOfWork unitOfWork = new UnitOfWork(context);
@@ -55,33 +56,40 @@ namespace SalesWebService.Controllers
             {
                 return NotFound();
             }
-            return View(product);
+            model.Id = id;
+            model.Name = product.Name;
+            model.Cost = product.Cost;
+
+            return View(model);
 
         }
 
         [HttpPost]
         [Authorize(Roles = "admin")]
-        public async Task<ActionResult> Edit(Product model)
+        public async Task<ActionResult> Edit(ProductsCreateEditViewModel model)
         {
-            using (var context = new ApplicationDbContext())
+            if (ModelState.IsValid)
             {
-                IUnitOfWork unitOfWork = new UnitOfWork(context);
-                Product product = unitOfWork.Products.FirstOrDefault(x => x.Id == model.Id);
-                if (product == null)
+                using (var context = new ApplicationDbContext())
                 {
-                    return NotFound();
-                }
-                product.Name = model.Name;
-                product.Cost = model.Cost;
-                try
-                {
-                    await unitOfWork.SaveAsync();
-                }
-                catch (Exception e)
-                {
-                    Log.Error($"ProductsContainer.Edit: Ошибка при попытке сохранения продукта: {DateTime.Now}" +
-                           $"{Environment.NewLine}{e}{Environment.NewLine}");
-                    throw new Exception($"Ошибка при попытке сохранения продукта: {e}");
+                    IUnitOfWork unitOfWork = new UnitOfWork(context);
+                    Product product = unitOfWork.Products.FirstOrDefault(x => x.Id == model.Id);
+                    if (product == null)
+                    {
+                        return NotFound();
+                    }
+                    product.Name = model.Name;
+                    product.Cost = model.Cost;
+                    try
+                    {
+                        await unitOfWork.SaveAsync();
+                    }
+                    catch (Exception e)
+                    {
+                        Log.Error($"ProductsContainer.Edit: Ошибка при попытке сохранения продукта: {DateTime.Now}" +
+                               $"{Environment.NewLine}{e}{Environment.NewLine}");
+                        throw new Exception($"Ошибка при попытке сохранения продукта: {e}");
+                    }
                 }
             }
             return View("Index");

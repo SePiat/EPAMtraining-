@@ -1,5 +1,5 @@
 ﻿
-@model SalesReportConverter.Model_.Models.Manager
+@model SalesWebService.Models.Managers.ManagersCreateEditViewModel
 @{
     ViewBag.Title = "Add manager";
 }
@@ -9,12 +9,18 @@
     <div class="form-group btn-light">
         <label asp-for="Name">Name</label>
         <input type="text" asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name"></span>
     </div>
     <div class="form-group btn-light">
         <label asp-for="SecondName">SecondName</label>
         <input type="text" asp-for="SecondName" class="form-control" />
+        <span asp-validation-for="SecondName"></span>
     </div>
     <div>
         <input type="submit" value="Add" class="btn btn-info" />
     </div>
 </form>
+@section scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
