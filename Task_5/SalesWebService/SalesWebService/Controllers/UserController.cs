@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SalesWebService.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,9 +10,7 @@ namespace SalesWebService.Controllers
 {
     public class UserController : Controller
     {
-
         private UserManager<IdentityUser> _userManager;
-
         public UserController(UserManager<IdentityUser> userManager)
         {
             _userManager = userManager;
@@ -44,7 +41,6 @@ namespace SalesWebService.Controllers
                         ModelState.AddModelError(String.Empty, error.Description);
                     }
                 }
-
             }
             return View(model);
         }
@@ -56,7 +52,6 @@ namespace SalesWebService.Controllers
             {
                 return NotFound();
             }
-
             EditUserViewModel model = new EditUserViewModel { Id = user.Id, Email = user.Email };
             return View(model);
         }

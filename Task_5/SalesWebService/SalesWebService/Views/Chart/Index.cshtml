@@ -2,7 +2,6 @@
 @{
     ViewData["Title"] = "Chart Page";
 }
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -26,9 +25,7 @@
 				],
 				data: [
 				{
-					type: "column", //change type to bar, line, area, pie, etc
-					
-                    //Uncomment below line to add data coming from the controller.
+					type: "column", //change type to bar, line, area, pie, etc                    
 					dataPoints: @Html.Raw(ViewBag.DataPoints),
 				}
 				]
@@ -36,6 +33,5 @@
 			chart.render();
 		};
     </script>
-
 </body>
 </html>		

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using SalesReportConverter.Model_.Models;
+using System;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using SalesReportConverter.Model_.Models;
 
 namespace SalesWebService.Models.Buyings
 {
@@ -22,10 +19,10 @@ namespace SalesWebService.Models.Buyings
         [RegularExpression(@"[a-zA-Za-zА-Я\s]+", ErrorMessage = "Error, enter only letters")]
         [StringLength(20, MinimumLength = 3)]
         public string Buyer { get; set; }
-        [Required]        
+        [Required]
         [StringLength(20, MinimumLength = 3)]
         public string Product { get; set; }
-       
+
         [Required]
         public DateTime PurchaseDate { get; set; }
         [Required]

@@ -1,18 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SalesReportConverter.DAL.Context;
 using SalesReportConverter.DAL.Repositories;
 using SalesReportConverter.DAL.Repositories.Abstractions;
 using SalesWebService.Models.Chart;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace SalesWebService.Controllers
 {
     public class ChartController : Controller
     {
+        [Authorize]
         public IActionResult ManagersChart()
         {
             IList<ChartViewModel> models = new List<ChartViewModel>();
@@ -23,15 +23,16 @@ namespace SalesWebService.Controllers
                 foreach (var manager in managers)
                 {
                     int countBuyings = unitOfWork.Buyings.ToList().Where(x => x.Manager == manager).Count();
-                    models.Add(new ChartViewModel(y: countBuyings, label:manager.Name + " " + manager.SecondName));
+                    models.Add(new ChartViewModel(y: countBuyings, label: manager.Name + " " + manager.SecondName));
                 }
             }
             ViewBag.NameChart = "Chart of the number of sales by managers";
 
             ViewBag.DataPoints = JsonConvert.SerializeObject(models);
-			return View("Index");
-		}
+            return View("Index");
+        }
 
+        [Authorize]
         public IActionResult BuyersChart()
         {
             IList<ChartViewModel> models = new List<ChartViewModel>();

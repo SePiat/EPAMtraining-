@@ -203,9 +203,7 @@ namespace SalesWebService.Controllers
                         }
                     }
                     return PartialView("ProductsContainer", model);
-
-                }
-                
+                }                
             }
             return RedirectToAction("ListOfProducts");
         }
