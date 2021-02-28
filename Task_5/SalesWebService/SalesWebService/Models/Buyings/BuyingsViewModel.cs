@@ -11,15 +11,18 @@ namespace SalesWebService.Models.Buyings
     {
         public Buying Buying { get; set; }
         [Required]
+        [RegularExpression(@"[a-zA-Za-zА-Я\s]+", ErrorMessage = "Error, enter only letters")]
         [StringLength(20, MinimumLength = 3)]
         public string ManagerName { get; set; }
         [Required]
+        [RegularExpression(@"[a-zA-Za-zА-Я\s]+", ErrorMessage = "Error, enter only letters")]
         [StringLength(20, MinimumLength = 3)]
         public string ManagerSecondName { get; set; }
         [Required]
+        [RegularExpression(@"[a-zA-Za-zА-Я\s]+", ErrorMessage = "Error, enter only letters")]
         [StringLength(20, MinimumLength = 3)]
         public string Buyer { get; set; }
-        [Required]
+        [Required]        
         [StringLength(20, MinimumLength = 3)]
         public string Product { get; set; }
        

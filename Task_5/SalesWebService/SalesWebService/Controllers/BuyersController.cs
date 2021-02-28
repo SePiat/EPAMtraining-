@@ -47,6 +47,7 @@ namespace SalesWebService.Controllers
         [Authorize(Roles = "admin")]
         public ActionResult Edit(int id)
         {
+            BuyersCreateEditViewModel model = new BuyersCreateEditViewModel();
             Buyer buyer;
             using (var context = new ApplicationDbContext())
             {
@@ -57,32 +58,36 @@ namespace SalesWebService.Controllers
             {
                 return NotFound();
             }
-            return View(buyer);
-
+            model.Id = id;
+            model.FullName = buyer.FullName;
+            return View(model);
         }
 
         [HttpPost]
         [Authorize(Roles = "admin")]
-        public async Task<ActionResult> Edit(Buyer model)
+        public async Task<ActionResult> Edit(BuyersCreateEditViewModel model)
         {
-            using (var context = new ApplicationDbContext())
+            if (ModelState.IsValid)
             {
-                IUnitOfWork unitOfWork = new UnitOfWork(context);
-                Buyer buyer = unitOfWork.Buyers.FirstOrDefault(x => x.Id == model.Id);
-                if (buyer == null)
+                using (var context = new ApplicationDbContext())
                 {
-                    return NotFound();
-                }
-                buyer.FullName = model.FullName;
-                try
-                {
-                    await unitOfWork.SaveAsync();
-                }
-                catch (Exception e)
-                {
-                    Log.Error($"BuyersController.Edit: Ошибка при попытке сохранения нового имени покупателя: {DateTime.Now}" +
-                           $"{Environment.NewLine}{e}{Environment.NewLine}");
-                    throw new Exception($"Ошибка при попытке сохранения нового имени покупателя: {e}");
+                    IUnitOfWork unitOfWork = new UnitOfWork(context);
+                    Buyer buyer = unitOfWork.Buyers.FirstOrDefault(x => x.Id == model.Id);
+                    if (buyer == null)
+                    {
+                        return NotFound();
+                    }
+                    buyer.FullName = model.FullName;
+                    try
+                    {
+                        await unitOfWork.SaveAsync();
+                    }
+                    catch (Exception e)
+                    {
+                        Log.Error($"BuyersController.Edit: Ошибка при попытке сохранения нового имени покупателя: {DateTime.Now}" +
+                               $"{Environment.NewLine}{e}{Environment.NewLine}");
+                        throw new Exception($"Ошибка при попытке сохранения нового имени покупателя: {e}");
+                    }
                 }
             }
             return View("Index");
@@ -122,7 +127,7 @@ namespace SalesWebService.Controllers
 
         [Authorize(Roles = "admin")]
         [HttpPost]
-        public async Task<ActionResult> Create(Buyer buyer)
+        public async Task<ActionResult> Create(BuyersCreateEditViewModel buyer)
         {
             if (ModelState.IsValid)
             {                
@@ -134,7 +139,7 @@ namespace SalesWebService.Controllers
                     {
                         try
                         {
-                            unitOfWork.Buyers.Add(buyer);
+                            unitOfWork.Buyers.Add(new Buyer() { FullName=buyer.FullName});
                             await unitOfWork.SaveAsync();
                         }
                         catch (Exception e)

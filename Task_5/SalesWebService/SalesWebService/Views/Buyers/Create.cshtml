@@ -1,4 +1,4 @@
-﻿@model SalesReportConverter.Model_.Models.Buyer
+﻿@model SalesWebService.Models.Buyers.BuyersCreateEditViewModel
 @{
     ViewBag.Title = "Add buyer";
 }
@@ -8,8 +8,15 @@
     <div class="form-group btn-light">
         <label asp-for="FullName">FullName</label>
         <input type="text" asp-for="FullName" class="form-control" />
+        <span asp-validation-for="FullName"></span>
     </div>
     <div class="">
         <input type="submit" value="Add" class="btn btn-info" />
     </div>
 </form>
+
+@section scripts{
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
