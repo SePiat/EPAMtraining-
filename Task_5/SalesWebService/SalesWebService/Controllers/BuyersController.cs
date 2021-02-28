@@ -39,8 +39,6 @@ namespace SalesWebService.Controllers
             }
             int pageNumber = globPage ?? 1;
             var model = models.ToPagedList(pageNumber, 5);
-
-
             return PartialView("BuyersContainer", model);
         }
 

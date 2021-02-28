@@ -66,8 +66,6 @@ namespace SalesWebService.Controllers
                 {
                     user.Email = model.Email;
                     user.UserName = model.Email;
-
-
                     var result = await _userManager.UpdateAsync(user);
                     if (result.Succeeded)
                     {
@@ -82,7 +80,6 @@ namespace SalesWebService.Controllers
                     }
                 }
             }
-
             return View(model);
 
         }
@@ -95,7 +92,6 @@ namespace SalesWebService.Controllers
             {
                 IdentityResult result = await _userManager.DeleteAsync(user);
             }
-
             return RedirectToAction("Index");
         }
         [Authorize(Roles = "admin")]

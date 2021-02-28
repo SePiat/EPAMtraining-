@@ -8,8 +8,7 @@
     @foreach (var user in Model)
     {
         <tr>
-            <td>@user.Email</td>
-            
+            <td>@user.Email</td>            
             <td>
                 <form asp-action="Delete" asp-route-Id="@user.Id" method="post">
                     <a class="btn btn-light" asp-action="Edit" asp-route-id="@user.Id">ChangeEmail</a>
