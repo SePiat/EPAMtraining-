@@ -25,8 +25,8 @@ namespace SalesWebService.Models.Buyings
         [StringLength(20, MinimumLength = 3)]
         public string Product { get; set; }
 
-        [Required]
-        public DateTime PurchaseDate { get; set; }
+        [Required]        
+        public DateTime PurchaseDate { get; set; }         
         [Required]
         public decimal Cost { get; set; }
     }
